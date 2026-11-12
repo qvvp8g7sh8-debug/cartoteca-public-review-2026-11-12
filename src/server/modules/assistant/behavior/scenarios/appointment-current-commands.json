@@ -1,0 +1,385 @@
+[
+  {
+    "id": "current-relative-source-service",
+    "category": "appointment-constraints",
+    "title": "Относительный перенос по исходной услуге",
+    "text": "Перенеси запись Анны Ивановой на пилинг PRX на час позже",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой",
+        "serviceQuery": "пилинг PRX"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер отбирает реальный исходный приём по услуге и доказывает сдвиг его времени на час. Модель не знает исходный час и не возвращает выдуманный target.",
+      "limitations": [
+        "При нескольких подходящих приёмах нужен выбор. Права, занятость и согласие вне графика проверяет сервер."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "moveAppointment",
+      "source-service",
+      "relative",
+      "current-wire"
+    ]
+  },
+  {
+    "id": "current-relative-source-staff",
+    "category": "appointment-constraints",
+    "title": "Относительный перенос у выбранного сотрудника",
+    "text": "Перенеси запись Анны Ивановой у Марии на час раньше",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой",
+        "staffQuery": "Марии"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сотрудник фильтрует исходные приёмы. Сервер вычисляет сдвиг на час раньше от выбранного приёма, сохраняя его исполнителя и услугу.",
+      "limitations": [
+        "Это не перенос к новому сотруднику. Дату и время нельзя выдумать без привязанного источника."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "moveAppointment",
+      "source-staff",
+      "relative",
+      "current-wire"
+    ]
+  },
+  {
+    "id": "current-keep-time-needs-date",
+    "category": "appointment-constraints",
+    "title": "Прежний час без новой даты",
+    "text": "Перенеси запись Анны Ивановой в то же время",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер выбирает существующий приём, сохраняет его час и уточняет новую дату; перенос на неизменные координаты не считается готовым.",
+      "limitations": [
+        "Без новой даты не подставлять исходный день. Режим сохранения определяет приложение."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "keep-time", "current-wire"]
+  },
+  {
+    "id": "current-cancel-source-service",
+    "category": "appointment-constraints",
+    "title": "Отмена по услуге исходного приёма",
+    "text": "Отмени запись Анны Ивановой на пилинг PRX",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "cancelAppointment",
+        "query": "Анны Ивановой",
+        "serviceQuery": "пилинг PRX"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер фильтрует реальные будущие приёмы по произнесённой услуге, затем требует отдельное подтверждение отмены конкретного приёма.",
+      "limitations": [
+        "Сокращение не выбирает между разными кодами продукта; фильтр не меняет услугу. Модель не подтверждает отмену."
+      ]
+    },
+    "tags": ["appointment-constraints", "cancelAppointment", "source-service", "current-wire"]
+  },
+  {
+    "id": "current-move-source-service",
+    "category": "appointment-constraints",
+    "title": "Перенос конкретной услуги",
+    "text": "Перенеси запись Анны Ивановой на пилинг PRX на завтра в 14:00",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой",
+        "serviceQuery": "пилинг PRX",
+        "date": "2026-10-21",
+        "time": "14:00"
+      },
+      "status": "needs_clarification",
+      "outcome": "Услуга фильтрует исходный приём, дата и время задают цель переноса. Сервер проверяет права, источник и занятость.",
+      "limitations": [
+        "Услуга и сотрудник исходной записи сохраняются. При неоднозначности источника нужен выбор."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "source-service", "current-wire"]
+  },
+  {
+    "id": "current-open-source-service",
+    "category": "appointment-constraints",
+    "title": "Открытие приёма по услуге",
+    "text": "Открой запись Анны Ивановой на пилинг PRX",
+    "referenceDate": "2026-10-20",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "editAppointment",
+        "query": "Анны Ивановой",
+        "serviceQuery": "пилинг PRX"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер находит существующий приём по клиенту и услуге и открывает его штатную форму.",
+      "limitations": [
+        "Сам разбор не изменяет услугу и не сохраняет запись; совпадения и доступ проверяет сервер."
+      ]
+    },
+    "tags": ["appointment-constraints", "editAppointment", "source-service", "current-wire"]
+  },
+  {
+    "id": "current-open-appointments-day",
+    "category": "calendar-dates",
+    "title": "Открой записи на 21",
+    "text": "Открой записи на 21",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-21",
+        "mode": "day"
+      },
+      "status": "supported",
+      "outcome": "Открывается расписание на21октября текущего года организации. Это просмотр, не редактирование отдельного приёма; сервер проверяет дату и доступ.",
+      "limitations": [
+        "21 означает день текущего месяца, не21:00. Несуществующая дата, дополнительные условия и несколько задач не выполняются."
+      ]
+    },
+    "tags": ["calendar-dates", "calendar", "current-wire"]
+  },
+  {
+    "id": "current-change-appointment",
+    "category": "appointment-constraints",
+    "title": "Измени запись",
+    "text": "Измени запись",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер уточняет существующую запись и новые дату/время. Прежнее время не подставляется молча.",
+      "limitations": ["Права, выбор источника, занятость и сохранение определяет приложение."]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "current-wire"]
+  },
+  {
+    "id": "current-open-appointment",
+    "category": "appointment-constraints",
+    "title": "Открой запись Ивановой",
+    "text": "Открой запись Ивановой",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "editAppointment",
+        "query": "Ивановой"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер находит доступную существующую запись и открывает её редактирование.",
+      "limitations": ["Сам разбор не изменяет запись и не подтверждает наличие клиента."]
+    },
+    "tags": ["appointment-constraints", "editAppointment", "current-wire"]
+  },
+  {
+    "id": "current-relative-move-hour",
+    "category": "appointment-constraints",
+    "title": "Перенеси запись Анны Ивановой на час позже",
+    "text": "Перенеси запись Анны Ивановой на час позже",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой"
+      },
+      "status": "needs_clarification",
+      "outcome": "После выбора исходного приёма сервер вычисляет сдвиг на60минут. Модель не знает исходного времени и оставляет date/time пустыми.",
+      "limitations": [
+        "Не превращать относительный сдвиг в длительность или время от текущих часов."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "relative", "current-wire"]
+  },
+  {
+    "id": "current-noon-not-duration",
+    "category": "appointment-fields",
+    "title": "Запиши Анну Иванову на завтра на двенадцать часов на консультацию",
+    "text": "Запиши Анну Иванову на завтра на двенадцать часов на консультацию",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-19",
+        "time": "12:00",
+        "serviceQuery": "консультацию"
+      },
+      "status": "supported",
+      "outcome": "Извлечены клиент, дата, начало и поисковая фраза услуги. Длительность берётся из выбранной услуги.",
+      "limitations": [
+        "Совпадения, необходимость уточнений и разрешённое исполнение определяет сервер."
+      ]
+    },
+    "tags": ["appointment-fields", "prepareAppointment", "clock", "current-wire"]
+  },
+  {
+    "id": "current-date-clock-first",
+    "category": "appointment-fields",
+    "title": "На девятнадцатое на десять утра запиши Анну Иванову на консультацию",
+    "text": "На девятнадцатое на десять утра запиши Анну Иванову на консультацию",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "time": "10:00",
+        "serviceQuery": "консультацию"
+      },
+      "status": "needs_clarification",
+      "outcome": "Время10:00 сохраняется независимо от порядка слов. Месяц для девятнадцатого предлагает и уточняет сервер.",
+      "limitations": ["Не подставлять месяц в модельный intent и не терять уже названное время."]
+    },
+    "tags": ["appointment-fields", "prepareAppointment", "clock", "date", "current-wire"]
+  },
+  {
+    "id": "current-cancel-selected-appointment",
+    "category": "appointment-constraints",
+    "title": "Удали запись Анны Ивановой на завтра в 18:00",
+    "text": "Удали запись Анны Ивановой на завтра в 18:00",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "cancelAppointment",
+        "query": "Анны Ивановой",
+        "date": "2026-10-19",
+        "time": "18:00"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер находит доступный существующий приём; при нескольких сначала предлагает выбор. Затем спрашивает «Отменить завтра в 18:00?». Только отдельное согласие пользователя на этот приём разрешает общему исполнителю установить status=cancelled с сохранением истории.",
+      "limitations": [
+        "Выбор приёма не подтверждает отмену. Модель возвращает только разбор текущих слов, без вопроса, action, ID и согласия; запись из базы не удаляется."
+      ]
+    },
+    "tags": ["appointment-constraints", "cancelAppointment", "confirmation", "current-wire"]
+  },
+  {
+    "id": "current-move-with-window-search",
+    "category": "appointment-constraints",
+    "title": "Перенос с подбором окна",
+    "text": "Перенеси запись Анны Ивановой на завтра. Найди свободное время",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой",
+        "date": "2026-10-19"
+      },
+      "status": "needs_clarification",
+      "outcome": "Одна задача переноса: сервер выбирает существующий приём и предлагает реальные окна новой даты. Поиск не является вторым действием.",
+      "limitations": [
+        "Точное время и доступность не выдумываются; выбор окна и исполнение проверяет сервер."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "current-wire", "window"]
+  },
+  {
+    "id": "current-move-morning-period",
+    "category": "appointment-constraints",
+    "title": "Перенос на утро",
+    "text": "Перенеси запись Анны Ивановой на завтра утром",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Ивановой",
+        "date": "2026-10-19"
+      },
+      "status": "needs_clarification",
+      "outcome": "Сервер сохраняет утренний период из исходной команды и ищет окно для полной длительности исходного приёма.",
+      "limitations": [
+        "Утро не означает точный час. Модель не возвращает границу периода вместо начала записи."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "current-wire", "window"]
+  },
+  {
+    "id": "current-move-source-partial-date",
+    "category": "appointment-constraints",
+    "title": "Перенеси запись Анны Семёновой на двадцатое на пилинг PRX",
+    "text": "Перенеси запись Анны Семёновой на двадцатое на пилинг PRX",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "moveAppointment",
+        "query": "Анны Семёновой",
+        "serviceQuery": "пилинг PRX"
+      },
+      "status": "needs_clarification",
+      "outcome": "Явный день без месяца требует серверного уточнения. Сохраняются независимые поля, прежняя дата не заменяет новое условие; услуга фильтрует реальный исходный приём.",
+      "limitations": [
+        "Нет ID, выдуманного времени или согласия в ответе модели; подтверждения и доступ проверяет сервер."
+      ]
+    },
+    "tags": ["appointment-constraints", "moveAppointment", "current-wire"]
+  },
+  {
+    "id": "current-cancel-source-staff-date",
+    "category": "appointment-constraints",
+    "title": "Отмени запись Анны Семёновой завтра в 14:00 у Марии",
+    "text": "Отмени запись Анны Семёновой завтра в 14:00 у Марии",
+    "referenceDate": "2026-10-18",
+    "referenceTime": "09:00",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "cancelAppointment",
+        "query": "Анны Семёновой",
+        "staffQuery": "Марии",
+        "date": "2026-10-19",
+        "time": "14:00"
+      },
+      "status": "needs_clarification",
+      "outcome": "Клиент, сотрудник и дата/время одновременно фильтруют реальные приёмы. Только новое привязанное согласие разрешает отменить выбранный приём.",
+      "limitations": [
+        "Нет ID, выдуманного времени или согласия в ответе модели; подтверждения и доступ проверяет сервер."
+      ]
+    },
+    "tags": ["appointment-constraints", "cancelAppointment", "current-wire"]
+  }
+]

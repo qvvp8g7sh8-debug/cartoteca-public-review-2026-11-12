@@ -1,0 +1,62 @@
+# One-shot native recovery job. No application env_file, ingress, or external network.
+services:
+  backup:
+    image: ${CARTOTECA_POSTGRES_APP_IMAGE:?Pin the PostgreSQL app image}
+    entrypoint: [node]
+    command: [scripts/backup-agent.cjs, run, --scheduled]
+    init: true
+    restart: 'no'
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 768m
+    cpus: '1.0'
+    pids_limit: 192
+    stop_grace_period: 15s
+    environment:
+      NODE_ENV: production
+      CARTOTECA_STORAGE_BACKEND: postgres
+      CARTOTECA_POSTGRES_PROFILE: production-v1
+      CARTOTECA_PG_HOST: postgres
+      CARTOTECA_PG_ALLOWED_HOSTS: postgres
+      CARTOTECA_PG_PORT: '5432'
+      CARTOTECA_PG_DATABASE: cartoteca
+      CARTOTECA_PG_USER: cartoteca_owner
+      CARTOTECA_PG_PASSWORD_FILE: /run/secrets/postgres_owner_password
+      BACKUP_POSTGRES_APPLICATION_ROLE: cartoteca_app
+      CARTOTECA_DATA_DIR: /data/assets
+      BACKUP_DIR: /backups
+      BACKUP_KEY_FILE: /run/secrets/postgres_backup_key
+      BACKUP_WORK_DIR: /backup-work
+      BACKUP_STATE_DIR: /backup-state
+      BACKUP_STATUS_FILE: /backup-status/status.json
+    secrets: [postgres_owner_password, postgres_backup_key]
+    volumes:
+      - assets:/data:ro
+      - archives:/backups
+      - work:/backup-work
+      - state:/backup-state
+      - status:/backup-status
+    tmpfs: ['/tmp:size=64m,mode=1777']
+    networks: [database]
+    labels:
+      cartoteca.scope: postgres-backup-v1
+      cartoteca.postgres-project: ${CARTOTECA_POSTGRES_PROJECT:?Select the existing PostgreSQL project}
+    logging:
+      driver: json-file
+      options: { max-size: '5m', max-file: '3' }
+networks:
+  database:
+    external: true
+    name: ${CARTOTECA_POSTGRES_PROJECT:?Select the existing PostgreSQL project}_database
+volumes:
+  assets: { external: true, name: '${CARTOTECA_POSTGRES_PROJECT}_postgres_assets' }
+  archives: { external: true, name: '${CARTOTECA_POSTGRES_PROJECT}_postgres_backups' }
+  work: { external: true, name: '${CARTOTECA_POSTGRES_PROJECT}_postgres_backup_work' }
+  state: { external: true, name: '${CARTOTECA_POSTGRES_PROJECT}_postgres_backup_state' }
+  status: { external: true, name: '${CARTOTECA_POSTGRES_PROJECT}_postgres_backup_status' }
+secrets:
+  postgres_owner_password:
+    file: ${CARTOTECA_POSTGRES_SECRET_DIR:?Select the private secret directory}/postgres_owner_password
+  postgres_backup_key:
+    file: ${CARTOTECA_POSTGRES_SECRET_DIR:?Select the private secret directory}/postgres_backup_key

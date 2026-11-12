@@ -1,0 +1,185 @@
+/* Compact calendar chrome; scheduling and status colours are unchanged. */
+@media screen and (max-width: 700px) and (orientation: portrait) {
+  .calendar-panel .mobile-date-navigation > .date-picker-toggle {
+    display: none;
+  }
+}
+@media screen {
+  .calendar-panel :is(.month-today, .mobile-today) {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 550;
+  }
+  .calendar-caption-short,
+  .early-hours-short {
+    display: none;
+  }
+}
+@media screen and (min-width: 701px) {
+  .calendar-day-tools > .calendar-period-caption {
+    display: none;
+  }
+  .calendar-day-tools:not(:has(.early-hours-control, .calendar-work-schedule)) {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .calendar-panel .mobile-calendar-heading {
+    gap: 6px;
+    padding-inline: 10px;
+  }
+  .calendar-panel
+    .mobile-calendar-heading
+    :is(.mobile-today, .calendar-work-days, .calendar-load-open) {
+    font-size: 12px;
+    padding-inline: 4px;
+  }
+  /* Schedule navigation stays a text action above the mobile calendar. */
+  .workspace.workspace-designed
+    .calendar-panel
+    .mobile-calendar-heading
+    > .calendar-work-days.secondary,
+  .workspace.workspace-designed
+    .calendar-panel
+    .mobile-calendar-heading
+    > .calendar-work-days.secondary:is(:hover, :active) {
+    padding: 6px 4px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--blue, #244c64);
+    box-shadow: none;
+  }
+  .calendar-panel .calendar-toolbar {
+    padding: 2px 10px 6px;
+  }
+  .calendar-panel .mobile-date-navigation {
+    height: 48px;
+    padding-left: 10px;
+  }
+  .calendar-panel .date-chip {
+    padding-block: 4px;
+  }
+  .calendar-panel .calendar-selection {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    flex: none;
+    gap: 6px;
+    padding: 2px 6px;
+    margin: 12px 10px 2px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface, #fff);
+  }
+  .calendar-panel .calendar-selection:has(label:nth-of-type(2)) {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.4fr);
+  }
+  .calendar-panel .calendar-selection label {
+    position: relative;
+    min-width: 0;
+    gap: 0;
+    margin: 0;
+    padding: 0 4px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .calendar-panel .calendar-selection label + label {
+    border-left: 1px solid var(--line);
+    padding-left: 10px;
+  }
+  .calendar-panel .calendar-filter-label {
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    right: 4px;
+    pointer-events: none;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+  }
+  .calendar-panel .calendar-selection label + label .calendar-filter-label {
+    left: 10px;
+  }
+  .calendar-panel .calendar-selection select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 40px;
+    margin: 0;
+    padding: 14px 0 2px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+  }
+  .calendar-panel .calendar-selection > small {
+    display: none;
+  }
+  .calendar-panel .calendar-caption-full,
+  .calendar-panel .early-hours-full {
+    display: none;
+  }
+  .calendar-panel .calendar-caption-short,
+  .calendar-panel .early-hours-short {
+    display: inline;
+  }
+  .calendar-panel .calendar-period-caption {
+    min-width: 0;
+    padding: 6px 10px;
+    text-align: left;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 18px;
+    overflow-wrap: anywhere;
+  }
+  .calendar-panel .calendar-day-tools {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 6px;
+    padding: 0 10px 4px;
+  }
+  .calendar-panel .calendar-day-tools:has(.calendar-work-hours):has(.early-hours-control) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto) auto;
+  }
+  .calendar-panel .calendar-day-tools > .calendar-period-caption {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .calendar-panel .calendar-day-tools > .early-hours-control {
+    grid-column: -2 / -1;
+    grid-row: 1;
+  }
+  .calendar-panel .calendar-day-tools .early-hours-control .secondary {
+    min-height: 44px;
+    padding: 6px 8px;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    white-space: nowrap;
+  }
+  .calendar-panel .calendar-day-tools .calendar-work-hours {
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+    border: 0;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .calendar-panel > .calendar-work-schedule {
+    margin: 2px 10px 6px;
+  }
+}

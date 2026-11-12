@@ -1,0 +1,441 @@
+[
+  {
+    "id": "cal-today",
+    "category": "calendar-dates",
+    "title": "Покажи моё расписание на сегодня",
+    "text": "Покажи моё расписание на сегодня",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-15"
+      },
+      "status": "supported",
+      "outcome": "Открыть разрешённое расписание на 15 октября; ничего не менять.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-tomorrow",
+    "category": "calendar-dates",
+    "title": "Открой расписание на завтра",
+    "text": "Открой расписание на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Открыть 16 октября по дате организации.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-day-after",
+    "category": "calendar-dates",
+    "title": "Покажи календарь на послезавтра",
+    "text": "Покажи календарь на послезавтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-17"
+      },
+      "status": "supported",
+      "outcome": "Открыть 17 октября, а не завтра.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-yesterday",
+    "category": "calendar-dates",
+    "title": "Покажи записи за вчера",
+    "text": "Покажи записи за вчера",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-14"
+      },
+      "status": "supported",
+      "outcome": "Открыть прошлую дату только для просмотра.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-before-yesterday",
+    "category": "calendar-dates",
+    "title": "Открой расписание за позавчера",
+    "text": "Открой расписание за позавчера",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-13"
+      },
+      "status": "supported",
+      "outcome": "Открыть 13 октября без изменения старых записей.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-after-three",
+    "category": "calendar-dates",
+    "title": "Покажи расписание через три дня",
+    "text": "Покажи расписание через три дня",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-18"
+      },
+      "status": "supported",
+      "outcome": "Сдвинуть календарную дату организации на три дня.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-week-later",
+    "category": "calendar-dates",
+    "title": "Открой расписание через неделю",
+    "text": "Открой расписание через неделю",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-22"
+      },
+      "status": "supported",
+      "outcome": "Открыть один день через семь дней; не обещать недельный режим.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-two-weeks-later",
+    "category": "calendar-dates",
+    "title": "Покажи календарь через две недели",
+    "text": "Покажи календарь через две недели",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-29"
+      },
+      "status": "supported",
+      "outcome": "Открыть 29 октября.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-month-later",
+    "category": "calendar-dates",
+    "title": "Покажи расписание через месяц, 15 ноября",
+    "text": "Покажи расписание через месяц, 15 ноября",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-11-15"
+      },
+      "status": "supported",
+      "outcome": "Открыть явно уточнённую дату 15 ноября.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-iso",
+    "category": "calendar-dates",
+    "title": "Открой календарь на 2026-11-03",
+    "text": "Открой календарь на 2026-11-03",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-11-03"
+      },
+      "status": "supported",
+      "outcome": "Использовать однозначную ISO дату.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-dotted",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 03.11.2026",
+    "text": "Покажи расписание на 03.11.2026",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-11-03"
+      },
+      "status": "supported",
+      "outcome": "В русском контексте DD.MM.YYYY означает 3 ноября.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-spoken-month",
+    "category": "calendar-dates",
+    "title": "Открой расписание на третье ноября 2026 года",
+    "text": "Открой расписание на третье ноября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-11-03"
+      },
+      "status": "supported",
+      "outcome": "Нормализовать порядковое числительное и родительный падеж месяца.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-month-genitive",
+    "category": "calendar-dates",
+    "title": "Покажи записи двадцать первого октября 2026 года",
+    "text": "Покажи записи двадцать первого октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-21"
+      },
+      "status": "supported",
+      "outcome": "Получить 21 октября, сохранив год.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-next-monday",
+    "category": "calendar-dates",
+    "title": "Покажи расписание в понедельник 19 октября 2026 года",
+    "text": "Покажи расписание в понедельник 19 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-19"
+      },
+      "status": "supported",
+      "outcome": "Дата и день недели согласованы.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-this-friday",
+    "category": "calendar-dates",
+    "title": "Открой расписание в эту пятницу, 16 октября 2026 года",
+    "text": "Открой расписание в эту пятницу, 16 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Выбрать явно названную пятницу текущей недели.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-next-friday-explicit",
+    "category": "calendar-dates",
+    "title": "Покажи следующую пятницу, 23 октября 2026 года",
+    "text": "Покажи следующую пятницу, 23 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-23"
+      },
+      "status": "supported",
+      "outcome": "При явной дате не заменять её ближайшей пятницей.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-bare-weekday",
+    "category": "calendar-dates",
+    "title": "Открой календарь в пятницу",
+    "text": "Открой календарь в пятницу",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "По принятому правилу голый день недели означает ближайший такой день не раньше referenceDate.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-contradicting-weekday",
+    "category": "calendar-dates",
+    "title": "Покажи пятницу 19 октября 2026 года",
+    "text": "Покажи пятницу 19 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. 19 октября — понедельник: не скрывать противоречие даты и дня недели.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-no-year",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 5 января",
+    "text": "Покажи расписание на 5 января",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Уточнить год; не переносить молча на прошлый или следующий январь.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  }
+]

@@ -1,0 +1,394 @@
+[
+  {
+    "id": "identity-duplicate-full-name",
+    "category": "clients-identity",
+    "title": "Найди Елену Петрову",
+    "text": "Найди Елену Петрову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Елену Петрову"
+      },
+      "status": "manual",
+      "outcome": "Показать обе доступные карточки и дать выбрать вручную.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "В организации две разные клиентки Елена Петрова."
+    ]
+  },
+  {
+    "id": "identity-missing",
+    "category": "clients-identity",
+    "title": "Найди клиента Зоя Облачная",
+    "text": "Найди клиента Зоя Облачная",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Зоя Облачная"
+      },
+      "status": "manual",
+      "outcome": "Показать пустой результат; не утверждать создание клиента.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "В доступном справочнике такого клиента нет."
+    ]
+  },
+  {
+    "id": "identity-inaccessible",
+    "category": "clients-identity",
+    "title": "Найди клиента Анна Иванова",
+    "text": "Найди клиента Анна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Иванова"
+      },
+      "status": "manual",
+      "outcome": "Штатный поиск возвращает только разрешённые карточки без подтверждения наличия скрытой.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "Карточка существует в другой организации либо недоступна текущему членству."
+    ]
+  },
+  {
+    "id": "identity-same-phone",
+    "category": "clients-identity",
+    "title": "Найди клиента +7 900 000 00 09",
+    "text": "Найди клиента +7 900 000 00 09",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "+7 900 000 00 09"
+      },
+      "status": "manual",
+      "outcome": "Общий семейный телефон может соответствовать нескольким карточкам.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "У двух синтетических клиентов общий телефон."
+    ]
+  },
+  {
+    "id": "identity-family-account",
+    "category": "clients-identity",
+    "title": "Найди ребёнка Анны Ивановой",
+    "text": "Найди ребёнка Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Родство не является именем или разрешением на карточку.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "identity-name-and-birth",
+    "category": "clients-identity",
+    "title": "Найди Елену Петрову 1990 года рождения",
+    "text": "Найди Елену Петрову 1990 года рождения",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Елену Петрову"
+      },
+      "status": "manual",
+      "outcome": "Открыть поиск по ФИО; год рождения сверить в разрешённом интерфейсе.",
+      "limitations": [
+        "Схема intent не хранит birthDate и не применяет такой фильтр."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "identity-two-identifiers",
+    "category": "clients-identity",
+    "title": "Найди Иванову, телефон +7 900 000 00 01",
+    "text": "Найди Иванову, телефон +7 900 000 00 01",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "+7 900 000 00 01"
+      },
+      "status": "manual",
+      "outcome": "Открыть поиск по точному телефону; ФИО сверить перед выбором.",
+      "limitations": [
+        "Одна query не выражает строгое AND двух идентификаторов."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "identity-conflicting-identifiers",
+    "category": "clients-identity",
+    "title": "Найди Анну Иванову по телефону Сергея +7 900 000 00 02",
+    "text": "Найди Анну Иванову по телефону Сергея +7 900 000 00 02",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не выбирать клиента по противоречащим друг другу данным.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "identity-same-staff-client-name",
+    "category": "clients-identity",
+    "title": "Найди клиента Мария Соколова",
+    "text": "Найди клиента Мария Соколова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Мария Соколова"
+      },
+      "status": "supported",
+      "outcome": "Слово «клиент» задаёт справочник клиентов даже при одноимённом сотруднике.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "identity-staff-not-client",
+    "category": "clients-identity",
+    "title": "Покажи расписание Марии Соколовой",
+    "text": "Покажи расписание Марии Соколовой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "staffQuery": "Марии Соколовой"
+      },
+      "status": "supported",
+      "outcome": "ФИО относится к специалисту, а не к client query.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Есть один разрешённый специалист с таким именем."
+    ]
+  },
+  {
+    "id": "identity-patronymic-not-staff",
+    "category": "clients-identity",
+    "title": "Найди клиента Сергея Петровича Иванова",
+    "text": "Найди клиента Сергея Петровича Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергея Петровича Иванова"
+      },
+      "status": "supported",
+      "outcome": "Петрович — часть ФИО клиента, а не имя второго специалиста.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "identity-service-like-name",
+    "category": "clients-identity",
+    "title": "Найди клиента Лилия Массаж",
+    "text": "Найди клиента Лилия Массаж",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Лилия Массаж"
+      },
+      "status": "manual",
+      "outcome": "Фамилия, похожая на услугу, остаётся ФИО; не готовить запись.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "identity-date-like-name",
+    "category": "clients-identity",
+    "title": "Найди клиента Май Оксану",
+    "text": "Найди клиента Май Оксану",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Май Оксану"
+      },
+      "status": "manual",
+      "outcome": "Не трактовать Май как дату без календарного запроса.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "identity-number-name",
+    "category": "clients-identity",
+    "title": "Найди клиента Номерова",
+    "text": "Найди клиента Номерова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Номерова"
+      },
+      "status": "supported",
+      "outcome": "Корень слова «номер» не делает фамилию телефоном.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "identity-no-automerge",
+    "category": "clients-identity",
+    "title": "Это две карточки одной Елены Петровой, объедини их",
+    "text": "Это две карточки одной Елены Петровой, объедини их",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Объединение карточек не входит в разрешённые действия.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "identity-archived",
+    "category": "clients-identity",
+    "title": "Найди архивную карточку Павла Блока",
+    "text": "Найди архивную карточку Павла Блока",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Павла Блока"
+      },
+      "status": "manual",
+      "outcome": "Открыть обычный поиск; архивный фильтр и права действуют штатно.",
+      "limitations": [
+        "Признак archive не передаётся текущим intent."
+      ]
+    },
+    "tags": [
+      "clients-identity",
+      "clients",
+      "manual"
+    ]
+  }
+]

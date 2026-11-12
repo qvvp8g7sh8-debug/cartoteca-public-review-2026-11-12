@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Cartoteca recovery verification
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+Unit=cartoteca-backup-agent.service
+
+[Install]
+WantedBy=timers.target

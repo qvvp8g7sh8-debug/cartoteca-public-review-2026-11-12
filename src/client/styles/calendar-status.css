@@ -1,0 +1,126 @@
+/* Status and online booking provenance, never patient identity, determine colour.
+   Keep after legacy parts: some media blocks span multiple source files. */
+.appointment-state-scheduled {
+  --appointment-fill: #eef2f5;
+  --appointment-accent: #8293a1;
+  --appointment-hover: #e4ebf0;
+}
+.appointment-state-confirmed {
+  --appointment-fill: #eaf5ef;
+  --appointment-accent: #58946b;
+  --appointment-hover: #deeee4;
+}
+.appointment-state-unfiled {
+  --appointment-fill: #fff4da;
+  --appointment-accent: #b58a2f;
+  --appointment-hover: #faeaca;
+}
+.appointment-state-completed {
+  --appointment-fill: #e5f0fb;
+  --appointment-accent: #4e7fa9;
+  --appointment-hover: #d8e8f7;
+}
+.appointment-state-cancelled {
+  --appointment-fill: #f5eeee;
+  --appointment-accent: #b98383;
+  --appointment-hover: #efe1e1;
+}
+.appointment-state-no-show {
+  --appointment-fill: #fff0df;
+  --appointment-accent: #b77e3c;
+  --appointment-hover: #f8e5cc;
+}
+.calendar-event[data-calendar-state],
+.agenda-event[data-calendar-state] {
+  background: var(--appointment-fill);
+  border-left-color: var(--appointment-accent);
+  color: #244c64;
+}
+.calendar-event[data-calendar-state]:hover,
+.agenda-event[data-calendar-state]:hover {
+  background: var(--appointment-hover);
+}
+.calendar-event[data-calendar-state]:focus-visible,
+.agenda-event[data-calendar-state]:focus-visible {
+  outline: 2px solid #4985ad;
+  outline-offset: 2px;
+}
+/* Online bookings use a warmer fill; the left edge still indicates their status. */
+:is(.calendar-event, .agenda-event)[data-calendar-source='online']:is(
+    .appointment-state-scheduled,
+    .appointment-state-confirmed,
+    .appointment-state-unfiled
+  ) {
+  --appointment-fill: #ffe2bd;
+  --appointment-hover: #ffd29a;
+  border-top: 1px solid #df8c36;
+  border-right: 1px solid #df8c36;
+  border-bottom: 1px solid #df8c36;
+}
+:is(.calendar-event, .agenda-event)[data-calendar-source='online'].appointment-state-scheduled {
+  --appointment-accent: #cf741b;
+}
+.calendar-status-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.calendar-status-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.calendar-status-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--appointment-fill);
+  border: 1px solid var(--appointment-accent);
+  flex-shrink: 0;
+}
+.agenda-event [data-calendar-status] {
+  display: inline;
+}
+.calendar-event-note {
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  color: inherit;
+}
+.calendar-event-note svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.calendar-entity-board .calendar-event.calendar-event-has-note[data-card-size] {
+  padding-right: 23px;
+}
+.calendar-event > .calendar-event-note {
+  position: absolute;
+  right: 4px;
+  top: 2px;
+}
+.agenda-event > .agenda-indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.agenda-event .agenda-indicators .agenda-chevron {
+  font-size: 24px;
+  line-height: 1;
+}
+@media (max-width: 700px) {
+  .calendar-status-legend {
+    font-size: 11px;
+    gap: 5px 12px;
+    margin: 6px 0 10px;
+  }
+}

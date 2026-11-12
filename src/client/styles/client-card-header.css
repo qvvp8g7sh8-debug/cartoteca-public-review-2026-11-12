@@ -1,0 +1,260 @@
+/* Desktop client identity, metadata and actions; mobile and print retain the existing view. */
+.patient-contact-label {
+  display: none;
+}
+@media screen {
+  @media (min-width: 901px) {
+    .workspace.card-mode .patient-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto auto auto;
+      align-items: center;
+      gap: 16px 10px;
+      padding: 20px 24px 16px;
+      border-radius: 10px;
+    }
+    .workspace.card-mode .patient-header :is(.patient-identity, .patient-actions) {
+      display: contents;
+    }
+    .workspace.card-mode .patient-header .eyebrow {
+      display: none;
+    }
+    .workspace.card-mode .patient-header h2 {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0 18px 0 0;
+      font-size: 26px;
+      line-height: 1.25;
+      font-weight: 650;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+    .workspace.card-mode .patient-header .contact {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin: 0 10px 0 0;
+      line-height: 1.4;
+    }
+    .workspace.card-mode .patient-contact-item {
+      display: grid;
+      gap: 3px;
+    }
+    .workspace.card-mode .patient-contact-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .workspace.card-mode .patient-contact-value {
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .workspace.card-mode :is(.patient-contact-prefix, .patient-contact-separator) {
+      display: none;
+    }
+    .workspace.card-mode .patient-contact-value::first-letter {
+      text-transform: uppercase;
+    }
+    .workspace.card-mode .patient-card-meta {
+      grid-column: 4 / -1;
+      grid-row: 2;
+      justify-self: end;
+      justify-content: flex-end;
+      max-width: 100%;
+      margin: 0;
+      gap: 6px 16px;
+    }
+    .workspace.card-mode .patient-header:has(.patient-connections) .patient-card-meta {
+      display: contents;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections)
+      .patient-card-meta
+      > .patient-video-consent {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: end;
+      align-self: start;
+      max-width: 40%;
+      padding-top: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections)
+      .patient-card-meta
+      > .patient-card-designation {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      min-width: 0;
+      margin: 0;
+      justify-self: start;
+      max-width: 100%;
+    }
+    .workspace.card-mode .patient-header:has(.patient-connections):has(.patient-card-designation) {
+      row-gap: 8px;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections):has(.patient-card-designation)
+      :is(.patient-video-consent, .patient-connections) {
+      grid-row: 3;
+    }
+    .workspace.card-mode .patient-card-meta > .patient-card-designation {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+    .workspace.card-mode .patient-card-meta #video-consent-label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .workspace.card-mode .patient-actions > #new-patient-appointment {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .workspace.card-mode .patient-actions > #edit-patient {
+      grid-column: 4;
+      grid-row: 1;
+    }
+    .workspace.card-mode .patient-actions > .patient-more {
+      grid-column: 5;
+      grid-row: 1;
+    }
+    .workspace.card-mode .patient-actions > button {
+      width: auto;
+      white-space: nowrap;
+      padding: 10px 14px;
+      box-shadow: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .workspace.card-mode .patient-actions > :is(#new-patient-appointment, #edit-patient) {
+      width: auto;
+    }
+    .workspace.card-mode .patient-more > summary {
+      padding: 10px 12px;
+      font-size: 13px;
+      box-sizing: border-box;
+      color: var(--muted);
+    }
+    .workspace.card-mode .patient-actions > .patient-connections {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      height: auto;
+      margin: 0;
+      padding: 12px 0 0;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .workspace.card-mode .patient-actions .patient-connections > summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      width: fit-content;
+      max-width: 60%;
+      height: auto;
+      min-height: 36px;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .workspace.card-mode .patient-connections > summary::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin: -3px 3px 0;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+    }
+    .workspace.card-mode .patient-connections[open] > summary::after {
+      transform: rotate(225deg);
+      margin-top: 3px;
+    }
+    .workspace.card-mode .patient-connections-status {
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 11px;
+      background: var(--surface-soft);
+    }
+    .workspace.card-mode
+      .patient-connections[data-connection-state='unlinked']
+      .patient-connections-status {
+      border-color: #e4d6a8;
+      background: #fff9e7;
+    }
+    .workspace.card-mode
+      .patient-connections[data-connection-state='linked']
+      .patient-connections-status {
+      border-color: #b3d7bd;
+      background: #edf7ef;
+    }
+    .workspace.card-mode .patient-actions .patient-connections[open] > .patient-connections-grid {
+      left: 0;
+      right: auto;
+      width: min(420px, 100%);
+    }
+    .workspace.card-mode .patient-actions > #print-status {
+      grid-column: 1 / -1;
+      margin: 0;
+    }
+  }
+  @media (min-width: 901px) and (max-width: 1199px) {
+    .workspace.card-mode .patient-header {
+      grid-template-columns: minmax(0, 1fr) auto auto auto;
+    }
+    .workspace.card-mode .patient-header h2 {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+    .workspace.card-mode .patient-header .contact {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: end;
+    }
+    .workspace.card-mode .patient-card-meta {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections)
+      .patient-card-meta
+      > .patient-video-consent {
+      grid-row: 3;
+    }
+    .workspace.card-mode .patient-actions > #new-patient-appointment {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+    }
+    .workspace.card-mode .patient-actions > #edit-patient {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    .workspace.card-mode .patient-actions > .patient-more {
+      grid-column: 4;
+      grid-row: 2;
+      justify-self: start;
+    }
+    .workspace.card-mode .patient-actions > .patient-connections {
+      grid-row: 3;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections):has(.patient-card-designation)
+      :is(.contact, #new-patient-appointment, #edit-patient, .patient-more) {
+      grid-row: 3;
+    }
+    .workspace.card-mode
+      .patient-header:has(.patient-connections):has(.patient-card-designation)
+      :is(.patient-video-consent, .patient-connections) {
+      grid-row: 4;
+    }
+  }
+}

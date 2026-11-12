@@ -1,0 +1,302 @@
+[
+  {
+    "id": "correction-single-date",
+    "category": "dialogue-corrections",
+    "title": "Покажи завтра, нет, послезавтра расписание",
+    "text": "Покажи завтра, нет, послезавтра расписание",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-17"
+      },
+      "status": "supported",
+      "outcome": "Явная самокоррекция одной даты оставляет только послезавтра.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-corrections",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "correction-single-time",
+    "category": "dialogue-corrections",
+    "title": "Запиши Анну Иванову завтра в 14:00, нет, в 15:00",
+    "text": "Запиши Анну Иванову завтра в 14:00, нет, в 15:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16",
+        "time": "15:00"
+      },
+      "status": "manual",
+      "outcome": "Локально разрешить клиента и специалиста; сервер уточняет недостающие клиента, услугу, дату, время и длительность через ограниченные варианты. Затем показать сводку и открыть обычную форму. Сохранить запись вручную.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "prepareAppointment",
+      "manual"
+    ]
+  },
+  {
+    "id": "correction-single-client",
+    "category": "dialogue-corrections",
+    "title": "Найди Анну Иванову, точнее Анну Петрову",
+    "text": "Найди Анну Иванову, точнее Анну Петрову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Петрову"
+      },
+      "status": "supported",
+      "outcome": "Последнее явное исправление заменяет имя, а не добавляет второго клиента.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-corrections",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "correction-unclear-client",
+    "category": "dialogue-corrections",
+    "title": "Найди Иванову или Петрову, не помню",
+    "text": "Найди Иванову или Петрову, не помню",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Альтернативные люди не превращаются в выбранную карточку.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "correction-repeated-name",
+    "category": "dialogue-corrections",
+    "title": "Найди, найди клиента Анна Иванова",
+    "text": "Найди, найди клиента Анна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Иванова"
+      },
+      "status": "supported",
+      "outcome": "Повтор команды из ASR не является двумя действиями.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-corrections",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "correction-hesitation",
+    "category": "dialogue-corrections",
+    "title": "Э-э, найди, пожалуйста, клиента Анна Иванова",
+    "text": "Э-э, найди, пожалуйста, клиента Анна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Иванова"
+      },
+      "status": "supported",
+      "outcome": "Убрать речевую запинку вокруг команды, сохранить ФИО.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-corrections",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "correction-no-punctuation",
+    "category": "dialogue-corrections",
+    "title": "запиши анну иванову завтра в четырнадцать тридцать",
+    "text": "запиши анну иванову завтра в четырнадцать тридцать",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "анну иванову",
+        "date": "2026-10-16",
+        "time": "14:30"
+      },
+      "status": "manual",
+      "outcome": "Локально разрешить клиента и специалиста; сервер уточняет недостающие клиента, услугу, дату, время и длительность через ограниченные варианты. Затем показать сводку и открыть обычную форму. Сохранить запись вручную.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "prepareAppointment",
+      "manual"
+    ]
+  },
+  {
+    "id": "correction-asr-surname",
+    "category": "dialogue-corrections",
+    "title": "Найди Анну Ива новую",
+    "text": "Найди Анну Ива новую",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Ива новую"
+      },
+      "status": "manual",
+      "outcome": "Не склеивать предположительно ошибочно распознанную фамилию в Иванову.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-corrections",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "correction-asr-time-loss",
+    "category": "dialogue-corrections",
+    "title": "Запиши Анну Иванову завтра в четыр... тридцать",
+    "text": "Запиши Анну Иванову завтра в четыр... тридцать",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16"
+      },
+      "status": "needs_clarification",
+      "outcome": "Оборванный час не восстанавливать. Сохранить остальные поля и запросить точное время в серверном диалоге.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "prepareAppointment",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "correction-phone-loss",
+    "category": "dialogue-corrections",
+    "title": "Найди клиента +7 900 000 00, последнюю цифру не помню",
+    "text": "Найди клиента +7 900 000 00, последнюю цифру не помню",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Неполный телефон с явной неопределённостью не дополнять.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "correction-time-or-name",
+    "category": "dialogue-corrections",
+    "title": "Найди Анну Иванову завтра",
+    "text": "Найди Анну Иванову завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Иванову"
+      },
+      "status": "manual",
+      "outcome": "Слово завтра не фильтрует клиентов; действие остаётся поиском.",
+      "limitations": [
+        "Клиентский поиск не имеет date фильтра."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "correction-duration-versus-time",
+    "category": "dialogue-corrections",
+    "title": "Запиши Анну Иванову завтра на полтора часа, начало в 15:00",
+    "text": "Запиши Анну Иванову завтра на полтора часа, начало в 15:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16",
+        "time": "15:00",
+        "duration": 90
+      },
+      "status": "manual",
+      "outcome": "Локально разрешить клиента и специалиста; сервер уточняет недостающие клиента, услугу, дату, время и длительность через ограниченные варианты. Затем показать сводку и открыть обычную форму. Сохранить запись вручную.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "dialogue-corrections",
+      "prepareAppointment",
+      "manual"
+    ]
+  }
+]

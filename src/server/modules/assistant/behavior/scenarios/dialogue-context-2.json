@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dialogue-client-two-step",
+    "category": "dialogue-context",
+    "title": "Найди Иванову и открой её расписание посещений",
+    "text": "Найди Иванову и открой её расписание посещений",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не выполнить только поиск, скрыв неподдерживаемую вторую операцию.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "unsupported"
+    ]
+  }
+]

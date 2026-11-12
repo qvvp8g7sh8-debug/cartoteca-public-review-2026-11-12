@@ -1,0 +1,27 @@
+.support-thread {
+  border-top: 1px solid #d7e2e7;
+  margin-top: 20px;
+  padding-top: 16px;
+}
+.support-thread-message {
+  padding: 12px 0;
+  border-bottom: 1px solid #e4ecef;
+}
+.support-thread-message p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#support-reply-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+#support-reply-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+#support-reply-form button {
+  justify-self: start;
+  min-height: 44px;
+}

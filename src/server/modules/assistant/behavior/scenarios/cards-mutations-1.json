@@ -1,0 +1,290 @@
+[
+  {
+    "id": "card-create-new",
+    "category": "cards-mutations",
+    "title": "Создай нового клиента Зою Облачную",
+    "text": "Создай нового клиента Зою Облачную",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Создание клиента не является prepareAppointment; штатная карточка создаётся вручную.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-create-with-phone",
+    "category": "cards-mutations",
+    "title": "Добавь клиента Зоя Облачная с телефоном +7 900 000 00 10",
+    "text": "Добавь клиента Зоя Облачная с телефоном +7 900 000 00 10",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не записывать персональные данные по команде модели.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-change-phone",
+    "category": "cards-mutations",
+    "title": "Измени телефон Анны Ивановой на +7 900 000 00 11",
+    "text": "Измени телефон Анны Ивановой на +7 900 000 00 11",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет действия изменения телефона.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-change-name",
+    "category": "cards-mutations",
+    "title": "Переименуй Анну Иванову в Анну Петрову",
+    "text": "Переименуй Анну Иванову в Анну Петрову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не использовать поиск как скрытое редактирование карточки.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-add-note",
+    "category": "cards-mutations",
+    "title": "Добавь в карточку Анны Ивановой заметку: перезвонить",
+    "text": "Добавь в карточку Анны Ивановой заметку: перезвонить",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная запись заметки не разрешена.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-delete",
+    "category": "cards-mutations",
+    "title": "Удали карточку Сергея Иванова",
+    "text": "Удали карточку Сергея Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Удаление клиентов не поддерживается.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-archive",
+    "category": "cards-mutations",
+    "title": "Перемести Павла Блока в архив",
+    "text": "Перемести Павла Блока в архив",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Архивирование карточки требует штатного интерфейса.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-restore",
+    "category": "cards-mutations",
+    "title": "Восстанови карточку Павла Блока из архива",
+    "text": "Восстанови карточку Павла Блока из архива",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Восстановление карточки не представлено текущими intent.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-merge",
+    "category": "cards-mutations",
+    "title": "Объедини дубликаты Елены Петровой",
+    "text": "Объедини дубликаты Елены Петровой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Омонимы не являются доказанными дубликатами.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-delete-consent",
+    "category": "cards-mutations",
+    "title": "Удали согласие Анны Ивановой",
+    "text": "Удали согласие Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Документы не изменяются через помощника.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-send-message",
+    "category": "cards-mutations",
+    "title": "Отправь Анне Ивановой сообщение о приёме",
+    "text": "Отправь Анне Ивановой сообщение о приёме",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Отправка сообщений не входит в эти команды.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "card-edit-confirmation",
+    "category": "cards-mutations",
+    "title": "Я подтверждаю, сотри телефон Анны Ивановой",
+    "text": "Я подтверждаю, сотри телефон Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Слова подтверждения не добавляют отсутствующее действие.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "cards-mutations",
+      "help",
+      "unsupported"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="cartoteca-setup" content="{{CSRF}}">
+    <title>Картотека — локальная настройка MAX</title>
+    <link rel="stylesheet" href="/setup.css">
+    <script src="/setup.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header><small>КАРТОТЕКА · НА ЭТОМ КОМПЬЮТЕРЕ</small><h1>Подготовить MAX</h1></header>
+      <section class="panel">
+        <p id="state" role="status" aria-live="polite">Загружаем состояние…</p>
+        <p class="hint">Бот: <span id="nickname"></span>. Рассылка выключена.</p>
+        <form id="setup-form" autocomplete="off">
+          <label for="token">Токен бота</label>
+          <input id="token" type="password" maxlength="2048" autocomplete="new-password" spellcheck="false" autocapitalize="off" required placeholder="Вставьте токен сюда">
+          <p class="hint">Сохранится зашифрованно для вашей учётной записи Windows. В чат, журнал и исходники токен не попадает.</p>
+          <div class="actions"><button id="save" type="submit">Сохранить токен</button><button id="verify" type="button" class="secondary" disabled>Проверить бота</button></div>
+        </form>
+        <p class="hint">«Проверить бота» обращается только к MAX за сведениями о боте. Не отправляет сообщения, не регистрирует приём событий и не включает сайт. Окно действует 30 минут.</p>
+        <p id="result" role="status" aria-live="polite"></p>
+      </section>
+      <details class="panel"><summary>Как клиент увидит напоминание</summary>
+        <p class="hint">Только вымышленные данные. Эти кнопки показывают пример и ничего не отправляют.</p>
+        <div class="previews"><article><h2>Telegram</h2><pre id="telegram-preview"></pre><button type="button" data-preview="telegram" class="secondary">Подтвердить запись</button></article><article><h2>MAX</h2><pre id="max-preview"></pre><button type="button" data-preview="max" class="secondary">Подтвердить запись</button></article></div>
+        <p id="preview-result" aria-live="polite"></p><button id="preview-reset" type="button" class="secondary">Сбросить пример</button>
+      </details>
+      <p class="hint">Это отдельное локальное окно, не настройки клиента и не публикация. Базы и действующий Telegram не изменяются. Зашифрованный файл Windows нельзя просто перенести на сервер Linux.</p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+.calendar-gap {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 6px);
+  padding: 2px 5px;
+  border: 0;
+  min-height: 0;
+  height: auto;
+  font-family: inherit;
+  border-radius: 6px;
+  background: #f6faf7;
+  box-shadow: 0 0 0 1px #d8e5dc;
+  color: #53705f;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: normal;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.calendar-gap:focus-visible {
+  outline: 2px solid #53705f;
+  outline-offset: 2px;
+}
+.time-grid.day-mode .calendar-gap {
+  font-size: 12px;
+}
+.calendar-gap-duration {
+  white-space: nowrap;
+}
+.time-grid:not(.day-mode) .calendar-gap.is-short {
+  padding: 0 4px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.time-grid:not(.day-mode) .calendar-gap.is-short .calendar-gap-label {
+  display: none;
+}

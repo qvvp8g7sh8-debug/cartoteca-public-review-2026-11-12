@@ -1,0 +1,295 @@
+/* Settings-only density. Keep controls readable and do not shrink other forms. */
+.settings-panel {
+  padding: 20px;
+}
+.settings-panel > h2 {
+  margin-bottom: 10px;
+}
+.settings-panel .account-settings {
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.settings-panel .account-settings p {
+  margin: 3px 0 0;
+  overflow-wrap: anywhere;
+}
+.settings-panel .settings-tiles {
+  gap: 8px;
+}
+.settings-panel .settings-tile {
+  margin: 0;
+}
+.settings-panel .settings-accordion-content {
+  padding: 12px 14px;
+}
+.settings-panel :is(.form-grid, .profile-grid, .online-booking-fields) {
+  gap: 10px 12px;
+  align-items: end;
+}
+.settings-panel .field {
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.settings-panel .field :is(input:not([type='checkbox']):not([type='radio']), select) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.settings-panel :is(button:not(.settings-help-trigger), .staff-telegram-open) {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 9px 14px;
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.settings-panel :is(.telegram-switch, .check-field) {
+  min-width: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.settings-panel :is(.form-hint, [role='status']) {
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.settings-panel [role='status']:empty {
+  display: none;
+}
+.settings-panel .settings-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+.settings-panel .settings-label-row > :first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.settings-panel .settings-label-row :is(h3, h4, p, .field) {
+  margin: 0;
+}
+.settings-panel .settings-label-row > label {
+  flex: 0 1 auto;
+  width: auto;
+}
+.settings-panel .settings-label-row > .telegram-switch {
+  display: flex;
+  align-items: center;
+}
+.settings-panel .profile-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.settings-panel .profile-organization-name {
+  grid-column: 1 / -1;
+}
+.settings-panel .profile-organization-info {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.settings-panel :is(.profile-save-row, .workspace-settings-actions) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 12px;
+}
+.settings-panel .profile-save-row p {
+  margin: 0;
+}
+.settings-panel .settings-section-heading {
+  margin-bottom: 8px;
+}
+.settings-panel .settings-section-heading h3 {
+  font-size: 16px;
+}
+.settings-panel .member-count {
+  margin-left: auto;
+}
+.settings-panel .invite-member-form {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px 12px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+}
+.settings-panel .invite-member-heading {
+  grid-column: 1 / -1;
+}
+.settings-panel :is(.team-members, .online-booking-members) {
+  gap: 8px;
+}
+.settings-panel .team-member {
+  padding: 10px 12px;
+  gap: 8px 12px;
+}
+.settings-panel .team-invitations {
+  margin: 12px 0;
+}
+.settings-panel .team-invitation {
+  padding: 10px 12px;
+}
+.settings-panel .workspace-room {
+  margin: 10px 0;
+  padding: 10px 12px;
+}
+.settings-panel .workspace-room :is(fieldset, legend) {
+  margin: 0;
+  padding: 0;
+}
+.settings-panel .workspace-room fieldset {
+  margin-top: 8px;
+}
+.settings-panel .workspace-staff-mode {
+  margin-top: 8px;
+}
+.settings-panel .workspace-staff label {
+  min-height: 36px;
+}
+.settings-panel .workspace-protection {
+  margin-top: 10px;
+  padding-top: 8px;
+}
+.settings-panel .telegram-settings-groups {
+  gap: 12px;
+}
+.settings-panel .telegram-settings-block + .telegram-settings-block {
+  padding-top: 12px;
+}
+.settings-panel .telegram-settings-form > .form-grid {
+  margin: 8px 0;
+}
+.settings-panel :is(.telegram-message-preview, .staff-notification-management) {
+  margin: 10px 0;
+}
+.settings-panel .telegram-message-preview {
+  padding: 10px 12px;
+}
+.settings-panel .staff-notification-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+.settings-panel .staff-notification-actions .settings-help-trigger {
+  margin-left: 0;
+}
+.settings-panel .online-booking-fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 12px 0 8px;
+}
+.settings-panel .online-booking-fields > .field:first-child {
+  grid-column: 1 / -1;
+}
+.settings-panel .online-booking-member {
+  padding: 8px 10px;
+}
+.settings-panel #booking-publication {
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.settings-panel .booking-publication {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  align-items: center;
+}
+.settings-panel .booking-publication > * {
+  grid-column: 1 / -1;
+}
+.settings-panel .booking-publication > .settings-label-row {
+  grid-column: 1;
+}
+.settings-panel .booking-publication > button[type='submit'] {
+  grid-column: 2;
+  grid-row: 1;
+}
+#online-booking-settings .booking-publication > .field {
+  margin: 0;
+}
+.settings-panel .support-intro {
+  margin: 0 0 6px;
+}
+.settings-panel .settings-legal {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+@media (min-width: 1000px) {
+  .settings-panel .profile-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .settings-panel .profile-grid > .field {
+    grid-column: span 2;
+  }
+  .settings-panel .profile-grid > .profile-organization-name {
+    grid-column: span 4;
+  }
+  .settings-panel .profile-grid > .profile-contact-field {
+    grid-column: span 3;
+  }
+  .settings-panel .online-booking-fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .settings-panel .online-booking-fields > .field:first-child {
+    grid-column: auto;
+  }
+  .settings-panel .workspace-room {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px 12px;
+  }
+  .settings-panel .workspace-room-heading {
+    grid-column: 1 / -1;
+  }
+  .settings-panel .workspace-room :is(fieldset, .workspace-staff-mode) {
+    margin: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .settings-panel .telegram-settings-groups {
+    gap: 16px;
+  }
+  .settings-panel .telegram-settings-block + .telegram-settings-block {
+    padding: 0 0 0 16px;
+  }
+}
+@media (max-width: 700px) {
+  .settings-panel {
+    padding: 14px;
+  }
+  .settings-panel .settings-accordion-content {
+    padding: 10px 12px;
+  }
+  .settings-panel :is(.form-grid, .profile-grid, .online-booking-fields, .invite-member-form) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .settings-panel .invite-member-form .field {
+    margin: 0;
+  }
+  .settings-panel .invite-member-form > button[type='submit'] {
+    width: 100%;
+  }
+  .settings-panel .booking-publication {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel .booking-publication > button[type='submit'] {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+}

@@ -1,0 +1,31 @@
+# Independent one-shot worker; no published ports, no web/SMTP/Telegram credentials.
+# Activate separately; existing production timer is NOT changed by adding this file.
+name: cartoteca-backup
+services:
+  backup:
+    image: cartoteca-app
+    build: .
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file: .env.backup
+    environment:
+      CARTOTECA_DATA_DIR: /data
+      BACKUP_DIR: /backups
+      BACKUP_KEY_FILE: /secrets/backup.key
+      BACKUP_STATE_DIR: /backup-state
+      BACKUP_WORK_DIR: /backup-work
+      BACKUP_STATUS_FILE: /backup-status/status.json
+    volumes:
+      - ./data:/data
+      - ./backups:/backups
+      - ./private/backup:/secrets:ro
+      - ./backup-state:/backup-state
+      - ./backup-work:/backup-work
+      - ./backup-status:/backup-status
+    tmpfs: ['/tmp:size=64m,mode=1777']
+    command: [node, scripts/backup-agent.cjs, run, --scheduled]
+    logging:
+      driver: json-file
+      options: { max-size: '5m', max-file: '3' }

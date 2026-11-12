@@ -1,0 +1,215 @@
+/* Phone landscape directory and client card. Existing actions and identity colors remain. */
+@media screen {
+  body.phone-landscape .workspace.workspace-designed.clients-mode > .directory {
+    height: 100%;
+    min-height: 0;
+    padding: 8px 10px;
+    margin: 0;
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+    border-radius: 10px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .section-heading {
+    margin-bottom: 4px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .section-heading h1 {
+    font-size: 20px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .directory-controls {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: center;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-filters {
+    display: flex;
+    grid-column: auto;
+    grid-row: auto;
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-filter {
+    min-height: 44px;
+    padding: 8px;
+    white-space: nowrap;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .list-tools {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    padding: 2px 0;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .name-sort {
+    width: auto;
+    margin-left: auto;
+  }
+  body.phone-landscape .workspace-designed.clients-mode #patient-list {
+    min-height: 0;
+    overflow: auto;
+    scrollbar-gutter: auto;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .patient-list-head {
+    display: none;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .patient-row.client-list-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 8px;
+    min-height: 60px;
+    padding: 6px 8px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-open-patient {
+    grid-area: 1 / 1;
+    min-height: 44px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-contact-actions {
+    grid-area: 1 / 2;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-list-next {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    grid-column: 1 / -1;
+    margin: 0 0 0 48px;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .client-list-phone {
+    display: none;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .person-cell > span:last-child > small.client-inline-phone {
+    display: block;
+  }
+  body.phone-landscape .workspace-designed.clients-mode .directory-note {
+    display: none;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode > .directory {
+    flex: none;
+    padding: 4px 8px;
+    margin: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode > #detail {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 8px 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.85fr);
+    gap: 8px 14px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-identity {
+    display: block;
+    grid-area: auto;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-header h2 {
+    margin: 0 0 4px;
+    font-size: 21px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-contact-item {
+    display: grid;
+    gap: 2px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-contact-value {
+    font-size: 16px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-top: 6px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: start;
+    align-items: stretch;
+    justify-content: start;
+    gap: 6px;
+    width: 100%;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-actions > button {
+    width: auto;
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-actions > .patient-more {
+    width: auto;
+    margin: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-connections {
+    flex: 1 0 100%;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-connections > summary {
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-connections[open] > .patient-connections-grid {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .patient-appointments {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .patient-appointments-list {
+    max-height: clamp(88px, calc(var(--phone-landscape-height) * 0.35), 156px);
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .unified-appointment-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 6px 12px;
+    padding: 6px 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .unified-appointment-row .telegram-strip-tools {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .telegram-strip-tools > button {
+    min-height: 44px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .card-tabs-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 12px;
+    margin-bottom: 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .card-tabs-row > .tabs {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .card-tabs-row > .visit-add-action {
+    flex: 0 1 auto;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 740px) {
+  body.phone-landscape .workspace.workspace-designed.card-mode #detail .patient-header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body.phone-landscape .workspace.workspace-designed.card-mode .unified-appointment-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

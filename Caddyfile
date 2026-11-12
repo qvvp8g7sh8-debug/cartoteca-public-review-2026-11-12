@@ -1,0 +1,9 @@
+{$DOMAIN} {
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+	reverse_proxy {$CARTOTECA_UPSTREAM:app:4173} {
+		header_up X-Cartoteca-Client-IP {remote_host}
+	}
+}

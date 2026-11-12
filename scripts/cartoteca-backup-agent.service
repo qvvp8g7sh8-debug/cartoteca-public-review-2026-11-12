@@ -1,0 +1,15 @@
+[Unit]
+Description=Independent verified Cartoteca recovery worker
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Adjust this absolute deployment directory before installation.
+WorkingDirectory=/opt/cartoteca
+ExecStart=/usr/bin/docker compose -f compose.backup.yaml run --rm --name cartoteca-backup-worker backup
+ExecStopPost=-/usr/bin/docker stop --time 10 cartoteca-backup-worker
+TimeoutStartSec=1800
+KillMode=control-group
+UMask=0077

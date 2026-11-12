@@ -1,0 +1,312 @@
+/* Compact interiors of v2 settings pages, with readable values and explicit states. */
+@media screen {
+  .settings-panel.settings-pages
+    :is(#workspace-settings, #online-booking-settings, #telegram-settings, #staff-notifications) {
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #2c4354;
+  }
+  .settings-panel.settings-pages
+    :is(
+      .workspace-room,
+      .online-booking-member,
+      .online-booking-service,
+      .staff-notification-channel
+    ) {
+    min-width: 0;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #d2dfe8;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages :is(#workspace-room-list, .online-booking-members) {
+    display: grid;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 0;
+  }
+  .settings-panel.settings-pages .workspace-room-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: end;
+    gap: 8px 12px;
+    margin-bottom: 12px;
+  }
+  .settings-panel.settings-pages .workspace-room-heading > .field {
+    margin: 0;
+    min-width: 0;
+  }
+  .settings-panel.settings-pages
+    :is(.workspace-room, .workspace-layout-field, .online-booking-fields)
+    :is(input:not([type='checkbox']):not([type='radio']), select) {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 8px 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2b4558;
+  }
+  .settings-panel.settings-pages .workspace-layout-field {
+    max-width: 360px;
+  }
+  .settings-panel.settings-pages :is(.workspace-room, .online-booking-service) fieldset {
+    min-width: 0;
+    padding: 10px;
+    margin: 12px 0 0;
+    border-radius: 8px;
+    border: 1px solid #dce5ec;
+  }
+  .settings-panel.settings-pages :is(.workspace-room fieldset, .online-booking-service) legend {
+    max-width: 100%;
+    padding: 0 4px;
+    color: #405e73;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages .workspace-staff {
+    gap: 6px;
+  }
+  .settings-panel.settings-pages .workspace-staff > label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    min-height: 44px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #f4f7fa;
+  }
+  .settings-panel.settings-pages .workspace-staff small {
+    color: #526b7f;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages .workspace-protection {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid #dce5ec;
+    border-radius: 10px;
+    background: #f4f7fa;
+  }
+  .settings-panel.settings-pages .workspace-settings-actions {
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 12px 0 0;
+    margin-top: 12px;
+    border-top: 1px solid #dce5ec;
+  }
+  .settings-panel.settings-pages .booking-publication {
+    margin: 0 0 16px;
+    padding: 12px;
+    border: 1px solid #cddde5;
+    border-radius: 10px;
+    background: #f5f8fa;
+  }
+  .settings-panel.settings-pages .booking-publication .booking-link-actions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-link-actions button {
+    min-height: 44px;
+    height: auto;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages .online-booking-fields {
+    gap: 12px 16px;
+    align-items: start;
+  }
+  .settings-panel.settings-pages .online-booking-fields .field {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages :is(.online-booking-fields small, .booking-mode-description) {
+    display: block;
+    margin: 6px 0 0;
+    color: #536d80;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .settings-panel.settings-pages :is(.check-field, .booking-price-setting, .telegram-switch) {
+    min-width: 0;
+    min-height: 44px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages .online-booking-member > strong {
+    color: #2a455a;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages .online-booking-member > small {
+    margin: 0;
+    color: #586f81;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages .online-booking-service {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+  }
+  .settings-panel.settings-pages .client-notification-settings-form {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #dce5ec;
+  }
+  .settings-panel.settings-pages #telegram-client-settings > p[data-connection-state] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    padding: 9px 10px;
+    border: 1px solid #e6dcbf;
+    border-radius: 8px;
+    background: #fff9e9;
+    color: #705b31;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages #telegram-client-settings > p[data-connection-state='connected'] {
+    background: #edf7f0;
+    border-color: #c6ddce;
+    color: #346749;
+  }
+  .settings-panel.settings-pages #telegram-client-settings > p[data-connection-state='checking'] {
+    background: #f1f5f8;
+    border-color: #d6e1e9;
+    color: #516a7c;
+  }
+  .settings-panel.settings-pages .telegram-settings-form > .form-grid {
+    max-width: 360px;
+    margin: 14px 0;
+  }
+  .settings-panel.settings-pages .telegram-settings-form .field {
+    margin: 0;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .telegram-settings-form > .form-hint {
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .telegram-message-preview {
+    margin: 12px 0 16px;
+    padding: 0 12px;
+    border: 1px solid #d8e3ec;
+    border-radius: 10px;
+    background: #f7f9fb;
+  }
+  .settings-panel.settings-pages .telegram-message-preview > summary {
+    min-height: 44px;
+    padding: 12px 0;
+    color: #345c76;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages .telegram-message-preview pre {
+    padding: 12px;
+    margin: 6px 0 12px;
+    border: 1px solid #dae4ec;
+    border-radius: 8px;
+    background: #fff;
+    color: #374e62;
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages .staff-notification-channels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .settings-panel.settings-pages .staff-notification-channel h4 {
+    margin: 0 0 8px;
+    color: #2f5068;
+    font-size: 15px;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-channel
+    .telegram-connection-status {
+    min-height: 40px;
+    padding: 8px 10px;
+    margin: 0 0 10px;
+    border-radius: 7px;
+    background: #fff8e4;
+    color: #715c30;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    [data-staff-state='ready']
+    .telegram-connection-status {
+    color: #346749;
+    background: #edf7f0;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    [data-staff-state='loading']
+    .telegram-connection-status {
+    color: #526a7d;
+    background: #f1f5f8;
+  }
+  .settings-panel.settings-pages .staff-notification-channel :is(button, .staff-telegram-open) {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .staff-notification-channel .form-hint {
+    margin: 8px 0;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages .staff-notification-management {
+    margin: 6px 0 0;
+  }
+  .settings-panel.settings-pages .staff-notification-management > summary {
+    min-height: 44px;
+    padding: 12px 0;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .settings-panel.settings-pages
+    :is(.workspace-room, .online-booking-member, .staff-notification-channel) {
+    padding: 12px;
+  }
+  .settings-panel.settings-pages .workspace-room-heading {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .settings-panel.settings-pages .workspace-room-heading > .field {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages .workspace-staff {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel.settings-pages .booking-publication .booking-link-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .settings-panel.settings-pages .online-booking-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel.settings-pages .staff-notification-channels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel.settings-pages .workspace-layout-field {
+    max-width: none;
+  }
+}

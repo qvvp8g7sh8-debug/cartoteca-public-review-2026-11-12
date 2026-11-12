@@ -1,0 +1,104 @@
+.appointment-patient-picker {
+  min-width: 0;
+}
+.appointment-patient-search-row {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 47px;
+  align-items: start;
+  gap: 8px;
+  margin-top: 8px;
+}
+.appointment-patient-search-row>input {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.appointment-patient-search-row>.appointment-patient-add {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  min-width: 47px;
+  margin: 0;
+  padding: 0;
+  border-radius: 9px;
+  font-size: 25px;
+  line-height: 1;
+  color: var(--blue);
+}
+.appointment-patient-add[aria-pressed="true"] {
+  background: #eaf3f8;
+  border-color: #8eafc4;
+}
+.appointment-patient-results {
+  max-height: min(240px,32dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+}
+.appointment-patient-results[hidden] {
+  display: none;
+}
+.appointment-patient-results>button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 0;
+  background: white;
+  color: var(--ink);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.appointment-patient-results>button+button {
+  border-top: 1px solid var(--line);
+}
+.appointment-patient-results>button:hover,.appointment-patient-results>button[aria-selected="true"] {
+  background: #eaf3f8;
+}
+.appointment-patient-results>button strong {
+  font-size: 14px;
+  font-weight: 550;
+}
+.appointment-patient-results>button small {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.appointment-patient-message {
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.appointment-patient-status {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--muted);
+}
+.appointment-patient-status:empty {
+  display: none;
+}
+.appointment-patient-search-row>:focus-visible {
+  outline: 2px solid #4985ad;
+  outline-offset: 2px;
+}
+@media(max-width:700px) {
+  .appointment-patient-results {
+    max-height: 28dvh;
+  }
+  .appointment-patient-search-row {
+    grid-template-columns: minmax(0,1fr) 47px;
+  }
+}

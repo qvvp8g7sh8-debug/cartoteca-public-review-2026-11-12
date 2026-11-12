@@ -1,0 +1,116 @@
+/* Phone landscape settings: one bounded page with a back action, including wide phones. */
+@media screen {
+  body.phone-landscape .settings-panel.settings-pages {
+    height: var(--settings-space, 100%);
+    min-height: 0;
+    padding: 6px 8px;
+  }
+  body.phone-landscape .settings-panel.settings-pages > h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+  }
+  body.phone-landscape .settings-panel.settings-pages .account-settings {
+    position: static;
+    gap: 12px;
+    max-width: none;
+    padding: 0;
+    margin: 0 0 6px;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-tiles {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    padding: 0;
+    overflow: auto;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-tile {
+    width: 100%;
+    margin: 0 0 4px;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-tile > summary {
+    min-height: 44px;
+    padding: 6px 10px;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-page-surface {
+    inset: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-tiles:not([data-settings-open])::after {
+    display: none;
+  }
+  body.phone-landscape .settings-panel.settings-pages[data-settings-open] > :is(h2, .account-settings, .early-access-offer, .settings-legal) {
+    display: none;
+  }
+  body.phone-landscape .settings-panel.settings-pages[data-settings-open] .settings-tiles {
+    overflow: hidden;
+  }
+  body.phone-landscape .settings-panel.settings-pages[data-settings-open] .settings-tile:not([open]) {
+    display: none;
+  }
+  body.phone-landscape .settings-panel.settings-pages[data-settings-open] .settings-tile[open] {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    border: 0;
+  }
+  body.phone-landscape .settings-panel.settings-pages[data-settings-open] .settings-tile[open] > summary {
+    display: none;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-page-toolbar {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 76px;
+    min-height: 44px;
+    gap: 4px;
+    padding: 0;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-page-title {
+    grid-area: 1 / 2;
+    text-align: center;
+    font-size: 17px;
+  }
+  body.phone-landscape .workspace.workspace-designed .settings-panel.settings-pages .settings-page-toolbar > button.settings-page-back {
+    display: inline-flex;
+    grid-area: 1 / 1;
+    align-items: center;
+    gap: 4px;
+    min-height: 44px;
+    padding: 6px 0;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-accordion-content {
+    padding: 8px 4px;
+    scrollbar-gutter: auto;
+  }
+  body.phone-landscape .settings-panel.settings-pages :is(.profile-grid, .online-booking-fields) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
+  }
+  body.phone-landscape .workspace.workspace-designed .settings-panel.settings-pages :is(#account-profile-form, #workspace-settings, #online-booking-settings, #team-settings, #telegram-settings, #staff-notifications) :is(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+    font-size: 16px;
+  }
+  body.phone-landscape .workspace.workspace-designed .settings-panel.settings-pages :is(#account-profile-form, #workspace-settings, #online-booking-settings, #team-settings, #telegram-settings, #staff-notifications) :is(input:not([type='checkbox']):not([type='radio']), select) {
+    min-height: 44px;
+  }
+  body.phone-landscape .settings-panel.settings-pages #online-booking-settings :is(.booking-publication, .online-booking-fields) :is(input:not([type='checkbox']):not([type='radio']), select) {
+    height: 44px;
+  }
+  body.phone-landscape .settings-panel.settings-pages #online-booking-settings .booking-kind-switch button {
+    min-height: 44px;
+  }
+  body.phone-landscape .settings-panel.settings-pages #online-booking-settings .settings-help-trigger {
+    flex-basis: 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+  body.phone-landscape .settings-panel.settings-pages .settings-legal {
+    margin-top: 4px;
+  }
+}
+@media screen and (max-width: 740px) {
+  body.phone-landscape .settings-panel.settings-pages :is(.profile-grid, .online-booking-fields) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

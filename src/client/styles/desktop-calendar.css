@@ -1,0 +1,112 @@
+/* Web toolbar only: event geometry, time rows and mobile calendar are unchanged. */
+@media screen and (min-width: 981px) {
+  .workspace-designed .calendar-panel {
+    --calendar-sidebar-width: 244px;
+    --calendar-layout-gap: 16px;
+    padding: 18px 20px 20px;
+  }
+  .workspace-designed .calendar-panel:has(.time-scroll) {
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 140px);
+    min-height: 320px;
+  }
+  .workspace-designed .calendar-panel:has(.time-scroll) .calendar-layout {
+    flex: 1;
+    min-height: 0;
+    align-items: stretch;
+  }
+  .workspace-designed .calendar-panel:has(.time-scroll) .calendar-sidebar {
+    overflow-y: auto;
+  }
+  .workspace-designed .calendar-panel:has(.time-scroll) .time-board {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .workspace-designed .calendar-panel:has(.time-scroll) .calendar-toolbar,
+  .workspace-designed .calendar-panel:has(.time-scroll) .calendar-selection,
+  .workspace-designed .time-board > :not(.time-scroll) {
+    flex-shrink: 0;
+  }
+  .workspace-designed .calendar-toolbar {
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .workspace-designed .calendar-toolbar .global-subtitle {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #586e79;
+  }
+  .workspace-designed .calendar-actions {
+    gap: 8px;
+  }
+  .workspace-designed .calendar-actions > button {
+    min-height: 36px;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .workspace-designed .calendar-mode {
+    gap: 3px;
+    padding: 3px;
+    border-radius: 8px;
+    background: #e8eef0;
+  }
+  .workspace-designed .calendar-mode button {
+    min-height: 31px;
+    padding: 5px 13px;
+    font-size: 13px;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+  .workspace-designed .calendar-mode button.active {
+    color: #2d6370;
+    background: #fff;
+    box-shadow: 0 1px 3px rgb(35 63 75 / 12%);
+  }
+  .workspace-designed .calendar-selection {
+    margin-bottom: 10px;
+    gap: 8px 12px;
+  }
+  .workspace-designed .calendar-selection label {
+    gap: 4px;
+  }
+  .workspace-designed .calendar-selection select {
+    min-height: 36px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+  .workspace-designed .month-picker {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .workspace-designed .month-heading {
+    margin-bottom: 10px;
+  }
+  .workspace-designed .month-heading strong {
+    font-size: 14px;
+  }
+  .workspace-designed .month-day {
+    min-height: 30px;
+    font-size: 12px;
+  }
+  .workspace-designed .month-today {
+    margin-top: 10px;
+    min-height: 34px;
+    font-size: 13px;
+  }
+  .workspace-designed .time-board {
+    border-radius: 10px;
+  }
+  .workspace-designed .time-scroll {
+    flex: 1;
+    min-height: 0;
+    max-height: none;
+  }
+  .workspace-designed .calendar-hint {
+    font-size: 12px;
+    color: #586e79;
+  }
+}

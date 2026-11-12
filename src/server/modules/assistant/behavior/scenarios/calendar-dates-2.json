@@ -1,0 +1,387 @@
+[
+  {
+    "id": "cal-no-month",
+    "category": "calendar-dates",
+    "title": "Открой календарь на двадцатое",
+    "text": "Открой календарь на двадцатое",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Уточнить месяц и при необходимости год.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-short-year",
+    "category": "calendar-dates",
+    "title": "Открой расписание на 01.02.27",
+    "text": "Открой расписание на 01.02.27",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Двузначный год не расширять молча.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-slash-date",
+    "category": "calendar-dates",
+    "title": "Покажи календарь на 04/05/2027",
+    "text": "Покажи календарь на 04/05/2027",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Уточнить 4 мая или 5 апреля, если формат не установлен.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-invalid-day",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 31 ноября 2026 года",
+    "text": "Покажи расписание на 31 ноября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не превращать несуществующий день в 1 декабря.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-nonleap",
+    "category": "calendar-dates",
+    "title": "Открой расписание на 29 февраля 2027 года",
+    "text": "Открой расписание на 29 февраля 2027 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. 2027 год не високосный; нужна правильная дата.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-leap",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 29 февраля 2028 года",
+    "text": "Покажи расписание на 29 февраля 2028 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2028-02-29"
+      },
+      "status": "supported",
+      "outcome": "Сохранить допустимый високосный день.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-zero-date",
+    "category": "calendar-dates",
+    "title": "Открой календарь на 00.10.2026",
+    "text": "Открой календарь на 00.10.2026",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нулевого дня не существует.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-year-end",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на завтра",
+    "text": "Покажи расписание на завтра",
+    "referenceDate": "2026-12-31",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2027-01-01"
+      },
+      "status": "supported",
+      "outcome": "Перейти через границу года.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-leap-boundary",
+    "category": "calendar-dates",
+    "title": "Покажи календарь на послезавтра",
+    "text": "Покажи календарь на послезавтра",
+    "referenceDate": "2028-02-28",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2028-03-01"
+      },
+      "status": "supported",
+      "outcome": "Учитывать 29 февраля при переходе месяца.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-before-midnight",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на завтра",
+    "text": "Покажи расписание на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "23:59",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Завтра считается по организации до полуночи.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-after-midnight",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на сегодня",
+    "text": "Покажи расписание на сегодня",
+    "referenceDate": "2026-10-16",
+    "referenceTime": "00:01",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Сегодня сменилось в часовом поясе организации.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-org-timezone",
+    "category": "calendar-dates",
+    "title": "Открой расписание на сегодня",
+    "text": "Открой расписание на сегодня",
+    "referenceDate": "2026-10-16",
+    "referenceTime": "00:30",
+    "timeZone": "Asia/Vladivostok",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Часы устройства в Москве не заменяют дату организации во Владивостоке.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-other-zone-time",
+    "category": "calendar-dates",
+    "title": "Покажи приёмы 16 октября в 10 утра по Берлину",
+    "text": "Покажи приёмы 16 октября в 10 утра по Берлину",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Уточнить перевод времени в часовой пояс организации; schema не хранит исходную зону.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ],
+    "futureTarget": {
+      "capability": "explicitZonedDateTime",
+      "fields": {
+        "sourceTimeZone": "Europe/Berlin",
+        "organizationTimeZone": "Europe/Moscow"
+      }
+    }
+  },
+  {
+    "id": "cal-zone-abbreviation",
+    "category": "calendar-dates",
+    "title": "Открой расписание на 16 октября в 10 CST",
+    "text": "Открой расписание на 16 октября в 10 CST",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Аббревиатура CST неоднозначна; уточнить город или IANA зону.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-dst-gap",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 29 марта 2026 года в 02:30 в Берлине",
+    "text": "Покажи расписание на 29 марта 2026 года в 02:30 в Берлине",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Местное время попадает в переход часов; не выбирать вымышленный момент.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "cal-dst-fold",
+    "category": "calendar-dates",
+    "title": "Открой расписание 25 октября 2026 года в 02:30 в Берлине",
+    "text": "Открой расписание 25 октября 2026 года в 02:30 в Берлине",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. При повторяющемся времени нужен явный UTC offset или уточнение.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  }
+]

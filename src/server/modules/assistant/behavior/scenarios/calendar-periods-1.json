@@ -1,0 +1,348 @@
+[
+  {
+    "id": "period-this-week",
+    "category": "calendar-periods",
+    "title": "Покажи расписание на эту неделю",
+    "text": "Покажи расписание на эту неделю",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-12",
+        "mode": "week"
+      },
+      "status": "supported",
+      "outcome": "Открыть недельный режим с понедельника12 по воскресенье18 октября; не подменять неделю одним днём.",
+      "limitations": [
+        "Режим просмотра не изменяет записи; фильтры произвольного периода не добавляются."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Штатные права позволяют просмотр выбранного календаря."
+    ]
+  },
+  {
+    "id": "period-next-week",
+    "category": "calendar-periods",
+    "title": "Покажи все записи на следующую неделю",
+    "text": "Покажи все записи на следующую неделю",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-19",
+        "mode": "week"
+      },
+      "status": "supported",
+      "outcome": "Открыть следующую календарную неделю19–25октября с обычными правами.",
+      "limitations": [
+        "Режим просмотра не изменяет записи; фильтры произвольного периода не добавляются."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Штатные права позволяют просмотр выбранного календаря."
+    ]
+  },
+  {
+    "id": "period-last-week",
+    "category": "calendar-periods",
+    "title": "Покажи расписание за прошлую неделю",
+    "text": "Покажи расписание за прошлую неделю",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-05",
+        "mode": "week"
+      },
+      "status": "supported",
+      "outcome": "Открыть прошлую неделю5–11октября только для просмотра.",
+      "limitations": [
+        "Режим просмотра не изменяет записи; фильтры произвольного периода не добавляются."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Штатные права позволяют просмотр выбранного календаря."
+    ]
+  },
+  {
+    "id": "period-working-week",
+    "category": "calendar-periods",
+    "title": "Покажи рабочую неделю с понедельника по пятницу",
+    "text": "Покажи рабочую неделю с понедельника по пятницу",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "period-weekend",
+    "category": "calendar-periods",
+    "title": "Покажи расписание на выходные 17 и 18 октября",
+    "text": "Покажи расписание на выходные 17 и 18 октября",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "period-month",
+    "category": "calendar-periods",
+    "title": "Покажи календарь за октябрь 2026 года",
+    "text": "Покажи календарь за октябрь 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-01",
+        "mode": "month"
+      },
+      "status": "supported",
+      "outcome": "Открыть месяц октябрь2026 по первому числу; день выбирается обычным календарём.",
+      "limitations": [
+        "Режим просмотра не изменяет записи; фильтры произвольного периода не добавляются."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Штатные права позволяют просмотр выбранного календаря."
+    ]
+  },
+  {
+    "id": "period-next-month",
+    "category": "calendar-periods",
+    "title": "Покажи записи на следующий месяц",
+    "text": "Покажи записи на следующий месяц",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-11-01",
+        "mode": "month"
+      },
+      "status": "supported",
+      "outcome": "Открыть ноябрь2026 в месячном режиме, а не только день1ноября.",
+      "limitations": [
+        "Режим просмотра не изменяет записи; фильтры произвольного периода не добавляются."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Штатные права позволяют просмотр выбранного календаря."
+    ]
+  },
+  {
+    "id": "period-explicit-range",
+    "category": "calendar-periods",
+    "title": "Покажи записи с 16 по 20 октября 2026 года",
+    "text": "Покажи записи с 16 по 20 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ],
+    "futureTarget": {
+      "capability": "calendarRange",
+      "fields": {
+        "startDate": "2026-10-16",
+        "endDate": "2026-10-20"
+      }
+    }
+  },
+  {
+    "id": "period-cross-year",
+    "category": "calendar-periods",
+    "title": "Покажи записи с 28 декабря 2026 по 4 января 2027",
+    "text": "Покажи записи с 28 декабря 2026 по 4 января 2027",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "period-rolling-seven",
+    "category": "calendar-periods",
+    "title": "Покажи записи на ближайшие семь дней",
+    "text": "Покажи записи на ближайшие семь дней",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "period-part-of-day",
+    "category": "calendar-periods",
+    "title": "Покажи завтрашние записи после обеда",
+    "text": "Покажи завтрашние записи после обеда",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "manual",
+      "outcome": "Открыть день; время просмотра и фильтр после обеда выбрать вручную.",
+      "limitations": [
+        "Текущий calendar handoff не фильтрует часть дня."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "manual"
+    ]
+  },
+  {
+    "id": "period-time-window",
+    "category": "calendar-periods",
+    "title": "Покажи расписание завтра с 14 до 17 часов",
+    "text": "Покажи расписание завтра с 14 до 17 часов",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "manual",
+      "outcome": "Открыть весь день; не утверждать, что применён временной фильтр.",
+      "limitations": [
+        "Интервал времени не представлен в текущем действии."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "manual"
+    ]
+  },
+  {
+    "id": "period-both-days",
+    "category": "calendar-periods",
+    "title": "Покажи одновременно сегодня и завтра",
+    "text": "Покажи одновременно сегодня и завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  }
+]

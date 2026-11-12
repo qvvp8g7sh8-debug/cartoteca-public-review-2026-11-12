@@ -1,0 +1,26 @@
+/* Saved visit photographs: procedure first, then date and phase. */
+@media screen {
+  #tab-content .photo-grid .photo-item {
+    min-width: 0;
+    align-self: start;
+  }
+  #tab-content .photo-item .photo-item-caption {
+    display: grid;
+    gap: 5px;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  #tab-content .photo-item-procedure {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  #tab-content .photo-item-caption small {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}

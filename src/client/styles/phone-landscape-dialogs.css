@@ -1,0 +1,64 @@
+/* Landscape inspection and supporting dialogs reuse the form layer's viewport tokens. */
+@media screen {
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointmentActions'] #form-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-content: start;
+    align-items: start;
+    gap: 8px 16px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointmentActions']
+    :is(.appointment-action-summary, .appointment-action-contact) {
+    grid-column: 1;
+    margin: 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointmentActions']
+    .appointment-action-options {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointmentActions']
+    :is(.appointment-action-notes, .appointment-action-outcomes, .appointment-action-delete) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointmentActions']
+    .appointment-action-outcomes {
+    padding-top: 8px;
+  }
+  body.phone-landscape :is(#action-confirmation, #settings-help-dialog, #client-contact-dialog) {
+    position: fixed;
+    top: calc(var(--phone-viewport-top, 0px) + var(--phone-dialog-top));
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: min(560px, calc(100% - var(--phone-dialog-left) - var(--phone-dialog-right)));
+    margin: 0 auto;
+    padding: 10px 16px;
+    overflow: auto;
+  }
+  body.phone-landscape :is(.settings-help-heading, .client-contact-heading) {
+    position: sticky;
+    top: -10px;
+    z-index: 1;
+    background: #fff;
+  }
+  body.phone-landscape .action-confirmation-buttons {
+    position: sticky;
+    bottom: -10px;
+    margin-top: 10px;
+    padding-block: 4px;
+    background: #fff;
+  }
+  body.phone-landscape .action-confirmation-buttons button {
+    min-height: 44px;
+  }
+  body.phone-landscape #photo-view {
+    max-height: var(--phone-dialog-height);
+    overflow: auto;
+  }
+  body.phone-landscape #photo-view #large-photo {
+    max-height: calc(var(--phone-dialog-height) - 96px);
+    object-fit: contain;
+  }
+}

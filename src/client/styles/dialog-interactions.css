@@ -1,0 +1,32 @@
+@media screen and (min-width: 701px) and (pointer: fine) {
+  dialog .dialog-drag-handle {
+    cursor: grab;
+    user-select: none;
+  }
+  dialog .dialog-drag-handle :is(button, a, input, select, textarea, summary) {
+    cursor: auto;
+    user-select: auto;
+  }
+  dialog .dialog-drag-handle :is(button, a, summary) {
+    cursor: pointer;
+  }
+  dialog.dialog-positioned {
+    translate: var(--dialog-offset-x, 0px) var(--dialog-offset-y, 0px);
+  }
+  dialog.dialog-dragging .dialog-drag-handle {
+    cursor: grabbing;
+  }
+}
+@media screen {
+  #photo-view .dialog-heading {
+    text-align: left;
+    margin-bottom: 12px;
+  }
+  #photo-view .dialog-heading h2 {
+    font-size: 18px;
+  }
+  #photo-view .dialog-heading .icon-btn {
+    float: none;
+    margin-bottom: 0;
+  }
+}

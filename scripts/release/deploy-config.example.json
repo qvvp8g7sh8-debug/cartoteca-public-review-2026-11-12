@@ -1,0 +1,15 @@
+{
+  "host": "server.example.invalid",
+  "user": "root",
+  "port": 22,
+  "identityFile": "C:/replace-with-existing-ssh-key",
+  "knownHostsFile": "C:/replace-with-existing-known-hosts",
+  "root": "/opt/cartoteca-v2",
+  "releaseRoot": "/opt/cartoteca-releases",
+  "container": "cartoteca-app-1",
+  "project": "cartoteca",
+  "backupTimer": "cartoteca-backup-agent.timer",
+  "origin": "https://site.example.invalid",
+  "schema": 15,
+  "expectedImage": "REPLACE_WITH_CURRENT_SHA256_IMAGE_ID"
+}

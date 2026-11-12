@@ -1,0 +1,122 @@
+/* One desktop composition for New/Edit Appointment and Visit; no lifecycle changes. */
+@media screen and (min-width: 981px) {
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    ) {
+    width: min(680px, calc(100% - 40px));
+    max-width: 680px;
+    background: #fff;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    .dialog-heading {
+    gap: 12px;
+    padding: 12px 20px;
+    background: #fff;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .dialog-heading
+    h2 {
+    font-size: 20px;
+    line-height: 1.3;
+    color: #233f4b;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    #form-content {
+    padding: 16px 20px;
+    scroll-padding-block: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #a3b9c2 transparent;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    .form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    .form-grid
+    > .field {
+    grid-column: 1 / -1;
+    font-size: 14px;
+    color: #233f4b;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    .form-grid
+    > .field:has(:is([name='date'], [name='time'], [name='duration'])) {
+    grid-column: auto;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .field
+    :is(input, select, textarea):not([type='hidden']) {
+    margin-top: 4px;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .appointment-patient-search-row {
+    margin-top: 4px;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .appointment-patient-search-row
+    > input[type='search'] {
+    margin-top: 0;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-hint {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    :is(.appointment-procedures, .visit-procedures) {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    :is(.appointment-procedure-row, .visit-procedure-row) {
+    background: #f3f7f8;
+    box-shadow: none;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    :is(.appointment-procedure-row, .visit-procedure-row)
+    strong {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    #form-error {
+    padding: 12px 20px;
+  }
+  #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+      .form-grid
+    )
+    .dialog-actions {
+    gap: 8px;
+    padding: 12px 20px;
+    background: #fff;
+    box-shadow: none;
+  }
+  @media (forced-colors: active) {
+    #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+      .dialog-heading
+      h2,
+    #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit']):has(
+        .form-grid
+      )
+      .form-grid
+      > .field {
+      color: CanvasText;
+    }
+  }
+}

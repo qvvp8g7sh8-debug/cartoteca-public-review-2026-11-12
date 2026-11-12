@@ -1,0 +1,408 @@
+:root {
+  --compact-row-height: 58px;
+}
+.settings-section.settings-accordion {
+  padding: 0;
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #d4e1e8;
+  border-radius: 12px;
+}
+.compact-accordion>summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: calc(var(--compact-row-height) - 2px);
+  padding: 0 14px;
+  border-radius: 12px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+.compact-accordion>summary::-webkit-details-marker {
+  display: none;
+}
+.compact-accordion>summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  flex-shrink: 0;
+  border-right: 2px solid #637584;
+  border-bottom: 2px solid #637584;
+  transform: rotate(45deg);
+}
+.compact-accordion[open]>summary::after {
+  transform: rotate(225deg);
+}
+.compact-accordion>summary:hover {
+  background: #f7fafc;
+}
+.compact-accordion>summary:focus-visible {
+  outline: 3px solid #4985ad;
+  outline-offset: 3px;
+}
+.visit.visit-accordion {
+  border-color: #d4e1e8;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.visit.visit-accordion>.visit-head {
+  padding: 0 14px;
+  border: 0;
+  background: #fff;
+}
+.visit.visit-accordion>.visit-head:hover {
+  background: #f7fafc;
+}
+.visit.visit-accordion>.visit-head:focus-visible {
+  outline-offset: -3px;
+}
+.visit-accordion .visit-date {
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.visit-accordion .visit-date small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.visit-brief {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.visit-accordion .visit-body {
+  border-top: 1px solid var(--line);
+}
+.appointment-outcome-history {
+  border: 1px solid #ead8d4;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+.appointment-outcome-history .visit-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: #fff8f6;
+  border-radius: 12px 12px 0 0;
+}
+.appointment-outcome-history .visit-brief {
+  flex: 1;
+  min-width: 0;
+}
+.appointment-outcome-status {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: #9b4338;
+}
+.appointment-outcome-status.is-no-show {
+  color: #9a6125;
+}
+.appointment-outcome-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-top: 1px solid #ead8d4;
+}
+.appointment-outcome-body .form-hint {
+  margin: 0;
+}
+@media(max-width:700px) {
+  .appointment-outcome-history .visit-head,.appointment-outcome-body {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .appointment-outcome-body .secondary {
+    width: 100%;
+  }
+}
+.visit-expanded-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.visit-expanded-meta>small {
+  color: var(--muted);
+}
+.visit-procedures>select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #cdd8e0;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 400;
+}
+.visit-procedures>.form-hint {
+  margin: 8px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+#visit-selected-procedures {
+  display: grid;
+  gap: 6px;
+}
+.visit-procedure-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d4e1e8;
+  border-radius: 9px;
+  background: #f7fbfd;
+}
+.visit-procedure-row>div {
+  min-width: 0;
+  flex: 1;
+}
+.visit-procedure-row strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+.visit-procedure-row small {
+  display: block;
+  margin-top: 3px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.visit-procedure-remove {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--blue);
+  font-size: 22px;
+}
+.visit-procedure-remove:hover {
+  background: #eaf1f6;
+}
+.form-grid.visit-form-grid {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+.visit-form-grid>.field {
+  min-width: 0;
+}
+.visit-form-grid .field input,.visit-form-grid .field textarea,.visit-form-grid .field select {
+  margin-top: 6px;
+  padding: 10px;
+  min-height: 44px;
+}
+.visit-form-grid .field textarea {
+  min-height: 64px;
+}
+.visit-form-grid .visit-procedures>.form-hint {
+  margin: 6px 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+#visit-procedures-total:empty {
+  display: none;
+}
+.visit-photo-section {
+  padding-top: 14px;
+  margin-top: 14px;
+}
+.visit-photo-section h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+.visit-photo-section>.form-hint {
+  font-size: 13px;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+.visit-photo-section .upload-label {
+  padding: 10px;
+  margin: 8px 0;
+}
+@media(max-width:700px) {
+  .form-grid.visit-form-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px;
+  }
+  .visit-form-grid>.full,.visit-form-grid>.visit-duration-field,.visit-form-grid>.visit-product-field {
+    grid-column: 1/-1;
+  }
+  /* Native date/time controls must fit the grid, including their Safari value wrapper. */
+  .visit-form-grid .field input[type="date"],.visit-form-grid .field input[type="time"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-inline-size: 0;
+    height: 46px;
+    min-height: 46px;
+    max-height: 46px;
+    appearance: none;
+    -webkit-appearance: none;
+    line-height: 1.25;
+    text-align: left;
+  }
+  .visit-form-grid .field input[type="date"]::-webkit-date-and-time-value,.visit-form-grid .field input[type="time"]::-webkit-date-and-time-value {
+    min-width: 0;
+    min-height: 1.25em;
+    text-align: left;
+  }
+  .visit-form-grid .field input[type="date"]::-webkit-datetime-edit,.visit-form-grid .field input[type="time"]::-webkit-datetime-edit {
+    min-width: 0;
+    padding: 0;
+  }
+  .visit-form-grid .field input[type="date"]::-webkit-datetime-edit-fields-wrapper,.visit-form-grid .field input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+    min-width: 0;
+    padding: 0;
+  }
+}
+@media(max-width:380px) {
+  .visit-form-grid>.field:has(input[type="date"]),.visit-form-grid>.field:has(input[type="time"]) {
+    grid-column: 1/-1;
+  }
+}
+/* Visit forms keep a stable phone frame; only the form body scrolls. */
+@media(max-width:700px) {
+  body:has(#editor[open] .visit-form-grid) {
+    overflow: hidden;
+  }
+  #editor:has(.visit-form-grid) {
+    position: fixed;
+    inset: 8px;
+    margin: 0 auto;
+    width: calc(100% - 16px);
+    height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
+    overflow: hidden;
+    padding: max(14px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));
+  }
+  #editor:has(.visit-form-grid) #editor-form {
+    display: grid;
+    grid-template-rows: auto minmax(0,1fr) auto auto;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+  #editor:has(.visit-form-grid) .dialog-heading {
+    min-width: 0;
+    margin: 0 0 12px;
+    align-items: flex-start;
+  }
+  #editor:has(.visit-form-grid) .dialog-heading h2 {
+    min-width: 0;
+    font-size: 18px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  #editor:has(.visit-form-grid) .dialog-heading .icon-btn {
+    flex-shrink: 0;
+  }
+  #editor:has(.visit-form-grid) #form-content {
+    min-height: 0;
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-padding-block: 14px;
+    padding: 2px 2px 12px;
+  }
+  #editor:has(.visit-form-grid) #form-error {
+    max-height: 12dvh;
+    overflow: auto;
+    margin: 8px 0;
+  }
+  #editor:has(.visit-form-grid) #form-error:empty {
+    display: none;
+  }
+  #editor:has(.visit-form-grid) .dialog-actions {
+    position: static;
+    bottom: auto;
+    margin: 0;
+    padding: 10px 0 0;
+  }
+  #editor:has(.visit-form-grid) .dialog-actions button {
+    min-width: 0;
+  }
+  #editor:has(.visit-form-grid) input,#editor:has(.visit-form-grid) select,#editor:has(.visit-form-grid) textarea {
+    font-size: 16px;
+  }
+}
+.settings-accordion-content {
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+.telegram-message-preview {
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 0;
+}
+.telegram-message-preview>summary {
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 550;
+}
+.telegram-message-preview pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  margin: 10px 0 0;
+  padding: 14px;
+  border: 1px solid #d6e1e7;
+  border-radius: 10px;
+  background: #f1f7fa;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.settings-accordion-content>p:first-child,.settings-accordion-content>.settings-section-heading>p {
+  margin-top: 0;
+}
+@media(max-width:700px) {
+  .settings-accordion-content {
+    padding: 12px;
+  }
+  .settings-accordion>summary {
+    padding: 0 12px;
+  }
+}
+.visit-history-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.visit-history-more:empty {
+  display: none;
+}
+.visit-history-more>button {
+  min-height: 44px;
+}

@@ -1,0 +1,198 @@
+/* Distinct management glyph in v2; legacy keeps its services grid. */
+@media screen {
+  .app-nav .nav-management-glyph {
+    display: none;
+  }
+  .app-nav-designed .nav-services-glyph {
+    display: none;
+  }
+  .app-nav-designed .nav-management-glyph {
+    display: block;
+  }
+}
+/* Selection uses surface, weight and a marker; other icons retain their color. */
+@media screen {
+  .topbar .app-nav-designed .app-nav-item {
+    position: relative;
+    transition: background 140ms ease,
+      box-shadow 140ms ease;
+  }
+  .topbar .app-nav-designed .app-nav-item:not(.active) {
+    color: #647880;
+  }
+  .topbar .app-nav-designed .app-nav-item.active {
+    color: #244e58;
+    background: #e3f0ee;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 65%);
+  }
+  .topbar .app-nav-designed .app-nav-item.active .nav-label {
+    font-weight: 700;
+  }
+  .topbar .app-nav-designed .app-nav-item.active::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 2px;
+    width: 28px;
+    max-width: 40%;
+    height: 3px;
+    margin-inline: auto;
+    border-radius: 3px;
+    background: #347c80;
+    pointer-events: none;
+  }
+  .topbar .app-nav-designed .app-nav-item:focus-visible {
+    outline: 2px solid #43858f;
+    outline-offset: 2px;
+  }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .topbar .app-nav-designed .app-nav-item {
+    transition: none;
+  }
+}
+/* The approved soft-volume settings treatment, only on v2 mobile navigation. */
+@media screen and (max-width: 700px) {
+  .topbar .app-nav-designed .app-nav-item {
+    --nav-icon-light: #549fe8;
+    --nav-icon-base: #347dca;
+    --nav-icon-edge: #2862a5;
+    gap: 6px;
+  }
+  .topbar .app-nav-designed .app-nav-item > svg,
+  .workspace-designed .management-tabs button > svg {
+    display: block;
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    color: #fff;
+    background: linear-gradient(145deg, var(--nav-icon-light), var(--nav-icon-base) 75%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 35%),
+      inset 0 -1px 0 rgb(0 0 0 / 7%),
+      0 2px 0 var(--nav-icon-edge),
+      0 4px 7px rgb(34 51 71 / 12%);
+  }
+  .topbar .app-nav-designed .app-nav-item > svg > :is(circle, rect),
+  .workspace-designed .management-tabs button > svg > :is(circle, rect) {
+    fill: rgb(255 255 255 / 23%);
+  }
+  .topbar .app-nav-designed [data-view='calendar'] {
+    --nav-icon-light: #3ab99a;
+    --nav-icon-base: #20977b;
+    --nav-icon-edge: #17715d;
+  }
+  .topbar .app-nav-designed [data-view='clients'] {
+    --nav-icon-light: #9b86e8;
+    --nav-icon-base: #7862cc;
+    --nav-icon-edge: #5b48a3;
+  }
+  .topbar .app-nav-designed [data-view='services'] {
+    --nav-icon-light: #e9ae50;
+    --nav-icon-base: #d48b29;
+    --nav-icon-edge: #af6c1c;
+  }
+  .topbar .app-nav-designed [data-view='settings'] {
+    --nav-icon-light: #43bbd0;
+    --nav-icon-base: #2598b1;
+    --nav-icon-edge: #1d758b;
+  }
+  .topbar .app-nav-designed .app-nav-item.active {
+    background: #e3f0ee;
+  }
+  .topbar .app-nav-designed .app-nav-item.active::after {
+    top: 3px;
+    bottom: auto;
+  }
+  .workspace-designed .management-tabs {
+    background: #f1f4f7;
+    padding: 4px;
+    gap: 4px;
+  }
+  .workspace-designed .management-tabs button {
+    --nav-icon-light: #e9ae50;
+    --nav-icon-base: #d48b29;
+    --nav-icon-edge: #af6c1c;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 4px;
+    min-height: 74px;
+    min-width: 0;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    background: transparent;
+  }
+  .workspace-designed .management-tabs button > svg {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 8px;
+  }
+  .workspace-designed .management-tabs button[aria-selected='true'] {
+    background: #fff;
+    border-color: #d7e1e8;
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgb(34 51 71 / 5%);
+  }
+  .workspace-designed .management-tab-copy {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-tabs [data-management-tab='schedule'] {
+    --nav-icon-light: #3ab99a;
+    --nav-icon-base: #20977b;
+    --nav-icon-edge: #17715d;
+  }
+  .workspace-designed .management-tabs [data-management-tab='requests'] {
+    --nav-icon-light: #ee9878;
+    --nav-icon-base: #d97956;
+    --nav-icon-edge: #b85c3b;
+  }
+}
+@media screen and (forced-colors: active) {
+  .topbar .app-nav-designed .app-nav-item.active {
+    background: Canvas;
+    color: CanvasText;
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+    box-shadow: none;
+  }
+  .topbar .app-nav-designed .app-nav-item.active::after {
+    background: Highlight;
+  }
+  .topbar .app-nav-designed .app-nav-item:not(.active) {
+    color: CanvasText;
+  }
+  .topbar .app-nav-designed .app-nav-item:focus-visible {
+    outline-color: Highlight;
+  }
+}
+@media screen and (max-width: 360px) {
+  .topbar .app-nav-designed .nav-label {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 700px) and (forced-colors: active) {
+  .topbar .app-nav-designed .app-nav-item > svg,
+  .workspace-designed .management-tabs button > svg {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+  .topbar .app-nav-designed .app-nav-item > svg > :is(circle, rect),
+  .workspace-designed .management-tabs button > svg > :is(circle, rect) {
+    fill: none;
+  }
+  .topbar .app-nav-designed .app-nav-item.active,
+  .workspace-designed .management-tabs button[aria-selected='true'] {
+    background: Canvas;
+    color: CanvasText;
+    outline: 2px solid Highlight;
+  }
+}

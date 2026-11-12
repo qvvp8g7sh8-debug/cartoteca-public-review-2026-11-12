@@ -1,0 +1,250 @@
+{
+  "tests/assistant-affirmative-answers.test.cjs": {
+    "bytes": 13903,
+    "sha256": "4543aa036da3c23d81c00ff1140cc2f567317989387ea4ee8367329f7152b242"
+  },
+  "tests/assistant-appointment-cancellation.test.cjs": {
+    "bytes": 14179,
+    "sha256": "bd5055be9b934587f13c58a9867ef146faeab775ca12f5c3d863c908e0970cb8"
+  },
+  "tests/assistant-appointment-execution.test.cjs": {
+    "bytes": 31657,
+    "sha256": "bea37a9995affa75eaff65c1f3f979fc6f84045bdde40ffa95976255e4b9717d"
+  },
+  "tests/assistant-appointment-management-eligibility.test.cjs": {
+    "bytes": 6420,
+    "sha256": "39797552cd2b5e32953490568dcfe573d0295b2611e3a4f5432842e95f9ca50d"
+  },
+  "tests/assistant-appointment-management.test.cjs": {
+    "bytes": 21236,
+    "sha256": "111585c90e3ad8d4f9327b40d18c503bf41987094c01ef93948aa1c2df92a24a"
+  },
+  "tests/assistant-appointment-move-execution.test.cjs": {
+    "bytes": 14889,
+    "sha256": "cefacc46a60d9a09ddb1303a0b10a2deee36355fb0b0605b3308fb7a16ce575e"
+  },
+  "tests/assistant-appointment-preview-lazy-cache.test.cjs": {
+    "bytes": 5017,
+    "sha256": "a2e7776779f5f3372ff6bc1f90386c10cf74fda3698424246632073207cb631d"
+  },
+  "tests/assistant-audio.test.cjs": {
+    "bytes": 37658,
+    "sha256": "aaedb50152bf1252a7e3b5849906e64382eee90d10089e4d6c62c1203055a5f7"
+  },
+  "tests/assistant-barge-bundle-browser.test.cjs": {
+    "bytes": 11954,
+    "sha256": "8c84b183b90fc7bd376c95b73c6e97e656cd123397ee7c05f96729e56bdd48ff"
+  },
+  "tests/assistant-barge-in.test.cjs": {
+    "bytes": 32905,
+    "sha256": "19e4422e9eac0f299ebb25d83a39f396fbda814970463082da506455dc37cfe5"
+  },
+  "tests/assistant-barge-management.test.cjs": {
+    "bytes": 11845,
+    "sha256": "daeff60d04da2f4e0cfd1c5a4180c8217495fc67527463ffd1aa4f9087f63318"
+  },
+  "tests/assistant-booking-day-flow.test.cjs": {
+    "bytes": 31905,
+    "sha256": "37a65d62ac75b415ae4a47e628032de619a1f1a2b4d33c86a1015033aab14332"
+  },
+  "tests/assistant-booking-window-prompt.test.cjs": {
+    "bytes": 4606,
+    "sha256": "166c69a43c11416254fe85709fcccc0526d437811f0135365a8d59e07b6c79ad"
+  },
+  "tests/assistant-calendar-read.test.cjs": {
+    "bytes": 11608,
+    "sha256": "a2efffb3c82aa042b2e4b0b9dc3466fae663f9e4b388d6b4b8cc512869fa9cc2"
+  },
+  "tests/assistant-client-card-flow.test.cjs": {
+    "bytes": 19043,
+    "sha256": "0af9869b0555e30bbba896870570fe7a48f62a71b3c090040240499d7e7fb169"
+  },
+  "tests/assistant-client-choice-names.test.cjs": {
+    "bytes": 17321,
+    "sha256": "17fdcba6fd241b8e8f1e779fa86af96e2448bf957977dbf6993bb8f906fb56d6"
+  },
+  "tests/assistant-client-confirmation-continuity.test.cjs": {
+    "bytes": 2592,
+    "sha256": "cf7c84707d676f87dc7596bc2480ab626b065e45377125aee325e619f1ab681a"
+  },
+  "tests/assistant-client-idle-work.test.cjs": {
+    "bytes": 19493,
+    "sha256": "983a85ed6c0e08a2d6213527f5c9b79ee0e535bb932a76b503c4d9a836f10124"
+  },
+  "tests/assistant-clock-duration-boundary.test.cjs": {
+    "bytes": 13374,
+    "sha256": "10cff102e24a28bdf7c2b9191cc4dfe9ac1467e95187c9d775c15c4ad79a26a9"
+  },
+  "tests/assistant-closed-time-rejection.test.cjs": {
+    "bytes": 7486,
+    "sha256": "3176aa85649283b3315ad4b66e2013f84629aadf11bcd87b44116413ff7672db"
+  },
+  "tests/assistant-command-transition.test.cjs": {
+    "bytes": 8956,
+    "sha256": "dc12cc0a2899021dfaba1132ac3d28aa7f3047b1b1b341b675189d8705a83338"
+  },
+  "tests/assistant-continuation-instructions.test.cjs": {
+    "bytes": 5886,
+    "sha256": "ff6f11f1f768c6ef5acd426d8c5c6b75daeb882c64eac3b917108c8c7f9c45e0"
+  },
+  "tests/assistant-create-save.test.cjs": {
+    "bytes": 3987,
+    "sha256": "7d93a013268e5a88837951885d1e36c0afe54f783062c2b9ef23825347d83abb"
+  },
+  "tests/assistant-current-card-example.test.cjs": {
+    "bytes": 5290,
+    "sha256": "c8de01018f5e6124af951ec34bd54b7ba864b20f86fb0f6e88c54cfeded181ca"
+  },
+  "tests/assistant-demo-constraints.test.cjs": {
+    "bytes": 3003,
+    "sha256": "e2322c655f8db23a19573107dbfc1aa440c22e22725ffd8daf3bc9def9ba156e"
+  },
+  "tests/assistant-dialogue-speech.test.cjs": {
+    "bytes": 13052,
+    "sha256": "f13c4b7742a7dcb9e767b4e74c6d8834e1f922446cc3931df90359db8acfaa3c"
+  },
+  "tests/assistant-entity-temporal-scope.test.cjs": {
+    "bytes": 7241,
+    "sha256": "46b2ce5a09fadc227876825457556c4df96cb7fc99f4766a896f15e2dc3aa0dc"
+  },
+  "tests/assistant-exact-name-with-patronymic.test.cjs": {
+    "bytes": 5339,
+    "sha256": "2be20c346829974bfe5d84ec15f24b6cd05a40b55d78bb563007ea7958caef40"
+  },
+  "tests/assistant-example-payload.test.cjs": {
+    "bytes": 13464,
+    "sha256": "8345eb72d849a18625e32bd34c29554a06082b13cfaac5544ab0ade61831a006"
+  },
+  "tests/assistant-example-runtime-contract.test.cjs": {
+    "bytes": 3873,
+    "sha256": "2b6b68580fc41211e76a3c9016984a84c79d36bf75fafd2bafc218ef07d02734"
+  },
+  "tests/assistant-example-selection.test.cjs": {
+    "bytes": 17529,
+    "sha256": "c740ced69e5b2c040255309aa7d39a9f4b02cc4fe628d187b3c38a1974d45185"
+  },
+  "tests/assistant-execution-time-recovery-ui.test.cjs": {
+    "bytes": 11816,
+    "sha256": "c0cbfd030222af81f5eb118a35608c4956b37437d80e94b232464ce43bddc02c"
+  },
+  "tests/assistant-explicit-time-clarification.test.cjs": {
+    "bytes": 8297,
+    "sha256": "a525a266f4793e62504477efed4220fe3faf9c221c4663cbdbec6dc7c4e89f6e"
+  },
+  "tests/assistant-free-range-view.test.cjs": {
+    "bytes": 3468,
+    "sha256": "2c8bd20a21611544fd9990004db079b4c79d2e251a2f7e582114618449c1c46c"
+  },
+  "tests/assistant-idle.test.cjs": {
+    "bytes": 3631,
+    "sha256": "c70ce983e79533521a9fc83db27fded4bb923a7284c4a942aae52f4984934c78"
+  },
+  "tests/assistant-initial-wire-temporal.test.cjs": {
+    "bytes": 5521,
+    "sha256": "638984dd355ec3c4308534864ec7356f8f70fe5163b6524a853be2225643e882"
+  },
+  "tests/assistant-local-speech-hints.test.cjs": {
+    "bytes": 6223,
+    "sha256": "1a32b18b112d8d4edf5490fd5076ead66f47b25ba7086f0861f4a324483c2c91"
+  },
+  "tests/assistant-management-date.test.cjs": {
+    "bytes": 10668,
+    "sha256": "5dd9d2ed3c0da624c2f4442eda52ada9c57a3424851474267976ff260a3c4e41"
+  },
+  "tests/assistant-management-request-routing.test.cjs": {
+    "bytes": 22244,
+    "sha256": "2260be65eb807350a3541b41de993a1aa7e4eb609b12ce54039468c43bab21bf"
+  },
+  "tests/assistant-management-temporal.test.cjs": {
+    "bytes": 12371,
+    "sha256": "9d2a88314a5b339cfde6f4d2d9f16c31f5357074df209e7c05ebef7efc2ba27c"
+  },
+  "tests/assistant-microphone-session.test.cjs": {
+    "bytes": 13522,
+    "sha256": "7e11b05adc8fcdb5d40d5d9d97894a2570b3fdf0775385fea6c2971f728c3e07"
+  },
+  "tests/assistant-model-instructions.test.cjs": {
+    "bytes": 12540,
+    "sha256": "685c432eae417acb2af3f52459a1c48cc47f048a58383362dabb44e44657597a"
+  },
+  "tests/assistant-model-runtime.test.cjs": {
+    "bytes": 13335,
+    "sha256": "086286be2c44be86c6bb7b62864aa26fe6a054a160c83e2e56e246250139108f"
+  },
+  "tests/assistant-named-fields-natural.test.cjs": {
+    "bytes": 7763,
+    "sha256": "56fa89dfbc19975f2828364f06ff870766718d2b49535b3b7fef100d36d03202"
+  },
+  "tests/assistant-natural-continuation.test.cjs": {
+    "bytes": 8769,
+    "sha256": "c7c82f369d407d7b0421d45a8e7a3edd2562e8f8387b70e3e43f8b47f6161bd0"
+  },
+  "tests/assistant-pcm-playback.test.cjs": {
+    "bytes": 22610,
+    "sha256": "9461544028c807f3c5061cdc47dbbe6ec362e6b90d98887501dce4e0756cb6ea"
+  },
+  "tests/assistant-phone-suffix-clarification.test.cjs": {
+    "bytes": 15395,
+    "sha256": "82de63394baecf12514b4d63fac2e8e99911f73f00685b7b1e0531aa4fadf97b"
+  },
+  "tests/assistant-prompt-current-behavior.test.cjs": {
+    "bytes": 14226,
+    "sha256": "bd9343e346cddcdc303e916f2682190c890ff8ed567e918f659548492baf7635"
+  },
+  "tests/assistant-prompt-prefix.test.cjs": {
+    "bytes": 12172,
+    "sha256": "48ede18174be3eb3937f79b350268e44d4336c89b7686c7c975994fe3634b469"
+  },
+  "tests/assistant-service-composite-identity.test.cjs": {
+    "bytes": 13829,
+    "sha256": "c12ec6ea7f572cb2128127bb75d5dc62a930a14045fadbc166587d1353d164a7"
+  },
+  "tests/assistant-service-whole-term-alias.test.cjs": {
+    "bytes": 6065,
+    "sha256": "5ec6725d68da188ea8f4fb2cfe6440253f23ea2c08f56ec69f66328044cf200b"
+  },
+  "tests/assistant-speech-question-repetition.test.cjs": {
+    "bytes": 7799,
+    "sha256": "fa0b886d7565d0c778c06dd66035c8209c427ccbd6ce11fe083f4a674c6ce8fc"
+  },
+  "tests/assistant-speech.test.cjs": {
+    "bytes": 94303,
+    "sha256": "5f129e1720be06f6ba0bdb6b1102f5da1316a9e865a497df638d0bc2ad544e6f"
+  },
+  "tests/assistant-staff-field-repair-identity.test.cjs": {
+    "bytes": 12057,
+    "sha256": "a5e3e6a83ee8051fc7fe2eb0604c7ac8d08c59a8fe364e2fd3672863003336cb"
+  },
+  "tests/assistant-surname-component-clarification.test.cjs": {
+    "bytes": 14596,
+    "sha256": "be691a621736468cd9c3a077c8e11913914c31fe0ff3fb4d1e13a356ac52ccd9"
+  },
+  "tests/assistant-test-journal.test.cjs": {
+    "bytes": 21261,
+    "sha256": "0f50ba224891284faa6d0abe283d31e9ba7ae4b3d5f4a0f117e3232b380623ea"
+  },
+  "tests/assistant-time-step-recovery.test.cjs": {
+    "bytes": 8516,
+    "sha256": "7fea49064cfdc6b70c034160aae43baa8dc74af47211e1f548e87078e5a9476a"
+  },
+  "tests/assistant-window-duration-scope.test.cjs": {
+    "bytes": 6609,
+    "sha256": "2c10b87f19967a1d152067136226277fb78d6508ec899830fa512729436fb286"
+  },
+  "tests/assistant-zero-minute-clock.test.cjs": {
+    "bytes": 6624,
+    "sha256": "fb3d4be02e9bcf75b93db8b84606b1317df04974429ae7061eb5d5c7b42d185a"
+  },
+  "tests/helpers/assistant-test-journal-store.cjs": {
+    "bytes": 6689,
+    "sha256": "f55d069f75288c7d03693dcc4d898bf8fb0088b2c8cf63134379e7d461845305"
+  },
+  "tests/helpers/assistant-test-journal.cjs": {
+    "bytes": 9796,
+    "sha256": "cbc853d71d7792648c24dde3570c8a8b2a9237609bf6857d5d8e54417db4f99b"
+  },
+  "tests/voice-assistant-ui.test.cjs": {
+    "bytes": 83377,
+    "sha256": "79fcca567fe2291a906f48bcd471df991aa38953005831a65a93cc9c8d296c39"
+  }
+}

@@ -1,0 +1,394 @@
+/* Appointment inspection is separate from editing. Reuses the bounded, draggable editor. */
+@media screen {
+  .unified-appointments .appointment-record-open {
+    min-height: 44px;
+    padding: 0;
+    margin: -6px 0;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    white-space: normal;
+  }
+  #editor[data-editor-kind='appointmentActions'] {
+    width: min(520px, calc(100% - 32px));
+    max-width: 520px;
+  }
+  #editor[data-editor-kind='appointmentActions'] #form-content {
+    padding: 16px;
+  }
+  #editor[data-editor-kind='appointmentActions'] .dialog-actions,
+  #editor[data-editor-kind='appointmentActions'] #form-error:empty {
+    display: none;
+  }
+  .appointment-action-summary {
+    display: grid;
+    gap: 5px;
+    min-width: 0;
+    margin-bottom: 12px;
+  }
+  .appointment-action-summary strong {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+  }
+  .appointment-action-summary span {
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .appointment-action-summary small {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .appointment-action-phone {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .appointment-action-contact {
+    margin-bottom: 14px;
+  }
+  .appointment-action-contact .client-contact-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+  .appointment-action-contact .client-contact-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex: 1;
+    width: auto;
+    height: auto;
+    min-height: 44px;
+    padding: 5px 12px;
+    border: 1px solid var(--contact-border);
+    border-radius: 9px;
+    background: var(--contact-gloss), var(--contact-surface);
+    box-shadow: var(--contact-shadow);
+    color: var(--contact-ink);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 550;
+    text-decoration: none;
+  }
+  .appointment-action-contact .client-contact-label {
+    display: none;
+  }
+  .appointment-action-contact .client-contact-action:hover:not(:disabled) {
+    background: var(--contact-gloss), var(--contact-hover);
+    border-color: var(--contact-ink);
+  }
+  .appointment-action-contact .client-contact-action:active:not(:disabled) {
+    box-shadow: inset 0 1px 3px rgb(34 51 71 / 12%);
+  }
+  .appointment-action-contact .client-contact-action:disabled {
+    background: #eaf0f5;
+    border-color: #c5d4df;
+    box-shadow: none;
+  }
+  .appointment-action-contact .client-contact-action svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+  }
+  .appointment-action-contact a {
+    order: -1;
+  }
+  .appointment-action-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .appointment-action-options button {
+    min-width: 0;
+    min-height: 44px;
+    padding: 9px 10px;
+    margin: 0;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1.3;
+    white-space: normal;
+  }
+  .appointment-action-options [data-open-appointment-patient] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #fff 0%, #f2f7fa 48%, #e8f0f5 100%);
+    border-color: #c5d4df;
+    color: var(--blue);
+    box-shadow: inset 0 1px 0 #fff, 0 2px 4px rgb(34 51 71 / 5%);
+  }
+  .appointment-client-card-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex: none;
+    filter: drop-shadow(0 1px 1px rgb(51 73 86 / 18%));
+  }
+  .appointment-action-options [data-open-appointment-patient]:hover:not(:disabled) {
+    border-color: #a6bbc9;
+    background: linear-gradient(180deg, #fff, #e3edf3);
+  }
+  .appointment-action-options [data-open-appointment-patient]:active:not(:disabled) {
+    box-shadow: inset 0 1px 3px rgb(34 51 71 / 12%);
+  }
+  .appointment-action-options [data-open-appointment-patient]:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .appointment-action-outcomes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .appointment-action-outcomes:empty {
+    display: none;
+  }
+  .appointment-action-outcomes .appointment-outcome-actions {
+    display: contents;
+  }
+  .appointment-action-outcomes .text-btn {
+    flex: 1 1 140px;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: #f4f7f8;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1.3;
+    white-space: normal;
+  }
+  .appointment-action-outcomes .text-btn:hover:not(:disabled) {
+    background: #eaf0f3;
+  }
+  .appointment-action-delete {
+    margin-top: 10px;
+  }
+  .appointment-action-delete .text-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    margin: 0;
+    border: 1px solid #ead7d7;
+    border-radius: 9px;
+    background: transparent;
+    color: #a43134;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    white-space: normal;
+  }
+  .appointment-action-delete .text-btn:hover:not(:disabled) {
+    background: #fff4f4;
+    border-color: #d9b5b5;
+  }
+  :is(.appointment-action-outcomes, .appointment-action-delete) .text-btn:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .appointment-action-notes {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  /* Scoped specificity keeps the common editor theme from flattening these actions. */
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn) {
+    --action-top: #fff;
+    --action-bottom: #eaf1f4;
+    --action-ink: #31505f;
+    --action-border: #ccdbe2;
+    border: 1px solid var(--action-border);
+    border-radius: 10px;
+    color: var(--action-ink);
+    background: linear-gradient(180deg, var(--action-top), var(--action-bottom));
+    box-shadow: inset 0 1px 0 #fff, inset 0 -2px 2px rgb(45 76 91 / 5%), 0 3px 6px rgb(30 61 75 / 10%);
+    font-family: inherit;
+    font-weight: 550;
+    transition: box-shadow 140ms ease, transform 140ms ease;
+  }
+  #editor[data-editor-kind='appointmentActions'] .appointment-action-options [data-manual-confirm][data-confirm-value='true'] {
+    --action-top: #f9fffc;
+    --action-bottom: #deeee5;
+    --action-ink: #2a6452;
+    --action-border: #c5dfd2;
+  }
+  #editor[data-editor-kind='appointmentActions'] .appointment-action-delete button.text-btn {
+    --action-top: #fffafa;
+    --action-bottom: #f5e8e7;
+    --action-ink: #9d3e43;
+    --action-border: #e6cfce;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):hover:not(:disabled) {
+    background: linear-gradient(180deg, var(--action-top), var(--action-bottom));
+    border-color: var(--action-border);
+    box-shadow: inset 0 1px 0 #fff, 0 5px 9px rgb(30 61 75 / 14%);
+    transform: translateY(-1px);
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):active:not(:disabled) {
+    box-shadow: inset 0 2px 4px rgb(30 61 75 / 12%), 0 1px 2px rgb(30 61 75 / 6%);
+    transform: none;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):disabled {
+    box-shadow: none;
+    transform: none;
+    opacity: .6;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .appointment-action-options [data-edit-appointment-action] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+  .appointment-action-options [data-edit-appointment-action] span {
+    min-width: 0;
+  }
+  .appointment-action-pencil {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    filter: drop-shadow(0 1px 1px rgb(45 76 91 / 15%));
+  }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn) {
+    transition: none;
+    transform: none;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):hover:not(:disabled) {
+    transform: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  #editor.editor-designed[data-editor-kind='appointmentActions'] {
+    width: calc(100% - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+  #editor.editor-designed[data-editor-kind='appointmentActions'] #editor-form {
+    max-height: calc(100dvh - 26px);
+  }
+  #editor.editor-designed[data-editor-kind='appointmentActions'] .dialog-heading {
+    padding: 10px 14px;
+  }
+  #editor.editor-designed[data-editor-kind='appointmentActions'] .dialog-heading h2 {
+    font-size: 17px;
+  }
+}
+@media screen and (forced-colors: active) {
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn),
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):is(:hover, :active, :disabled) {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+    transform: none;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):focus-visible {
+    outline-color: Highlight;
+  }
+  #editor[data-editor-kind='appointmentActions'] :is(.appointment-action-options button:not([data-open-appointment-patient]), .appointment-action-outcomes .text-btn, .appointment-action-delete .text-btn):disabled {
+    color: GrayText;
+    opacity: 1;
+  }
+  .appointment-action-pencil {
+    filter: none;
+  }
+  .appointment-action-pencil path {
+    fill: ButtonText;
+    stroke: none;
+  }
+  .appointment-action-options [data-open-appointment-patient],
+  .appointment-action-options [data-open-appointment-patient]:hover:not(:disabled),
+  .appointment-action-options [data-open-appointment-patient]:active:not(:disabled) {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .appointment-action-options [data-open-appointment-patient]:focus-visible {
+    outline-color: Highlight;
+  }
+  .appointment-action-options [data-open-appointment-patient] {
+    box-shadow: none;
+  }
+  .appointment-client-card-icon {
+    filter: none;
+  }
+  .appointment-client-card-icon .client-icon-portrait {
+    fill: ButtonText;
+  }
+  .appointment-client-card-icon .client-icon-shine {
+    display: none;
+  }
+  .appointment-action-contact .client-contact-action {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+  .appointment-action-contact .client-contact-action:hover:not(:disabled),
+  .appointment-action-contact .client-contact-action:active:not(:disabled) {
+    background: ButtonFace;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .appointment-action-contact .client-contact-action:disabled {
+    background: ButtonFace;
+    color: GrayText;
+    border-color: GrayText;
+  }
+  :is(.appointment-action-outcomes, .appointment-action-delete) .text-btn,
+  :is(.appointment-action-outcomes, .appointment-action-delete) .text-btn:hover:not(:disabled) {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+  :is(.appointment-action-outcomes, .appointment-action-delete) .text-btn:focus-visible {
+    outline-color: Highlight;
+  }
+}
+@media screen {
+  .appointment-notification-history {
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .appointment-notification-history summary {
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .notification-history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 260px;
+    overflow: auto;
+  }
+  .notification-history-list li {
+    display: grid;
+    gap: 3px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .notification-history-list small {
+    color: var(--muted);
+  }
+}

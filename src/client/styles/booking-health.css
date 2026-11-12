@@ -1,0 +1,65 @@
+.app-nav-item .booking-health-count,
+.app-nav-item.active .booking-health-count,
+.settings-tile .booking-health-count {
+  background: #fff0cd;
+  color: #795820;
+}
+.settings-tile-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.settings-tile-heading .settings-tile-title {
+  overflow-wrap: anywhere;
+}
+.booking-health-panel {
+  padding: 10px 12px;
+  margin: 0 0 12px;
+  border-radius: 10px;
+  background: #edf7f0;
+  color: #2b6142;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.booking-health-panel[hidden] {
+  display: none;
+}
+.booking-health-panel.has-problems {
+  background: #fff7e6;
+  color: #765723;
+}
+.booking-health-panel.is-loading {
+  background: #eef3f6;
+  color: var(--muted);
+}
+.booking-health-issue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+.booking-health-issue > div {
+  min-width: 0;
+}
+.booking-health-issue p,
+.booking-health-sync {
+  margin: 4px 0 0;
+}
+.booking-health-issue button {
+  flex-shrink: 0;
+  min-height: 44px;
+  white-space: normal;
+}
+@media (max-width: 700px) {
+  .booking-health-issue {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .booking-health-issue button {
+    width: 100%;
+  }
+}

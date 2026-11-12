@@ -1,0 +1,301 @@
+/* The compact channel row opens independent native dialogs, outside the row layout. */
+@media screen {
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-notification-channels {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-notification-channels > div,
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-channel-host {
+    display: block;
+    width: 44px;
+    min-width: 44px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-channel-trigger {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    max-width: none;
+    height: 44px;
+    min-height: 44px;
+    padding: 9px;
+    border: 1px solid #d9e3e6;
+    border-radius: 50%;
+    background: #f2f6f7;
+    color: #71838a;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-channel-trigger.is-linked {
+    border-color: #a7cbb9;
+    background: #edf7ef;
+    color: #32644c;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-channel-trigger[aria-expanded='true'] {
+    outline: 2px solid #407d85;
+    outline-offset: 2px;
+  }
+  .staff-channel-trigger:focus-visible {
+    outline: 2px solid #407d85;
+    outline-offset: 2px;
+  }
+  .staff-channel-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(480px, calc(100vw - 32px));
+    height: fit-content;
+    max-width: none;
+    max-height: min(680px, calc(100dvh - 40px));
+    padding: 0;
+    border: 1px solid #d7e3e6;
+    border-radius: 16px;
+    background: #fff;
+    color: #2e4f59;
+    box-shadow: 0 16px 56px rgb(29 58 66 / 22%);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .staff-channel-dialog[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .staff-channel-dialog:not([open]) {
+    display: none;
+  }
+  .staff-channel-dialog::backdrop {
+    background: rgb(20 40 46 / 38%);
+  }
+  .staff-channel-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e9eb;
+  }
+  .staff-channel-dialog-header > div {
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog-header h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .staff-channel-status {
+    margin: 4px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #71838a;
+  }
+  .staff-channel-status.is-linked {
+    color: #32734f;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-close {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #f1f5f6;
+    color: #486b77;
+    font-size: 26px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    gap: 14px;
+    padding: 16px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    overflow: auto;
+    overscroll-behavior: contain;
+    overflow-wrap: anywhere;
+  }
+  .staff-channel-content :is(.staff-channel-intro, .staff-channel-unavailable) {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .staff-channel-intro {
+    color: #637982;
+  }
+  .staff-channel-unavailable {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f3f6f7;
+    color: #5d737c;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content :is(button, a.primary) {
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content > .primary {
+    width: 100%;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content .staff-notification-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+    margin: 0;
+  }
+  .staff-channel-content .staff-notification-actions :is(button, a) {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .staff-channel-content :is(.staff-notification-link, .staff-channel-help) {
+    margin: 0;
+    font-size: 13px;
+  }
+  .staff-channel-content :is(.staff-notification-link, .staff-channel-help) > summary {
+    min-height: 44px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #486b77;
+  }
+  .staff-channel-content .staff-notification-link input {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+  .staff-channel-help p {
+    margin: 6px 0 0;
+    line-height: 1.5;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content .form-hint {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content .telegram-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin: 0;
+    font-size: 14px;
+  }
+  .staff-channel-content .telegram-switch input {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+  }
+  .staff-channel-content .staff-push-events {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .staff-channel-content fieldset {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .staff-channel-content .staff-push-events label {
+    min-height: 48px;
+    border-bottom: 1px solid #edf1f2;
+    font-size: 14px;
+  }
+  .staff-channel-content .staff-push-events input {
+    width: 20px;
+    height: 20px;
+  }
+  .staff-channel-content .staff-push-period {
+    max-width: none;
+    flex-wrap: wrap;
+    margin: 12px 0 6px;
+    font-size: 14px;
+  }
+  .staff-channel-content .staff-push-period select {
+    min-height: 44px;
+    width: 140px;
+  }
+  .staff-channel-content .staff-channel-refresh {
+    align-self: flex-start;
+    color: #486b77;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-message {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 12px 16px;
+    border-top: 1px solid #e2e9eb;
+    background: #f8fafb;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .staff-channel-message:empty {
+    display: none;
+  }
+  body:has(.staff-channel-dialog[open]) {
+    overflow: hidden;
+  }
+  @media (max-width: 600px) {
+    .staff-channel-dialog {
+      inset: auto 0 0;
+      margin: 0;
+      width: 100%;
+      max-height: calc(100dvh - 28px);
+      border-bottom: 0;
+      border-radius: 20px 20px 0 0;
+    }
+    .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content {
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+  }
+  @media (max-width: 440px) {
+    .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications .staff-notification-channels {
+      grid-column: 1;
+      grid-row: 2;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    .settings-panel.settings-pages #staff-notifications .staff-channel-dialog .staff-channel-content .staff-notification-actions {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (forced-colors: active) {
+    .staff-channel-dialog {
+      border: 1px solid CanvasText;
+      box-shadow: none;
+      color: CanvasText;
+    }
+    .staff-channel-unavailable, .staff-channel-close {
+      background: Canvas;
+      color: CanvasText;
+    }
+  }
+}

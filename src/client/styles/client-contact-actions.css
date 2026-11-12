@@ -1,0 +1,345 @@
+/* Contact actions and the card's original stacked appointment/service controls. */
+@media screen {
+  #staff-notifications .staff-notification-channels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+  }
+  #staff-notifications .staff-notification-channel {
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  #staff-notifications .staff-notification-channel h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+  }
+  #staff-notifications .staff-notification-link input {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+  }
+  .settings-panel {
+    min-width: 0;
+  }
+  .settings-panel :is(input, textarea, button, select, summary, label) {
+    font-family: inherit;
+  }
+  .settings-panel :is(.field, .online-booking-fields, .settings-tile-copy, .team-member-main) {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .settings-panel .online-booking-fields {
+    align-items: start;
+  }
+  .settings-panel .online-booking-fields .settings-label-row {
+    min-height: 36px;
+  }
+  .settings-panel :is(#telegram-message-preview, #max-message-preview) {
+    min-width: 0;
+    max-width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel :is(.settings-label-row, .booking-mode-description) {
+    overflow-wrap: anywhere;
+  }
+  .card-mode .patient-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px;
+    width: 320px;
+    max-width: 100%;
+  }
+  .card-mode .patient-actions > #new-patient-appointment {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .card-mode .patient-actions > #edit-patient {
+    width: 100%;
+  }
+  .card-mode .patient-actions > button,
+  .card-mode .patient-actions > .patient-more > summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-mode .patient-actions > .patient-more > summary {
+    padding: 9px 12px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .patient-actions details.patient-connections {
+    position: relative;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 44px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .patient-actions .patient-connections > summary {
+    display: grid;
+    align-content: center;
+    gap: 3px;
+    height: 100%;
+    min-height: 0;
+    padding: 5px 12px;
+    font-size: 12px;
+    line-height: 15px;
+    list-style: none;
+  }
+  .patient-connections-status {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .patient-connections-status.is-linked {
+    color: #367062;
+  }
+  .patient-actions .patient-connections[data-connection-state='linked'] {
+    background: #edf7ef;
+    border-color: #b3d7bd;
+  }
+  .patient-actions .patient-connections[data-connection-state='unlinked'] {
+    background: #fff9e7;
+    border-color: #e4d6a8;
+  }
+  .patient-connections[data-connection-state='unlinked'] .patient-connections-status {
+    color: #786332;
+  }
+  .patient-connections .connection-service:not(.is-linked, .is-future, .is-loading) {
+    background: #fff9e7;
+    border-color: #e4d6a8;
+  }
+  .patient-connections .connection-service.is-linked {
+    background: #edf7ef;
+    border-color: #b3d7bd;
+  }
+  .patient-actions .patient-connections[open] > .patient-connections-grid {
+    position: absolute;
+    z-index: 8;
+    top: calc(100% + 6px);
+    right: 0;
+    width: min(360px, calc(100vw - 32px));
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px #20374420;
+    background: #fff;
+    max-height: calc(100dvh - 160px);
+    overflow-y: auto;
+  }
+  .patient-actions .patient-connections-grid .connection-service {
+    padding: 8px 5px;
+  }
+  .patient-actions .patient-connections-grid .connection-service small {
+    white-space: normal;
+    font-size: 11px;
+  }
+  .patient-row.client-list-row,
+  .patient-list-head {
+    grid-template-columns: minmax(190px, 1.45fr) minmax(100px, 0.8fr) minmax(110px, 0.8fr) minmax(130px, 1fr)
+      96px;
+    gap: 12px;
+    cursor: default;
+  }
+  .client-open-patient {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    padding: 0;
+    background: none;
+    color: inherit;
+    text-align: left;
+  }
+  .client-contact-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+  .client-contact-action {
+    --contact-ink: #315f99;
+    --contact-surface: #eaf2fc;
+    --contact-hover: #dce9f9;
+    --contact-border: #c9d9ef;
+    --contact-shadow: inset 0 1px 2px #fff, inset 0 -2px 3px rgb(34 70 91 / 8%), 0 2px 3px rgb(34 70 91 / 10%);
+    --contact-gloss: linear-gradient(160deg, #ffffffd9, #ffffff1a 45%, #ffffff00 65%);
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border: 1px solid var(--contact-border);
+    border-radius: 12px;
+    background: var(--contact-gloss), var(--contact-surface);
+    color: var(--contact-ink);
+    box-shadow: var(--contact-shadow);
+    padding: 5px;
+    text-decoration: none;
+  }
+  .client-contact-action[aria-label='Позвонить клиенту'] {
+    --contact-ink: #24786a;
+    --contact-surface: #e6f4ef;
+    --contact-hover: #d5ece3;
+    --contact-border: #bddfd1;
+  }
+  .client-contact-action:hover:not(:disabled) {
+    background: var(--contact-gloss), var(--contact-hover);
+    border-color: var(--contact-ink);
+  }
+  .client-contact-action:active:not(:disabled) {
+    box-shadow: inset 0 1px 3px rgb(34 51 71 / 12%);
+  }
+  .client-contact-action:focus-visible {
+    outline: 2px solid #244e62;
+    outline-offset: 3px;
+  }
+  .client-contact-action:disabled {
+    background: #eaf0f5;
+    border-color: #c5d4df;
+    box-shadow: none;
+    opacity: 1;
+    cursor: not-allowed;
+  }
+  .client-contact-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    flex: none;
+    pointer-events: none;
+  }
+  .client-contact-icon img {
+    display: block;
+    visibility: hidden;
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .client-contact-action:disabled .client-contact-icon img {
+    filter: grayscale(1);
+    opacity: 0.5;
+  }
+  .client-contact-icon svg {
+    display: block;
+    grid-area: 1 / 1;
+  }
+  .client-contact-icon.is-image-ready img {
+    visibility: visible;
+  }
+  .client-contact-icon.is-image-ready svg {
+    visibility: hidden;
+  }
+  .client-contact-action svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linejoin: round;
+  }
+  .client-contact-dialog {
+    width: min(440px, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    padding: 20px;
+  }
+  .client-contact-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .client-contact-heading h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  .client-contact-heading button {
+    min-width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    font-size: 22px;
+    background: var(--light);
+    color: var(--ink);
+  }
+  .client-contact-dialog p {
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+  .client-contact-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .client-contact-options a {
+    text-align: center;
+    min-height: 44px;
+    padding: 12px 8px;
+  }
+  @media (max-width: 1100px) {
+    .patient-list-head {
+      display: none;
+    }
+    .patient-row.client-list-row {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .client-list-row .client-list-cell {
+      display: none;
+    }
+  }
+  @media (max-width: 700px) {
+    .card-mode .patient-actions {
+      width: 100%;
+    }
+    .patient-actions details.patient-connections {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+    .patient-actions .patient-connections[open] > .patient-connections-grid {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  #staff-notifications .staff-notification-channels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media screen and (forced-colors: active) {
+  .client-contact-action {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .client-contact-action:disabled {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+  .client-contact-action:hover:not(:disabled),
+  .client-contact-action:active:not(:disabled) {
+    background: ButtonFace;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .client-contact-icon img {
+    display: none;
+  }
+  .client-contact-icon svg,
+  .client-contact-icon.is-image-ready svg {
+    display: block;
+    visibility: visible;
+  }
+  .client-contact-action:focus-visible {
+    outline-color: Highlight;
+  }
+}

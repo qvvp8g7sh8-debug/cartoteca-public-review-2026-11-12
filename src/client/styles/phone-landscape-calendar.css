@@ -1,0 +1,302 @@
+/* Two compact control rows leave the remaining height to the current calendar view. */
+@media screen {
+  body.phone-landscape .calendar-panel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    padding: 4px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+  body.phone-landscape .workspace-designed .calendar-panel:has(.time-scroll) {
+    height: 100%;
+    min-height: 0;
+  }
+  body.phone-landscape .calendar-panel :is(.calendar-title, .mobile-calendar-heading, .mobile-date-navigation, .mobile-date-caption, .calendar-hint) {
+    display: none;
+  }
+  body.phone-landscape .calendar-panel .calendar-toolbar {
+    display: block;
+    flex: none;
+    margin: 0;
+    padding: 0 0 4px;
+  }
+  body.phone-landscape .calendar-panel .calendar-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 4px;
+  }
+  body.phone-landscape .calendar-actions > :is(.secondary, .mobile-today, .date-picker-toggle),
+  body.phone-landscape .calendar-actions #calendar-new {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    height: 44px;
+    padding: 6px;
+    border-radius: 9px;
+    font-size: 14px;
+  }
+  body.phone-landscape .calendar-actions [data-calendar-prev] {
+    order: 0;
+    font-size: 24px;
+  }
+  body.phone-landscape .calendar-actions .date-picker-toggle {
+    order: 1;
+    width: auto;
+    min-width: 100px;
+    gap: 5px;
+    background: #f2f6f7;
+  }
+  body.phone-landscape .date-picker-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+  body.phone-landscape .phone-landscape-date-label {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  body.phone-landscape .calendar-actions [data-calendar-next] {
+    order: 2;
+    font-size: 24px;
+  }
+  body.phone-landscape .calendar-actions .mobile-today {
+    order: 3;
+    width: auto;
+    padding-inline: 8px;
+    color: #2d6370;
+  }
+  body.phone-landscape .calendar-actions .calendar-mode {
+    order: 4;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    gap: 0;
+    padding: 0;
+    border-radius: 9px;
+    background: #edf3f4;
+  }
+  body.phone-landscape .calendar-panel .calendar-mode button {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: 6px 4px;
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+  body.phone-landscape .calendar-mode button::before {
+    display: none;
+  }
+  body.phone-landscape [data-phone-calendar-mode] {
+    display: none;
+    order: 4;
+    flex: 1;
+    min-width: 84px;
+    min-height: 44px;
+  }
+  body.phone-landscape .calendar-actions .calendar-load-open {
+    order: 5;
+  }
+  body.phone-landscape .calendar-actions .calendar-booking-tools {
+    display: contents;
+  }
+  body.phone-landscape .calendar-actions #calendar-new {
+    order: 6;
+    margin: 0;
+    box-shadow: 0 2px 5px #233f4b18;
+  }
+  body.phone-landscape #calendar-new .new-record-label {
+    display: none;
+  }
+  body.phone-landscape #calendar-new .new-record-plus {
+    font-size: 28px;
+    line-height: 1;
+  }
+  body.phone-landscape .phone-calendar-filters {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 0 0 4px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  body.phone-landscape .phone-calendar-filters:empty {
+    display: none;
+  }
+  body.phone-landscape .phone-calendar-filters .calendar-selection {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  body.phone-landscape .calendar-selection label {
+    display: block;
+    flex: 1;
+    min-width: 115px;
+  }
+  body.phone-landscape .calendar-selection .calendar-filter-label,
+  body.phone-landscape .calendar-actions .calendar-load-open span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  body.phone-landscape .calendar-selection select {
+    width: 100%;
+    min-height: 44px;
+    padding: 6px 8px;
+    font-size: 16px;
+  }
+  body.phone-landscape .phone-calendar-filters .calendar-day-tools {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  body.phone-landscape .calendar-day-tools .mobile-date-caption {
+    display: none;
+  }
+  body.phone-landscape .phone-calendar-filters .early-hours-control {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  body.phone-landscape .phone-calendar-filters :is(button, select) {
+    min-height: 44px;
+  }
+  body.phone-landscape .phone-calendar-filters :is(.calendar-work-hours, .calendar-work-schedule) {
+    margin: 0;
+    font-size: 12px;
+  }
+  body.phone-landscape .phone-calendar-filters .calendar-work-schedule > label {
+    font-size: 12px;
+  }
+  body.phone-landscape .phone-calendar-filters .early-hours-control button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  body.phone-landscape .phone-calendar-filters [data-open-work-schedule] {
+    flex: none;
+    padding: 6px 8px;
+  }
+  body.phone-landscape .calendar-panel .calendar-layout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    gap: 0;
+  }
+  body.phone-landscape .calendar-panel .calendar-sidebar {
+    display: contents;
+  }
+  body.phone-landscape .calendar-panel .month-picker {
+    display: none;
+    position: absolute;
+    z-index: 12;
+    inset: 48px 4px auto;
+    width: min(360px, calc(100% - 8px));
+    max-height: calc(100% - 52px);
+    padding: 8px;
+    overflow: auto;
+    box-shadow: 0 8px 28px #23344626;
+  }
+  body.phone-landscape .calendar-panel .month-picker.is-open {
+    display: block;
+  }
+  body.phone-landscape .month-picker :is(button, .month-day) {
+    min-height: 44px;
+  }
+  body.phone-landscape .month-picker .month-heading {
+    margin-bottom: 4px;
+  }
+  body.phone-landscape .calendar-panel .time-board {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    border-radius: 8px;
+  }
+  body.phone-landscape .calendar-panel .time-scroll {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overscroll-behavior: contain;
+  }
+  body.phone-landscape .calendar-panel .time-head.day-mode {
+    display: grid;
+  }
+  body.phone-landscape .calendar-panel .time-day-heading {
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+  body.phone-landscape .calendar-panel .time-day-heading span {
+    margin-top: 1px;
+  }
+  body.phone-landscape .calendar-panel :is(.month-overview, .appointment-agenda, .calendar-load-scroll) {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    padding: 8px;
+    overflow: auto;
+  }
+  body.phone-landscape .calendar-load-picker {
+    display: contents;
+  }
+  body.phone-landscape .calendar-load-scroll .load-stats {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  body.phone-landscape .calendar-load-scroll .load-stats > div {
+    padding: 8px;
+    gap: 2px;
+  }
+  body.phone-landscape .calendar-panel .overview-heading {
+    margin-bottom: 6px;
+  }
+  body.phone-landscape .calendar-panel .overview-day {
+    min-height: 44px;
+    padding: 4px;
+    gap: 2px;
+  }
+  body.phone-landscape .calendar-panel .agenda-event {
+    min-height: 44px;
+    padding: 8px;
+    margin-bottom: 4px;
+  }
+}
+@media screen and (max-width: 740px) {
+  body.phone-landscape .calendar-actions .calendar-mode {
+    display: none;
+  }
+  body.phone-landscape [data-phone-calendar-mode] {
+    display: block;
+  }
+}

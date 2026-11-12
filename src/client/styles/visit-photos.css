@@ -1,0 +1,292 @@
+/* Visit editor only: a compact gallery, with native file selection and captions. */
+@media screen {
+  #editor .visit-photo-section.visit-photos {
+    padding: 0;
+    margin-top: 18px;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+  }
+  #editor .visit-photos-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding-top: 14px;
+  }
+  #editor .visit-photos-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  #editor .visit-photos h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  #editor #photo-upload-count {
+    font-size: 12px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+  }
+  #editor .visit-photos .upload-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 8px 12px;
+    margin: 0;
+    border: 1px solid #c9dadc;
+    border-radius: 9px;
+    background: var(--light, #edf5f4);
+    color: var(--blue);
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 140ms ease,
+      border-color 140ms ease;
+  }
+  #editor .visit-photos .upload-label > svg {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+  }
+  #editor .visit-photos #photo-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+  }
+  #editor .visit-photos .upload-label:hover:not([aria-disabled='true']) {
+    background: #e0eeed;
+    border-color: #87b0b5;
+  }
+  #editor .visit-photos .upload-label:focus-within {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  #editor .visit-photos .upload-label[aria-disabled='true'] {
+    background: #f4f6f7;
+    border-color: var(--line);
+    color: var(--muted);
+    cursor: default;
+  }
+  #editor .visit-photos-empty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 64px;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px dashed #d2dee3;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.45;
+    background: #f8fafb;
+    box-sizing: border-box;
+  }
+  #editor .visit-photos-empty svg {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    color: #8aa4ad;
+  }
+  #editor .visit-photos .upload-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 12px 0 0;
+  }
+  #editor .visit-photos .upload-list:empty {
+    display: none;
+  }
+  #editor .visit-photos .upload-preview {
+    display: block;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  #editor .upload-preview-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f0f4f6;
+  }
+  #editor .visit-photos .upload-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    border-radius: 0;
+    object-fit: contain;
+  }
+  #editor .upload-preview-open {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    cursor: zoom-in;
+  }
+  #editor .upload-preview-open:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: -3px;
+  }
+  #editor .upload-preview-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #dce3e7;
+    border-radius: 9px;
+    background: #fff;
+    color: #637783;
+    box-shadow: 0 1px 5px rgb(24 49 62 / 8%);
+    cursor: pointer;
+    transition: color 140ms ease,
+      background 140ms ease;
+  }
+  #editor .upload-preview-remove svg {
+    width: 19px;
+    height: 19px;
+  }
+  #editor .upload-preview-remove:hover {
+    color: #a53e35;
+    background: #fff4f2;
+  }
+  #editor .upload-preview-remove:focus-visible,
+  #editor .upload-preview-caption select:focus-visible,
+  #editor .visit-photos-batch select:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+  #editor .upload-preview-caption {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  #editor .upload-preview-caption select,
+  #editor .visit-photos-batch select {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+  }
+  #editor .visit-photos-batch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(130px, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  #editor .visit-photos-help,
+  #editor .visit-photos-status {
+    margin: 10px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  #editor .visit-photos-status {
+    font-size: 12px;
+    color: var(--blue);
+  }
+  #editor .visit-photos-status.is-processing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #editor .visit-photos-status.is-processing::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border: 2px solid #c7ddde;
+    border-top-color: var(--blue);
+    border-radius: 50%;
+    animation: visit-photo-processing 900ms linear infinite;
+  }
+  #editor .visit-photos [hidden] {
+    display: none !important;
+  }
+  @keyframes visit-photo-processing {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media (max-width: 700px) {
+    #editor .visit-photos .upload-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    #editor .visit-photos .upload-label {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+    #editor .upload-preview-caption select,
+    #editor .visit-photos-batch select {
+      font-size: 16px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #editor .visit-photos-status.is-processing::before {
+      animation: none;
+    }
+    #editor .visit-photos .upload-label,
+    #editor .upload-preview-remove {
+      transition: none;
+    }
+  }
+}

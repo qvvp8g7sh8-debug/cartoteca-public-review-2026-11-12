@@ -1,0 +1,415 @@
+/* Content of schedules and the inbox; no selectors for the main calendar. */
+@media screen and (min-width: 901px) {
+  .workspace-designed .management-panel .services-panel:has(> .service-catalog-person) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 24px;
+  }
+  .workspace-designed .management-panel .services-panel > * {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+  .workspace-designed .management-panel .services-panel > .service-catalog-person {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding-bottom: 18px;
+  }
+  .workspace-designed .management-panel .service-catalog-person > .field {
+    width: 100%;
+    max-width: 100%;
+  }
+  .workspace-designed .management-panel .services-panel > .services-heading {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    margin: 0;
+    padding-bottom: 18px;
+  }
+  .workspace-designed .management-panel .services-heading-actions {
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .workspace-designed .management-panel .services-heading-actions button {
+    min-height: 44px;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 700px) {
+  .workspace-designed .management-panel .services-panel > .service-catalog-person {
+    margin-bottom: 12px;
+  }
+}
+@media screen {
+  .workspace-designed .management-panel :is(.work-schedule-panel, .booking-requests-panel) {
+    min-width: 0;
+    color: #293f50;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .workspace-designed .management-panel :is(.work-schedule-toolbar, .work-schedule-person) {
+    gap: 8px;
+    min-width: 0;
+  }
+  .workspace-designed .management-panel .work-schedule-person {
+    display: grid;
+  }
+  .workspace-designed .management-panel .work-schedule-person > strong {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-panel .work-scope-staff {
+    color: #315c73;
+  }
+  .workspace-designed .management-panel .work-scope-organization {
+    color: #645381;
+  }
+  .workspace-designed .management-panel button.work-scope-label:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  .workspace-designed .management-panel .work-schedule-toolbar > .field {
+    min-width: 0;
+    margin: 0;
+    font-size: 13px;
+  }
+  .workspace-designed .management-panel .work-schedule-toolbar select {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 10px;
+    margin-top: 6px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .workspace-designed .management-panel .service-catalog-person select {
+    margin-top: 0;
+  }
+  .workspace-designed .management-panel .work-month-nav {
+    gap: 8px;
+    padding: 4px;
+    background: #f2f5f8;
+    border: 1px solid #dbe4eb;
+    border-radius: 10px;
+  }
+  .workspace-designed .management-panel .work-month-nav > button {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 7px;
+    background: #fff;
+  }
+  .workspace-designed .management-panel .work-month-nav > strong {
+    min-width: 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-panel .work-schedule-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .workspace-designed .management-panel .work-schedule-calendar {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #d4e0e7;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .workspace-designed .management-panel .work-schedule-calendar > .form-hint {
+    margin: 0;
+    font-size: 12px;
+    color: #526b7a;
+  }
+  .workspace-designed .management-panel .work-weekdays {
+    margin-top: 10px;
+  }
+  .workspace-designed .management-panel .work-weekdays > button {
+    min-height: 44px;
+    color: #426479;
+    font-weight: 600;
+  }
+  .workspace-designed .management-panel .work-day {
+    min-height: 56px;
+    padding: 6px 1px;
+    gap: 3px;
+    border-radius: 8px;
+  }
+  .workspace-designed .management-panel .work-day.is-working {
+    color: #2a6047;
+    background: #edf7f0;
+    border-color: #bfd8c9;
+  }
+  .workspace-designed .management-panel .work-day.is-closed {
+    color: #536373;
+    background: #edf0f4;
+    border-color: #d3dce4;
+  }
+  .workspace-designed .management-panel .work-day[aria-pressed='true'] {
+    color: #fff;
+    background: #2e6974;
+    border-color: #2e6974;
+    outline-color: #194955;
+    box-shadow: inset 0 0 0 2px #fff;
+  }
+  .workspace-designed .management-panel .work-day > small {
+    font-size: 10px;
+  }
+  .workspace-designed .management-panel .work-legend {
+    gap: 8px 14px;
+    margin: 12px 0 0;
+    color: #536a7a;
+    font-size: 11px;
+  }
+  .workspace-designed .management-panel .work-schedule-selection {
+    align-self: start;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #d4e0e7;
+    border-radius: 12px;
+    background: #f7f9fb;
+  }
+  .workspace-designed .management-panel .work-selection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid #d1e0e7;
+    border-radius: 10px;
+    background: #f4f8fa;
+    box-shadow: 0 2px 5px rgb(35 58 76 / 5%);
+  }
+  .workspace-designed .management-panel .work-selection > span {
+    grid-column: 1 / -1;
+    color: #294c60;
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .workspace-designed .management-panel .work-selection > button {
+    padding: 8px;
+    font-size: 13px;
+    white-space: normal;
+    min-height: 44px;
+  }
+  .workspace-designed .management-panel .work-date-info {
+    color: #315c73;
+    background: #eaf2f7;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-panel .work-schedule-help > summary {
+    min-height: 44px;
+    padding: 12px 0;
+    color: #355f78;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .workspace-designed
+    .management-panel
+    :is(.work-schedule-help p, .work-permission, .work-calendar-start) {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .workspace-designed .management-panel .work-calendar-start > select {
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+  .workspace-designed .management-panel .work-calendar-start > small {
+    font-size: 12px;
+  }
+  .workspace-designed .management-panel .booking-requests-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .workspace-designed .management-panel .booking-requests-heading h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    margin: 0;
+  }
+  .workspace-designed .management-panel .booking-requests-heading p {
+    margin: 0;
+    color: #536b7c;
+  }
+  .workspace-designed .management-panel .booking-requests-tools > button {
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .workspace-designed .management-panel .booking-request-sync {
+    display: inline-block;
+    max-width: 100%;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #eef3f7;
+    color: #50697d;
+    font-size: 11px;
+  }
+  .workspace-designed .management-panel .booking-request-sync.is-stale {
+    color: #735820;
+    background: #fff5dc;
+  }
+  .workspace-designed .management-panel .booking-request {
+    min-width: 0;
+    margin-bottom: 12px;
+    padding: 14px;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #cddce6;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgb(35 58 76 / 4%);
+  }
+  .workspace-designed .management-panel .booking-request-contact {
+    align-items: start;
+    gap: 4px 12px;
+  }
+  .workspace-designed .management-panel .booking-request-contact strong {
+    color: #243f52;
+    font-size: 15px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-panel .booking-request-contact a {
+    font-size: 13px;
+    color: #3d617b;
+  }
+  .workspace-designed .management-panel .booking-request-summary p {
+    margin: 8px 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed .management-panel .booking-request > .booking-request-summary {
+    display: block;
+  }
+  .workspace-designed .management-panel .booking-request-schedule {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    color: #3a5b73;
+    font-variant-numeric: tabular-nums;
+  }
+  .workspace-designed .management-panel .booking-request-schedule strong {
+    font-size: 17px;
+    color: #244e65;
+  }
+  .workspace-designed .management-panel .booking-request-comment {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #f5f7fa;
+    color: #4b6274;
+  }
+  .workspace-designed .management-panel .booking-request-status {
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #e8d7af;
+    border-radius: 7px;
+    background: #fff7e7;
+    color: #705629;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .workspace-designed .management-panel [data-request-state='agreed'] .booking-request-status {
+    color: #2e684a;
+    border-color: #c1ddcd;
+    background: #edf7f1;
+  }
+  .workspace-designed .management-panel #booking-requests-panel .booking-request-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .workspace-designed .management-panel #booking-requests-panel .booking-request-actions button {
+    min-height: 44px;
+    padding: 8px;
+    font-size: 13px;
+  }
+  .workspace-designed
+    .management-panel
+    #booking-requests-panel
+    .booking-request-actions
+    .booking-danger {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+  .workspace-designed .management-panel .booking-danger {
+    color: #9a4647;
+    background: #fff;
+    border-color: #e1c5c8;
+  }
+}
+@media screen and (forced-colors: active) {
+  .workspace-designed
+    .management-panel
+    :is(.work-day[aria-pressed='true'], .booking-request-status) {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+  .workspace-designed .management-panel .work-scope-label {
+    color: CanvasText;
+  }
+  .workspace-designed .management-panel .work-day[aria-pressed='true'] {
+    outline-color: Highlight;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .workspace-designed .management-panel .work-selection {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+  }
+  .workspace-designed .management-panel .work-selection > span {
+    grid-column: auto;
+  }
+  .workspace-designed .management-panel .work-schedule-layout {
+    grid-template-columns: minmax(300px, 1.2fr) minmax(250px, 0.8fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  .workspace-designed .management-panel .work-day {
+    min-height: 46px;
+    padding: 4px 1px;
+  }
+  .workspace-designed .management-panel :is(.work-schedule-calendar, .work-schedule-selection) {
+    padding: 10px;
+  }
+  .workspace-designed .management-panel .booking-requests-heading {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace-designed .management-panel .booking-requests-heading p {
+    font-size: 12px;
+  }
+  .workspace-designed .management-panel #booking-requests-panel .booking-requests-tools {
+    display: none;
+  }
+  .workspace-designed .management-panel .booking-request {
+    padding: 12px;
+  }
+  .workspace-designed .management-panel #booking-requests-panel .booking-request-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .workspace-designed .management-panel #booking-requests-panel .booking-request-actions .primary {
+    grid-column: 1 / -1;
+  }
+}

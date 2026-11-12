@@ -1,0 +1,208 @@
+/* Readable directory hierarchy; only the v2 client list, not the calendar/card. */
+@media screen {
+  .workspace-designed.clients-mode > .directory {
+    color: #253c4a;
+    border-color: #c9d7e0;
+  }
+  .workspace-designed.clients-mode .section-heading h1 {
+    color: #203949;
+    font-weight: 700;
+  }
+  .workspace-designed.clients-mode :is(#count, #list-result-count) {
+    color: #526777;
+  }
+  .workspace-designed.clients-mode .search {
+    background: #fff;
+    border: 1px solid #bbcdd9;
+    color: #47677c;
+  }
+  .workspace-designed.clients-mode .search:focus-within {
+    border-color: #397987;
+    box-shadow: 0 0 0 3px rgb(57 121 135 / 12%);
+  }
+  .workspace-designed.clients-mode .search input {
+    color: #253c4a;
+  }
+  .workspace-designed.clients-mode .search input::placeholder {
+    color: #617585;
+    opacity: 1;
+  }
+  .workspace-designed.clients-mode .client-filter {
+    color: #425d70;
+    border-color: #c5d4df;
+    background: #fff;
+    font-weight: 500;
+  }
+  .workspace-designed.clients-mode .client-filter.active {
+    color: #fff;
+    background: #295f6c;
+    border-color: #295f6c;
+    font-weight: 650;
+    box-shadow: 0 2px 4px rgb(28 66 77 / 10%);
+  }
+  .workspace-designed.clients-mode .client-filter.active span {
+    background: rgb(255 255 255 / 18%);
+    color: #fff;
+  }
+  .workspace-designed.clients-mode .sort-switch {
+    background: #e5ecf2;
+    border: 1px solid #d0dce5;
+  }
+  .workspace-designed.clients-mode .sort-switch button {
+    color: #4b6173;
+  }
+  .workspace-designed.clients-mode .sort-switch button.active {
+    color: #244e62;
+    box-shadow: 0 1px 3px rgb(29 58 77 / 13%);
+  }
+  .workspace-designed.clients-mode #patient-list {
+    background: #fff;
+    border-color: #c8d7e1;
+  }
+  .workspace-designed.clients-mode .patient-list-head {
+    background: #eaf0f5;
+    color: #425d71;
+    font-weight: 600;
+  }
+  .workspace-designed.clients-mode .patient-row.client-list-row {
+    background: #fff;
+    border-color: #d9e3eb;
+  }
+  .workspace-designed.clients-mode .patient-row.client-list-row:hover {
+    background: #f2f7fa;
+  }
+  .workspace-designed.clients-mode .patient-row.client-list-row.active {
+    background: #edf5f7;
+    box-shadow: inset 3px 0 #327786;
+  }
+  .workspace-designed.clients-mode .person-cell strong {
+    color: #223c50;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .workspace-designed.clients-mode .avatar {
+    color: #62499e;
+    background: linear-gradient(145deg, #f0ebfc, #e4dcf5);
+    border: 1px solid #d7ccee;
+    font-weight: 700;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='0'] {
+    color: #315f99;
+    background: linear-gradient(145deg, #e8f2ff, #d8e8fb);
+    border-color: #bdd3ef;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='1'] {
+    color: #256e6c;
+    background: linear-gradient(145deg, #e3f6f2, #ccece7);
+    border-color: #afd5ce;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='2'] {
+    color: #a14b52;
+    background: linear-gradient(145deg, #fff0ed, #f7dcd9);
+    border-color: #e8c3c3;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='3'] {
+    color: #87612b;
+    background: linear-gradient(145deg, #fff5de, #f4e7c6);
+    border-color: #e3d3a9;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='4'] {
+    color: #62499e;
+    background: linear-gradient(145deg, #f0ebfc, #e4dcf5);
+    border-color: #d7ccee;
+  }
+  .workspace-designed.clients-mode .avatar[data-client-color='5'] {
+    color: #416d3b;
+    background: linear-gradient(145deg, #eef7e6, #dceccd);
+    border-color: #c4d9b5;
+  }
+  .workspace-designed.clients-mode .client-list-cell {
+    color: #374f60;
+  }
+  .workspace-designed.clients-mode :is(.client-list-cell small, .patient-designation) {
+    color: #526b7c;
+  }
+  .workspace-designed.clients-mode .client-next {
+    color: #2e5380;
+    background: #edf3fc;
+    border: 1px solid #cadbf0;
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .workspace-designed.clients-mode .client-contact-action {
+    --contact-ink: #315f99;
+    --contact-surface: #eaf2fc;
+    --contact-hover: #dce9f9;
+    --contact-border: #c9d9ef;
+    color: var(--contact-ink);
+    border-color: var(--contact-border);
+    border-radius: 12px;
+    background: var(--contact-gloss), var(--contact-surface);
+    box-shadow: var(--contact-shadow);
+  }
+  .workspace-designed.clients-mode .client-contact-action[aria-label='Позвонить клиенту'] {
+    --contact-ink: #24786a;
+    --contact-surface: #e6f4ef;
+    --contact-hover: #d5ece3;
+    --contact-border: #bddfd1;
+  }
+  .workspace-designed.clients-mode .client-contact-action:hover:not(:disabled) {
+    background: var(--contact-gloss), var(--contact-hover);
+    border-color: var(--contact-ink);
+  }
+  .workspace-designed.clients-mode .client-contact-action:active:not(:disabled) {
+    box-shadow: inset 0 1px 3px rgb(34 51 71 / 12%);
+  }
+  .workspace-designed.clients-mode .client-contact-action svg {
+    stroke-width: 1.9;
+  }
+  .workspace-designed.clients-mode .client-contact-action:focus-visible {
+    outline: 2px solid #244e62;
+    outline-offset: 3px;
+  }
+  .workspace-designed.clients-mode .client-contact-action:disabled {
+    color: #637484;
+    border-color: #c5d4df;
+    background: #eaf0f5;
+    box-shadow: none;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .workspace-designed.clients-mode .person-cell > span:last-child > small.client-inline-phone {
+    color: #405b70;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .workspace-designed.clients-mode .client-list-next {
+    color: #506879;
+  }
+}
+@media screen and (forced-colors: active) {
+  .workspace-designed.clients-mode :is(.avatar, .avatar[data-client-color], .client-next, .client-filter.active, .client-contact-action) {
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+    filter: none;
+  }
+  .workspace-designed.clients-mode .client-contact-action:disabled {
+    color: GrayText;
+    border-color: GrayText;
+    background: Canvas;
+  }
+  .workspace-designed.clients-mode .client-contact-action:hover:not(:disabled),
+  .workspace-designed.clients-mode .client-contact-action:active:not(:disabled) {
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+  .workspace-designed.clients-mode .client-contact-action:focus-visible {
+    outline-color: Highlight;
+  }
+  .workspace-designed.clients-mode .client-filter.active {
+    outline: 2px solid Highlight;
+    outline-offset: -3px;
+  }
+}

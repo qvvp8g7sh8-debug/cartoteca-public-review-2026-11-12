@@ -1,0 +1,89 @@
+/* Calm team workspace: color denotes state, not the role or messenger brand. */
+@media screen {
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) {
+    --team-line: #dce5e7;
+    --team-ink: #2e4f59;
+    --team-muted: #6b7e86;
+    color: var(--team-ink);
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) :is(h3, h4) {
+    color: var(--team-ink);
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) .settings-help-trigger {
+    color: #57737d;
+    background: transparent;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) .settings-help-trigger > span {
+    border-color: #cfdde1;
+    background: #f5f8f9;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-member, .invite-member-form) {
+    border: 1px solid var(--team-line);
+    background: #fff;
+    box-shadow: 0 2px 7px rgb(40 69 76 / 3%);
+  }
+  .settings-panel.settings-pages #team-settings .team-avatar {
+    color: #356770;
+    background: #eaf2f3;
+    border: 1px solid #d2e2e5;
+    box-sizing: border-box;
+  }
+  .settings-panel.settings-pages #team-settings :is(.role-badge, .member-count) {
+    color: #5d737c;
+    background: #f0f4f5;
+    border: 1px solid #e0e7e9;
+    box-sizing: border-box;
+  }
+  .settings-panel.settings-pages #team-settings .team-member.is-suspended {
+    background: #f7f8f9;
+    opacity: 1;
+  }
+  .settings-panel.settings-pages #team-settings .team-member.is-suspended .team-avatar {
+    color: #7b8990;
+    background: #edf0f2;
+    border-color: #dbe2e5;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-member small, .form-hint) {
+    color: var(--team-muted);
+  }
+  .settings-panel.settings-pages #team-settings .form-hint.error {
+    color: #b3343b;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-invite-panel, .member-edit-panel) {
+    border-color: var(--team-line);
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > summary {
+    padding: 10px 12px;
+    border: 1px solid var(--team-line);
+    border-radius: 8px;
+    background: #f3f7f8;
+    color: #3e6470;
+    box-sizing: border-box;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form {
+    margin-top: 8px;
+  }
+  .settings-panel.settings-pages #team-settings .member-edit-panel > summary {
+    color: #3e6470;
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #staff-notifications {
+    padding-top: 12px;
+    border-top: 1px solid var(--team-line);
+  }
+  .settings-panel.settings-pages :is(#team-settings, #personal-access) #telegram-staff-heading {
+    font-size: 15px;
+  }
+  .settings-panel.settings-pages :is([data-settings-icon='team-settings'], [data-settings-icon='personal-access']) {
+    --settings-icon-light: #65a4aa;
+    --settings-icon-base: #407d85;
+    --settings-icon-edge: #2e6068;
+  }
+  @media (forced-colors: active) {
+    .settings-panel.settings-pages #team-settings :is(.team-member, .invite-member-form, .team-avatar, .role-badge, .member-count, .team-invite-panel > summary) {
+      color: CanvasText;
+      background: Canvas;
+      border-color: CanvasText;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@media screen {
+  .staff-push-channel {
+    margin-top: 12px;
+  }
+  .staff-notification-channel fieldset {
+    border: 0;
+    padding: 0;
+    margin: 12px 0;
+    min-width: 0;
+  }
+  .staff-notification-channel legend {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .staff-push-events {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 14px;
+  }
+  .staff-push-events label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .staff-push-events input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+  }
+  .staff-push-period {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 380px;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  .staff-push-period select {
+    width: 145px;
+    min-height: 44px;
+  }
+  .staff-push-channel button {
+    min-height: 44px;
+    max-width: 100%;
+    white-space: normal;
+  }
+  @media (max-width: 520px) {
+    .staff-push-events {
+      grid-template-columns: 1fr;
+    }
+  }
+}

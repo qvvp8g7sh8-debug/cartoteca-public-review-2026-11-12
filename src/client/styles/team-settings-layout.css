@@ -1,0 +1,560 @@
+/* Team settings: notification icons, a compact roster and per-person actions. */
+@media screen {
+  .settings-panel.settings-pages #team-settings {
+    display: grid;
+    align-content: start;
+    grid-auto-rows: max-content;
+    gap: 16px;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-own-notifications, .team-roster) {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #d7e3e6;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .settings-panel.settings-pages #team-settings .team-roster {
+    position: relative;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(3, 44px);
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #team-settings .staff-notification-heading {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #team-settings #telegram-staff-heading {
+    margin: 0;
+    font-size: 16px;
+  }
+  .settings-panel.settings-pages #team-settings .staff-notification-account {
+    margin: 4px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--team-muted);
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications .staff-notification-channels {
+    display: contents;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications .staff-notification-details > summary {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-direction: row;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 9px;
+    border-radius: 50%;
+    gap: 0;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications [data-staff-channel='max'] > details > summary {
+    grid-column: 2;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications [data-staff-channel='telegram'] > details > summary {
+    grid-column: 3;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications .staff-push-channel > details > summary {
+    grid-column: 4;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications summary > span:not(.connection-max-mark) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications .staff-notification-body {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications .telegram-settings-result:empty {
+    display: none;
+  }
+  .settings-panel.settings-pages #team-settings #staff-notifications :is(svg, .connection-max-mark) {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+  .settings-panel.settings-pages #team-settings .team-self-rules {
+    margin-top: 7px;
+    max-width: 420px;
+  }
+  .settings-panel.settings-pages #team-settings .team-self-rules > summary {
+    min-height: 28px;
+    font-size: 12px;
+    color: #486b77;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages #team-settings .team-self-rules[open] > div {
+    margin-top: 8px;
+  }
+  .settings-panel.settings-pages #team-settings .team-roster-heading {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-right: 160px;
+    margin-bottom: 10px;
+  }
+  .settings-panel.settings-pages #team-settings .team-roster-heading h3 {
+    margin: 0;
+    font-size: 17px;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel {
+    display: block;
+    border: 0;
+    margin: 0;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > summary {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid #245867;
+    border-radius: 9px;
+    background: #245867;
+    color: #fff;
+    list-style: none;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > summary svg {
+    width: 20px;
+    height: 20px;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > :not(summary) {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel:not([open]) > :not(summary) {
+    display: none;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > summary::-webkit-details-marker {
+    display: none;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel[open] > summary {
+    background: #1c4855;
+  }
+  .settings-panel.settings-pages #team-settings .invite-panel-chevron {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel[open] .invite-panel-chevron {
+    transform: rotate(180deg);
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form {
+    position: absolute;
+    right: 20px;
+    top: 72px;
+    z-index: 30;
+    width: min(420px, calc(100% - 40px));
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 10px 12px;
+    padding: 14px;
+    margin: 0;
+    box-sizing: border-box;
+    max-height: 70vh;
+    overflow: auto;
+    border: 1px solid var(--team-line);
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(29 58 66 / 12%);
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form > * {
+    order: 0;
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-heading {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form .field {
+    margin: 0;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form :is(input, select) {
+    width: 100%;
+    min-height: 44px;
+    padding: 9px;
+    box-sizing: border-box;
+    border: 1px solid var(--team-line);
+    border-radius: 7px;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form :is(.invite-role-hint, .invite-mail-warning) {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .settings-panel.settings-pages #team-settings .invite-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages #team-settings .invite-form-actions button {
+    min-height: 44px;
+    width: auto;
+    margin: 0;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .team-members {
+    display: grid;
+    gap: 0;
+  }
+  .settings-panel.settings-pages #team-settings .team-member {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+    padding: 16px 0;
+    border: 0;
+    border-bottom: 1px solid var(--team-line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages #team-settings .team-member:last-child {
+    border-bottom: 0;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-main {
+    min-width: 0;
+    flex: 1;
+    gap: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-copy {
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-main strong {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-main small {
+    margin-top: 3px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages #team-settings .team-avatar {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border: 0;
+    font-weight: 500;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-channels {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 7px;
+    border: 1px solid #d9e3e6;
+    border-radius: 50%;
+    background: #f2f6f7;
+    box-sizing: border-box;
+    color: #71838a;
+    cursor: default;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel :is(svg, .connection-max-mark) {
+    width: 22px;
+    height: 22px;
+    flex-basis: 22px;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel svg {
+    fill: #83939a;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel .connection-max-mark {
+    background: #e3e8ea;
+    color: #71838a;
+    border: 1px solid #ced8dc;
+    font-size: 8px;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel.is-linked {
+    border-color: #a7cbb9;
+    background: #edf7ef;
+    color: #32644c;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel.is-linked svg {
+    fill: #3c8562;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel.is-linked .connection-max-mark {
+    background: #dcefe2;
+    color: #32734f;
+    border-color: #b3d7bd;
+  }
+  .settings-panel.settings-pages #team-settings .team-access-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 136px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: #e9f4ef;
+    color: #347760;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+  .settings-panel.settings-pages #team-settings .is-suspended .team-access-pill {
+    background: #f2eeee;
+    color: #8b6262;
+  }
+  .settings-panel.settings-pages #team-settings .member-access-toggle:hover {
+    background: #dcefe5;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-menu {
+    position: relative;
+    margin: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-menu > summary,
+  .settings-panel.settings-pages #team-settings .team-more-placeholder {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #356777;
+    list-style: none;
+    font-size: 25px;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-menu > summary:hover {
+    background: #f0f5f6;
+  }
+  .settings-panel.settings-pages #team-settings .team-member-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+  .settings-panel.settings-pages #team-settings .team-member:has(.team-member-menu[open]) {
+    z-index: 20;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-body {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    z-index: 21;
+    width: 296px;
+    max-width: calc(100vw - 48px);
+    max-height: 65vh;
+    overflow: auto;
+    padding: 6px;
+    border: 1px solid #d5e1e4;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(29 58 66 / 12%);
+    box-sizing: border-box;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action {
+    margin: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action > summary {
+    min-height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #385f6e;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action > summary:hover {
+    background: #f3f7f8;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action > :not(summary) {
+    margin: 5px 6px 10px;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action .field {
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .member-menu-action :is(input[type='text'], input[name='specialty'], select) {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px;
+    border: 1px solid var(--team-line);
+    border-radius: 7px;
+    box-sizing: border-box;
+  }
+  .settings-panel.settings-pages #team-settings .member-specialty-form {
+    display: grid;
+    gap: 8px;
+  }
+  .settings-panel.settings-pages #team-settings .member-specialty-form button {
+    justify-self: start;
+    min-height: 40px;
+  }
+  .settings-panel.settings-pages #team-settings .team-channel-hint {
+    margin: 8px 0 0;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #team-settings #staff-booking-rules {
+    margin: 0;
+  }
+  .settings-panel.settings-pages #team-settings #staff-booking-rules-message:empty,
+  .settings-panel.settings-pages #team-settings #team-message:empty {
+    display: none;
+  }
+  .settings-panel.settings-pages #team-settings .staff-booking-rule-row {
+    padding: 8px;
+    border-radius: 7px;
+    gap: 8px;
+  }
+  .settings-panel.settings-pages #team-settings .staff-booking-rule-person strong {
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #team-settings .staff-booking-rule-person small {
+    font-size: 11px;
+  }
+  .settings-panel.settings-pages #team-settings .member-rule-hint {
+    margin-top: 7px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-member-menu > summary, .team-channel, .team-access-pill):focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+  @media (max-width: 800px) {
+    .settings-panel.settings-pages #team-settings :is(.team-own-notifications, .team-roster) {
+      padding: 14px;
+    }
+    .settings-panel.settings-pages #team-settings .team-member {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 14px 0;
+    }
+    .settings-panel.settings-pages #team-settings .team-member-actions {
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .settings-panel.settings-pages #team-settings .team-access-pill {
+      min-width: 122px;
+      font-size: 12px;
+    }
+    .settings-panel.settings-pages #team-settings .team-invite-panel > summary {
+      right: 14px;
+      top: 14px;
+    }
+    .settings-panel.settings-pages #team-settings .invite-member-form {
+      position: static;
+      width: 100%;
+      max-height: none;
+      margin-bottom: 8px;
+      box-shadow: none;
+      background: #f8fafb;
+    }
+  }
+  @media (max-width: 520px) {
+    .settings-panel.settings-pages #team-settings .invite-member-form {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 12px;
+    }
+    .settings-panel.settings-pages #team-settings .invite-form-actions {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+    .settings-panel.settings-pages #team-settings .invite-form-actions button {
+      padding: 9px;
+    }
+  }
+  @media (max-width: 460px) {
+    .settings-panel.settings-pages #team-settings #staff-notifications {
+      grid-template-columns: minmax(0, 1fr) repeat(3, 38px);
+      gap: 5px;
+    }
+    .settings-panel.settings-pages #team-settings #staff-notifications .staff-notification-details > summary {
+      width: 38px;
+      height: 38px;
+      min-height: 38px;
+      padding: 7px;
+    }
+    .settings-panel.settings-pages #team-settings .staff-notification-account {
+      font-size: 12px;
+    }
+    .settings-panel.settings-pages #team-settings .team-member-channels {
+      gap: 4px;
+    }
+    .settings-panel.settings-pages #team-settings .team-channel {
+      width: 34px;
+      height: 34px;
+      min-height: 34px;
+      padding: 6px;
+    }
+    .settings-panel.settings-pages #team-settings .team-access-pill {
+      min-width: 116px;
+      padding: 8px;
+      font-size: 11px;
+    }
+  }
+  @media (max-width: 360px) {
+    .settings-panel.settings-pages #team-settings .invite-form-actions .primary {
+      white-space: normal;
+    }
+    .settings-panel.settings-pages #team-settings .team-channel {
+      width: 30px;
+      height: 30px;
+      min-height: 30px;
+      padding: 4px;
+    }
+    .settings-panel.settings-pages #team-settings .team-access-pill {
+      min-width: 106px;
+      padding: 7px;
+      font-size: 10px;
+    }
+    .settings-panel.settings-pages #team-settings .team-member-menu > summary {
+      width: 32px;
+    }
+    .settings-panel.settings-pages #team-settings .team-member-actions {
+      gap: 6px;
+    }
+  }
+  @media (forced-colors: active) {
+    .settings-panel.settings-pages #team-settings :is(.team-access-pill, .team-channel, .member-menu-body, .team-invite-panel > summary) {
+      color: CanvasText;
+      background: Canvas;
+      border: 1px solid CanvasText;
+      box-shadow: none;
+    }
+    .settings-panel.settings-pages #team-settings .team-channel svg {
+      fill: CanvasText;
+    }
+  }
+}

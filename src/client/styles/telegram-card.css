@@ -1,0 +1,267 @@
+.telegram-edit-appointment {
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+.telegram-share-invitation {
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+.telegram-connected-status {
+  color: #367062;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: default;
+  white-space: nowrap;
+}
+.telegram-share-link {
+  margin-top: 12px;
+}
+.telegram-share-link summary {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--blue);
+  min-height: 36px;
+  line-height: 1.5;
+}
+.telegram-share-link input {
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+}
+.telegram-strip-tools {
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+.telegram-share-actions {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  align-items: stretch;
+}
+.telegram-share-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  min-width: 0;
+  padding: 10px 8px;
+}
+.telegram-share-actions button:disabled {
+  cursor: not-allowed;
+}
+.telegram-share-recipient {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--light);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.telegram-share-recipient span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.telegram-share-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+.telegram-share-message {
+  margin-top: 14px;
+}
+.telegram-share-message summary {
+  cursor: pointer;
+  color: var(--blue);
+  font-size: 14px;
+  min-height: 36px;
+  line-height: 1.5;
+}
+.telegram-share-message textarea {
+  font-size: 16px;
+  min-height: 140px;
+  overflow-wrap: anywhere;
+}
+#telegram-share-dialog {
+  max-width: 560px;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+.telegram-share-qr,.telegram-share-help {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.telegram-share-qr summary,.telegram-share-help summary {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--blue);
+  min-height: 36px;
+  line-height: 1.5;
+}
+.telegram-share-qr img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  background: white;
+}
+.telegram-share-help a {
+  display: inline-block;
+  max-width: 100%;
+}
+@media(max-width:700px) {
+  #telegram-share-dialog .dialog-heading {
+    margin-bottom: 12px;
+  }
+  #telegram-share-dialog .telegram-share-actions {
+    gap: 7px;
+    font-size: 14px;
+  }
+  #telegram-share-dialog .dialog-heading h2 {
+    font-size: 20px;
+  }
+  .telegram-share-message textarea {
+    min-height: 150px;
+  }
+  .telegram-share-invitation {
+    font-size: 12px;
+  }
+  #telegram-share-dialog .telegram-share-secondary button {
+    font-size: 14px;
+    min-height: 44px;
+  }
+}
+.telegram-service-menu summary:focus-visible {
+  outline: 3px solid #4985ad;
+  outline-offset: 3px;
+}
+.telegram-strip-date select {
+  max-width: 100%;
+  min-width: 0;
+  padding: 5px 24px 5px 7px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  font-size: 13px;
+}
+.telegram-empty-appointment {
+  font-size: 14px;
+  color: var(--muted);
+}
+.telegram-service-menu>div {
+  max-width: min(320px,calc(100vw - 48px));
+  box-sizing: border-box;
+}
+.telegram-service-menu .field {
+  margin: 10px 0;
+}
+.telegram-service-menu button {
+  max-width: 100%;
+}
+.profile-save-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+.profile-save-row p {
+  margin: 0;
+}
+@media(max-width:700px) {
+  .telegram-patient-panel:has(.telegram-compact-strip) {
+    padding: 7px 9px;
+  }
+  .telegram-compact-strip,.telegram-strip-content {
+    gap: 7px;
+  }
+  .telegram-strip-date strong {
+    font-size: 12px;
+  }
+  .telegram-strip-date small {
+    font-size: 11px;
+  }
+  .telegram-strip-content>.primary {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+  .telegram-strip-date select {
+    width: 100%;
+    font-size: 12px;
+  }
+  .telegram-compact-strip .telegram-service-menu summary {
+    width: 32px;
+    height: 36px;
+  }
+  .profile-save-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media(max-width:700px) {
+  .telegram-compact-strip {
+    flex-wrap: wrap;
+  }
+  .telegram-strip-content {
+    flex-basis: 100%;
+  }
+  .telegram-strip-tools {
+    max-width: 100%;
+    gap: 7px;
+  }
+  .telegram-edit-appointment {
+    font-size: 12px;
+  }
+}
+.unified-appointments.telegram-patient-panel {
+  padding: 8px 12px;
+  margin: 10px 0 14px;
+  background: #fff;
+}
+.unified-appointments .telegram-compact-strip {
+  min-height: 40px;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 8px;
+  padding: 4px 0;
+}
+.unified-appointment-row+.unified-appointment-row {
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+  padding-top: 12px;
+}
+.unified-appointments .telegram-strip-content {
+  display: block;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.appointment-info-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.appointment-info-heading strong {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.appointment-status {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  cursor: default;
+}
+.appointment-status.is-confirmed {
+  color: #367062;
+}
+.appointment-service-line {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "constraint-recurring",
+    "category": "appointment-constraints",
+    "title": "Записывай Анну Иванову каждый вторник в 14:00",
+    "text": "Записывай Анну Иванову каждый вторник в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Повторяющиеся записи не представлены текущей схемой.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-multiple-clients",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову и Сергея Иванова завтра в 14:00",
+    "text": "Запиши Анну Иванову и Сергея Иванова завтра в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Два клиента требуют двух отдельных подтверждённых операций.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-multiple-dates",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову 16 и 17 октября 2026 в 14:00",
+    "text": "Запиши Анну Иванову 16 и 17 октября 2026 в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не потерять вторую дату и не создать первую скрытно.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-copy-previous",
+    "category": "appointment-constraints",
+    "title": "Сделай Анне Ивановой такую же запись, как в прошлый раз",
+    "text": "Сделай Анне Ивановой такую же запись, как в прошлый раз",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет чтения предыдущего визита; клиенту нужны явные поля.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "constraint-use-selected-client",
+    "category": "appointment-constraints",
+    "title": "Запиши выбранного в карточке клиента завтра в 14:00",
+    "text": "Запиши выбранного в карточке клиента завтра в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Выбранная карточка не входит в контекст dispatcher; нужно имя или телефон.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "constraint-delete-all",
+    "category": "appointment-constraints",
+    "title": "Удали все мои записи на завтра",
+    "text": "Удали все мои записи на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Массовое удаление и любые мутации существующих приёмов запрещены.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  }
+]

@@ -1,0 +1,244 @@
+/* Visit editor only; fields, procedure selection and photo controls keep their behavior. */
+@media screen {
+  #editor.editor-designed[data-editor-kind='visit'] {
+    border-color: #d1dfe2;
+    background: #fff;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .dialog-heading {
+    padding: 14px 18px;
+    background: #f5f9f9;
+    border-bottom-color: #e2ebed;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] #form-content {
+    padding: 16px 18px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-form-grid > .field {
+    grid-column: 1 / -1;
+    color: #3c5864;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    .visit-form-grid
+    > .field:has(:is([name='date'], [name='time'], [name='duration'])) {
+    grid-column: auto;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .field input,
+      .field select,
+      .field textarea,
+      .visit-photos-batch select,
+      .upload-preview-caption select
+    ):not([type='hidden']) {
+    border: 1px solid #cedde2;
+    border-radius: 10px;
+    background: #fff;
+    color: #294754;
+    box-shadow: inset 0 1px 2px rgb(35 65 80 / 5%);
+    font-family: inherit;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .field input,
+      .field select,
+      .field textarea,
+      .visit-photos-batch select,
+      .upload-preview-caption select
+    ):focus-visible {
+    border-color: #80aab2;
+    outline: 2px solid #80aab259;
+    outline-offset: 1px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-procedures {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-procedure-row {
+    border-color: #dae5e8;
+    background: #f5f9f9;
+    box-shadow: inset 0 1px 0 #fff;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-procedure-row strong {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-procedures > .form-hint {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-photo-section.visit-photos {
+    margin-top: 16px;
+    border-top-color: #e2ebed;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-photos-heading {
+    padding-top: 12px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-photos-empty {
+    min-height: 56px;
+    background: #f5f9f9;
+    border-color: #d5e2e5;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .dialog-actions button,
+      .visit-procedure-remove,
+      .visit-photos .upload-label,
+      .upload-preview-remove,
+      .dialog-heading .icon-btn
+    ) {
+    --visit-button-top: #fff;
+    --visit-button-bottom: #eaf1f4;
+    --visit-button-ink: #31505f;
+    --visit-button-border: #ccdbe2;
+    border: 1px solid var(--visit-button-border);
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--visit-button-top), var(--visit-button-bottom));
+    color: var(--visit-button-ink);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 75%),
+      inset 0 -2px 2px rgb(45 76 91 / 5%),
+      0 3px 6px rgb(30 61 75 / 10%);
+    transition: box-shadow 140ms ease;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] #save-editor {
+    --visit-button-top: #3f7880;
+    --visit-button-bottom: #255760;
+    --visit-button-ink: #fff;
+    --visit-button-border: #32656d;
+    font-weight: 600;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .dialog-actions button,
+      .visit-procedure-remove,
+      .visit-photos .upload-label,
+      .upload-preview-remove,
+      .dialog-heading .icon-btn
+    ):hover:not(:disabled):not([aria-disabled='true']) {
+    background: linear-gradient(180deg, var(--visit-button-top), var(--visit-button-bottom));
+    border-color: var(--visit-button-border);
+    color: var(--visit-button-ink);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 75%),
+      0 5px 9px rgb(30 61 75 / 14%);
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .dialog-actions button,
+      .visit-procedure-remove,
+      .visit-photos .upload-label,
+      .upload-preview-remove,
+      .dialog-heading .icon-btn
+    ):active:not(:disabled):not([aria-disabled='true']) {
+    box-shadow: inset 0 2px 4px rgb(30 61 75 / 12%),
+      0 1px 2px rgb(30 61 75 / 6%);
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .dialog-actions button,
+      .visit-procedure-remove,
+      .visit-photos .upload-label,
+      .upload-preview-remove,
+      .dialog-heading .icon-btn
+    ):is(:disabled, [aria-disabled='true']) {
+    box-shadow: none;
+    opacity: 0.6;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .dialog-actions button,
+      .visit-procedure-remove,
+      .visit-photos .upload-label,
+      .upload-preview-remove,
+      .dialog-heading .icon-btn
+    ):focus-visible,
+  #editor.editor-designed[data-editor-kind='visit'] .visit-photos .upload-label:focus-within {
+    outline: 2px solid #43858f;
+    outline-offset: 3px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .dialog-actions {
+    background: #f9fbfb;
+    border-top-color: #e2ebed;
+    padding: 12px 18px;
+  }
+}
+@media screen and (min-width: 701px) {
+  #editor.editor-designed[data-editor-kind='visit'] {
+    width: min(600px, calc(100% - 32px));
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #editor.editor-designed[data-editor-kind='visit'] .dialog-heading {
+    padding: max(10px, env(safe-area-inset-top)) 14px 10px;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] #form-content {
+    padding: 14px;
+    scrollbar-gutter: auto;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .visit-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    .visit-form-grid
+    > .field:has([name='duration']) {
+    grid-column: 1 / -1;
+  }
+  #editor.editor-designed[data-editor-kind='visit'] .dialog-actions {
+    padding: 10px 14px max(12px, env(safe-area-inset-bottom));
+  }
+}
+@media screen and (max-width: 360px) {
+  #editor.editor-designed[data-editor-kind='visit']
+    .visit-form-grid
+    > .field:has(:is([name='date'], [name='time'])) {
+    grid-column: 1 / -1;
+  }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  #editor.editor-designed[data-editor-kind='visit'] :is(#save-editor, button, .upload-label) {
+    transition: none;
+  }
+}
+@media screen and (forced-colors: active) {
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      #save-editor,
+      button,
+      input,
+      select,
+      textarea,
+      .upload-label,
+      .visit-procedure-row,
+      .visit-photos-empty
+    ) {
+    --visit-button-top: ButtonFace;
+    --visit-button-bottom: ButtonFace;
+    --visit-button-ink: ButtonText;
+    --visit-button-border: ButtonText;
+    box-shadow: none;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(#save-editor, button, .upload-label):is(:hover, :active) {
+    box-shadow: none;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(
+      .field input,
+      .field select,
+      .field textarea,
+      .visit-photos-batch select,
+      .upload-preview-caption select
+    ):not([type='hidden']) {
+    background: Field;
+    color: FieldText;
+    border-color: ButtonText;
+  }
+  #editor.editor-designed[data-editor-kind='visit']
+    :is(#save-editor, button, input, select, textarea, .upload-label):focus-visible,
+  #editor.editor-designed[data-editor-kind='visit'] .visit-photos .upload-label:focus-within {
+    outline-color: Highlight;
+  }
+}

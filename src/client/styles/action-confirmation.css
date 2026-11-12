@@ -1,0 +1,246 @@
+.action-confirmation {
+  width: min(440px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: auto;
+  border: 1px solid #cbdde7;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 16px 48px #16384926;
+}
+.action-confirmation::backdrop {
+  background: #16384955;
+}
+.action-confirmation h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.action-confirmation p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.action-confirmation-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+}
+.action-confirmation-buttons button {
+  min-height: 44px;
+  min-width: 0;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.confirmation-prefer-cancel [data-confirm-accept] {
+  color: #875047;
+  border-color: #e3d7d3;
+}
+@media (min-width: 701px) {
+  .confirmation-prefer-cancel [data-confirm-cancel] {
+    order: 1;
+  }
+}
+.action-confirmation button:focus-visible {
+  outline: 2px solid #315f77;
+  outline-offset: 3px;
+}
+.settings-panel .settings-label-row > label.checkbox-hit-area,
+.patient-video-consent .video-consent-label-row > label.checkbox-hit-area {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.online-booking-fields {
+  align-items: start;
+}
+.checkbox-hit-area input {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+.booking-mode-description {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.invite-member-form .invite-role-hint {
+  grid-column: 1 / -1;
+  order: 2;
+  margin: 2px 0 0;
+}
+.organization-time-zone-form {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.organization-time-zone-form select {
+  contain: paint;
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+.organization-time-zone-form label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.section-heading #count {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.appointment-delete-menu summary {
+  min-height: 44px;
+  padding: 12px;
+  cursor: pointer;
+}
+.appointment-delete-menu {
+  min-width: 0;
+}
+.appointment-delivery-note {
+  margin: 4px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.video-consent-label-row {
+  align-items: center;
+}
+#video-consent-label {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 0;
+}
+.patient-more {
+  position: relative;
+}
+.patient-more:not([open]) > button {
+  display: none;
+}
+.patient-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 8px;
+  flex-wrap: wrap;
+}
+.patient-card-meta > .patient-card-designation {
+  margin: 0;
+  flex: 1;
+  min-width: 120px;
+}
+.patient-card-meta .patient-video-consent {
+  display: inline-flex;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+.patient-card-meta .video-consent-main {
+  flex: none;
+}
+.patient-card-meta #video-consent-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+details.patient-connections {
+  padding: 0;
+}
+details.patient-connections > summary {
+  padding: 12px 14px;
+  min-height: 44px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+details.patient-connections > .patient-connections-grid {
+  padding: 0 12px 12px;
+}
+.client-notification-settings-form {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.client-notification-settings-form .settings-label-row {
+  align-items: center;
+}
+.patient-more > summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+}
+.patient-more[open] > button {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 5px);
+  z-index: 5;
+  min-width: 190px;
+  box-shadow: 0 8px 24px #182c3920;
+  background: white;
+}
+@media (max-width: 760px) {
+  .patient-header > div:first-child {
+    width: 100%;
+  }
+  .card-mode .patient-actions {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .card-mode .patient-actions #new-patient-appointment {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+  .card-mode .patient-actions #edit-patient {
+    min-height: 44px;
+  }
+  .patient-actions #print-status {
+    grid-column: 1 / -1;
+  }
+  .video-consent-label-row .settings-help-trigger {
+    margin-top: 0;
+  }
+}
+@media (max-width: 700px) {
+  .action-confirmation {
+    padding: 20px;
+  }
+  .action-confirmation-buttons {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .action-confirmation-buttons .primary {
+    order: -1;
+  }
+}

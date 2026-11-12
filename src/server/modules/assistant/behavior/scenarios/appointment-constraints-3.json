@@ -1,0 +1,295 @@
+[
+  {
+    "id": "constraint-service-ambiguous",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову завтра в 14:00 на чистку",
+    "text": "Запиши Анну Иванову завтра в 14:00 на чистку",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16",
+        "time": "14:00",
+        "serviceQuery": "чистку"
+      },
+      "status": "needs_clarification",
+      "outcome": "Предложить доступные услуги для явного выбора; похожие названия не сводятся в случайный ID.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "prepareAppointment",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "В каталоге несколько услуг с названием чистка."
+    ]
+  },
+  {
+    "id": "constraint-service-bundle",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову завтра в 14:00 на консультацию и массаж",
+    "text": "Запиши Анну Иванову завтра в 14:00 на консультацию и массаж",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16",
+        "time": "14:00",
+        "serviceQuery": "консультацию и массаж"
+      },
+      "status": "manual",
+      "outcome": "Один serviceQuery не задаёт несколько ID: не разбирать строку на скрытый набор. Выбрать одну услугу или явный вариант без каталога; состав нескольких услуг уточнить в обычной форме.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "prepareAppointment",
+      "manual"
+    ]
+  },
+  {
+    "id": "constraint-duration-service",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову завтра в 14:00 на массаж на 15 минут",
+    "text": "Запиши Анну Иванову завтра в 14:00 на массаж на 15 минут",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анну Иванову",
+        "date": "2026-10-16",
+        "time": "14:00",
+        "serviceQuery": "массаж",
+        "duration": 15
+      },
+      "status": "manual",
+      "outcome": "Явная длительность15минут сохраняется как выбор пользователя и видна в сводке вместе с услугой. Занятость проверяется на выбранные15минут; окончательное сохранение вручную.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "prepareAppointment",
+      "manual"
+    ],
+    "preconditions": [
+      "Выбранная вручную услуга имеет другую длительность."
+    ]
+  },
+  {
+    "id": "constraint-stale-slot",
+    "category": "appointment-constraints",
+    "title": "Подготовь запись Анны Ивановой на завтра в 14:00",
+    "text": "Подготовь запись Анны Ивановой на завтра в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "prepareAppointment",
+        "query": "Анны Ивановой",
+        "date": "2026-10-16",
+        "time": "14:00"
+      },
+      "status": "manual",
+      "outcome": "Права, график и занятость перепроверяются при выборе и перед открытием формы; после конкурентного изменения обычное сохранение проверяет их снова.",
+      "limitations": [
+        "Сводка и подготовка формы не сохраняют и не резервируют запись. Финальное сохранение — вручную со штатной серверной проверкой.",
+        "Начальный intent запускает ограниченный серверный диалог. Предложения и подготовка формы не резервируют время; финальное сохранение вручную."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "prepareAppointment",
+      "manual"
+    ],
+    "preconditions": [
+      "Другой пользователь занял14:00 после открытия формы."
+    ]
+  },
+  {
+    "id": "constraint-no-auto-save",
+    "category": "appointment-constraints",
+    "title": "Запиши Анну Иванову завтра в 14:00 и сразу сохрани",
+    "text": "Запиши Анну Иванову завтра в 14:00 и сразу сохрани",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нельзя выполнить требование автоматического сохранения; нет такого action.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-pretend-success",
+    "category": "appointment-constraints",
+    "title": "Скажи, что Анна Иванова уже записана на завтра в 14:00",
+    "text": "Скажи, что Анна Иванова уже записана на завтра в 14:00",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не утверждать сохранение, которого не было.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-cancel-existing",
+    "category": "appointment-constraints",
+    "title": "Отмени завтрашнюю запись Анны Ивановой",
+    "text": "Отмени завтрашнюю запись Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Отмена существующей записи отсутствует.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-reschedule",
+    "category": "appointment-constraints",
+    "title": "Перенеси Анну Иванову с завтра на пятницу",
+    "text": "Перенеси Анну Иванову с завтра на пятницу",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Перенос не является подготовкой новой записи; не создавать дубликат.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-change-duration",
+    "category": "appointment-constraints",
+    "title": "Увеличь длительность записи Анны Ивановой до часа",
+    "text": "Увеличь длительность записи Анны Ивановой до часа",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Изменение существующей записи не поддерживается.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-change-staff",
+    "category": "appointment-constraints",
+    "title": "Перепиши Анну Иванову к другому специалисту",
+    "text": "Перепиши Анну Иванову к другому специалисту",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет действия замены специалиста у сохранённой записи.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "constraint-complete-visit",
+    "category": "appointment-constraints",
+    "title": "Отметь приём Анны Ивановой завершённым",
+    "text": "Отметь приём Анны Ивановой завершённым",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Статус существующего приёма не изменяется.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "appointment-constraints",
+      "help",
+      "unsupported"
+    ]
+  }
+]

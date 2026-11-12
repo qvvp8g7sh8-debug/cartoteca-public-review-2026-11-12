@@ -1,0 +1,421 @@
+[
+  {
+    "id": "name-accusative-female",
+    "category": "clients-morphology",
+    "title": "Найди Анну Иванову",
+    "text": "Найди Анну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Иванову"
+      },
+      "status": "supported",
+      "outcome": "Сохранять произнесённое имя; локальные падежные кандидаты сверять только с доступным справочником.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ],
+    "preconditions": [
+      "Одна доступная Анна Иванова; нет отдельного точного совпадения «Анну Иванову»."
+    ]
+  },
+  {
+    "id": "name-genitive-female",
+    "category": "clients-morphology",
+    "title": "Покажи карточку Анны Ивановой",
+    "text": "Покажи карточку Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clientCard",
+        "query": "Анны Ивановой"
+      },
+      "status": "supported",
+      "outcome": "Падеж сверяется с доступными именами. Одно совпадение открывает карточку, неоднозначность — список для ручного выбора.",
+      "limitations": [
+        "Ивановой не является самостоятельно подтверждённой личностью; скрытых карточек не искать."
+      ]
+    },
+    "tags": [
+      "clients-morphology",
+      "clientCard",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-dative-female",
+    "category": "clients-morphology",
+    "title": "Перейди к Анне Ивановой в клиентах",
+    "text": "Перейди к Анне Ивановой в клиентах",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анне Ивановой"
+      },
+      "status": "supported",
+      "outcome": "Сохранять произнесённое имя; локальные падежные кандидаты сверять только с доступным справочником.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-instrumental-female",
+    "category": "clients-morphology",
+    "title": "Найди карточку с Анной Ивановой",
+    "text": "Найди карточку с Анной Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анной Ивановой"
+      },
+      "status": "manual",
+      "outcome": "Падеж не является новым клиентом; открыть поиск.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-prepositional-female",
+    "category": "clients-morphology",
+    "title": "Найди информацию о клиенте Анне Ивановой",
+    "text": "Найди информацию о клиенте Анне Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анне Ивановой"
+      },
+      "status": "manual",
+      "outcome": "Только поиск; не читать сведения вслух.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-genitive-male",
+    "category": "clients-morphology",
+    "title": "Найди карточку Сергея Иванова",
+    "text": "Найди карточку Сергея Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергея Иванова"
+      },
+      "status": "manual",
+      "outcome": "Рассматривать формы Сергей Иванов как кандидата, не менять исходный query.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-dative-male",
+    "category": "clients-morphology",
+    "title": "Перейди к Сергею Иванову в клиентах",
+    "text": "Перейди к Сергею Иванову в клиентах",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергею Иванову"
+      },
+      "status": "supported",
+      "outcome": "Сохранять произнесённое имя; локальные падежные кандидаты сверять только с доступным справочником.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-instrumental-male",
+    "category": "clients-morphology",
+    "title": "Найди клиента с именем Сергеем Ивановым",
+    "text": "Найди клиента с именем Сергеем Ивановым",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергеем Ивановым"
+      },
+      "status": "manual",
+      "outcome": "Сочетание имени и фамилии сверить локально.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-prepositional-male",
+    "category": "clients-morphology",
+    "title": "Найди карточку о Сергее Иванове",
+    "text": "Найди карточку о Сергее Иванове",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергее Иванове"
+      },
+      "status": "manual",
+      "outcome": "Не удалять последнее е у произвольных фамилий без словарного совпадения.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-patronymic-full",
+    "category": "clients-morphology",
+    "title": "Найди Анну Сергеевну Иванову",
+    "text": "Найди Анну Сергеевну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Сергеевну Иванову"
+      },
+      "status": "supported",
+      "outcome": "Сопоставлять все три компонента, не игнорировать отчество.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-male-patronymic",
+    "category": "clients-morphology",
+    "title": "Найди Сергея Петровича Иванова",
+    "text": "Найди Сергея Петровича Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сергея Петровича Иванова"
+      },
+      "status": "supported",
+      "outcome": "Родительные формы имени и отчества не дают права угадать карточку.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-adjective-surname",
+    "category": "clients-morphology",
+    "title": "Найди Марию Белую",
+    "text": "Найди Марию Белую",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Марию Белую"
+      },
+      "status": "supported",
+      "outcome": "Белая/Белую — допустимое семейство только при подтверждённом справочником имени.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-adjective-male",
+    "category": "clients-morphology",
+    "title": "Найди Павла Белого",
+    "text": "Найди Павла Белого",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Павла Белого"
+      },
+      "status": "supported",
+      "outcome": "Сопоставлять с Павел Белый или Белой только при единственном допустимом кандидате.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-ski-female",
+    "category": "clients-morphology",
+    "title": "Найди Елену Смоленскую",
+    "text": "Найди Елену Смоленскую",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Елену Смоленскую"
+      },
+      "status": "supported",
+      "outcome": "Сохранить женскую фамилию Смоленская, не заменить мужской Смоленский.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-ski-male",
+    "category": "clients-morphology",
+    "title": "Найди Дмитрия Смоленского",
+    "text": "Найди Дмитрия Смоленского",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Дмитрия Смоленского"
+      },
+      "status": "supported",
+      "outcome": "Фамильная форма -ского является кандидатом к -ский.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-in-female",
+    "category": "clients-morphology",
+    "title": "Найди Ольгу Ильину",
+    "text": "Найди Ольгу Ильину",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Ольгу Ильину"
+      },
+      "status": "supported",
+      "outcome": "Ильина/Ильину не смешивать с мужским Ильин при неполном имени.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-double-both-parts",
+    "category": "clients-morphology",
+    "title": "Найди Анну Салтыкову-Щедрину",
+    "text": "Найди Анну Салтыкову-Щедрину",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Салтыкову-Щедрину"
+      },
+      "status": "supported",
+      "outcome": "Сохранять обе части составной фамилии и границу дефиса.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-double-partial",
+    "category": "clients-morphology",
+    "title": "Найди Анну Салтыкову",
+    "text": "Найди Анну Салтыкову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Салтыкову"
+      },
+      "status": "manual",
+      "outcome": "Неполная составная фамилия не должна автоматически выбрать Салтыкову-Щедрину.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  }
+]

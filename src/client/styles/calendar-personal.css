@@ -1,0 +1,46 @@
+/* Personal reservations keep the calendar's existing scale and a distinct quiet tone. */
+:is(.calendar-event, .agenda-event).calendar-personal {
+  background: #f1edf7;
+  border-color: #b4a0ca;
+  color: #4d3968;
+}
+:is(.calendar-event, .agenda-event).calendar-personal:hover {
+  background: #e8e0f2;
+}
+:is(.calendar-event, .agenda-event).calendar-personal:focus-visible {
+  outline: 2px solid #755694;
+  outline-offset: 2px;
+}
+.calendar-entity-board
+  .calendar-personal
+  :is(
+    .calendar-event-time,
+    .calendar-event-duration,
+    .calendar-event-context,
+    .calendar-event-service
+  ) {
+  color: #5f4b77;
+}
+.calendar-personal strong {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.calendar-personal :is(.calendar-event-service, .calendar-event-context) {
+  font-weight: 400;
+}
+@media (forced-colors: active) {
+  :is(.calendar-event, .agenda-event).calendar-personal {
+    border-color: ButtonText;
+    color: ButtonText;
+  }
+  .calendar-entity-board
+    .calendar-personal
+    :is(
+      .calendar-event-time,
+      .calendar-event-duration,
+      .calendar-event-context,
+      .calendar-event-service
+    ) {
+    color: ButtonText;
+  }
+}

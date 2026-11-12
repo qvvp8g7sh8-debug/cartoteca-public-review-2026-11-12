@@ -1,0 +1,237 @@
+/* Appointment editing only: no changes to creation, other editors or booking rules. */
+@media screen {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form) {
+    border-color: #d1dfe2;
+    background: #fff;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .dialog-heading {
+    padding: 14px 18px;
+    background: #f5f9f9;
+    border-bottom-color: #e2ebed;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    #form-content {
+    padding: 16px 18px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form) .form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .form-grid
+    > .field {
+    grid-column: 1 / -1;
+    color: #3c5864;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field:has(:is([name='date'], [name='time'], [name='duration'])) {
+    grid-column: auto;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field
+    :is(input, select, textarea):not([type='hidden']) {
+    border: 1px solid #cedde2;
+    border-radius: 10px;
+    background: #fff;
+    color: #294754;
+    box-shadow: inset 0 1px 2px rgb(35 65 80 / 5%);
+    font-family: inherit;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field
+    :is(input, select, textarea):focus-visible {
+    border-color: #80aab2;
+    outline: 2px solid #80aab259;
+    outline-offset: 1px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-procedures {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-procedure-row {
+    border-color: #dae5e8;
+    background: #f5f9f9;
+    box-shadow: inset 0 1px 0 #fff;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-procedure-row
+    strong {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-service-picker
+    > summary {
+    justify-content: flex-start;
+    font-size: 14px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-service-picker
+    > summary::before {
+    content: '+';
+    font-size: 20px;
+    line-height: 1;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-service-picker
+    > summary::after {
+    margin-left: auto;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .appointment-service-menu {
+    border: 1px solid #cedde2;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgb(30 61 75 / 13%);
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(
+      .dialog-actions button,
+      .appointment-patient-add,
+      .appointment-procedure-remove,
+      .appointment-service-picker > summary,
+      .dialog-heading .icon-btn
+    ) {
+    --edit-button-top: #fff;
+    --edit-button-bottom: #eaf1f4;
+    --edit-button-ink: #31505f;
+    --edit-button-border: #ccdbe2;
+    border: 1px solid var(--edit-button-border);
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--edit-button-top), var(--edit-button-bottom));
+    color: var(--edit-button-ink);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 75%),
+      inset 0 -2px 2px rgb(45 76 91 / 5%),
+      0 3px 6px rgb(30 61 75 / 10%);
+    transition: box-shadow 140ms ease;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form) #save-editor {
+    --edit-button-top: #3f7880;
+    --edit-button-bottom: #255760;
+    --edit-button-ink: #fff;
+    --edit-button-border: #32656d;
+    font-weight: 600;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(
+      .dialog-actions button,
+      .appointment-patient-add,
+      .appointment-procedure-remove,
+      .appointment-service-picker > summary,
+      .dialog-heading .icon-btn
+    ):hover:not(:disabled) {
+    background: linear-gradient(180deg, var(--edit-button-top), var(--edit-button-bottom));
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 75%),
+      0 5px 9px rgb(30 61 75 / 14%);
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(
+      .dialog-actions button,
+      .appointment-patient-add,
+      .appointment-procedure-remove,
+      .appointment-service-picker > summary,
+      .dialog-heading .icon-btn
+    ):active:not(:disabled) {
+    box-shadow: inset 0 2px 4px rgb(30 61 75 / 12%),
+      0 1px 2px rgb(30 61 75 / 6%);
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(.dialog-actions button, .appointment-patient-add, .appointment-procedure-remove):disabled {
+    box-shadow: none;
+    opacity: 0.6;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(
+      .dialog-actions button,
+      .appointment-patient-add,
+      .appointment-procedure-remove,
+      .appointment-service-picker > summary,
+      .dialog-heading .icon-btn
+    ):focus-visible {
+    outline: 2px solid #43858f;
+    outline-offset: 3px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .dialog-actions {
+    background: #f9fbfb;
+    border-top-color: #e2ebed;
+    padding: 12px 18px;
+  }
+}
+@media screen and (min-width: 701px) {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form) {
+    width: min(600px, calc(100% - 32px));
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .dialog-heading {
+    padding: max(10px, env(safe-area-inset-top)) 14px 10px;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    #form-content {
+    padding: 14px;
+    scrollbar-gutter: auto;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form) .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field:has([name='duration']) {
+    grid-column: 1 / -1;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .dialog-actions {
+    padding: 10px 14px max(12px, env(safe-area-inset-bottom));
+  }
+}
+@media screen and (max-width: 360px) {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field:has(:is([name='date'], [name='time'])) {
+    grid-column: 1 / -1;
+  }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(#save-editor, button, summary) {
+    transition: none;
+  }
+}
+@media screen and (forced-colors: active) {
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(
+      .field input,
+      .field select,
+      .field textarea,
+      .appointment-procedure-row,
+      .appointment-service-menu,
+      #save-editor,
+      button,
+      summary
+    ) {
+    --edit-button-top: ButtonFace;
+    --edit-button-bottom: ButtonFace;
+    --edit-button-ink: ButtonText;
+    --edit-button-border: ButtonText;
+    box-shadow: none;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(#save-editor, button, summary):is(:hover, :active) {
+    box-shadow: none;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    .field
+    :is(input, select, textarea):not([type='hidden']) {
+    background: Field;
+    color: FieldText;
+    border-color: ButtonText;
+  }
+  #editor.editor-designed[data-editor-kind='appointment']:has(.appointment-edit-form)
+    :is(#save-editor, .field input, .field select, .field textarea, button, summary):focus-visible {
+    outline-color: Highlight;
+  }
+}

@@ -1,0 +1,2147 @@
+{
+  "state": "src/client/core/state.js",
+  "styles": [
+    "src/client/styles/public-booking.css",
+    "src/client/styles/online-booking.css",
+    "src/client/styles/legacy-shell.css",
+    "src/client/styles/calendar-base.css",
+    "src/client/styles/services-base.css",
+    "src/client/styles/clients-layout.css",
+    "src/client/styles/calendar-grid.css",
+    "src/client/styles/calendar-mobile.css",
+    "src/client/styles/services-layout.css",
+    "src/client/styles/team-layout.css",
+    "src/client/styles/printing-layout.css",
+    "src/client/styles/telegram-base.css",
+    "src/client/styles/compact-forms.css",
+    "src/client/styles/telegram-card.css",
+    "src/client/styles/services.css",
+    "src/client/styles/workspace.css",
+    "src/client/styles/settings.css",
+    "src/client/styles/telegram-settings.css",
+    "src/client/styles/appointment-patient-picker.css",
+    "src/client/styles/calendar-status.css",
+    "src/client/styles/work-schedules.css",
+    "src/client/styles/appointment-procedures.css",
+    "src/client/styles/management.css",
+    "src/client/styles/booking-inbox.css",
+    "src/client/styles/booking-time-picker.css",
+    "src/client/styles/calendar-gaps.css",
+    "src/client/styles/support-thread.css",
+    "src/client/styles/settings-compact.css",
+    "src/client/styles/settings-help.css",
+    "src/client/styles/booking-health.css",
+    "src/client/styles/max-connections.css",
+    "src/client/styles/action-confirmation.css",
+    "src/client/styles/interface-theme.css",
+    "src/client/styles/client-contact-actions.css",
+    "src/client/styles/settings-pages.css",
+    "src/client/styles/settings-icons.css",
+    "src/client/styles/client-workspace.css",
+    "src/client/styles/client-directory-contrast.css",
+    "src/client/styles/client-card-design.css",
+    "src/client/styles/client-card-header.css",
+    "src/client/styles/patient-mark.css",
+    "src/client/styles/management-design.css",
+    "src/client/styles/management-details-design.css",
+    "src/client/styles/mobile-navigation-design.css",
+    "src/client/styles/settings-details-design.css",
+    "src/client/styles/editor-design.css",
+    "src/client/styles/visit-photos.css",
+    "src/client/styles/photo-gallery.css",
+    "src/client/styles/staff-push.css",
+    "src/client/styles/staff-notifications.css",
+    "src/client/styles/workspace-settings-design.css",
+    "src/client/styles/staff-booking-rules.css",
+    "src/client/styles/team-settings-design.css",
+    "src/client/styles/calendar-columns.css",
+    "src/client/styles/dialog-interactions.css",
+    "src/client/styles/calendar-load.css",
+    "src/client/styles/calendar-mobile-composition.css",
+    "src/client/styles/appointment-time.css",
+    "src/client/styles/team-settings-layout.css",
+    "src/client/styles/staff-channel-panels.css",
+    "src/client/styles/appointment-actions.css",
+    "src/client/styles/appointment-editor-design.css",
+    "src/client/styles/visit-editor-design.css",
+    "src/client/styles/client-card-calm.css",
+    "src/client/styles/services-calm.css",
+    "src/client/styles/improvements.css",
+    "src/client/styles/buttons-calm.css",
+    "src/client/styles/desktop-shell.css",
+    "src/client/styles/desktop-directory.css",
+    "src/client/styles/desktop-calendar.css",
+    "src/client/styles/desktop-card.css",
+    "src/client/styles/desktop-management.css",
+    "src/client/styles/desktop-settings.css",
+    "src/client/styles/desktop-workspace.css",
+    "src/client/styles/desktop-booking.css",
+    "src/client/styles/desktop-card-header.css",
+    "src/client/styles/desktop-editors.css",
+    "src/client/styles/phone-landscape-shell.css",
+    "src/client/styles/phone-landscape-calendar.css",
+    "src/client/styles/phone-landscape-clients.css",
+    "src/client/styles/phone-landscape-management.css",
+    "src/client/styles/phone-landscape-settings.css",
+    "src/client/styles/phone-landscape-forms.css",
+    "src/client/styles/phone-landscape-dialogs.css",
+    "src/client/styles/time-picker.css",
+    "src/client/styles/calendar-personal.css",
+    "src/client/styles/calendar-creation.css",
+    "src/client/styles/integrations.css",
+    "src/client/styles/paid-services.css",
+    "src/client/styles/voice-assistant.css"
+  ],
+  "bookingSources": [
+    "src/client/public/phone.js",
+    "src/client/public/flow.js",
+    "src/client/public/receipt.js",
+    "src/client/public/view.js",
+    "src/client/public/page.js",
+    "src/client/public/reply.js"
+  ],
+  "factories": [
+    {
+      "path": "src/client/modules/early-access.js",
+      "factory": "createEarlyAccess",
+      "dependencies": [
+        "$",
+        "plural",
+        "readBackground"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/shared/improvement-status.cjs",
+      "factory": "createImprovementStatuses",
+      "dependencies": [],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/improvements.js",
+      "factory": "createImprovements",
+      "dependencies": [
+        "$",
+        "esc",
+        "improvementStatusLabel",
+        "markSettingsSaved",
+        "readBackground",
+        "request",
+        "settingsSectionHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/shared/work-schedule.cjs",
+      "factory": "createAppointmentScheduleMath",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/appointment-availability.js",
+      "factory": "createAppointmentAvailability",
+      "dependencies": [
+        "$",
+        "accountId",
+        "appointmentOverlapRules",
+        "appointmentRoomId",
+        "isActiveAppointment",
+        "isoDate",
+        "parseDate",
+        "readBackground",
+        "roomOptions",
+        "roomsFor",
+        "setAppointmentTimeHint"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-load-navigation.js",
+      "factory": "createCalendarLoadNavigation",
+      "dependencies": [
+        "cabinetTodayDate",
+        "setCalendarMode",
+        "setView"
+      ]
+    },
+    {
+      "path": "src/client/core/dialog-interactions.js",
+      "factory": "createDialogInteractions",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/core/phone-landscape.js",
+      "factory": "createPhoneLandscape",
+      "dependencies": [
+        "positionCalendarEvents",
+        "updateCurrentTime"
+      ]
+    },
+    {
+      "path": "src/client/modules/time-picker-sound.js",
+      "factory": "createTimePickerSound",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/time-picker-wheel.js",
+      "factory": "createTimePickerWheel",
+      "dependencies": [
+        "playTimePickerTick",
+        "unlockTimePickerSound"
+      ]
+    },
+    {
+      "path": "src/client/modules/time-picker-view.js",
+      "factory": "createTimePickerView",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/time-picker-source.js",
+      "factory": "createTimePickerSources",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/time-picker-fields.js",
+      "factory": "createTimePickerFields",
+      "dependencies": [
+        "$",
+        "mountTimePickerField",
+        "timePickerFieldHtml",
+        "timePickerSource"
+      ]
+    },
+    {
+      "path": "src/client/modules/time-picker.js",
+      "factory": "createTimePicker",
+      "dependencies": [
+        "$",
+        "timePickerSource"
+      ]
+    },
+    {
+      "path": "src/client/modules/staff-channel-panels.js",
+      "factory": "createStaffChannelPanels",
+      "dependencies": [
+        "esc",
+        "staffChannelIconHtml"
+      ]
+    },
+    {
+      "path": "src/client/modules/staff-push.js",
+      "factory": "createStaffPushUI",
+      "dependencies": [
+        "$",
+        "confirmAction",
+        "ensurePatient",
+        "markSettingsSaved",
+        "openAppointmentActions",
+        "openBookingRequestTarget",
+        "openManagement",
+        "renderStaffChannelPanel",
+        "request",
+        "setView",
+        "settingsSectionVisible",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/settings-pages.js",
+      "factory": "createSettingsPages",
+      "dependencies": [
+        "$",
+        "syncVisibleTelegram"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/profile-overview.js",
+      "factory": "createProfileOverview",
+      "dependencies": [
+        "$",
+        "accountRole",
+        "confirmAction",
+        "esc",
+        "initials",
+        "markSettingsSaved"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/client-contact.js",
+      "factory": "createClientContact",
+      "dependencies": [
+        "clientRecords",
+        "esc",
+        "normalizePatientPhoneText"
+      ]
+    },
+    {
+      "path": "src/client/modules/client-service-summary.js",
+      "factory": "createClientServiceSummary",
+      "dependencies": [
+        "$"
+      ]
+    },
+    {
+      "path": "src/client/modules/organization-time-zone.js",
+      "factory": "createOrganizationTimeZoneSettings",
+      "dependencies": [
+        "$",
+        "applyCabinetTimeZone",
+        "confirmAction",
+        "markSettingsSaved",
+        "request",
+        "timeZoneSelect"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/settings-guard.js",
+      "factory": "createSettingsGuard",
+      "dependencies": [
+        "$",
+        "confirmAction"
+      ]
+    },
+    {
+      "path": "src/client/modules/action-confirmation.js",
+      "factory": "createActionConfirmation",
+      "dependencies": [
+        "$"
+      ]
+    },
+    {
+      "path": "src/client/modules/max-invitation.js",
+      "factory": "createMaxInvitation",
+      "dependencies": [
+        "$",
+        "esc",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/max-client.js",
+      "factory": "createMaxClient",
+      "dependencies": [
+        "$",
+        "dismissMaxInvitation",
+        "ensurePatient",
+        "esc",
+        "patientView",
+        "request",
+        "showMaxInvitation",
+        "toast",
+        "updateClientServiceSummary"
+      ]
+    },
+    {
+      "path": "src/client/modules/booking-health.js",
+      "factory": "createBookingHealth",
+      "dependencies": [
+        "$",
+        "canManageTeam",
+        "esc",
+        "readBackground",
+        "syncBookingPublication"
+      ]
+    },
+    {
+      "path": "src/client/modules/settings-help.js",
+      "factory": "createSettingsHelp",
+      "dependencies": [
+        "$",
+        "esc"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-gaps.js",
+      "factory": "createCalendarGaps",
+      "dependencies": [
+        "$",
+        "appointmentStart",
+        "cabinetClock",
+        "calendarColumnEvents",
+        "calendarColumns",
+        "calendarEvents",
+        "calendarWorkingRanges",
+        "parseDate",
+        "timeLabel"
+      ]
+    },
+    {
+      "path": "src/client/modules/booking-inbox.js",
+      "factory": "createBookingInbox",
+      "dependencies": [
+        "$",
+        "bookingRequestsVisible",
+        "readBackground",
+        "refreshBookingRequests"
+      ]
+    },
+    {
+      "path": "src/client/modules/booking-request-list.js",
+      "factory": "createBookingRequestList",
+      "dependencies": [
+        "readBackground"
+      ]
+    },
+    {
+      "path": "src/client/modules/management.js",
+      "factory": "createManagement",
+      "dependencies": [
+        "$",
+        "bookingRequestsPanelHtml",
+        "configureServiceView",
+        "loadWorkSchedules",
+        "mountBookingRequests",
+        "renderBookingInbox",
+        "servicesHtml",
+        "setView",
+        "workScheduleSettingsHtml"
+      ]
+    },
+    {
+      "path": "src/client/modules/staff-notification-actions.js",
+      "factory": "createStaffNotificationActions",
+      "dependencies": [
+        "confirmAction",
+        "request"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/staff-notifications.js",
+      "factory": "createStaffNotifications",
+      "dependencies": [
+        "$",
+        "canManageTeam",
+        "changeStaffNotification",
+        "esc",
+        "markSettingsSaved",
+        "mountStaffPush",
+        "readBackground",
+        "renderStaffChannelPanel",
+        "settingsHelpHtml",
+        "settingsSectionVisible",
+        "syncStaffPush"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/booking-time.js",
+      "factory": "createBookingTime",
+      "dependencies": [
+        "esc",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/modules/booking-publication.js",
+      "factory": "createBookingPublication",
+      "dependencies": [
+        "$",
+        "confirmAction",
+        "esc",
+        "refreshBookingHealth",
+        "request",
+        "settingsHelpHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/booking-request-view.js",
+      "factory": "createBookingRequestView",
+      "dependencies": [
+        "esc",
+        "formatDate",
+        "formatMinutes"
+      ]
+    },
+    {
+      "path": "src/client/modules/booking-requests.js",
+      "factory": "createBookingRequests",
+      "dependencies": [
+        "$",
+        "bookingRequestsHtml",
+        "expireBookingRequestEditors",
+        "invalidateCalendarRead",
+        "invalidateDirectory",
+        "openBookingTime",
+        "readBackground",
+        "readBookingRequestWindow",
+        "reconcileBookingRequests",
+        "refreshBookingInbox",
+        "renderBookingInbox",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/modules/online-booking-settings.js",
+      "factory": "createOnlineBookingSettings",
+      "dependencies": [
+        "$",
+        "esc",
+        "markSettingsSaved",
+        "mountBookingPublication",
+        "refreshBookingHealth",
+        "renderBookingHealth",
+        "request",
+        "settingsHelpHtml",
+        "settingsSectionHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/client-notification-settings.js",
+      "factory": "createClientNotificationSettings",
+      "dependencies": [
+        "$",
+        "confirmAction",
+        "markSettingsSaved",
+        "request",
+        "settingsHelpHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/appointment-procedures.js",
+      "factory": "createAppointmentProcedures",
+      "dependencies": [
+        "$",
+        "canEditServices",
+        "durationOptions",
+        "esc",
+        "formatMinutes",
+        "formatPrice",
+        "openServiceForm",
+        "refreshAppointmentRooms",
+        "refreshAppointmentSchedule",
+        "serviceCategory",
+        "serviceSnapshot",
+        "servicesForStaff",
+        "suspendAppointmentEditor",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/work-schedule-view.js",
+      "factory": "createWorkScheduleView",
+      "dependencies": [
+        "accountRole",
+        "cabinetTimeZoneLabel",
+        "esc",
+        "formatDate",
+        "monthTitle"
+      ]
+    },
+    {
+      "path": "src/client/modules/work-schedules.js",
+      "factory": "createWorkSchedules",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole",
+        "cabinetToday",
+        "calendarRange",
+        "esc",
+        "isoDate",
+        "mountTimePickerFields",
+        "openManagement",
+        "openWorkScheduleEditor",
+        "parseDate",
+        "readBackground",
+        "request",
+        "setView",
+        "toast",
+        "workDayLabel",
+        "workScheduleMonthHtml"
+      ]
+    },
+    {
+      "path": "src/client/modules/work-schedule-editor.js",
+      "factory": "createWorkScheduleEditor",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole",
+        "appointmentScheduleHint",
+        "appointmentScheduleWarning",
+        "cabinetTimeZoneLabel",
+        "closeEditor",
+        "confirmAction",
+        "esc",
+        "formatDate",
+        "isoDate",
+        "loadCalendarSchedule",
+        "loadWorkSchedules",
+        "mountAppointmentTimePicker",
+        "openDialog",
+        "parseDate",
+        "readBackground",
+        "refreshBookingHealth",
+        "request",
+        "scheduleEditorContext",
+        "setAppointmentTimeHint",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/form-validation.js",
+      "factory": "createFormValidation",
+      "dependencies": [
+        "hasPatientIdentity"
+      ]
+    },
+    {
+      "path": "src/client/core/read-scheduler.js",
+      "factory": "createReadScheduler",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/core/background-refresh.js",
+      "factory": "createBackgroundRefresh",
+      "dependencies": [
+        "$",
+        "applyAssistantScope",
+        "bookingHealthDeadline",
+        "bookingHealthInterval",
+        "bookingInboxDeadline",
+        "bookingInboxInterval",
+        "canManageTeam",
+        "earlyAccessVisible",
+        "flushCalendarRedraw",
+        "flushClientList",
+        "flushDirectoryReads",
+        "improvementsVisible",
+        "loadCalendarRecords",
+        "loadCalendarSchedule",
+        "loadEarlyAccess",
+        "loadImprovements",
+        "loadRoomAvailability",
+        "refreshBookingHealth",
+        "refreshBookingInbox",
+        "refreshCabinetTimeZone",
+        "refreshTeamInvitations",
+        "request",
+        "resetAssistant",
+        "syncVisibleTelegram",
+        "updateCurrentTime"
+      ]
+    },
+    {
+      "path": "src/client/modules/save-recovery.js",
+      "factory": "createSaveRecovery",
+      "dependencies": [
+        "$",
+        "cabinetSaveStatus",
+        "closeEditor",
+        "openDialog",
+        "recoverCabinetSave",
+        "renderSaveRecovery",
+        "restoreAppointmentEditor",
+        "setView",
+        "toast",
+        "updatePhotoSaveButton"
+      ]
+    },
+    {
+      "path": "src/shared/appointment-status.cjs",
+      "factory": "createAppointmentStatuses",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/appointment-outcomes.js",
+      "factory": "createAppointmentOutcomes",
+      "dependencies": [
+        "$",
+        "appointmentStatusLabel",
+        "cabinetClock",
+        "cabinetToday",
+        "canEditRecord",
+        "closeEditor",
+        "confirmAction",
+        "ensurePatient",
+        "esc",
+        "formatDate",
+        "formatMinutes",
+        "isActiveAppointment",
+        "openAppointmentForm",
+        "openDialog",
+        "rollback",
+        "save",
+        "setView",
+        "timeLabel",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/shared/time-zone.cjs",
+      "factory": "createZonedClock",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/cabinet-time.js",
+      "factory": "createCabinetTime",
+      "dependencies": [
+        "invalidateCalendarRead",
+        "invalidateDirectory",
+        "isoDate",
+        "parseDate",
+        "renderList",
+        "request",
+        "setView",
+        "zonedClock"
+      ]
+    },
+    {
+      "path": "src/shared/patient-names.cjs",
+      "factory": "createPatientNames",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/patient-phone.js",
+      "factory": "createPatientPhone",
+      "dependencies": [
+        "$",
+        "normalizePatientPhoneText"
+      ]
+    },
+    {
+      "path": "src/client/modules/patient-fields.js",
+      "factory": "createPatientFields",
+      "dependencies": [
+        "esc",
+        "patientFullName",
+        "patientNameParts"
+      ]
+    },
+    {
+      "path": "src/client/core/client-directory.js",
+      "factory": "createClientDirectory",
+      "dependencies": [
+        "$",
+        "cabinetToday",
+        "clientRecords",
+        "patientMatchesSearch",
+        "renderList",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/core/cabinet-queries.js",
+      "factory": "createCabinetQueries",
+      "dependencies": [
+        "$",
+        "isoDate",
+        "readBackground",
+        "rememberLoadedPatient",
+        "request",
+        "setView",
+        "toast",
+        "updateCurrentTime",
+        "weekStart"
+      ]
+    },
+    {
+      "path": "src/client/core/patient-view.js",
+      "factory": "createPatientView",
+      "dependencies": [
+        "ensurePatient",
+        "patient",
+        "renderDetail",
+        "request",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/core/cabinet-store.js",
+      "factory": "createCabinetStore",
+      "dependencies": [
+        "invalidateCalendarRead",
+        "invalidateDirectory",
+        "invalidatePatientRead",
+        "openSaveRecovery",
+        "patientNameParts",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/core/session.js",
+      "factory": "createSession",
+      "dependencies": [
+        "cancelReadTasks",
+        "isPatientList",
+        "legacyData",
+        "resetAssistant",
+        "save",
+        "scheduleRead",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/core/session-startup.js",
+      "factory": "createSessionStartup",
+      "dependencies": [
+        "$",
+        "applyAssistantScope",
+        "applyCabinetTimeZone",
+        "applyServiceGroups",
+        "canManageTeam",
+        "cancelReadTasks",
+        "initializeDirectory",
+        "legacyData",
+        "loadCalendarRecords",
+        "loadWorkspace",
+        "migrateLegacy",
+        "openSaveRecovery",
+        "openStaffPushTarget",
+        "rememberCabinet",
+        "request",
+        "resetAssistant",
+        "rollback",
+        "scheduleAssistantLoad",
+        "scheduleSettingsLoad",
+        "setView",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/printing.js",
+      "factory": "createPrinting",
+      "dependencies": [
+        "$",
+        "buildPrintCard",
+        "formatDate",
+        "formatMinutes",
+        "patient",
+        "photoSource",
+        "printElement",
+        "printField",
+        "printablePatient",
+        "roomName",
+        "waitPrintImage"
+      ]
+    },
+    {
+      "path": "src/client/modules/clients.js",
+      "factory": "createClients",
+      "dependencies": [
+        "$",
+        "cabinetToday",
+        "cabinetTodayDate",
+        "canEditPatient",
+        "clientContactActionsHtml",
+        "clientRecords",
+        "countVisits",
+        "directoryView",
+        "esc",
+        "formatDate",
+        "formatPhone",
+        "initials",
+        "isActiveAppointment",
+        "isoDate",
+        "openDialog",
+        "patientDesignationHtml",
+        "patientFieldsHtml",
+        "patientFullName",
+        "patientMatchesSearch",
+        "patientNameParts",
+        "plural",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/core/navigation.js",
+      "factory": "createNavigation",
+      "dependencies": [
+        "$",
+        "calendarHtml",
+        "canEditServices",
+        "checkAppVersion",
+        "clientRecords",
+        "configureServiceView",
+        "confirmSettingsLeave",
+        "ensurePatientView",
+        "ensureSettings",
+        "invalidatePrint",
+        "loadAccountProfile",
+        "loadCalendarRecords",
+        "loadCalendarSchedule",
+        "loadEarlyAccess",
+        "loadOnlineBookingSettings",
+        "loadRoomAvailability",
+        "loadTeamAccess",
+        "loadTelegramSettings",
+        "loadWorkspace",
+        "managementHtml",
+        "mountAssistant",
+        "mountIntegrations",
+        "mountManagement",
+        "mountSettingsPages",
+        "positionCalendarEvents",
+        "refreshBookingHealth",
+        "refreshBookingInbox",
+        "renderBookingHealth",
+        "renderBookingInbox",
+        "renderDetail",
+        "renderList",
+        "settingsHtml",
+        "updateCurrentTime"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-columns.js",
+      "factory": "createCalendarColumns",
+      "dependencies": [
+        "accountId",
+        "accountRole",
+        "calendarEvents",
+        "calendarScheduleMembers",
+        "esc",
+        "isoDate",
+        "personalCalendarDayEvent",
+        "roomName",
+        "setView",
+        "timeLabel"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-time-grid.js",
+      "factory": "createCalendarTimeGrid",
+      "dependencies": [
+        "accountId",
+        "cabinetClock",
+        "calendarAppointmentAppearance",
+        "calendarColumnEvents",
+        "calendarColumns",
+        "calendarStaffName",
+        "esc",
+        "layoutAppointments",
+        "parseDate",
+        "personalCalendarCardHtml",
+        "roomName",
+        "scheduleDayKind",
+        "scheduleDayLabel",
+        "scheduleSlotStyle",
+        "timeLabel"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-week-scroll.js",
+      "factory": "createCalendarWeekScroll",
+      "dependencies": []
+    },
+    {
+      "path": "src/shared/calendar-load.cjs",
+      "factory": "createCalendarLoadMath",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/calendar-load-data.js",
+      "factory": "createCalendarLoadData",
+      "dependencies": [
+        "accountId",
+        "accountRole",
+        "calendarLoadDates",
+        "calendarLoadDay",
+        "calendarLoadSchedule",
+        "calendarRecordsReady",
+        "calendarScheduleMembers",
+        "isoDate"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-load-view.js",
+      "factory": "createCalendarLoadView",
+      "dependencies": [
+        "cabinetTimeZoneLabel",
+        "calendarControlsHtml",
+        "calendarLoadModel",
+        "esc",
+        "formatDate",
+        "monthCalendarHtml",
+        "parseDate",
+        "plural",
+        "setView"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar.js",
+      "factory": "createCalendar",
+      "dependencies": [
+        "$",
+        "appointmentConfirmationStatus",
+        "appointmentStart",
+        "bindCalendarWeekScroll",
+        "cabinetClock",
+        "cabinetTimeZoneLabel",
+        "cabinetToday",
+        "calendarClientPhone",
+        "calendarControlsHtml",
+        "calendarEventPeople",
+        "calendarEvents",
+        "calendarHiddenUntil",
+        "calendarLoadButtonHtml",
+        "calendarLoadDates",
+        "calendarLoadHtml",
+        "calendarOverviewHtml",
+        "calendarSelectionHtml",
+        "calendarTimeGridHtml",
+        "calendarWorkScheduleHtml",
+        "esc",
+        "formatDate",
+        "isoDate",
+        "monthCalendarHtml",
+        "monthTitle",
+        "normalizeCalendarSelection",
+        "personalCalendarAgendaHtml",
+        "personalCalendarDayEvent",
+        "plural",
+        "renderCalendarGaps",
+        "roomName",
+        "scheduleDayKind",
+        "scheduleDayLabel",
+        "timeLabel",
+        "weekStart"
+      ]
+    },
+    {
+      "path": "src/client/modules/service-catalog.js",
+      "factory": "createServiceCatalog",
+      "dependencies": [
+        "$",
+        "accountId",
+        "canManageTeam",
+        "durationMinutes",
+        "esc",
+        "formatPrice",
+        "serviceCategory"
+      ]
+    },
+    {
+      "path": "src/client/modules/services.js",
+      "factory": "createServices",
+      "dependencies": [
+        "$",
+        "canDelete",
+        "canEditServices",
+        "durationMinutes",
+        "esc",
+        "formatMinutes",
+        "formatPrice",
+        "plural",
+        "save",
+        "selectServiceStaff",
+        "serviceCategory",
+        "serviceGroupControlHtml",
+        "serviceStaffHtml",
+        "serviceStaffId",
+        "servicesForStaff"
+      ]
+    },
+    {
+      "path": "src/client/modules/service-groups.js",
+      "factory": "createServiceGroupControls",
+      "dependencies": [
+        "$",
+        "canEditServices",
+        "categoryOptions",
+        "configureServiceView",
+        "confirmAction",
+        "request",
+        "setView",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/service-events.js",
+      "factory": "createServiceEvents",
+      "dependencies": [
+        "$",
+        "clearServiceSelection",
+        "configureServiceView",
+        "durationMinutes",
+        "openAppointmentForm",
+        "openServiceForm",
+        "removeServiceSelection",
+        "renderServiceResults",
+        "rollback",
+        "saveServices",
+        "selectedServices",
+        "serviceSnapshot",
+        "serviceView",
+        "setView",
+        "toast",
+        "toggleServiceSelection"
+      ]
+    },
+    {
+      "path": "src/client/modules/profile.js",
+      "factory": "createProfile",
+      "dependencies": [
+        "$",
+        "accountRole",
+        "canManageTeam",
+        "esc",
+        "loadAccountProfile",
+        "loadTeamAccess",
+        "mountOrganizationTimeZone",
+        "profileOverviewHtml",
+        "readBackground",
+        "request",
+        "settingsHelpHtml",
+        "settingsSectionHtml",
+        "syncProfileOverview",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/staff-channel-icons.js",
+      "factory": "createStaffChannelIcons",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/staff-booking-rules.js",
+      "factory": "createStaffBookingRules",
+      "dependencies": [
+        "$",
+        "accountId",
+        "canManageTeam",
+        "confirmAction",
+        "esc",
+        "markSettingsSaved",
+        "request",
+        "settingsHelpHtml",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/workspace-view.js",
+      "factory": "createWorkspaceView",
+      "dependencies": [
+        "$",
+        "canManageTeam",
+        "esc",
+        "settingsHelpHtml",
+        "settingsSectionHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/workspace-data.js",
+      "factory": "createWorkspaceData",
+      "dependencies": [
+        "renderStaffBookingRules",
+        "renderWorkspaceError",
+        "renderWorkspaceSettings",
+        "request",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/workspace.js",
+      "factory": "createWorkspaceSettings",
+      "dependencies": [
+        "$",
+        "accountId",
+        "expandWorkspaceRoom",
+        "saveWorkspaceSettings",
+        "syncWorkspaceRoomLayout",
+        "syncWorkspaceRoomSummary",
+        "workspaceFormValues",
+        "workspaceRoomEditorHtml",
+        "workspaceSettingsMessage"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/rooms.js",
+      "factory": "createRooms",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole",
+        "calendarLoadDates",
+        "changeCalendarGrouping",
+        "esc",
+        "filterScheduleCalendarEvents",
+        "isoDate",
+        "loadWorkspace",
+        "patientNameParts",
+        "readBackground",
+        "refreshAppointmentRooms",
+        "setView",
+        "toast",
+        "weekStart"
+      ]
+    },
+    {
+      "path": "src/client/modules/team-member-view.js",
+      "factory": "createTeamMemberView",
+      "dependencies": [
+        "canManageMembers",
+        "esc",
+        "initials",
+        "staffChannelIconHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/paid-services-view.js",
+      "factory": "createPaidServicesView",
+      "dependencies": [
+        "accountRole",
+        "esc"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/paid-services.js",
+      "factory": "createPaidServices",
+      "dependencies": [
+        "$",
+        "accountRole",
+        "applyAssistantScope",
+        "confirmAction",
+        "paidPaymentMessage",
+        "paidPriceText",
+        "paidServicesContentHtml",
+        "request",
+        "settingsSectionHtml",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/team.js",
+      "factory": "createTeam",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole",
+        "canManageTeam",
+        "esc",
+        "improvementSettingsHtml",
+        "integrationsSettingsHtml",
+        "memberHtml",
+        "mountStaffNotifications",
+        "onlineBookingSettingsHtml",
+        "paidServicesSettingsHtml",
+        "profileSettingsHtml",
+        "readBackground",
+        "renderStaffBookingRules",
+        "renderTeamAccess",
+        "request",
+        "settingsHelpHtml",
+        "settingsSectionHtml",
+        "supportSettingsHtml",
+        "telegramSettingsHtml",
+        "workspaceSettingsHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/support-requests.js",
+      "factory": "createSupportRequests",
+      "dependencies": [
+        "$",
+        "esc",
+        "settingsHelpHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/support.js",
+      "factory": "createSupport",
+      "dependencies": [
+        "$",
+        "clearSupportReceipt",
+        "hasUnsavedSettings",
+        "refreshSupportReceipt",
+        "renderSupportReceipt",
+        "resetSupportRequestScope",
+        "sendSupportRequest",
+        "setSupportMessage",
+        "settingsSectionHtml",
+        "supportRequestFormHtml",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/team-events.js",
+      "factory": "createTeamEvents",
+      "dependencies": [
+        "$",
+        "confirmAction",
+        "loadTeamAccess",
+        "renderTeamAccess",
+        "request",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/manual-confirmation.js",
+      "factory": "createManualConfirmation",
+      "dependencies": [
+        "$",
+        "appointmentConfirmationControls",
+        "appointmentConfirmationStatus",
+        "appointmentStatusLabel",
+        "cabinetToday",
+        "canEditRecord",
+        "confirmAction",
+        "esc",
+        "formatDate",
+        "invalidateCalendarRead",
+        "isActiveAppointment",
+        "loadPatientTelegram",
+        "mountAppointmentConfirmation",
+        "refreshAppointmentActions",
+        "request",
+        "setView",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/appointment-panel.js",
+      "factory": "createAppointmentPanel",
+      "dependencies": [
+        "appointmentConfirmationControls",
+        "appointmentConfirmationStatus",
+        "appointmentOutcomeControls",
+        "cabinetToday",
+        "canEditRecord",
+        "esc",
+        "formatDate",
+        "formatMinutes",
+        "isActiveAppointment",
+        "isClosedAppointment"
+      ]
+    },
+    {
+      "path": "src/client/modules/telegram-sharing.js",
+      "factory": "createTelegramSharing",
+      "dependencies": [
+        "$",
+        "esc",
+        "normalizePatientPhoneText",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/telegram-settings.js",
+      "factory": "createTelegramSettings",
+      "dependencies": [
+        "$",
+        "canManageTeam",
+        "confirmAction",
+        "esc",
+        "loadTelegramSettings",
+        "markSettingsSaved",
+        "mountClientNotificationSettings",
+        "mountStaffNotifications",
+        "readBackground",
+        "request",
+        "settingsHelpHtml",
+        "settingsSectionHtml",
+        "settingsSectionVisible",
+        "toast"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/telegram.js",
+      "factory": "createTelegram",
+      "dependencies": [
+        "$",
+        "appointmentPanelHtml",
+        "canEditRecord",
+        "canManageTeam",
+        "completeAppointment",
+        "esc",
+        "isActiveAppointment",
+        "loadPatientMax",
+        "loadPatientTelegram",
+        "loadTelegramSettings",
+        "openAppointmentForm",
+        "readPatientTelegramStatus",
+        "rememberCabinet",
+        "rememberPatient",
+        "request",
+        "shareTelegramInvitation",
+        "syncStaffNotifications",
+        "toast",
+        "updateClientServiceSummary",
+        "viewPatient"
+      ]
+    },
+    {
+      "path": "src/client/modules/card.js",
+      "factory": "createCard",
+      "dependencies": [
+        "$",
+        "appointmentPanelHtml",
+        "buildPrintCard",
+        "canEditPatient",
+        "canEditRecord",
+        "esc",
+        "formatDate",
+        "formatMinutes",
+        "formatPhone",
+        "invalidatePrint",
+        "isActiveAppointment",
+        "loadPatientTelegram",
+        "loadPatientViewPage",
+        "patientAppointmentsHtml",
+        "patientConnectionsHtml",
+        "patientMarkHtml",
+        "patientView",
+        "photoSource",
+        "plural",
+        "printablePatient",
+        "renderTab",
+        "videoConsentHtml",
+        "viewPatient",
+        "visitHtml"
+      ]
+    },
+    {
+      "path": "src/client/modules/patient-mark.js",
+      "factory": "createPatientMark",
+      "dependencies": [
+        "$",
+        "canEditPatient",
+        "closeEditor",
+        "esc",
+        "openDialog",
+        "patient",
+        "renderDetail",
+        "save",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/video-consent.js",
+      "factory": "createVideoConsent",
+      "dependencies": [
+        "confirmAction",
+        "patient",
+        "renderDetail",
+        "rollback",
+        "save",
+        "settingsHelpHtml",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/visit-procedures.js",
+      "factory": "createVisitProcedures",
+      "dependencies": [
+        "$",
+        "esc",
+        "formatMinutes",
+        "lockSavedVisit",
+        "serviceOptions",
+        "serviceSnapshot",
+        "servicesForStaff",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/appointment-patient-picker.js",
+      "factory": "createAppointmentPatientPicker",
+      "dependencies": [
+        "$",
+        "esc",
+        "formatPhone",
+        "loadAppointmentDirectory",
+        "normalizePatientSearchQuery",
+        "patientDesignationHtml"
+      ]
+    },
+    {
+      "path": "src/client/modules/appointment-actions.js",
+      "factory": "createAppointmentActions",
+      "dependencies": [
+        "$",
+        "appointmentConfirmationControls",
+        "appointmentOutcomeControls",
+        "calendarAppointmentAppearance",
+        "calendarClientPhone",
+        "canDelete",
+        "canEditRecord",
+        "clientContactActionsHtml",
+        "closeEditor",
+        "confirmAction",
+        "ensurePatient",
+        "esc",
+        "formatDate",
+        "formatMinutes",
+        "isActiveAppointment",
+        "notificationHistoryHtml",
+        "openAppointmentForm",
+        "openDialog",
+        "patientNameParts",
+        "readAppointmentEditor",
+        "requestEditorClose",
+        "rollback",
+        "save",
+        "setView",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/appointments.js",
+      "factory": "createAppointments",
+      "dependencies": [
+        "$",
+        "accountId",
+        "appointmentPatientPickerHtml",
+        "appointmentRoomField",
+        "cabinetToday",
+        "canEditRecord",
+        "clientRecords",
+        "completeAppointment",
+        "confirmAction",
+        "durationMinutes",
+        "durationOptions",
+        "ensurePatient",
+        "esc",
+        "formatDate",
+        "formatMinutes",
+        "isActiveAppointment",
+        "isClosedAppointment",
+        "isoDate",
+        "mountAppointmentPatientPicker",
+        "mountAppointmentProcedures",
+        "openAppointmentActions",
+        "openAppointmentForm",
+        "openAppointmentOutcome",
+        "openDialog",
+        "openVisitForm",
+        "patient",
+        "patientFieldsHtml",
+        "readAppointmentEditor",
+        "refreshAppointmentRooms",
+        "refreshAppointmentSchedule",
+        "requestEditorClose",
+        "selectedServiceItems",
+        "serviceCategory",
+        "serviceDuration",
+        "serviceSnapshot",
+        "servicesForStaff",
+        "setView",
+        "staffField",
+        "timeLabel",
+        "timeOptions",
+        "toast",
+        "viewPatient"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-personal.js",
+      "factory": "createCalendarPersonal",
+      "dependencies": [
+        "appointmentStart",
+        "calendarStaffName",
+        "esc",
+        "timeLabel"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-creation-tabs.js",
+      "factory": "createCalendarCreationTabs",
+      "dependencies": [
+        "$",
+        "durationOptions",
+        "mountAppointmentTimePicker",
+        "personalEventFields"
+      ]
+    },
+    {
+      "path": "src/client/modules/personal-events.js",
+      "factory": "createPersonalEvents",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole",
+        "appointmentStart",
+        "calendarHiddenUntil",
+        "closeEditor",
+        "confirmAction",
+        "durationOptions",
+        "esc",
+        "invalidateCalendarRead",
+        "isoDate",
+        "openDialog",
+        "parseDate",
+        "request",
+        "setView",
+        "staffField",
+        "timeOptions",
+        "toast",
+        "updatePhotoSaveButton"
+      ]
+    },
+    {
+      "path": "src/client/modules/photos.js",
+      "factory": "createPhotos",
+      "dependencies": [
+        "$",
+        "cabinetSaveStatus",
+        "canDelete",
+        "esc",
+        "renderUploads",
+        "resize",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/service-save.js",
+      "factory": "createServiceSave",
+      "dependencies": [
+        "$",
+        "closeEditor",
+        "configureServiceView",
+        "formatPrice",
+        "restoreAppointmentEditor",
+        "saveServices",
+        "setView",
+        "toast",
+        "validateServiceValues"
+      ]
+    },
+    {
+      "path": "src/client/modules/appointment-save.js",
+      "factory": "createAppointmentSave",
+      "dependencies": [
+        "$",
+        "accountId",
+        "assertAppointmentAvailability",
+        "assertAppointmentEdit",
+        "clearServiceSelection",
+        "closeEditor",
+        "confirmAppointmentWorkSchedule",
+        "ensurePatient",
+        "isActiveAppointment",
+        "parseDate",
+        "patientFormValues",
+        "prepareTelegramInvitation",
+        "save",
+        "saveAppointmentChange",
+        "setView",
+        "toast",
+        "validateAppointmentValues",
+        "validatePatientValues"
+      ]
+    },
+    {
+      "path": "src/client/modules/patient-save.js",
+      "factory": "createPatientSave",
+      "dependencies": [
+        "$",
+        "accountId",
+        "closeEditor",
+        "patientFormValues",
+        "prepareTelegramInvitation",
+        "renderDetail",
+        "renderList",
+        "save",
+        "setView",
+        "toast",
+        "validatePatientValues"
+      ]
+    },
+    {
+      "path": "src/client/modules/visit-save.js",
+      "factory": "createVisitSave",
+      "dependencies": [
+        "$",
+        "accountId",
+        "closeEditor",
+        "isClosedAppointment",
+        "parseDate",
+        "save",
+        "setView",
+        "toast",
+        "validateVisitDuration"
+      ]
+    },
+    {
+      "path": "src/client/modules/visit-form.js",
+      "factory": "createVisitForm",
+      "dependencies": [
+        "$",
+        "cabinetToday",
+        "canEditRecord",
+        "esc",
+        "mountVisitProcedures",
+        "openDialog",
+        "patient",
+        "renderUploads",
+        "staffField",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/service-form.js",
+      "factory": "createServiceForm",
+      "dependencies": [
+        "$",
+        "canEditServices",
+        "categoryOptions",
+        "durationMinutes",
+        "esc",
+        "openDialog",
+        "serviceCategory",
+        "serviceOwnerId",
+        "serviceStaffId",
+        "serviceStaffLabel",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/core/editor.js",
+      "factory": "createEditor",
+      "dependencies": [
+        "$",
+        "cabinetSaveStatus",
+        "cancelPhotoProcessing",
+        "confirmAction",
+        "mountAppointmentTimePicker",
+        "mountCalendarCreationTabs",
+        "mountServiceGroupControl",
+        "photosPending",
+        "refreshAppointmentServices",
+        "renderSaveRecovery",
+        "resetCalendarCreationTabs",
+        "rollback",
+        "saveAppointmentForm",
+        "savePatientForm",
+        "savePatientMarkForm",
+        "savePersonalEventForm",
+        "saveServiceForm",
+        "saveVisitForm",
+        "saveWorkScheduleForm",
+        "updatePhotoSaveButton"
+      ]
+    },
+    {
+      "path": "src/client/shared/format.js",
+      "factory": "createFormat",
+      "dependencies": [
+        "$",
+        "normalizePatientPhoneText"
+      ]
+    },
+    {
+      "path": "src/client/shared/access.js",
+      "factory": "createAccess",
+      "dependencies": [
+        "$",
+        "accountId",
+        "accountRole"
+      ]
+    },
+    {
+      "path": "src/client/modules/calendar-integration-view.js",
+      "factory": "createCalendarIntegrationView",
+      "dependencies": [
+        "esc",
+        "settingsHelpHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/integrations.js",
+      "factory": "createIntegrations",
+      "dependencies": [
+        "$",
+        "accountRole",
+        "calendarIntegrationHeading",
+        "calendarIntegrationHtml",
+        "calendarIntegrationTarget",
+        "request",
+        "settingsSectionHtml"
+      ],
+      "phase": "settings"
+    },
+    {
+      "path": "src/client/modules/staff-field.js",
+      "factory": "createStaffField",
+      "dependencies": [
+        "accountId",
+        "canManageTeam",
+        "esc"
+      ]
+    },
+    {
+      "path": "src/client/core/deferred-settings.js",
+      "factory": "createDeferredSettings",
+      "dependencies": [
+        "scheduleRead",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/core/settings-events.js",
+      "factory": "createSettingsEvents",
+      "phase": "settings",
+      "dependencies": [
+        "bindClientNotificationSettingsEvents",
+        "bindImprovementEvents",
+        "bindOnlineBookingSettingsEvents",
+        "bindOrganizationTimeZoneEvents",
+        "bindPaidServicesEvents",
+        "bindProfileEvents",
+        "bindProfileOverviewEvents",
+        "bindSettingsPageEvents",
+        "bindStaffBookingRulesEvents",
+        "bindSupportEvents",
+        "bindTeamEvents",
+        "bindTelegramSettingsEvents",
+        "bindWorkspaceSettingsEvents"
+      ]
+    },
+    {
+      "path": "src/client/modules/notification-history.js",
+      "factory": "createNotificationHistory",
+      "dependencies": [
+        "esc",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/core/assistant-host.js",
+      "factory": "createAssistantHost",
+      "dependencies": [
+        "destroyVoiceAssistant",
+        "mountVoiceAssistant",
+        "scheduleRead",
+        "toast"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-timing.js",
+      "factory": "createAssistantTiming",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-pcm-transport.js",
+      "factory": "createAssistantPcmTransport",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-playback.js",
+      "factory": "createAssistantPlayback",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantPcmTransport"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-audio.js",
+      "factory": "createAssistantAudio",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantPlayback",
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-barge-signal.js",
+      "factory": "createAssistantBargeSignal",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-echo-reflection.js",
+      "factory": "createAssistantEchoReflection",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-echo-math.js",
+      "factory": "createAssistantEchoMath",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantEchoReflection"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-echo-proof.js",
+      "factory": "createAssistantEchoProof",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantEchoMath"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-barge-in.js",
+      "factory": "createAssistantBargeIn",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantAudioPlaying",
+        "assistantBargeSignal",
+        "assistantEchoProof",
+        "assistantOutputReference",
+        "encodeAssistantWav",
+        "pauseAssistantAudio",
+        "recordAssistantAudioDiagnostic",
+        "resumeAssistantAudio",
+        "stopAssistantAudio"
+      ]
+    },
+    {
+      "path": "src/shared/assistant-appointment-identity.cjs",
+      "factory": "createAssistantAppointmentIdentity",
+      "dependencies": [],
+      "phase": "assistant"
+    },
+    {
+      "path": "src/client/modules/assistant-appointment-preview.js",
+      "factory": "createAssistantAppointmentPreview",
+      "dependencies": [
+        "$",
+        "assistantAppointmentStamp",
+        "canEditRecord",
+        "discardAssistantDraft",
+        "ensurePatient",
+        "esc",
+        "formatDate",
+        "isActiveAppointment",
+        "mountAppointmentTimePicker",
+        "openAppointmentForm",
+        "openDialog",
+        "refreshAppointmentRooms",
+        "refreshAppointmentSchedule"
+      ],
+      "phase": "assistant"
+    },
+    {
+      "path": "src/client/modules/assistant-appointment-save.js",
+      "factory": "createAssistantAppointmentSave",
+      "phase": "assistant",
+      "dependencies": [
+        "request"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-commands.js",
+      "factory": "createAssistantCommands",
+      "phase": "assistant",
+      "dependencies": [
+        "$",
+        "accountId",
+        "clientRecords",
+        "ensurePatient",
+        "formatDate",
+        "invalidateCalendarRead",
+        "mountAppointmentTimePicker",
+        "openAppointmentForm",
+        "parseDate",
+        "renderList",
+        "runAssistantAppointmentPreview",
+        "saveAssistantAppointment",
+        "serviceSnapshot",
+        "servicesForStaff",
+        "setCalendarMode",
+        "setView",
+        "toast",
+        "weekStart"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-trigger.js",
+      "factory": "createAssistantTrigger",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-conversation.js",
+      "factory": "createAssistantConversation",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-speech-text.js",
+      "factory": "createAssistantSpeechText",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-speech.js",
+      "factory": "createAssistantSpeech",
+      "phase": "assistant",
+      "dependencies": [
+        "assistantAudioFormat",
+        "assistantLocalVoiceReady",
+        "assistantSpokenField",
+        "assistantSpokenOption",
+        "assistantTurnTiming",
+        "playAssistantAudio",
+        "playAssistantReadyCue",
+        "prepareAssistantAudio",
+        "recordAssistantAudioDiagnostic",
+        "releaseAssistantAudio",
+        "startAssistantBargeIn",
+        "startAssistantCapture",
+        "stopAssistantAudio",
+        "stopAssistantBargeIn",
+        "stopAssistantCapture"
+      ]
+    },
+    {
+      "path": "src/client/modules/assistant-presentation.js",
+      "factory": "createAssistantPresentation",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/assistant-idle.js",
+      "factory": "createAssistantIdle",
+      "phase": "assistant",
+      "dependencies": []
+    },
+    {
+      "path": "src/client/modules/voice-assistant.js",
+      "factory": "createVoiceAssistant",
+      "phase": "assistant",
+      "dependencies": [
+        "applyAssistantScope",
+        "assistantActionCaption",
+        "assistantAudioFormat",
+        "assistantDraftText",
+        "assistantIdleTimer",
+        "assistantPanelHtml",
+        "assistantPresentation",
+        "assistantSpeechController",
+        "assistantTurnTiming",
+        "destroyAssistantTrigger",
+        "discardAssistantDraft",
+        "mountAssistantTrigger",
+        "playAssistantAudio",
+        "releaseAssistantAudio",
+        "renderAssistantConversation",
+        "request",
+        "resetAssistant",
+        "runAssistantAction",
+        "stopAssistantAudio",
+        "stopAssistantCapture",
+        "takeAssistantPlaybackSummary",
+        "toast",
+        "unlockAssistantAudio"
+      ]
+    }
+  ],
+  "events": "src/client/core/events.js",
+  "adminSources": [
+    "src/shared/improvement-status.cjs",
+    "src/client/modules/admin/records.js",
+    "src/client/modules/admin/details.js",
+    "src/client/modules/admin/backup-view.js",
+    "src/client/modules/admin/billing-money.js",
+    "src/client/modules/admin/audit-view.js",
+    "src/client/modules/admin/overview.js",
+    "src/client/modules/admin/lists.js",
+    "src/client/modules/admin/events.js",
+    "src/client/modules/admin/voice-providers.js",
+    "src/client/modules/admin/voice-view.js",
+    "src/client/modules/admin/payment-review-view.js",
+    "src/client/modules/admin/billing-summary-view.js",
+    "src/client/modules/admin/billing-pages-view.js",
+    "src/client/modules/admin/billing-view.js",
+    "src/client/modules/admin/voice-members.js",
+    "src/client/modules/admin/voice-behavior-view.js",
+    "src/client/modules/admin/voice-behavior-diff.js",
+    "src/client/modules/admin/voice-behavior-editor.js",
+    "src/client/modules/admin/voice-behavior-library-view.js",
+    "src/client/modules/admin/voice-behavior-library.js",
+    "src/client/modules/admin/voice-behavior.js",
+    "src/client/modules/admin/voice.js",
+    "src/client/modules/admin/navigation.js",
+    "src/client/modules/admin/billing-pages.js",
+    "src/client/modules/admin/billing-navigation.js",
+    "src/client/modules/admin/billing.js",
+    "src/client/modules/admin/mfa.js",
+    "src/client/modules/admin/dashboard.js"
+  ],
+  "eventDependencies": [
+    "$",
+    "bindAppointmentActionEvents",
+    "bindAppointmentOutcomeEvents",
+    "bindAppointmentPatientPickerEvents",
+    "bindAppointmentProcedureEvents",
+    "bindAppointmentWorkflowEvents",
+    "bindAssistantLifecycle",
+    "bindBackgroundEvents",
+    "bindBookingHealthEvents",
+    "bindCalendarCreationTabEvents",
+    "bindClientContactEvents",
+    "bindDialogInteractionEvents",
+    "bindEditorCloseEvents",
+    "bindManagementEvents",
+    "bindManualConfirmationEvents",
+    "bindMaxClientEvents",
+    "bindMaxInvitationEvents",
+    "bindNotificationHistoryEvents",
+    "bindPatientMarkEvents",
+    "bindPatientPhoneEvents",
+    "bindPatientViewEvents",
+    "bindPersonalEventEvents",
+    "bindPhoneLandscapeEvents",
+    "bindRoomEvents",
+    "bindSaveRecoveryEvents",
+    "bindServiceEvents",
+    "bindServiceGroupEvents",
+    "bindSettingsGuardEvents",
+    "bindSettingsHelpEvents",
+    "bindTelegramEvents",
+    "bindTelegramSharingEvents",
+    "bindTimePickerEvents",
+    "bindVideoConsentEvents",
+    "bindVisitProcedureEvents",
+    "bindWorkScheduleEditorEvents",
+    "bindWorkScheduleEvents",
+    "cabinetTodayDate",
+    "calendarNewAppointment",
+    "changePhotoCaption",
+    "confirmSettingsLeave",
+    "disconnectPushOnLogout",
+    "handleCalendarLoadClick",
+    "handleCalendarLoadNavigation",
+    "invalidatePrint",
+    "migrateLegacy",
+    "openAppointmentActions",
+    "openAppointmentForm",
+    "openPatientForm",
+    "openPersonalEventForm",
+    "openServiceForm",
+    "openVisitForm",
+    "parseDate",
+    "patient",
+    "preservePhoneCalendarOnResize",
+    "printPatient",
+    "printablePatient",
+    "processFiles",
+    "renderDetail",
+    "renderList",
+    "renderUploads",
+    "request",
+    "requestEditorClose",
+    "resetAssistant",
+    "rollback",
+    "saveServices",
+    "setCalendarMode",
+    "setView",
+    "showMorePatientAppointments",
+    "showMoreVisits",
+    "showPhoto",
+    "submit",
+    "toast"
+  ]
+}

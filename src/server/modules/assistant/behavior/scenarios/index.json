@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "context": {
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "locale": "ru-RU"
+  },
+  "synthetic": true,
+  "evidence": "Оригинальные ожидаемые сценарии по исходникам и предметным правилам; прогоны моделей, тестов и реальных действий не выполнялись.",
+  "scope": [
+    "calendar",
+    "clients",
+    "cards",
+    "prepareAppointment",
+    "moveAppointment",
+    "cancelAppointment",
+    "editAppointment"
+  ],
+  "excludedScope": ["settings"],
+  "categories": [
+    {
+      "id": "calendar-dates",
+      "title": "Расписание: даты",
+      "description": "Одна календарная дата, относительные выражения, валидность и часовые пояса."
+    },
+    {
+      "id": "calendar-periods",
+      "title": "Расписание: периоды и специалисты",
+      "description": "День, неделя и месяц; произвольные диапазоны и фильтры отмечены отдельно."
+    },
+    {
+      "id": "calendar-availability",
+      "title": "Расписание: свободное время",
+      "description": "Серверные окна, график, занятость, кабинеты, права и неподдержанные подсчёты."
+    },
+    {
+      "id": "clients-search",
+      "title": "Клиенты: поиск",
+      "description": "ФИО, телефон, порядок слов, речевые формулировки и неполные запросы."
+    },
+    {
+      "id": "clients-identity",
+      "title": "Клиенты: выбор человека",
+      "description": "Омонимы, дубликаты, несколько критериев, отсутствующие и недоступные карточки."
+    },
+    {
+      "id": "clients-morphology",
+      "title": "Клиенты: склонения ФИО",
+      "description": "Падежи, составные и несклоняемые фамилии, ё/е, точные совпадения и контрпримеры."
+    },
+    {
+      "id": "cards-reading",
+      "title": "Карточки: просмотр",
+      "description": "Открытие разрешённой карточки; чтение содержимого моделью не поддержано."
+    },
+    {
+      "id": "cards-mutations",
+      "title": "Карточки: изменения",
+      "description": "Неподдерживаемые создание, изменение, архивирование, объединение и удаление."
+    },
+    {
+      "id": "appointment-fields",
+      "title": "Новая запись: поля",
+      "description": "Клиент, дата, время, специалист, услуга и длительность."
+    },
+    {
+      "id": "appointment-constraints",
+      "title": "Новая запись: ограничения",
+      "description": "Занятость, график, права, гонки, пропущенные поля и ручное сохранение."
+    },
+    {
+      "id": "dialogue-context",
+      "title": "Речь: контекст и отрицания",
+      "description": "Активный серверный диалог, ответы на текущий слот, контекст вне диалога и отрицания."
+    },
+    {
+      "id": "dialogue-corrections",
+      "title": "Речь: исправления и распознавание",
+      "description": "Самокоррекция, запинки, ошибки STT, роли клиента и специалиста."
+    },
+    {
+      "id": "safety-boundaries",
+      "title": "Границы действий",
+      "description": "Несколько команд, недоступные действия, произвольные ID/API и отсутствие обещаний."
+    }
+  ],
+  "files": [
+    "appointment-current-commands.json",
+    "calendar-dates-1.json",
+    "calendar-dates-2.json",
+    "calendar-dates-3.json",
+    "calendar-periods-1.json",
+    "calendar-periods-2.json",
+    "calendar-availability-1.json",
+    "clients-search-1.json",
+    "clients-search-2.json",
+    "clients-identity-1.json",
+    "clients-morphology-1.json",
+    "clients-morphology-2.json",
+    "cards-reading-1.json",
+    "cards-mutations-1.json",
+    "appointment-fields-1.json",
+    "appointment-fields-2.json",
+    "appointment-fields-3.json",
+    "appointment-fields-4.json",
+    "appointment-fields-5.json",
+    "appointment-constraints-1.json",
+    "appointment-constraints-2.json",
+    "appointment-constraints-3.json",
+    "appointment-constraints-4.json",
+    "dialogue-context-1.json",
+    "dialogue-context-2.json",
+    "dialogue-corrections-1.json",
+    "dialogue-corrections-2.json",
+    "safety-boundaries-1.json",
+    "safety-boundaries-2.json"
+  ],
+  "packs": [
+    {
+      "id": "current-commands",
+      "title": "Текущие команды: 7 примеров",
+      "description": "Просмотр записей на день, редактирование, перенос, отмена и новая запись. Актуальный разбор; подтверждения и исполнение определяет сервер. Импорт выключенными в черновик, автоматический подбор сохраняет ограничения12примеров/4096байт.",
+      "caseIds": [
+        "current-open-appointments-day",
+        "current-open-appointment",
+        "current-change-appointment",
+        "current-relative-move-hour",
+        "current-cancel-selected-appointment",
+        "current-noon-not-duration",
+        "current-date-clock-first"
+      ]
+    },
+    {
+      "id": "expanded",
+      "title": "Неделя, месяц, окна, карточка и уточнения: 8 примеров",
+      "description": "Новые действия локального пилота. Импорт только выключенными в черновик; включение и утверждение администратором. Примеры разбора не являются отчётом о прогонах.",
+      "caseIds": [
+        "period-this-week",
+        "period-next-week",
+        "period-month",
+        "period-next-month",
+        "avail-first-open",
+        "avail-after-time",
+        "card-open",
+        "appt-missing-time"
+      ]
+    },
+    {
+      "id": "starter",
+      "title": "Рекомендуемый старт: 8 примеров",
+      "description": "Три команды календаря, два поиска и три подготовки записи. Добавляются выключенными в черновик; выбор и утверждение выполняет администратор.",
+      "caseIds": [
+        "cal-today",
+        "cal-tomorrow",
+        "cal-iso",
+        "client-full-name",
+        "client-phone",
+        "appt-complete",
+        "appt-missing-time",
+        "appt-service"
+      ]
+    },
+    {
+      "id": "names",
+      "title": "Склонения и совпадения имён",
+      "description": "Примеры и контрпримеры для локального различения ФИО; неоднозначные случаи остаются ручными.",
+      "caseIds": [
+        "name-accusative-female",
+        "name-genitive-female",
+        "name-dative-female",
+        "name-instrumental-female",
+        "name-prepositional-female",
+        "name-genitive-male",
+        "name-dative-male",
+        "name-instrumental-male",
+        "name-prepositional-male",
+        "name-patronymic-full",
+        "name-male-patronymic",
+        "name-adjective-surname",
+        "name-adjective-male",
+        "name-ski-female",
+        "name-ski-male",
+        "name-in-female",
+        "name-double-both-parts",
+        "name-double-partial",
+        "name-indeclinable-ko",
+        "name-indeclinable-ma",
+        "name-kim-female",
+        "name-kima-ambiguous",
+        "name-kim-male",
+        "name-ivanov-versus-ivanova",
+        "name-initial-collision",
+        "name-nickname-sasha",
+        "name-nickname-shura",
+        "name-yo-vs-e",
+        "name-homonym-cases",
+        "name-exact-before-variant",
+        "name-latin-cyrillic",
+        "name-apostrophe",
+        "name-particle",
+        "name-georgian",
+        "name-patronymic-conflict",
+        "name-without-fuzzy"
+      ]
+    },
+    {
+      "id": "boundaries",
+      "title": "Ограничения и недоступные действия",
+      "description": "Негативные случаи для будущей приёмки: они не расширяют разрешения и не создают новые действия.",
+      "caseIds": [
+        "period-working-week",
+        "period-weekend",
+        "period-explicit-range",
+        "period-cross-year",
+        "period-rolling-seven",
+        "period-both-days",
+        "period-recurring-weekdays",
+        "period-staff-inactive",
+        "period-foreign-staff",
+        "period-all-staff",
+        "avail-workday-closed",
+        "avail-count",
+        "avail-next-patient",
+        "avail-last-today",
+        "avail-busy-details",
+        "avail-travel-buffer",
+        "avail-room",
+        "avail-conflict",
+        "client-last-client",
+        "identity-no-automerge",
+        "card-read-phone",
+        "card-read-birth",
+        "card-next-visit",
+        "card-last-visit",
+        "card-notes",
+        "card-payments",
+        "card-all-clients-export",
+        "card-hidden-existence",
+        "card-create-new",
+        "card-create-with-phone",
+        "card-change-phone",
+        "card-change-name",
+        "card-add-note",
+        "card-delete",
+        "card-archive",
+        "card-restore",
+        "card-merge",
+        "card-delete-consent",
+        "card-send-message",
+        "card-edit-confirmation",
+        "appt-duration-too-long",
+        "constraint-staff-inactive",
+        "constraint-staff-acl",
+        "constraint-no-auto-save",
+        "constraint-pretend-success",
+        "constraint-cancel-existing",
+        "current-cancel-selected-appointment",
+        "constraint-reschedule",
+        "constraint-change-duration",
+        "constraint-change-staff",
+        "constraint-complete-visit",
+        "constraint-recurring",
+        "constraint-multiple-clients",
+        "constraint-multiple-dates",
+        "constraint-delete-all",
+        "dialogue-deferred-command",
+        "dialogue-client-two-step",
+        "safety-two-independent",
+        "safety-save-and-delete",
+        "safety-prompt-injection",
+        "safety-fabricated-id",
+        "safety-code-input",
+        "safety-payload-json",
+        "safety-foreign-organization",
+        "safety-admin-clinical",
+        "safety-availability-fabrication",
+        "safety-ignore-acl",
+        "safety-silent-confirm",
+        "safety-mass-find",
+        "safety-business-promise",
+        "safety-clinical-inference",
+        "safety-replay-old-confirmation"
+      ]
+    }
+  ],
+  "invariants": [
+    "Все имена, телефоны и условия синтетические; рабочие данные не читались.",
+    "current.intent — ожидаемый разбор в существующей схеме, а не запись наблюдённого результата модели.",
+    "current.status описывает возможность рабочего процесса; не является метрикой качества провайдера.",
+    "help возвращает общую подсказку; prepareAppointment запускает ограниченный серверный диалог с TTL и привязкой к пользователю, сессии, организации и версии правил.",
+    "Склонённые имена и телефоны сохраняют исходную форму; идентификаторы разрешаются только локально после ACL.",
+    "Режим сохранения определяет приложение: разрешённые создание/перенос выполняются автоматически, иначе открывается форма; отмена требует отдельного подтверждения. Исторические current-исходы сохранены как контекст прежних этапов.",
+    "Библиотека не отправляется целиком в prompt; активные примеры ограничены12 и4096 байтами.",
+    "В модели девять intent: help/calendar/clients/clientCard/availability/prepareAppointment/moveAppointment/cancelAppointment/editAppointment. Действия выполняются кодом после проверок, не текстовым обещанием.",
+    "Простые уточнения обрабатываются локально; неоднозначные продолжения новой записи могут разбираться моделью по отдельному строгому контракту. Вариант выбирается непрозрачным ID с повторной проверкой прав и занятости.",
+    "Произвольные календарные выборки, чтение содержимого карты вслух, изменение карточек клиентов, несколько независимых команд и интроспекция остаются неподдержанными.",
+    "Примеры с другой исходной зоной, DST и неподдерживаемыми действиями не являются активным обучением новых возможностей."
+  ]
+}

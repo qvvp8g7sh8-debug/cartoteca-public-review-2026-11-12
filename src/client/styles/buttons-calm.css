@@ -1,0 +1,313 @@
+/* Shared action-button material. Keep navigation, selection grids and channel states. */
+@media screen {
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ) {
+    --calm-button-top: #fff;
+    --calm-button-bottom: #f0f4f7;
+    --calm-button-ink: #334d5b;
+    --calm-button-line: #d9e3e9;
+    --calm-button-shine: rgb(255 255 255 / 80%);
+    min-width: 0;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 9px 14px;
+    border: 1px solid var(--calm-button-line);
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--calm-button-top), var(--calm-button-bottom));
+    color: var(--calm-button-ink);
+    box-shadow: inset 0 1px 0 var(--calm-button-shine),
+      inset 0 -2px 2px rgb(45 76 91 / 5%),
+      0 3px 6px rgb(30 61 75 / 10%);
+    font-family: inherit;
+    font-weight: 550;
+    line-height: 1.35;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    text-decoration: none;
+    transition: box-shadow 140ms ease,
+      border-color 140ms ease;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(.primary, .add-round, .staff-telegram-open, .staff-max-open) {
+    --calm-button-top: #4d7d89;
+    --calm-button-bottom: #315e6c;
+    --calm-button-ink: #fff;
+    --calm-button-line: #3c6c78;
+    --calm-button-shine: rgb(255 255 255 / 22%);
+    font-weight: 600;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(.danger, .booking-danger, [data-work-remove], [data-remove-room]) {
+    --calm-button-top: #fffafa;
+    --calm-button-bottom: #f5e8e7;
+    --calm-button-ink: #9d3e43;
+    --calm-button-line: #e6cfce;
+    --calm-button-shine: rgb(255 255 255 / 80%);
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ):active:not(:disabled):not([aria-disabled='true']) {
+    background: linear-gradient(180deg, var(--calm-button-top), var(--calm-button-bottom));
+    box-shadow: inset 0 2px 4px rgb(30 61 75 / 12%),
+      0 1px 2px rgb(30 61 75 / 6%);
+    transform: none;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ):focus-visible {
+    outline: 2px solid #43858f;
+    outline-offset: 3px;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ):is(:disabled, [aria-disabled='true']) {
+    box-shadow: none;
+    opacity: 0.6;
+    transform: none;
+    cursor: default;
+  }
+  /* Round close buttons retain their silhouette and compact header alignment. */
+  body :is(.workspace.workspace-designed, dialog, .booking-shell) button.icon-btn {
+    min-height: 0;
+    border-radius: 50%;
+    padding: 0;
+  }
+  body :is(.workspace.workspace-designed, dialog, .booking-shell) button.add-round {
+    padding: 0;
+  }
+}
+@media screen and (hover: hover) and (pointer: fine) {
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ):hover:not(:active):not(:disabled):not([aria-disabled='true']) {
+    background: linear-gradient(180deg, var(--calm-button-top), var(--calm-button-bottom));
+    box-shadow: inset 0 1px 0 var(--calm-button-shine),
+      0 5px 9px rgb(30 61 75 / 14%);
+    transform: none;
+  }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  body :is(.workspace.workspace-designed, dialog, .booking-shell) :is(button, a) {
+    transition: none;
+  }
+}
+@media screen and (forced-colors: active) {
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(
+      .primary,
+      .secondary,
+      .text-btn,
+      .quiet,
+      .back,
+      .icon-btn,
+      .add-round,
+      .settings-page-back,
+      .management-back,
+      .booking-page-close,
+      .staff-telegram-open,
+      .staff-max-open,
+      [data-booking-retry]
+    ):not(
+      :where(
+        .connection-service,
+        .client-contact-action,
+        .patient-mark-button,
+        .appointment-record-open,
+        .service-select-card,
+        .service-edit-card,
+        .selected-service-card,
+        .staff-channel-trigger,
+        .team-access-pill,
+        .photo-item,
+        [role='tab'],
+        [role='switch'],
+        [role='checkbox'],
+        [aria-pressed]
+      )
+    ) {
+    --calm-button-top: ButtonFace;
+    --calm-button-bottom: ButtonFace;
+    --calm-button-ink: ButtonText;
+    --calm-button-line: ButtonText;
+    --calm-button-shine: transparent;
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+    opacity: 1;
+    transition: none;
+    transform: none;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(:hover, :active, :focus-visible) {
+    box-shadow: none;
+    outline-color: Highlight;
+  }
+  body
+    :is(.workspace.workspace-designed, dialog, .booking-shell)
+    :is(button, a):is(:disabled, [aria-disabled='true']) {
+    color: GrayText;
+  }
+}

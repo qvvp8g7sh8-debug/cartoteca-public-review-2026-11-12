@@ -1,0 +1,335 @@
+[
+  {
+    "id": "avail-first-open",
+    "category": "calendar-availability",
+    "title": "Найди первое свободное окно завтра",
+    "text": "Найди первое свободное окно завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "availability",
+        "date": "2026-10-16",
+        "duration": 30
+      },
+      "status": "supported",
+      "outcome": "Сервер находит первые доступные окна на30минут по графику, занятости и кабинетам; показать варианты, не утверждать бронь.",
+      "limitations": [
+        "По умолчанию окно30минут обозначается явно. До12предложений; выбор запускает уточнения клиента/услуги и обычную форму с ручным сохранением."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "availability",
+      "supported"
+    ]
+  },
+  {
+    "id": "avail-after-time",
+    "category": "calendar-availability",
+    "title": "Когда завтра есть свободные полчаса после 14:00?",
+    "text": "Когда завтра есть свободные полчаса после 14:00?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "availability",
+        "date": "2026-10-16",
+        "time": "14:00",
+        "duration": 30
+      },
+      "status": "supported",
+      "outcome": "Запросить реальные окна длительностью30минут начиная с14:00; учитывается вся длительность, не только начало.",
+      "limitations": [
+        "Варианты строятся сервером; выбранный вариант проверяется повторно. Сохранение записи вручную."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "availability",
+      "supported"
+    ]
+  },
+  {
+    "id": "avail-before-time",
+    "category": "calendar-availability",
+    "title": "Есть ли завтра окошко до 12 часов?",
+    "text": "Есть ли завтра окошко до 12 часов?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "availability",
+        "date": "2026-10-16",
+        "endTime": "12:00",
+        "duration": 30
+      },
+      "status": "supported",
+      "outcome": "Предложить только серверные окна30минут, которые целиком заканчиваются не позднее12:00.",
+      "limitations": [
+        "Длительность по умолчанию30минут сообщается пользователю. Окна не резервируются."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "availability",
+      "supported"
+    ]
+  },
+  {
+    "id": "avail-any-doctor",
+    "category": "calendar-availability",
+    "title": "Найди свободные полчаса у доступных специалистов с 16 по 18 октября 2026 с 16:00 до 16:30",
+    "text": "Найди свободные полчаса у доступных специалистов с 16 по 18 октября 2026 с 16:00 до 16:30",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "availability",
+        "date": "2026-10-16",
+        "endDate": "2026-10-18",
+        "time": "16:00",
+        "endTime": "16:30",
+        "duration": 30
+      },
+      "status": "supported",
+      "outcome": "Сервер ищет30минут внутри точных границ дня на трёх датах только у специалистов, доступных текущей роли.",
+      "limitations": [
+        "Косметолог видит предложения только своего расписания. До31дня включительно/12вариантов."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "availability",
+      "supported"
+    ]
+  },
+  {
+    "id": "avail-workday-closed",
+    "category": "calendar-availability",
+    "title": "Кто работает в воскресенье?",
+    "text": "Кто работает в воскресенье?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Поиск окон учитывает серверный график, но перечисление работающих специалистов отдельной командой не реализовано.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-count",
+    "category": "calendar-availability",
+    "title": "Сколько у меня клиентов завтра?",
+    "text": "Сколько у меня клиентов завтра?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Модель не получает записи и не может посчитать их.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ],
+    "futureTarget": {
+      "capability": "calendarAggregate",
+      "fields": {
+        "date": "2026-10-16",
+        "metric": "appointmentCount"
+      }
+    }
+  },
+  {
+    "id": "avail-next-patient",
+    "category": "calendar-availability",
+    "title": "Кто у меня следующий клиент?",
+    "text": "Кто у меня следующий клиент?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет чтения текущего списка записей в модель.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-last-today",
+    "category": "calendar-availability",
+    "title": "Во сколько сегодня последний приём?",
+    "text": "Во сколько сегодня последний приём?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не выдумывать конец расписания.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-cancellations",
+    "category": "calendar-availability",
+    "title": "Покажи только отменённые записи завтра",
+    "text": "Покажи только отменённые записи завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "manual",
+      "outcome": "Открыть день; статусный фильтр выставить штатным интерфейсом.",
+      "limitations": [
+        "calendar action не применяет status фильтр."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "calendar",
+      "manual"
+    ]
+  },
+  {
+    "id": "avail-busy-details",
+    "category": "calendar-availability",
+    "title": "Кем занято завтра в 15:00?",
+    "text": "Кем занято завтра в 15:00?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не читать персональные данные из недоступной записи.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-travel-buffer",
+    "category": "calendar-availability",
+    "title": "Найди свободный час с перерывом по 15 минут до и после",
+    "text": "Найди свободный час с перерывом по 15 минут до и после",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Сам поиск окон поддержан, но отдельные буферы до/после отсутствуют в схеме; нельзя заявить их проверенными.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-room",
+    "category": "calendar-availability",
+    "title": "Есть ли свободный кабинет завтра в 14:00?",
+    "text": "Есть ли свободный кабинет завтра в 14:00?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Поиск окон учитывает доступные кабинеты, но отдельный запрос свободного кабинета без специалиста отсутствует.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "avail-conflict",
+    "category": "calendar-availability",
+    "title": "Проверь, не пересекаются ли мои записи завтра",
+    "text": "Проверь, не пересекаются ли мои записи завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Поиск окон исключает занятость; отдельный аудит пересечений существующих записей не реализован.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-availability",
+      "help",
+      "unsupported"
+    ]
+  }
+]

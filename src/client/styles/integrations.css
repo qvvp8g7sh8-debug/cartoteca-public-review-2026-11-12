@@ -1,0 +1,340 @@
+/* Each integration stays a small independent block in the settings page. */
+@media screen {
+  .settings-panel #integrations-settings .integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 360px));
+    align-items: start;
+    gap: 12px;
+  }
+  .settings-panel #integrations-settings .integration-card {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    border: 1px solid #dbe5eb;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fff, #f9fbfc);
+    box-shadow: 0 1px 3px #16384908;
+  }
+  .settings-panel #integrations-settings .integration-card:has(> .integration-card-summary) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 0;
+    min-height: 74px;
+  }
+  .settings-panel #integrations-settings .integration-card-summary {
+    display: grid;
+    gap: 0;
+    min-width: 0;
+  }
+  .settings-panel #integrations-settings .integration-card-heading {
+    grid-column: 1;
+    justify-content: flex-start;
+    gap: 4px;
+    min-width: 0;
+  }
+  .settings-panel #integrations-settings .integration-card-heading h4 {
+    min-width: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .settings-panel #integrations-settings .integration-card :is(.form-hint, [role='status']) {
+    margin: 0;
+  }
+  .settings-panel #integrations-settings .integration-card-status {
+    color: #586e79;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .settings-panel #integrations-settings [data-calendar-status='connected'] {
+    color: #32644c;
+  }
+  .settings-panel #integrations-settings .integration-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    width: 46px;
+    height: 44px;
+    min-height: 44px;
+    margin: 0;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+  .settings-panel #integrations-settings .integration-switch input {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 46px;
+    height: 44px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-50%);
+    cursor: inherit;
+  }
+  .settings-panel #integrations-settings .integration-switch-track {
+    position: relative;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 26px;
+    box-sizing: border-box;
+    border: 1px solid #bdcdd5;
+    border-radius: 20px;
+    background: #dce5ea;
+    box-shadow: inset 0 1px 2px #1638490d;
+  }
+  .settings-panel #integrations-settings .integration-switch-track::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 4px #16384933;
+    content: '';
+  }
+  .settings-panel
+    #integrations-settings
+    .integration-switch
+    input:checked
+    + .integration-switch-track {
+    border-color: #32644c;
+    background: #39735a;
+  }
+  .settings-panel
+    #integrations-settings
+    .integration-switch
+    input:checked
+    + .integration-switch-track::after {
+    transform: translateX(20px);
+  }
+  .settings-panel
+    #integrations-settings
+    .integration-switch
+    input:focus-visible
+    + .integration-switch-track {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .settings-panel #integrations-settings .integration-switch:has(input:disabled) {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .settings-panel #integrations-settings [data-calendar-message]:empty {
+    display: none;
+  }
+  .settings-panel #integrations-settings .integration-card > .form-hint {
+    grid-column: 1 / -1;
+  }
+  .settings-panel #integrations-settings [data-calendar-message]:not(:empty) {
+    padding-top: 8px;
+  }
+  .settings-panel #integrations-settings .integration-selection {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 4px;
+    min-width: 0;
+    margin: 10px 0 0;
+    padding: 8px 0 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+  .settings-panel #integrations-settings .integration-selection legend {
+    padding: 0 0 4px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .settings-panel #integrations-settings .integration-selection-choice {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    min-height: 44px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+  .settings-panel #integrations-settings .integration-selection-choice input {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    min-height: 0;
+    margin: 0;
+    accent-color: var(--blue);
+  }
+  .settings-panel #integrations-settings .integration-selection-choice span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel #integrations-settings .integration-selection-choice:has(input:disabled) {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .settings-panel #integrations-settings .integration-staff-list {
+    display: grid;
+    max-height: 224px;
+    padding-left: 12px;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  .settings-panel #integrations-settings [data-calendar-staff-list][hidden],
+  .settings-panel #integrations-settings [data-calendar-selection-hint]:empty {
+    display: none;
+  }
+  .settings-panel #integrations-settings [data-calendar-save] {
+    justify-self: start;
+    width: auto;
+    min-height: 44px;
+    max-width: 100%;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .settings-panel #integrations-settings .integration-selection input:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog:not([open]) {
+    display: none;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog {
+    width: min(560px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border: 1px solid #cbdde7;
+    border-radius: 14px;
+    background: #fff;
+    color: var(--ink);
+    box-shadow: 0 12px 40px #16384926;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog::backdrop {
+    background: #16384955;
+  }
+  .settings-panel #integrations-settings .integration-help-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .settings-panel #integrations-settings .integration-help-heading h3 {
+    min-width: 0;
+    margin: 8px 0;
+    font-size: 17px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog .integration-help-close {
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d3e1e9;
+    border-radius: 9px;
+    background: #f5f9fb;
+    color: var(--blue);
+    font-size: 25px;
+    line-height: 1;
+  }
+  .settings-panel
+    #integrations-settings
+    .integration-help-dialog
+    .integration-help-close:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+  .settings-panel #integrations-settings [data-calendar-help-text] {
+    margin: 10px 0 14px;
+    font-size: 15px;
+    line-height: 1.55;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog .integration-manual {
+    min-width: 0;
+    border-top: 1px solid var(--line);
+  }
+  .settings-panel #integrations-settings .integration-help-dialog .integration-manual > summary {
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 12px 0;
+    color: var(--blue);
+    font-size: 13px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  .settings-panel
+    #integrations-settings
+    .integration-help-dialog
+    .integration-manual
+    > summary:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+  .settings-panel #integrations-settings .integration-manual-content {
+    display: grid;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .settings-panel #integrations-settings .integration-manual-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .settings-panel #integrations-settings .integration-help-dialog .integration-manual input {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 9px 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  .settings-panel #integrations-settings .integration-manual-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .settings-panel #integrations-settings .integration-manual-controls :is(a, button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-height: 44px;
+    max-width: 100%;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+}
+/* On a narrow settings page the card uses all available width. */
+@media screen and (max-width: 700px) {
+  .settings-panel #integrations-settings .integrations-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel #integrations-settings .integration-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

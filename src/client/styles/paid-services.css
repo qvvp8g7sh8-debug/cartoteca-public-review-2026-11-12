@@ -1,0 +1,190 @@
+@media screen {
+  .paid-services {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+    color: var(--ink, #203b4c);
+  }
+  .paid-services :is(p, h4) {
+    margin: 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .paid-services .form-hint {
+    color: var(--muted, #647681);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .paid-package-current,
+  .paid-service,
+  .paid-package-checkout {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--line, #dbe5eb);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .paid-package-current {
+    background: #f4f8fa;
+  }
+  .paid-service-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .paid-services h4 {
+    font-size: 16px;
+  }
+  .paid-service-status {
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #285b46;
+    background: #edf5f1;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .paid-package-quota {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+  }
+  .paid-package-quota dt {
+    color: var(--muted, #647681);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .paid-package-quota dd {
+    margin: 4px 0 0;
+    font-size: 24px;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+  .paid-package-quota > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .paid-package-catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 12px;
+    min-width: 0;
+  }
+  .paid-services .paid-package-price {
+    color: var(--blue, #244c64);
+    font-size: 24px;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+  .paid-package-price small {
+    color: var(--muted, #647681);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .paid-package-rules {
+    display: grid;
+    gap: 6px;
+    font-size: 14px;
+  }
+  .paid-package-notice {
+    padding: 12px;
+    border: 1px solid var(--line, #dbe5eb);
+    border-radius: 10px;
+    background: #f4f8fa;
+    font-size: 14px;
+  }
+  .paid-package-checkout fieldset {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .paid-package-checkout legend {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .paid-package-checkout .field {
+    margin: 0;
+  }
+  .paid-package-checkout :is(select, input:not([type='checkbox'])) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #cdd8e0;
+    border-radius: 8px;
+    color: var(--ink, #203b4c);
+    background: #fff;
+    font: inherit;
+    font-size: 16px;
+  }
+  .paid-package-consent {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    min-height: 44px;
+    color: var(--ink, #203b4c);
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .paid-package-consent input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+  }
+  .paid-package-checkout :disabled {
+    cursor: default;
+  }
+  .paid-services button {
+    justify-self: start;
+    min-height: 44px;
+  }
+  .paid-services [data-paid-message]:empty {
+    display: none;
+  }
+  .paid-services [data-paid-message][data-status='error'] {
+    color: #963b3b;
+  }
+}
+@media screen and (max-width: 480px) {
+  .paid-services {
+    gap: 12px;
+  }
+  .paid-package-current,
+  .paid-service,
+  .paid-package-checkout {
+    padding: 12px;
+  }
+  .paid-package-quota {
+    gap: 8px;
+  }
+  .paid-package-quota dt {
+    font-size: 11px;
+  }
+  .paid-services button {
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+@media screen {
+  .paid-service-group {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line, #dbe5eb);
+  }
+  .paid-service-group > h3 { margin: 0; font-size: 18px; }
+}

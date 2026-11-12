@@ -1,0 +1,53 @@
+@media(max-width:700px) {
+  .settings-panel {
+    padding-bottom: 18px;
+  }
+  .settings-section-heading {
+    margin-bottom: 14px;
+  }
+  .invite-member-form {
+    display: block;
+    padding: 13px;
+  }
+  .invite-member-form .field {
+    display: block;
+    margin-top: 12px;
+  }
+  .invite-member-form .primary {
+    width: 100%;
+    margin-top: 12px;
+  }
+  .invite-result>div {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .team-member {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+  .team-member-meta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .member-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .member-controls select,.member-controls button {
+    width: 100%;
+    min-width: 0;
+  }
+  .account-settings {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .account-settings .secondary {
+    width: 100%;
+  }
+}

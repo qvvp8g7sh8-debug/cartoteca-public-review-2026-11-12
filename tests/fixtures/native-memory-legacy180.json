@@ -1,0 +1,796 @@
+{
+  "version": 180,
+  "baseSourceManifestSHA256": "48afa23e60f3e5a2f9cdb89de4a97075ed2f08491f85b9c89917a84dbf251d5c",
+  "baselineModuleSHA256": "c08f513600bbd57ce63aa749eaabfd7edcd8eb83c7ed20c98b9e3e60658c50ec",
+  "plans": [
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "cc8465eece8191e8010a8bf442fdcd7e6f22a46ab615755927c7a87bf9de584a"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "f3a44b0c1d8e43388d387e23c3a859a35312237ddec5dfb8b34840c438a7b0da"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "0da7e150769bed4154679cb61aa34322bfc57e58bccaa816cd971b6e848d8e55"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "9292dd889e2056ca84a8f10464cac6e485c9966b0c4c07be3de8dd627b3848f7"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "8ed5929a7045dd3fc235a5e250fa1facfa08cd457ef71075adaafb075984ab52"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": false,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "2565b3520272c2131a3c2a63419da2587c6a40508954fbba3ae6f59960c1c85f"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "44bc6522fcdd8fafcf8cd3c040229319a29b10da7c407566a906fd644132f47a"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "c5343a8bb088ef76ca5302403e4d683bd598470035251ab6e9c65616d1b1bc7b"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "0f320c0c54d9cdd1a19187c3512bb1c67e4d08177e7af136eff3045eb48261f8"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "bd79087cfea473a5db45498283371ddbad420d93e3861c3a2afd84ca4e201fa7"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "2ba887d6eedc3615f4c5a27e8cf9dea4bff1162bd84530c4fe61019856bf6a42"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "f71b560d9368d89ca746c698b1ee9a7a8d907e0c105d85e0b348261f3da8e935"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "37056a46a35e9644e82ba0e97ca4eef2b41508bfe0e2f860280391bee63c9ffc"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "71c0c8df22907320b70dd1c3377df533ae00ba4d06036e4d8fb5d4c314ae8bf7"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "d84eaad73744952a41d37be8d40eb8b2dddd51047f6c6be541937567aa5c3249"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "e8f1b73bbc3e2c155227d4255108b2a9ba9e4e5d13b27af7a0f9b4a7e786ff83"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "0e3091c008aaf0f095ea957bdbb0d6574fd1bf9e0c4a1434708a620ef42069f4"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "b029b8e601352904cabe8936f886b161b5a3ca8dc7ef57acbf10bb37c70fd0af"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "ef9a8296c72c70dc2b60517485f341bd702f871b10a2998ba5765b919858935e"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "8be90a51d367341b6900172bfb4cf783fd779854b884eb2f38eafe8f0d43b6dc"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "8d1ec165305b26a51d3e5685c7ebcb4572bb2d8831af9ac6fcaa8941a9155cca"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "bcd9c549833f963313823995c9995db573b26efaffe7818acab29128bbd8f442"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "a63fb9c426635b525c4232cb3bd2f3b3f553a5268d95f8b9406cfa9c8746b7de"
+    },
+    {
+      "input": {
+        "budgetMiB": 1536,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "bc8417145dddf794eb1a53ba2dcffd9ad1d26860b0dd8e5bff43f81dc898054b"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "d170ea0500a732a1832715faa43121f340f43bbb8616f3e2f1dfe31b4bce729f"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "12cb48ba9c5a3c4521a5c01a4922b61a1be5ea4199754e159ddaec00ecc3e743"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "5f451abea1d9d1a5206bacd3902237599e97a6e140a61dd1fa719a8ad1a66fd9"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "99ac70cb2e2b34d482a54d22927d47fd92e2be7a548696d6d64dceb202b0c6c1"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "41905a87b8987670959fdf7d9be30929390736137f8e0e176b22c458889c1817"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": false,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "53ee56f9c7734bf4e00ed6ff304dff20120860bec5292f7c08b56da306d057a9"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "b666fa9eaf3b82e339689016edd5038438bd2a94a3e3b817d0324f4586cdcd90"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "5328967612711d1e170bbe849e8519604a38ad60aef28bf74b8e5ad5876ac3aa"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "e99f888906f8f171836a6340deab71e48b63495ae3ef600d4d8e14e4cac300db"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "d9a1e33733774b5327335287c0e1bff84d87c7efaec0eeab40442406d8a41a23"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "73fe62ad4156731bfbf67358d8bae3fb9568c6e19f4149c4d479f38fce3507a9"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 0,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "b324a4c5a5d908d02967c06ace5bb64fa47ae22c64078a65cca8ad2a70c50f6c"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "d77146a4f1720e3efb2bd32d573d847fdfd59f213e9869ccd5e8255a134a2545"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "d1e96905b5af9f988ab2d29a2dcdc5f841266869a3c57ff2f9140c9e2c6e32dc"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "207c5ba31d1fa9be09a4dd4f7c1d59b17da171ecdefa88ce98b5a625018c5b19"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "2ef6574e0a86ee7586de680e8e468f20daf64356acb1ff34cf8f548e5d31b169"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "01f71bd9c2857eb79b95cdafec8612900e6eadd4c16fab1893f2086e9a0ac1cc"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 1,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "de5b8c3e103b7fbc823b3b7e3233e34ae45886b596304b3f2a8be75a9e4d45bf"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "3fa726be995b32ae00e3ce8e1500a36ab9108a3890abc8ba42e66aa02d467020"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "5d2243ed63a958581dc245eab2b686bddf0463e681d9d2888c1f983e56db98da"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": false,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "df7e517bf87b5e365117c566f01051afcfdadddd66b44c1a577f06c9b978041d"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 2
+      },
+      "jsonSHA256": "fc2c1959be75e5328721862c17f7292bd4f7cd0efafeb61f9599322eb0d73e21"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 3
+      },
+      "jsonSHA256": "95a2034fd977d4ab848d3fbe99659a6006e817d7fe395b0f712ec5c4f0613bef"
+    },
+    {
+      "input": {
+        "budgetMiB": 2560,
+        "postgres": true,
+        "commandCount": 2,
+        "releaseGate": true,
+        "queryConcurrency": 4
+      },
+      "jsonSHA256": "b678a4cd8ef59d1e68b2ca7362b7f1c4208104badc60f9d49f336ca618c2b890"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 2,
+        "releaseGate": false
+      },
+      "jsonSHA256": "b647f9e14526ad0854d8ea3be971af6217ee279f44c3e6ea87aac0f38e46609e"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 2,
+        "releaseGate": true
+      },
+      "jsonSHA256": "d99e94923eb5ac20de6a97eef42bdf0025a530ff7888aaf26a607bc9abc61f8d"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 3,
+        "releaseGate": false
+      },
+      "jsonSHA256": "95eea226037a1e8124d2407d8367c763a8de418c92d5bae90a2d0b63a25d1ffb"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 3,
+        "releaseGate": true
+      },
+      "jsonSHA256": "61a0b1161208d5cd8cc5e39d8978dfa111243da27b7a43d8ee4f055c227f4e6b"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 4,
+        "releaseGate": false
+      },
+      "jsonSHA256": "a4ea57f2912dad68f70231edb019ebfc706cc5e2166ca8c51e7b27e575cd0a6c"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 4,
+        "releaseGate": true
+      },
+      "jsonSHA256": "de58ee138b9154eb634f9cf90a4ff5c7ef844d5cf8aaf853cb0607ca112028ae"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 5,
+        "releaseGate": false
+      },
+      "jsonSHA256": "168b24ee6f9e91f3c3ad0848018edc5b82a951a00196f300120c6612b1cc3936"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 5,
+        "releaseGate": true
+      },
+      "jsonSHA256": "5c8a92f1d22609889b0156762bd11fdaeef846bc215518bf03828c880887a648"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 6,
+        "releaseGate": false
+      },
+      "jsonSHA256": "822d86effbbd02c8bd5899d6a3ae23fd7632d0041573f084591d83ab737a6edc"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 2,
+        "queryConcurrency": 6,
+        "releaseGate": true
+      },
+      "jsonSHA256": "89916bccccf601fc96ec72d017f17f15961f0b16d6554b11090ef9d9e9011b45"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 2,
+        "releaseGate": false
+      },
+      "jsonSHA256": "65d1a324ce247ae8a8be59467e0892435d8c7c4a6e11f35368aa372ee128700c"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 2,
+        "releaseGate": true
+      },
+      "jsonSHA256": "41f3daefad75446810a41aa069b65b5126b66f5d87581c7f1bdde21a6b1e1e2e"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 3,
+        "releaseGate": false
+      },
+      "jsonSHA256": "e133ab52384e9692165ea06cde5fa786cd38a34a58958931f044eea73cb6e172"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 3,
+        "releaseGate": true
+      },
+      "jsonSHA256": "76b4348b1d90c51f88561b0bab86f5b2d507ed7e630209059ccd705f58303c78"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 4,
+        "releaseGate": false
+      },
+      "jsonSHA256": "5e3db3a2e7149308d488389d1145a845d563cb704fe6dcba1a7499716815d6c8"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 4,
+        "releaseGate": true
+      },
+      "jsonSHA256": "fd3ef01a6fb5f691453e739f693d31a013b71379498b1d16a67febf96fe5ae38"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 5,
+        "releaseGate": false
+      },
+      "jsonSHA256": "5aeb0d18769cdca48203ac0eac7ce05b0e4797b90c50fc13c5f80bc2fc5e3c04"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 5,
+        "releaseGate": true
+      },
+      "jsonSHA256": "de1977737180e17b4b70c72cbd9b59015407fc02e844a8bbbea827bf2a6ba928"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 6,
+        "releaseGate": false
+      },
+      "jsonSHA256": "79c31257fa8dcd9a81d410a4609af9c6ac5d13b44c452a6c0e95946758bb2d34"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 3,
+        "queryConcurrency": 6,
+        "releaseGate": true
+      },
+      "jsonSHA256": "5923d8190f40ace7b98c952dde0e9261e0f785decbac841d54f844062acd58e2"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 2,
+        "releaseGate": false
+      },
+      "jsonSHA256": "8016ef2ac4a26a6eab0e353f23b7ae2f6b2d33f1bfa7404a315e8fe8afab72c7"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 2,
+        "releaseGate": true
+      },
+      "jsonSHA256": "a118d78352fcd966da4dfba8629edf75180f34d4caa3d02b8c3c152bb4b8df3b"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 3,
+        "releaseGate": false
+      },
+      "jsonSHA256": "48a719f6fef075e4a6806b500fd0c1ed7f549e223a0904b3594530c2e71c5a85"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 3,
+        "releaseGate": true
+      },
+      "jsonSHA256": "6b661261861d68cf8275b4c3232edf05cdf199b6a9b5eca5eac89af5abb43bc9"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 4,
+        "releaseGate": false
+      },
+      "jsonSHA256": "c2d9a5fb24f0f9f2cf9f04614baf3bd4214a62e9328cbe0d10a4a0a8fb9b1318"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 4,
+        "releaseGate": true
+      },
+      "jsonSHA256": "a2fa3e55d2fa41e4de8d077e480c9d6399f0e6571865b0ac0395fb9024c8ef55"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 5,
+        "releaseGate": false
+      },
+      "jsonSHA256": "15b08f7c72faedf25085e0ca4a8e54f86e7a65cc2f2c0a0cd1a48d4cd582c238"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 5,
+        "releaseGate": true
+      },
+      "jsonSHA256": "3d11ea8f015894cde3f174a029c82b09c3bf046385afd5587d8721d5edd428aa"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 6,
+        "releaseGate": false
+      },
+      "jsonSHA256": "9d90dade5dfc326efd71cf244b2a48ad9f2e265366d6e3c19c5be5b78e073c1e"
+    },
+    {
+      "input": {
+        "budgetMiB": 4096,
+        "postgres": true,
+        "commandCount": 4,
+        "queryConcurrency": 6,
+        "releaseGate": true
+      },
+      "jsonSHA256": "6cd42b60796b7ef344733e0fe86e75cb07817ffdf4535dd9232121699e13f975"
+    }
+  ],
+  "cacheBudgetKeys": ["retain", "remove", "touch", "releaseOwner", "clear", "stats"],
+  "cacheBudgetStats": {
+    "maxBytes": 10,
+    "bytes": 0,
+    "peakBytes": 0,
+    "entries": 0,
+    "evictions": 0,
+    "rejected": 0
+  }
+}

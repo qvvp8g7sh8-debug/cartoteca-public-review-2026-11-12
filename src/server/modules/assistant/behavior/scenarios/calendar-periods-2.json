@@ -1,0 +1,234 @@
+[
+  {
+    "id": "period-recurring-weekdays",
+    "category": "calendar-periods",
+    "title": "Покажи все мои пятницы в ноябре",
+    "text": "Покажи все мои пятницы в ноябре",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Произвольная выборка дней или фильтр периода отсутствуют. День/календарная неделя/месяц не заменяют весь запрошенный диапазон.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "period-upcoming-only",
+    "category": "calendar-periods",
+    "title": "Покажи только предстоящие приёмы сегодня",
+    "text": "Покажи только предстоящие приёмы сегодня",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-15"
+      },
+      "status": "manual",
+      "outcome": "Открыть дату; фильтр относительно текущего времени отсутствует.",
+      "limitations": [
+        "Нельзя заявить, что прошедшие приёмы скрыты."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "manual"
+    ]
+  },
+  {
+    "id": "period-today-time",
+    "category": "calendar-periods",
+    "title": "Открой расписание сегодня на 14:30",
+    "text": "Открой расписание сегодня на 14:30",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-15"
+      },
+      "status": "manual",
+      "outcome": "Открыть дату; прокрутка к 14:30 текущим calendar action не гарантируется.",
+      "limitations": [
+        "Поле time calendar handoff не использует."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "manual"
+    ]
+  },
+  {
+    "id": "period-staff-filter",
+    "category": "calendar-periods",
+    "title": "Покажи расписание специалиста Марии Соколовой на завтра",
+    "text": "Покажи расписание специалиста Марии Соколовой на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16",
+        "staffQuery": "Марии Соколовой"
+      },
+      "status": "supported",
+      "outcome": "Локально разрешить имя специалиста и открыть его разрешённый календарь.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Есть один активный разрешённый специалист Мария Соколова."
+    ]
+  },
+  {
+    "id": "period-staff-ambiguous",
+    "category": "calendar-periods",
+    "title": "Покажи расписание Елены на завтра",
+    "text": "Покажи расписание Елены на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16",
+        "staffQuery": "Елены"
+      },
+      "status": "needs_clarification",
+      "outcome": "При двух специалистах с таким именем не выбирать первого.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Два активных разрешённых специалиста имеют имя Елена."
+    ]
+  },
+  {
+    "id": "period-staff-missing",
+    "category": "calendar-periods",
+    "title": "Покажи расписание доктора Туманова завтра",
+    "text": "Покажи расписание доктора Туманова завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16",
+        "staffQuery": "Туманова"
+      },
+      "status": "needs_clarification",
+      "outcome": "Не находить вымышленного специалиста по похожему имени.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Такого специалиста в доступной организации нет."
+    ]
+  },
+  {
+    "id": "period-staff-inactive",
+    "category": "calendar-periods",
+    "title": "Покажи расписание специалиста Бориса Тихонова завтра",
+    "text": "Покажи расписание специалиста Бориса Тихонова завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16",
+        "staffQuery": "Бориса Тихонова"
+      },
+      "status": "unsupported",
+      "outcome": "Неактивный специалист не становится доступным через помощника.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "unsupported"
+    ],
+    "preconditions": [
+      "Специалист неактивен."
+    ]
+  },
+  {
+    "id": "period-foreign-staff",
+    "category": "calendar-periods",
+    "title": "Покажи расписание другого косметолога Марии Соколовой",
+    "text": "Покажи расписание другого косметолога Марии Соколовой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "staffQuery": "Марии Соколовой"
+      },
+      "status": "unsupported",
+      "outcome": "Косметолог не получает чужое расписание через имя в команде.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-periods",
+      "calendar",
+      "unsupported"
+    ],
+    "preconditions": [
+      "Текущий косметолог не имеет права читать календарь Марии."
+    ]
+  },
+  {
+    "id": "period-all-staff",
+    "category": "calendar-periods",
+    "title": "Покажи расписание всех сотрудников сразу",
+    "text": "Покажи расписание всех сотрудников сразу",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не расширять персональные права и не обещать групповой календарь.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "calendar-periods",
+      "help",
+      "unsupported"
+    ]
+  }
+]

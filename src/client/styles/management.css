@@ -1,0 +1,384 @@
+/* Daily operations. Existing services view ID remains the navigation entry. */
+.management-panel {
+  min-width: 0;
+  padding: 22px;
+}
+.management-heading h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+.management-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 620px;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 22px;
+  background: #f1f5f7;
+  border: 1px solid #e0e8ed;
+  border-radius: 12px;
+}
+.management-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: normal;
+}
+.management-tabs svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+.management-tabs button[aria-selected='true'] {
+  background: #fff;
+  border-color: #cbdde7;
+  color: var(--blue);
+  font-weight: 650;
+  box-shadow: 0 2px 5px #244c6408;
+}
+.management-tabs button:hover:not([aria-selected='true']) {
+  background: #e6eef3;
+  color: var(--ink);
+}
+.management-tabs button:focus-visible,
+.management-content:focus-visible {
+  outline: 2px solid #4985ad;
+  outline-offset: 2px;
+}
+.management-content,
+.management-content > section {
+  min-width: 0;
+}
+.management-panel [hidden] {
+  display: none !important;
+}
+.management-panel .services-panel {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.management-panel .services-heading {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.management-panel .services-heading > div:first-child {
+  display: none;
+}
+.management-panel .services-heading:not(:has(.services-heading-actions)) {
+  display: none;
+}
+.management-panel .services-heading-actions {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.management-panel .services-heading-actions button {
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.management-panel .service-selection-bar {
+  padding: 12px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.management-panel .service-selection-bar.is-empty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f6f9fb;
+  border-color: #e1eaf0;
+}
+.management-panel .service-selection-empty {
+  flex: 1 1 220px;
+}
+.management-panel .service-selection-empty span {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.management-panel .is-empty .service-selection-actions {
+  width: auto;
+  flex: 0 1 auto;
+}
+.management-panel .service-selection-actions .primary {
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+.management-panel .service-catalog-toolbar {
+  margin-bottom: 10px;
+}
+.management-panel .service-category-nav {
+  margin-bottom: 12px;
+}
+.management-panel .service-edit-card .setting-actions button {
+  min-height: 44px;
+}
+.management-panel .service-row-main > strong {
+  font-size: 15px;
+  line-height: 1.35;
+}
+.management-panel .service-card-product {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.work-schedule-panel .work-schedule-toolbar {
+  margin-bottom: 12px;
+}
+.work-schedule-person {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.work-schedule-person .text-btn {
+  min-height: 44px;
+  font-size: 13px;
+}
+.work-schedule-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 680px) minmax(230px, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+.work-schedule-calendar {
+  min-width: 0;
+}
+.work-schedule-calendar .work-weekdays {
+  margin-top: 0;
+}
+.work-schedule-selection {
+  min-width: 0;
+  padding: 16px;
+  background: #f7fafb;
+  border: 1px solid #e0e8ed;
+  border-radius: 12px;
+}
+.work-schedule-selection .work-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+  gap: 8px;
+}
+.work-schedule-selection .work-selection > span {
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.work-schedule-selection .work-selection button {
+  padding: 10px 8px;
+  font-size: 14px;
+}
+.work-schedule-help {
+  border-top: 1px solid #e0e8ed;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.work-schedule-help summary {
+  padding: 12px 0;
+  cursor: pointer;
+}
+.work-schedule-help p {
+  margin: 0 0 10px;
+}
+.booking-requests-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.booking-requests-heading h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.booking-requests-heading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.booking-requests-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.booking-requests-panel .booking-request {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px 24px;
+  padding: 16px;
+  margin: 0 0 12px;
+  background: #fbfdfe;
+}
+.booking-requests-panel .booking-request-summary {
+  display: block;
+  min-width: 0;
+}
+.booking-request-contact {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.booking-request-contact strong {
+  font-size: 16px;
+}
+.booking-request-contact a {
+  color: var(--blue);
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+.booking-request-status {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #edf3f6;
+  color: #5e7584;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.booking-request-decision {
+  min-width: 0;
+  max-width: 450px;
+}
+.booking-requests-panel .booking-request-actions {
+  margin-top: 0;
+  gap: 8px;
+}
+.booking-request > .booking-time-editor {
+  grid-column: 1 / -1;
+}
+.booking-requests-empty {
+  border: 1px dashed #cfdee6;
+  border-radius: 12px;
+  padding: 28px 18px;
+  text-align: center;
+  color: var(--muted);
+}
+.booking-requests-empty strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+.booking-requests-empty p {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+@media (max-width: 1050px) {
+  .booking-requests-panel .booking-request {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .booking-request-decision {
+    max-width: none;
+  }
+  .work-schedule-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .management-panel {
+    padding: 12px;
+  }
+  .management-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .management-tabs {
+    max-width: none;
+    margin-bottom: 16px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .management-tabs button {
+    min-height: 62px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 7px 2px;
+    font-size: 13px;
+  }
+  .management-tabs button span {
+    max-width: 100%;
+    overflow-wrap: normal;
+  }
+  .management-panel .services-heading-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+  .management-panel .services-heading-actions button {
+    width: 100%;
+    padding: 9px 7px;
+    font-size: 13px;
+    white-space: normal;
+  }
+  .management-panel .is-empty .service-selection-empty {
+    flex-basis: 140px;
+  }
+  .management-panel .service-selection-bar.is-empty {
+    gap: 8px;
+    padding: 10px;
+  }
+  .management-panel .is-empty .service-selection-actions {
+    flex: 1 1 130px;
+  }
+  .management-panel .is-empty .service-create-stack {
+    width: 100%;
+  }
+  .work-schedule-panel .work-schedule-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .work-schedule-panel .work-schedule-toolbar > .field {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .work-schedule-selection {
+    padding: 12px;
+  }
+  .booking-requests-panel .booking-request {
+    padding: 12px;
+  }
+  #booking-requests-panel .booking-request-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #booking-requests-panel .booking-request-actions .booking-danger {
+    grid-column: 1 / -1;
+    justify-self: start;
+    width: auto;
+    color: #98544f;
+  }
+  .booking-request-actions [data-request-time-close] {
+    grid-column: auto;
+  }
+  .topbar .app-nav-item[data-view='services'] .nav-label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+}

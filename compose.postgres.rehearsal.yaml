@@ -1,0 +1,44 @@
+# Requires Docker Compose 2.24.4+ (!override). Run only postgres and app; never ingress.
+services:
+  app:
+    env_file: !reset []
+    environment:
+      APP_ORIGIN: https://synthetic.invalid
+      CARTOTECA_POSTGRES_REHEARSAL: synthetic-v1
+      CARTOTECA_MAX_ENABLED: '0'
+      CARTOTECA_PUSH_ENABLED: '0'
+      CARTOTECA_PAYMENT_NETWORK_ENABLED: '0'
+    networks: !override
+      private:
+        ipv4_address: ${CARTOTECA_APP_PRIVATE_IP:-172.30.123.3}
+      database:
+        ipv4_address: ${CARTOTECA_APP_DATABASE_IP:-172.30.124.3}
+    volumes:
+      - rehearsal_state:/rehearsal:ro
+  postgres:
+    networks:
+      database:
+        ipv4_address: ${CARTOTECA_PG_PRIVATE_IP:-172.30.124.2}
+  postgres-operator:
+    entrypoint: [node]
+    command: [scripts/postgres-ops.cjs, help]
+    environment:
+      APP_ORIGIN: https://synthetic.invalid
+      CARTOTECA_POSTGRES_REHEARSAL: synthetic-v1
+    volumes: !override
+      - postgres_assets:/data
+      - rehearsal_state:/rehearsal
+      - postgres_backups:/backups
+      - postgres_backup_work:/backup-work
+      - postgres_backup_state:/backup-state
+      - postgres_backup_status:/backup-status
+  caddy:
+    profiles: [never-start-in-rehearsal]
+networks:
+  database:
+    ipam: !override { config: [{ subnet: '${CARTOTECA_DATABASE_SUBNET:-172.30.124.0/29}' }] }
+  private:
+    internal: true
+    ipam: !override { config: [{ subnet: '${CARTOTECA_PRIVATE_SUBNET:-172.30.123.0/29}' }] }
+volumes:
+  rehearsal_state: { labels: { cartoteca.scope: scale123-rehearsal } }

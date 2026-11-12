@@ -1,0 +1,443 @@
+[
+  {
+    "id": "client-full-name",
+    "category": "clients-search",
+    "title": "Найди клиента Анна Сергеевна Иванова",
+    "text": "Найди клиента Анна Сергеевна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Сергеевна Иванова"
+      },
+      "status": "supported",
+      "outcome": "Открыть штатный поиск по явно названному ФИО.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-surname",
+    "category": "clients-search",
+    "title": "Найди клиента Иванова",
+    "text": "Найди клиента Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Иванова"
+      },
+      "status": "supported",
+      "outcome": "Показать доступные результаты, не выбирать одного по фамилии.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-name-surname",
+    "category": "clients-search",
+    "title": "Покажи клиента Анна Иванова",
+    "text": "Покажи клиента Анна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Иванова"
+      },
+      "status": "supported",
+      "outcome": "Поиск клиента, а не сотрудника или записи.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-reordered",
+    "category": "clients-search",
+    "title": "Найди Иванова Анна Сергеевна",
+    "text": "Найди Иванова Анна Сергеевна",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Иванова Анна Сергеевна"
+      },
+      "status": "supported",
+      "outcome": "Сохранить произнесённый порядок ФИО для локального поиска.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-initials",
+    "category": "clients-search",
+    "title": "Найди Иванова А. С.",
+    "text": "Найди Иванова А. С.",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Иванова А. С."
+      },
+      "status": "manual",
+      "outcome": "Открыть поиск; инициалы не раскрывать в угаданное полное имя.",
+      "limitations": [
+        "Сокращения не гарантируют уникальность."
+      ]
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-only-name",
+    "category": "clients-search",
+    "title": "Найди клиента Анна",
+    "text": "Найди клиента Анна",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна"
+      },
+      "status": "manual",
+      "outcome": "Показать всех доступных Анн для выбора.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-phone",
+    "category": "clients-search",
+    "title": "Найди клиента по телефону +7 900 000-00-01",
+    "text": "Найди клиента по телефону +7 900 000-00-01",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "+7 900 000-00-01"
+      },
+      "status": "supported",
+      "outcome": "Открыть поиск по явно произнесённому телефону; цифры не изменять.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-phone-eight",
+    "category": "clients-search",
+    "title": "Найди клиента по номеру 8 900 000 00 01",
+    "text": "Найди клиента по номеру 8 900 000 00 01",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "8 900 000 00 01"
+      },
+      "status": "supported",
+      "outcome": "Сохранить номер; локальный поиск нормализует допустимый префикс.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-phone-spoken-digits",
+    "category": "clients-search",
+    "title": "Найди клиента по телефону плюс семь девятьсот ноль ноль ноль ноль ноль ноль один",
+    "text": "Найди клиента по телефону плюс семь девятьсот ноль ноль ноль ноль ноль ноль один",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "+7 900 000 00 01"
+      },
+      "status": "manual",
+      "outcome": "Перевести только однозначно произнесённые цифры; пользователь проверяет STT.",
+      "limitations": [
+        "Нельзя дополнять потерянную цифру."
+      ]
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-phone-last-four",
+    "category": "clients-search",
+    "title": "Найди клиента, телефон заканчивается на 0001",
+    "text": "Найди клиента, телефон заканчивается на 0001",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "0001"
+      },
+      "status": "manual",
+      "outcome": "Открыть поиск по явному фрагменту; не считать его уникальным идентификатором.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-international-phone",
+    "category": "clients-search",
+    "title": "Найди клиента по телефону +1 202 555 0101",
+    "text": "Найди клиента по телефону +1 202 555 0101",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "+1 202 555 0101"
+      },
+      "status": "supported",
+      "outcome": "Не заменять международный код на +7.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-email",
+    "category": "clients-search",
+    "title": "Найди клиента по адресу anna.ivanova@example.invalid",
+    "text": "Найди клиента по адресу anna.ivanova@example.invalid",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "anna.ivanova@example.invalid"
+      },
+      "status": "manual",
+      "outcome": "Открыть поиск по буквальному значению; поддержка email штатным поиском не обещается.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-quoted-name",
+    "category": "clients-search",
+    "title": "Найди клиента «Вера Ким»",
+    "text": "Найди клиента «Вера Ким»",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Вера Ким"
+      },
+      "status": "supported",
+      "outcome": "Кавычки вокруг ФИО не входят в поисковую строку.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-hyphenated-name",
+    "category": "clients-search",
+    "title": "Найди Анну-Марию Орлову",
+    "text": "Найди Анну-Марию Орлову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну-Марию Орлову"
+      },
+      "status": "supported",
+      "outcome": "Сохранить дефис и обе части имени.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-double-surname",
+    "category": "clients-search",
+    "title": "Найди Анну Салтыкову-Щедрину",
+    "text": "Найди Анну Салтыкову-Щедрину",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Салтыкову-Щедрину"
+      },
+      "status": "supported",
+      "outcome": "Не отбрасывать вторую часть составной фамилии.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-spelling-yo",
+    "category": "clients-search",
+    "title": "Найди Семёна Фёдорова",
+    "text": "Найди Семёна Фёдорова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Семёна Фёдорова"
+      },
+      "status": "supported",
+      "outcome": "Сохранить ё в исходном запросе; нормализация не меняет карточку.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-uppercase",
+    "category": "clients-search",
+    "title": "Найди клиента АННА ИВАНОВА",
+    "text": "Найди клиента АННА ИВАНОВА",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "АННА ИВАНОВА"
+      },
+      "status": "supported",
+      "outcome": "Регистр не даёт дополнительных прав и не меняет сущность.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-extra-spaces",
+    "category": "clients-search",
+    "title": "Найди клиента  Анна   Иванова",
+    "text": "Найди клиента  Анна   Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна   Иванова"
+      },
+      "status": "supported",
+      "outcome": "Сохранить слова; нормализация пробелов допустима локально.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "client-transliteration",
+    "category": "clients-search",
+    "title": "Найди клиента Anna Ivanova",
+    "text": "Найди клиента Anna Ivanova",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Anna Ivanova"
+      },
+      "status": "manual",
+      "outcome": "Сохранить латиницу; не гарантировать совпадение с кириллицей.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  }
+]

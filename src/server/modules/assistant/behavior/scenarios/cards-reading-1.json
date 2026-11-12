@@ -1,0 +1,262 @@
+[
+  {
+    "id": "card-open",
+    "category": "cards-reading",
+    "title": "Открой карту Анны Ивановой",
+    "text": "Открой карту Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clientCard",
+        "query": "Анны Ивановой"
+      },
+      "status": "supported",
+      "outcome": "Однозначное доступное совпадение открывает штатную карточку по локальному ID. При нескольких совпадениях — уточнение с выбором доступного клиента.",
+      "limitations": ["Содержимое карточки, контакты и заметки не передаются модели."]
+    },
+    "tags": ["cards-reading", "clientCard", "supported"],
+    "preconditions": ["В доступном справочнике ровно одна Анна Иванова."]
+  },
+  {
+    "id": "card-read-phone",
+    "category": "cards-reading",
+    "title": "Скажи телефон Анны Ивановой",
+    "text": "Скажи телефон Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не возвращать номер в ответе модели; разрешённый просмотр выполняется в карточке.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-read-birth",
+    "category": "cards-reading",
+    "title": "Когда день рождения у Анны Ивановой?",
+    "text": "Когда день рождения у Анны Ивановой?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Модель не читает карточку и не знает дату рождения.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-history",
+    "category": "cards-reading",
+    "title": "Покажи историю посещений Сергея Иванова",
+    "text": "Покажи историю посещений Сергея Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clientCard",
+        "query": "Сергея Иванова"
+      },
+      "status": "manual",
+      "outcome": "После однозначного ACL-поиска открыть штатную карточку; нужный раздел пользователь выбирает вручную.",
+      "limitations": ["Открытие конкретной вкладки и чтение содержимого модели не реализованы."]
+    },
+    "tags": ["cards-reading", "clientCard", "manual"]
+  },
+  {
+    "id": "card-next-visit",
+    "category": "cards-reading",
+    "title": "Когда следующая запись Анны Ивановой?",
+    "text": "Когда следующая запись Анны Ивановой?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет серверного чтения записей клиента в ответ помощника.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-last-visit",
+    "category": "cards-reading",
+    "title": "Когда Сергей Иванов был в последний раз?",
+    "text": "Когда Сергей Иванов был в последний раз?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не придумывать дату из текста команды.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-notes",
+    "category": "cards-reading",
+    "title": "Прочитай заметки в карточке Анны Ивановой",
+    "text": "Прочитай заметки в карточке Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Заметки и клинические сведения не передаются провайдеру.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-photo",
+    "category": "cards-reading",
+    "title": "Покажи фотографии Анны Ивановой",
+    "text": "Покажи фотографии Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clientCard",
+        "query": "Анны Ивановой"
+      },
+      "status": "manual",
+      "outcome": "После однозначного ACL-поиска открыть штатную карточку; нужный раздел пользователь выбирает вручную.",
+      "limitations": ["Открытие конкретной вкладки и чтение содержимого модели не реализованы."]
+    },
+    "tags": ["cards-reading", "clientCard", "manual"]
+  },
+  {
+    "id": "card-consents",
+    "category": "cards-reading",
+    "title": "Покажи согласия Анны Ивановой",
+    "text": "Покажи согласия Анны Ивановой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clientCard",
+        "query": "Анны Ивановой"
+      },
+      "status": "manual",
+      "outcome": "После однозначного ACL-поиска открыть штатную карточку; нужный раздел пользователь выбирает вручную.",
+      "limitations": ["Открытие конкретной вкладки и чтение содержимого модели не реализованы."]
+    },
+    "tags": ["cards-reading", "clientCard", "manual"]
+  },
+  {
+    "id": "card-payments",
+    "category": "cards-reading",
+    "title": "Сколько должна Анна Иванова?",
+    "text": "Сколько должна Анна Иванова?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Расчёт долга и платежей не входит в разрешённый каталог.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-all-clients-export",
+    "category": "cards-reading",
+    "title": "Выгрузи телефоны всех клиентов",
+    "text": "Выгрузи телефоны всех клиентов",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет массового чтения и экспорта карточек.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-current-ui",
+    "category": "cards-reading",
+    "title": "Открой карточку клиента из выбранной записи",
+    "text": "Открой карточку клиента из выбранной записи",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Текущий dispatcher не получает выбранную запись; попросить явно назвать клиента.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": ["cards-reading", "help", "needs_clarification"]
+  },
+  {
+    "id": "card-hidden-existence",
+    "category": "cards-reading",
+    "title": "Проверь, есть ли в другой организации Иванова",
+    "text": "Проверь, есть ли в другой организации Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не подтверждать наличие недоступной карточки.",
+      "limitations": ["Утверждение примера не добавляет отсутствующее действие в приложение."]
+    },
+    "tags": ["cards-reading", "help", "unsupported"]
+  },
+  {
+    "id": "card-merge-read",
+    "category": "cards-reading",
+    "title": "Покажи различия между двумя карточками Елены Петровой",
+    "text": "Покажи различия между двумя карточками Елены Петровой",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Елены Петровой"
+      },
+      "status": "manual",
+      "outcome": "Открыть обычный поиск и сравнить вручную; автоматического чтения/сравнения нет.",
+      "limitations": []
+    },
+    "tags": ["cards-reading", "clients", "manual"]
+  }
+]

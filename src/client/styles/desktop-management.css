@@ -1,0 +1,389 @@
+/* Approved desktop A. The existing mobile and print layouts remain outside this layer. */
+@media screen and (min-width: 981px) {
+  .workspace.workspace-designed .management-panel {
+    grid-template-columns: minmax(165px, 1fr) auto minmax(165px, 1fr);
+    grid-template-rows: 44px minmax(0, 1fr);
+    gap: 0 16px;
+    padding: 18px 22px 20px;
+    height: calc(100dvh - 142px);
+    min-height: 300px;
+    background: #fff;
+    border: 1px solid #dce5e9;
+    border-radius: 12px;
+    box-shadow: none;
+    color: #233f4b;
+  }
+  .workspace.workspace-designed .management-panel .management-heading {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+  .workspace.workspace-designed .management-panel .management-heading h2 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+  }
+  .workspace.workspace-designed .management-panel .management-tabs {
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: row;
+    align-self: stretch;
+    justify-content: center;
+    gap: 24px;
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+  .workspace.workspace-designed .management-panel .management-tabs button {
+    min-height: 42px;
+    padding: 7px 2px 11px;
+    gap: 8px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #586e79;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: none;
+  }
+  .workspace.workspace-designed .management-panel .management-tabs button[aria-selected='true'] {
+    color: #2d6370;
+    border-bottom-color: #2d6370;
+    background: transparent;
+    font-weight: 650;
+  }
+  .workspace.workspace-designed .management-panel .management-tabs svg {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+  .workspace.workspace-designed .management-panel .management-tab-copy small {
+    display: none;
+  }
+  .workspace.workspace-designed .management-panel .management-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-height: 0;
+    padding: 18px 0 0;
+    border-left: 0;
+    border-top: 1px solid #dce5e9;
+    scrollbar-width: thin;
+    scrollbar-color: #b6c8d0 transparent;
+  }
+  .workspace.workspace-designed .management-panel .services-panel {
+    --service-muted: #586e79;
+  }
+  .workspace.workspace-designed .management-panel .services-panel > .service-catalog-person,
+  .workspace.workspace-designed .management-panel .services-panel > .services-heading {
+    padding-bottom: 12px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .services-heading-actions button,
+  .workspace.workspace-designed .management-panel .services-panel .service-selection-actions button,
+  .workspace.workspace-designed .management-panel .services-panel .setting-actions button {
+    min-height: 36px;
+    padding: 7px 11px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-catalog-person select,
+  .workspace.workspace-designed .management-panel .services-panel .service-category-select select {
+    min-height: 38px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-selection-bar,
+  .workspace.workspace-designed .management-panel .services-panel .service-edit-notice {
+    margin-bottom: 12px;
+    padding: 9px 12px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-catalog-search {
+    max-width: 440px;
+    min-height: 38px;
+    border-radius: 8px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-catalog-search input {
+    min-height: 36px;
+    padding-block: 6px;
+    font-size: 14px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-category-nav {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-category-tab {
+    min-height: 34px;
+    padding: 6px 10px;
+    border-radius: 7px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-category-tab.active {
+    color: #315762;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-select-card,
+  .workspace.workspace-designed .management-panel .services-panel .service-edit-card {
+    min-height: 52px;
+    padding: 7px 12px;
+    gap: 16px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-row-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 2px 20px;
+    align-items: center;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-row-main > strong {
+    grid-column: 1;
+    font-size: 14px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-row-meta {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-columns: 100px 120px;
+    gap: 10px;
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .workspace.workspace-designed
+    .management-panel
+    .services-panel
+    .service-row-meta
+    > [aria-hidden] {
+    display: none;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-card-duration {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-card-price {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-card-product {
+    grid-column: 1;
+    margin: 0;
+    line-height: 1.35;
+  }
+  .workspace.workspace-designed
+    .management-panel
+    .services-panel
+    .service-edit-card
+    .setting-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .service-card-check {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+    font-size: 15px;
+  }
+  .workspace.workspace-designed .management-panel .services-panel .selected-service-card {
+    min-height: 34px;
+    padding-block: 5px;
+    font-size: 13px;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-panel {
+    max-width: 990px;
+    margin-inline: auto;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-toolbar {
+    width: calc(100% - 310px);
+    max-width: 680px;
+    margin: 0 0 12px;
+    align-items: end;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-toolbar > .field {
+    max-width: 285px;
+    flex: 1;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-toolbar select {
+    min-height: 38px;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .workspace.workspace-designed .management-panel .work-month-nav {
+    flex-shrink: 0;
+    padding: 0;
+    gap: 6px;
+    border: 0;
+    background: transparent;
+  }
+  .workspace.workspace-designed .management-panel .work-month-nav > button {
+    width: 32px;
+    min-height: 36px;
+    border-radius: 7px;
+  }
+  .workspace.workspace-designed .management-panel .work-month-nav > strong {
+    min-width: 110px;
+    font-size: 15px;
+  }
+  .workspace.workspace-designed .management-panel .work-selection {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .workspace.workspace-designed .management-panel .work-selection > span {
+    flex: 1;
+    font-size: 13px;
+  }
+  .workspace.workspace-designed .management-panel .work-selection > button {
+    min-height: 36px;
+    padding: 7px 11px;
+    font-size: 13px;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-layout {
+    grid-template-columns: minmax(0, 680px) 286px;
+    align-items: start;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-calendar {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .workspace.workspace-designed .management-panel .work-weekdays > button {
+    min-height: 32px;
+  }
+  .workspace.workspace-designed .management-panel .work-day {
+    min-height: 56px;
+  }
+  .workspace.workspace-designed .management-panel .work-day > small {
+    font-size: 12px;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-selection {
+    padding: 0 0 0 20px;
+    border: 0;
+    border-left: 1px solid #dce5e9;
+    border-radius: 0;
+    background: transparent;
+  }
+  .workspace.workspace-designed .management-panel .work-schedule-help > summary {
+    min-height: 36px;
+    padding: 9px 0;
+  }
+  .workspace.workspace-designed .management-panel .work-calendar-start > select {
+    min-height: 38px;
+    font-size: 14px;
+  }
+  .workspace.workspace-designed .management-panel .work-date-info {
+    margin: 3px 0;
+    padding: 6px 10px;
+  }
+  .workspace.workspace-designed .management-panel .booking-requests-heading {
+    margin-bottom: 5px;
+    align-items: center;
+  }
+  .workspace.workspace-designed .management-panel .booking-requests-tools > button {
+    min-height: 34px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-sync {
+    padding: 3px 7px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 304px;
+    align-items: start;
+    gap: 18px;
+    padding: 12px 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #dce5e9;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+  }
+  .workspace.workspace-designed .management-panel .booking-request > .booking-request-summary {
+    position: relative;
+    min-height: 67px;
+    padding-left: 120px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-contact {
+    gap: 3px 10px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-contact strong {
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-summary p {
+    margin: 3px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-schedule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 105px;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-schedule strong {
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 650;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-schedule > span {
+    font-size: 12px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-comment {
+    padding: 5px 8px;
+    border-radius: 5px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-status {
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-decision > .field {
+    margin: 0 0 8px;
+    font-size: 12px;
+  }
+  .workspace.workspace-designed .management-panel .booking-request-decision select {
+    min-height: 36px;
+    font-size: 13px;
+  }
+  .workspace.workspace-designed .management-panel #booking-requests-panel .booking-request-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .workspace.workspace-designed
+    .management-panel
+    #booking-requests-panel
+    .booking-request-actions
+    button {
+    min-height: 36px;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 7px;
+  }
+  .workspace.workspace-designed .management-panel :is(button, select, input):focus-visible {
+    outline: 2px solid #2d6370;
+    outline-offset: 2px;
+  }
+  @media (forced-colors: active) {
+    .workspace.workspace-designed .management-panel .management-tabs button[aria-selected='true'] {
+      color: Highlight;
+      border-bottom-color: Highlight;
+    }
+    .workspace.workspace-designed .management-panel :is(button, select, input):focus-visible {
+      outline-color: Highlight;
+    }
+  }
+}

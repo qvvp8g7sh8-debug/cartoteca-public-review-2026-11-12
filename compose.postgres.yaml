@@ -1,0 +1,207 @@
+# Explicit PostgreSQL server profile. Existing compose.yaml remains SQLite.
+x-postgres-environment: &postgres-environment
+  NODE_ENV: production
+  CARTOTECA_STORAGE_BACKEND: postgres
+  CARTOTECA_POSTGRES_PROFILE: production-v1
+  CARTOTECA_PG_HOST: postgres
+  CARTOTECA_PG_ALLOWED_HOSTS: postgres
+  CARTOTECA_PG_PORT: '5432'
+  CARTOTECA_PG_DATABASE: cartoteca
+  CARTOTECA_PG_USER: cartoteca_app
+  CARTOTECA_PG_PASSWORD_FILE: /run/secrets/postgres_app_password
+  BACKUP_POSTGRES_APPLICATION_ROLE: cartoteca_app
+  APP_ORIGIN: https://${DOMAIN:?Set DOMAIN}
+  CARTOTECA_DATA_DIR: /data/assets
+  CARTOTECA_SHARED_CABINET_WRITES: '1'
+
+services:
+  postgres:
+    image: postgres:18.6-bookworm@sha256:bbf83594798e144bff365a9c191c5d779f181fb3135902064ab8ff11918020fc
+    restart: 'on-failure:3'
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID, FOWNER, DAC_OVERRIDE]
+    mem_limit: 512m
+    cpus: '1.0'
+    pids_limit: 128
+    shm_size: 64m
+    stop_grace_period: 20s
+    environment:
+      POSTGRES_USER: cartoteca_owner
+      POSTGRES_DB: cartoteca
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_owner_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256 --auth-local=trust
+      PGDATA: /var/lib/postgresql/18/docker
+    command:
+      [
+        postgres,
+        -c,
+        max_connections=32,
+        -c,
+        shared_buffers=128MB,
+        -c,
+        work_mem=4MB,
+        -c,
+        maintenance_work_mem=32MB,
+        -c,
+        max_wal_size=512MB,
+        -c,
+        log_statement=none,
+        -c,
+        log_min_error_statement=panic,
+      ]
+    secrets: [postgres_owner_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+      - /var/run/postgresql:size=8m,mode=3777
+    networks:
+      database:
+        ipv4_address: ${CARTOTECA_PG_PRIVATE_IP:-172.30.42.2}
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U cartoteca_owner -d cartoteca -t 2']
+      interval: 5s
+      timeout: 3s
+      retries: 6
+      start_period: 20s
+    labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 }
+    logging: &logging
+      driver: json-file
+      options: { max-size: '5m', max-file: '3' }
+
+  app:
+    build: .
+    image: ${CARTOTECA_POSTGRES_APP_IMAGE:-cartoteca-postgres:scale123}
+    command: [node, scripts/start-postgres-server.cjs]
+    env_file: ['${CARTOTECA_APP_ENV_FILE:-.env.local}']
+    restart: 'on-failure:3'
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 768m
+    cpus: '1.5'
+    pids_limit: 192
+    stop_grace_period: 10s
+    environment:
+      <<: *postgres-environment
+      BIND_HOST: 0.0.0.0
+      PORT: '4173'
+      TRUSTED_PROXIES: ${CARTOTECA_CADDY_PRIVATE_IP:-172.30.41.2}
+      BACKUP_STATUS_FILE: /backup-status/status.json
+      CARTOTECA_POSTGRES_READINESS_SOCKET: /tmp/cartoteca-postgres-readiness.sock
+    secrets: [postgres_app_password]
+    volumes:
+      - postgres_assets:/data
+      - postgres_backup_status:/backup-status:ro
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    networks:
+      private:
+        ipv4_address: ${CARTOTECA_APP_PRIVATE_IP:-172.30.41.3}
+      database:
+        ipv4_address: ${CARTOTECA_APP_DATABASE_IP:-172.30.42.3}
+      egress: {}
+    depends_on:
+      postgres: { condition: service_healthy }
+    healthcheck:
+      test: [CMD, node, scripts/postgres-readiness.cjs, --technical-output]
+      interval: 10s
+      timeout: 8s
+      retries: 3
+      start_period: 40s
+    labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 }
+    logging: *logging
+
+  postgres-operator:
+    profiles: [ops]
+    image: ${CARTOTECA_POSTGRES_APP_IMAGE:-cartoteca-postgres:scale123}
+    entrypoint: [node, scripts/postgres-ops.cjs]
+    command: [help]
+    init: true
+    restart: 'no'
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    cpus: '1.0'
+    pids_limit: 128
+    environment:
+      <<: *postgres-environment
+      CARTOTECA_PG_USER: cartoteca_owner
+      CARTOTECA_PG_PASSWORD_FILE: /run/secrets/postgres_owner_password
+      CARTOTECA_PG_APPLICATION_PASSWORD_FILE: /run/secrets/postgres_app_password
+      BACKUP_DIR: /backups
+      BACKUP_KEY_FILE: /run/secrets/postgres_backup_key
+      BACKUP_WORK_DIR: /backup-work
+      BACKUP_STATE_DIR: /backup-state
+      BACKUP_STATUS_FILE: /backup-status/status.json
+    secrets: [postgres_owner_password, postgres_app_password, postgres_backup_key]
+    volumes:
+      - postgres_assets:/data
+      # Offline only: SQLite connections are readOnly; writable directory permits
+      # SHM/empty-WAL maintenance. Importer pins every durable source byte.
+      - ${CARTOTECA_MIGRATION_SOURCE:-./postgres-migration-source}:/migration/source:rw
+      - postgres_backups:/backups
+      - postgres_backup_work:/backup-work
+      - postgres_backup_state:/backup-state
+      - postgres_backup_status:/backup-status
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    networks: [database]
+    depends_on:
+      postgres: { condition: service_healthy }
+    labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 }
+    logging: *logging
+
+  caddy:
+    profiles: [ingress]
+    image: cartoteca-caddy:2.11.7
+    build: { context: ., dockerfile: Dockerfile.caddy }
+    restart: unless-stopped
+    ports: ['80:80', '443:443']
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      private:
+        ipv4_address: ${CARTOTECA_CADDY_PRIVATE_IP:-172.30.41.2}
+    depends_on:
+      app: { condition: service_healthy }
+    logging: *logging
+
+networks:
+  database:
+    internal: true
+    ipam: { config: [{ subnet: '${CARTOTECA_DATABASE_SUBNET:-172.30.42.0/29}' }] }
+  private:
+    ipam: { config: [{ subnet: '${CARTOTECA_PRIVATE_SUBNET:-172.30.41.0/29}' }] }
+  egress:
+    enable_ipv4: false
+    enable_ipv6: true
+    ipam: { config: [{ subnet: '${CARTOTECA_EGRESS_SUBNET:-fd30:ca47:42::/64}' }] }
+
+volumes:
+  postgres_data: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  postgres_assets: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  postgres_backups: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  postgres_backup_work: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  postgres_backup_state: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  postgres_backup_status: { labels: { cartoteca.backend: postgres, cartoteca.scope: scale123 } }
+  caddy_data: {}
+  caddy_config: {}
+
+# Protect the host parent directory (0700). Docker file-backed secrets retain
+# host metadata; these granted files must be readable by USER node and PG init.
+secrets:
+  postgres_owner_password:
+    file: ${CARTOTECA_POSTGRES_SECRET_DIR:?Set private secret directory}/postgres_owner_password
+  postgres_app_password:
+    file: ${CARTOTECA_POSTGRES_SECRET_DIR:?Set private secret directory}/postgres_app_password
+  postgres_backup_key:
+    file: ${CARTOTECA_POSTGRES_SECRET_DIR:?Set private secret directory}/postgres_backup_key

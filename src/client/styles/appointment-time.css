@@ -1,0 +1,21 @@
+/* Only manual booking hints; calendar and public booking colours are unchanged. */
+#editor .appointment-time-status {
+  font-weight: 600;
+  line-height: 1.45;
+}
+#editor .appointment-time-status.is-valid {
+  color: #28734c;
+}
+#editor .appointment-time-status.is-warning {
+  color: #b33b3b;
+}
+#editor:has(#appointment-work-schedule) #form-error {
+  color: #b33b3b;
+  font-weight: 600;
+}
+@media (forced-colors: active) {
+  #editor .appointment-time-status.is-valid,
+  #editor .appointment-time-status.is-warning {
+    color: CanvasText;
+  }
+}

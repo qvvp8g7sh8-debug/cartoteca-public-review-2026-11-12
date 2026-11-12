@@ -1,0 +1,183 @@
+/* Client marks are internal to the card, not appointment or directory statuses. */
+@media screen {
+  .patient-header h2:has(> .patient-mark-button) {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .patient-header h2 > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .patient-mark-button,
+  .patient-mark-option {
+    color: #85939b;
+    --mark-fill: #b5c0c7;
+    --mark-tint: #eef2f4;
+  }
+  .patient-mark-button {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .patient-mark-button svg {
+    width: 21px;
+    height: 21px;
+  }
+  .patient-mark-button:hover {
+    background: #f0f4f5;
+  }
+  .patient-mark-button:focus-visible,
+  .patient-mark-option:has(input:focus-visible) {
+    outline: 2px solid var(--blue, #244c64);
+    outline-offset: 2px;
+  }
+  [data-patient-mark='star'],
+  [data-mark-option='star'] {
+    color: #a87720;
+    --mark-fill: #edbe4e;
+    --mark-tint: #fcf3dd;
+  }
+  [data-patient-mark='attention'],
+  [data-mark-option='attention'] {
+    color: #a34c57;
+    --mark-fill: #e88488;
+    --mark-tint: #fbedef;
+  }
+  [data-patient-mark='flag'],
+  [data-mark-option='flag'] {
+    color: #4c7fa6;
+    --mark-fill: #80b8df;
+    --mark-tint: #eaf3fa;
+  }
+  .patient-mark-icon {
+    overflow: visible;
+    filter: drop-shadow(0 1px 1px #253d4620);
+  }
+  .patient-mark-icon .mark-surface {
+    fill: var(--mark-fill, #f7f9fa);
+    stroke: none;
+  }
+  .patient-mark-icon .mark-shade {
+    fill: currentColor;
+    stroke: none;
+    opacity: 0.16;
+  }
+  .patient-mark-icon .mark-highlight {
+    stroke: #fff;
+    stroke-width: 1.1;
+    opacity: 0.8;
+  }
+  .patient-mark-icon .mark-glyph {
+    stroke-width: 2;
+  }
+  [data-mark-option='attention'] .mark-glyph,
+  [data-patient-mark='attention'] .mark-glyph {
+    stroke: #fff;
+  }
+  .patient-mark-icon .mark-symbol {
+    fill: #fff;
+    stroke: none;
+  }
+  #editor:is([data-editor-kind='patientMark'], [data-editor-kind='patientMarkView']) {
+    width: min(420px, calc(100vw - 24px));
+  }
+  .patient-mark-picker {
+    border: 0;
+    padding: 0;
+    margin: 0 0 16px;
+    min-width: 0;
+  }
+  .patient-mark-picker legend {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .patient-mark-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(44px, 1fr));
+    gap: 8px;
+  }
+  .patient-mark-option {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 52px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .patient-mark-option input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .patient-mark-option svg,
+  .patient-mark-readonly svg {
+    width: 28px;
+    height: 28px;
+  }
+  .patient-mark-option:has(input:checked) {
+    background: var(--mark-tint);
+  }
+  .patient-mark-option:hover {
+    background: var(--mark-tint);
+  }
+  #editor[data-editor-kind='patientMark'] textarea {
+    width: 100%;
+    min-width: 0;
+    resize: vertical;
+    font-size: 16px;
+  }
+  .patient-mark-readonly {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .patient-mark-note {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+}
+@media (forced-colors: active) {
+  .patient-mark-icon {
+    filter: none;
+  }
+  .patient-mark-icon .mark-surface {
+    fill: ButtonText;
+  }
+  .patient-mark-icon .mark-highlight,
+  .patient-mark-icon .mark-shade {
+    display: none;
+  }
+  [data-mark-option='attention'] .mark-glyph,
+  [data-patient-mark='attention'] .mark-glyph {
+    stroke: Canvas;
+  }
+  .patient-mark-icon .mark-symbol {
+    fill: Canvas;
+  }
+  .patient-mark-option:has(input:checked) {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+}
+@media print {
+  .patient-mark-button {
+    display: none;
+  }
+}

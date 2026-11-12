@@ -1,0 +1,367 @@
+/* Compact settings rows share the card/Telegram height and our own icon style. */
+.settings-panel>h2 {
+  margin: 0 0 14px;
+}
+.settings-panel .account-settings {
+  margin: 0 0 18px;
+  min-width: 0;
+}
+.settings-panel .account-settings>div {
+  min-width: 0;
+}
+.settings-panel .account-settings p {
+  overflow-wrap: anywhere;
+}
+.settings-tiles {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.settings-tiles>.settings-section {
+  margin: 0;
+  border-radius: 12px;
+  min-width: 0;
+}
+.settings-tile>summary {
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 9px 14px;
+  min-height: var(--compact-row-height);
+  box-sizing: border-box;
+}
+.settings-tile-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #edf4f8;
+  color: var(--blue);
+}
+.settings-tile-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.settings-tile-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.settings-tile-title {
+  font-size: 15px;
+  line-height: 1.3;
+}
+.settings-tile-description {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--muted);
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+.settings-tile>summary::after {
+  transform: rotate(-45deg);
+  margin-left: auto;
+}
+.settings-tile[open]>summary::after {
+  transform: rotate(45deg);
+}
+.member-specialty-form {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+.member-specialty-form .field {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+}
+.member-specialty-form input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.member-specialty-form button {
+  flex-shrink: 0;
+}
+.team-invitations {
+  margin: 16px 0;
+  min-width: 0;
+}
+.team-invitations h4 {
+  margin: 0 0 10px;
+}
+.team-invitation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  min-width: 0;
+  background: #f8fbfd;
+}
+.invitation-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.invitation-copy small,.invitation-copy span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.team-invitation[data-invitation-status="accepted"] .invitation-copy span {
+  color: #2e6b46;
+}
+.team-invitation[data-invitation-status="failed"] .invitation-copy span {
+  color: #963b3b;
+}
+.invitation-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.support-help {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.support-help>details {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+.support-help summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 550;
+}
+.support-help p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
+.support-contact-link {
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.support-intro {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 650px;
+}
+#support-form {
+  max-width: 720px;
+  min-width: 0;
+}
+#support-description {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 110px;
+  padding: 12px;
+  border: 1px solid #cdd8e0;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+}
+#support-description[aria-invalid="true"] {
+  border-color: #ae3434;
+}
+#support-form .form-hint {
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 6px 0 10px;
+}
+.support-extra {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.support-extra>summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 550;
+}
+.support-extra .support-help {
+  margin-bottom: 0;
+}
+.support-chat-fallback {
+  display: inline-block;
+  margin: 8px 0;
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+.support-chat-fallback[hidden] {
+  display: none;
+}
+#support-message {
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 720px;
+}
+#support-message[data-status="pending"],#support-message[data-status="success"],#support-message[data-status="error"] {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  background: #eff7fb;
+  color: var(--ink);
+}
+#support-message[data-status="success"] {
+  border-color: #b8d7c5;
+  background: #edf7f0;
+  color: #235b3b;
+}
+#support-message[data-status="error"] {
+  border-color: #e5bbbb;
+  background: #fff3f3;
+  color: #8c2929;
+}
+#support-message:empty {
+  display: none;
+}
+#support-open-telegram:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+.app-version-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1376px;
+  margin: 12px auto;
+  padding: 12px 16px;
+  border: 1px solid #bdd4e2;
+  border-radius: 12px;
+  background: #eff7fb;
+  color: var(--ink);
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.app-version-notice .secondary {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+@media(max-width:700px) {
+  .team-invitation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .invitation-controls {
+    flex-wrap: wrap;
+  }
+  .invitation-controls button {
+    min-height: 44px;
+    flex: 1;
+  }
+  .settings-panel>h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .settings-panel .account-settings {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .settings-panel .account-settings .secondary {
+    width: auto;
+    flex-shrink: 0;
+    padding: 10px 12px;
+  }
+  .settings-tile>summary {
+    gap: 10px;
+    padding: 9px 12px;
+  }
+  .settings-tile-description {
+    font-size: 11px;
+  }
+  .app-version-notice {
+    margin: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .support-actions>button {
+    flex: 1;
+    min-height: 44px;
+  }
+  #support-form>.support-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 6px;
+  }
+  #support-form>.support-actions>button {
+    width: 100%;
+    flex: auto;
+  }
+}
+.settings-legal {
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.settings-legal a {
+  color: var(--accent, #244c64);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media screen {
+  .settings-panel > .early-access-offer {
+    flex: 0 0 auto;
+    min-width: 0;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border-left: 3px solid #527d6b;
+    border-radius: 0 8px 8px 0;
+    background: #edf5f1;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .early-access-offer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .early-access-offer strong {
+    font-weight: 650;
+    color: #285b46;
+  }
+  .early-access-days {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #566b61;
+    font-variant-numeric: tabular-nums;
+  }
+  .early-access-days[hidden] {
+    display: none;
+  }
+}

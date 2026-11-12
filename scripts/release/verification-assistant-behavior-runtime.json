@@ -1,0 +1,326 @@
+{
+  "app-assistant.js": {
+    "bytes": 198143,
+    "sha256": "10af191b059e0af5c2adf6eeb7bf9ddb962a36123110795ecd053df8ab4ffdce"
+  },
+  "app-settings.js": {
+    "bytes": 215136,
+    "sha256": "685c4b637b23315c53ba02c14c973342163fa59be5778fb0e2863f4986976bc3"
+  },
+  "app.js": {
+    "bytes": 638567,
+    "sha256": "2680a98ae2d7c3cb924ac78218450fe606c77266e4c75db5c11213e6444e7c0f"
+  },
+  "src/client/contracts/assistant.d.ts": {
+    "bytes": 5058,
+    "sha256": "6e796ebf5b783f9e6fed1a658e6fef99897180c37dbcb6e83a65dc47c308ae6f"
+  },
+  "src/client/manifest.json": {
+    "bytes": 52508,
+    "sha256": "7b5c3bdc332302d9a4c6f943a6e483df4b103ad267f0005aab9608eb81774fce"
+  },
+  "src/client/modules/assistant-appointment-preview.js": {
+    "bytes": 5859,
+    "sha256": "0ff25d0d361142a23901020e2c29540994076c2d3c0eee44bf87f42f79ae84e2"
+  },
+  "src/client/modules/assistant-appointment-save.js": {
+    "bytes": 11448,
+    "sha256": "e548b9614710dcf32536dfa171ba4d46d129839560f702827084f8393979391f"
+  },
+  "src/client/modules/assistant-audio.js": {
+    "bytes": 31526,
+    "sha256": "ef1e78fff7c443e6d99a166db45c0378e9b2fc3fb9d0885de49e6fd33eb2b0b0"
+  },
+  "src/client/modules/assistant-barge-in.js": {
+    "bytes": 21187,
+    "sha256": "a048ea0a9e00675b802c39e15a32c1896ec14b37714cdd23797340de42780aea"
+  },
+  "src/client/modules/assistant-commands.js": {
+    "bytes": 7933,
+    "sha256": "c6d44d611286e1d0ce6ab447899849571fdda73efd3704819eed13a4cbc9ffaa"
+  },
+  "src/client/modules/assistant-idle.js": {
+    "bytes": 1025,
+    "sha256": "3d54dbc655c7a7a13c5ae42aac2245ac653cdb08263b429d5663f337fe65a722"
+  },
+  "src/client/modules/assistant-playback.js": {
+    "bytes": 17174,
+    "sha256": "5d29477c57f8717da2da91d36455cbbc328e0290304f69ca220054adfb086f4b"
+  },
+  "src/client/modules/assistant-speech.js": {
+    "bytes": 34560,
+    "sha256": "ecae0caddabc9898b05a971f3154d0e46daac61e498c36d1479006ded4505fdc"
+  },
+  "src/client/modules/assistant-trigger.js": {
+    "bytes": 10213,
+    "sha256": "8dac965c9c180acd5d768541fd92794ba479469a9f00903587c293294daf6665"
+  },
+  "src/client/modules/voice-assistant.js": {
+    "bytes": 30549,
+    "sha256": "96ba7ca26676ba7add3bc098e73547e40e133919095e72b5d653fba01a76f398"
+  },
+  "src/server/modules/assistant/actions.cjs": {
+    "bytes": 4495,
+    "sha256": "9fdbfc17ecbd42981c610aa699c1ea4dc7cc8834f3f08525231261528de6fcf4"
+  },
+  "src/server/modules/assistant/affirmative-answer.cjs": {
+    "bytes": 1925,
+    "sha256": "2454567c47303fe6d9c5c6d8f65f15769b581ac14f1a0086b7a86a3ccd851c2e"
+  },
+  "src/server/modules/assistant/appointment-cancellation-snapshot.cjs": {
+    "bytes": 4450,
+    "sha256": "c00b253b84ff78ff38afdb908c4caaaf947048d62c2d7977c54b1fcb1f771d99"
+  },
+  "src/server/modules/assistant/appointment-execution-snapshot.cjs": {
+    "bytes": 6612,
+    "sha256": "e2f7997046705cd75c1d3548f0fa4200abf1594cc0e09be4f9e0509e6193ac38"
+  },
+  "src/server/modules/assistant/appointment-execution.cjs": {
+    "bytes": 9107,
+    "sha256": "9846512e5cd2b008b70f27d3ee9d86599ca8d9f2b5136f704843a490804b38d1"
+  },
+  "src/server/modules/assistant/appointment-management-availability.cjs": {
+    "bytes": 2515,
+    "sha256": "78107069cdbec0050ed51c018fc752e1aacc48fd7167924fadee33ed0efe8ca7"
+  },
+  "src/server/modules/assistant/appointment-management-date.cjs": {
+    "bytes": 5338,
+    "sha256": "1f5eeb98f3f7f8d6c8d96cef65aacecb10f903094644bbc1e0cc32e19756efff"
+  },
+  "src/server/modules/assistant/appointment-management-flow.cjs": {
+    "bytes": 22391,
+    "sha256": "b92cd7619e537a775a020e24fec1756ca592b2654dd31f0a8defee5b0ee67c7b"
+  },
+  "src/server/modules/assistant/appointment-management-input.cjs": {
+    "bytes": 4530,
+    "sha256": "2f94b2b015b263e8d21903dcb6336f980a179d4faf8b670610c447e0f84f7130"
+  },
+  "src/server/modules/assistant/appointment-management-intent.cjs": {
+    "bytes": 7366,
+    "sha256": "1d4c97404c974b930596a684185725c80d46bc2754f0aa27371e6f8da1264fd4"
+  },
+  "src/server/modules/assistant/appointment-management-temporal.cjs": {
+    "bytes": 4704,
+    "sha256": "29cadcaf88d58d6a7831875f785e6d2203be4bb7eb7004599939493459963a44"
+  },
+  "src/server/modules/assistant/appointment-management-view.cjs": {
+    "bytes": 4040,
+    "sha256": "46a59c293ac45bc42963b9bd14d874af13886b506ef18a2495803836249296e5"
+  },
+  "src/server/modules/assistant/appointment-move-snapshot.cjs": {
+    "bytes": 6259,
+    "sha256": "4142d677e8ec885bb4aef068f88ae90df03c70649cb0a5f56c70717645f82da8"
+  },
+  "src/server/modules/assistant/appointment-time-input.cjs": {
+    "bytes": 886,
+    "sha256": "f245f0d1a45e930368cdd3d9f7bbf34c19dde5fe3eb0ae1dc4d7636178868eb9"
+  },
+  "src/server/modules/assistant/availability.cjs": {
+    "bytes": 10509,
+    "sha256": "69007249f6214e90db248c4b11527dcce1017be80dd2452aaac4280d3bae6a78"
+  },
+  "src/server/modules/assistant/booking-temporal-constraints.cjs": {
+    "bytes": 5782,
+    "sha256": "161f144126d3c1307fec9fab613743e69a4e28ebe3199f3ef60b82af69fa1a52"
+  },
+  "src/server/modules/assistant/calendar-read-request.cjs": {
+    "bytes": 4319,
+    "sha256": "1b21f4cd664e963bed7369d2bccd6dc35510448b6854e9d905ac641971c22086"
+  },
+  "src/server/modules/assistant/client-choice-names.cjs": {
+    "bytes": 13413,
+    "sha256": "a7402ae6bbdb4c8d93d533b3ffa114b63510cce60e0958334a24fcd9a28123b6"
+  },
+  "src/server/modules/assistant/client-name-components.cjs": {
+    "bytes": 8073,
+    "sha256": "46130b61c77413c409347c34b2b88e91f68f82f2631c48c615504234247695c3"
+  },
+  "src/server/modules/assistant/client-phone-answer.cjs": {
+    "bytes": 1789,
+    "sha256": "ef68e30e7fa2e07aa61bae13c29e0d5fa9fee2ed0b87956a5065e34e5e2655f6"
+  },
+  "src/server/modules/assistant/client-source-span.cjs": {
+    "bytes": 9516,
+    "sha256": "a3b2c4d63d1d3136f5afdb0b6da67852ff849be132b8b45345dedf142dae0c95"
+  },
+  "src/server/modules/assistant/clock-context.cjs": {
+    "bytes": 8483,
+    "sha256": "950ae07cf18cc5bd772297f7688ff9647bf71250012e48a034d14f50cce7a598"
+  },
+  "src/server/modules/assistant/clock-minute.cjs": {
+    "bytes": 1126,
+    "sha256": "6030f23052d1c195c3b02c802777e8c5346e8e98642bf183965614908b20aa62"
+  },
+  "src/server/modules/assistant/continuation-contract.cjs": {
+    "bytes": 7028,
+    "sha256": "46d6c8151cdb639d2ff64c95d292768ce8c1a56194b188f0cfb182993c6737b2"
+  },
+  "src/server/modules/assistant/continuation-examples.cjs": {
+    "bytes": 5818,
+    "sha256": "f1c11e080122e9dd6d443586770dfa02f2da06d9b542f4597f4eaedef21eb2de"
+  },
+  "src/server/modules/assistant/continuation-operation.cjs": {
+    "bytes": 14869,
+    "sha256": "1b9b2366b3e4174fea4db761710e0ab1ae0e9df3c6bdae13dc648f8c305c2a71"
+  },
+  "src/server/modules/assistant/continuation-prompt.cjs": {
+    "bytes": 10182,
+    "sha256": "1e45e62ddea2948bdd977fe489592631aca34a21baf00a2949653c4855e46c29"
+  },
+  "src/server/modules/assistant/continuation-runtime.cjs": {
+    "bytes": 5653,
+    "sha256": "22b367092cadbd750242a3b40d6d9c5fb0d89d97de4566a7ec0745d8e3efbe85"
+  },
+  "src/server/modules/assistant/continuation-source-scope.cjs": {
+    "bytes": 1804,
+    "sha256": "ec8c3d42bc3b35559ec7f4356a8930607e4279b6e413cce164ba16898ae49ab2"
+  },
+  "src/server/modules/assistant/demo-intents.cjs": {
+    "bytes": 4659,
+    "sha256": "c65690083f2baa960d33a34cbc462b31539f7f3f753ce97cbfc8da97d40bf732"
+  },
+  "src/server/modules/assistant/dialogue-booking-time.cjs": {
+    "bytes": 10014,
+    "sha256": "4199edfb88f4ce0fb90f287f4b261b5ee3042926452cbfe53311c404f193fb15"
+  },
+  "src/server/modules/assistant/dialogue-choices.cjs": {
+    "bytes": 6584,
+    "sha256": "2065a3f8dcb94f46d9bd860264e4e230765421da3042d4f1938d07df30eac305"
+  },
+  "src/server/modules/assistant/dialogue-command-transition.cjs": {
+    "bytes": 1584,
+    "sha256": "e3a7a172a22c7ac6c3eb0663e9ba74603688a4d8f42c1267c9f440b83cc5e456"
+  },
+  "src/server/modules/assistant/dialogue-fast-booking.cjs": {
+    "bytes": 4225,
+    "sha256": "99638ccaf84e617c7569902064cb89e2f170cc13802bd9f8d8935fc05e5c1b6c"
+  },
+  "src/server/modules/assistant/dialogue-flow.cjs": {
+    "bytes": 31230,
+    "sha256": "e8a31075208efafe64a16bd70d06f1107bbc38fe5b8f33978700b0368daaf763"
+  },
+  "src/server/modules/assistant/dialogue-input.cjs": {
+    "bytes": 8984,
+    "sha256": "b00446cb4ef2a1f99f042487cfc25e37eec7cfa2af58510796cf6d7d3dc703e2"
+  },
+  "src/server/modules/assistant/dialogue-options.cjs": {
+    "bytes": 11037,
+    "sha256": "2e7556a35d13ea976d89438d4ec82c634413612c4a15251a87e7a5706fa571d8"
+  },
+  "src/server/modules/assistant/dialogue-repair-parse.cjs": {
+    "bytes": 10461,
+    "sha256": "f664e1c1da80166a94187d5deba5ee9528b37e1d7a6f60034b92b59941ac3499"
+  },
+  "src/server/modules/assistant/dialogue-repair-values.cjs": {
+    "bytes": 9086,
+    "sha256": "c7521f650061d4c47384a34e32416965c84678bb446bbe037c59bfcc85fe160c"
+  },
+  "src/server/modules/assistant/dialogue-slots.cjs": {
+    "bytes": 4875,
+    "sha256": "e685d115b01d2fbc8052e1158f2356fd81bbf980aceb78b1bd9471046b00312f"
+  },
+  "src/server/modules/assistant/domain-rules.cjs": {
+    "bytes": 10782,
+    "sha256": "696dd5a6931c6f7f195eb6b9c80cc6414d36dfcc0d3c2a949a1db9470122a957"
+  },
+  "src/server/modules/assistant/entity-provenance.cjs": {
+    "bytes": 14009,
+    "sha256": "bc2e7729fc12067092594907348a9cd87596ffeaac61072a1334e09381e06d05"
+  },
+  "src/server/modules/assistant/example-features.cjs": {
+    "bytes": 5520,
+    "sha256": "e232adac7f95066a346d872a8387b2b0fa2a92fbd3e50b4a59aa53acfb263018"
+  },
+  "src/server/modules/assistant/example-retrieval.cjs": {
+    "bytes": 5143,
+    "sha256": "96b59a9f7b1a1d2b2a8e499b9e9295a63d72d5372b18b226ada4e8e947bb026c"
+  },
+  "src/server/modules/assistant/example-selection.cjs": {
+    "bytes": 9058,
+    "sha256": "910e1316e8c37de01869ea95defce2119ec9a5da867a41178a4023e476eef5d9"
+  },
+  "src/server/modules/assistant/field-answer.cjs": {
+    "bytes": 1557,
+    "sha256": "e629edff2360d78476466c8c8749a1308b54e344b1b9e34271b11615f0f0eedb"
+  },
+  "src/server/modules/assistant/free-range-view.cjs": {
+    "bytes": 1778,
+    "sha256": "c8dd9a52333b838ef184202f28ca6843ac6a0e34879580e222422b68a43b89ce"
+  },
+  "src/server/modules/assistant/initial-model-response.cjs": {
+    "bytes": 757,
+    "sha256": "71b59a5083edfabd6c579b57673236689d810867e6ce51299df272a54dcb223a"
+  },
+  "src/server/modules/assistant/initial-temporal-constraints.cjs": {
+    "bytes": 12358,
+    "sha256": "9fb041fb84084fab8f1e30ddb3bc6891b79813fdc31b5467da974c2a410d8d8e"
+  },
+  "src/server/modules/assistant/intent-contract.cjs": {
+    "bytes": 2726,
+    "sha256": "6db2a776dffcc36f1de90c050a020ee843be4ab0ec5b82f2422c33fc3d0a457b"
+  },
+  "src/server/modules/assistant/intents.cjs": {
+    "bytes": 5789,
+    "sha256": "b0e0c34514b65ebde9a5aec6facf51e1076cc3d9849bf30076d0cb42355336df"
+  },
+  "src/server/modules/assistant/local-speech-hints.cjs": {
+    "bytes": 4848,
+    "sha256": "a74555df707d3f4aaa2f4bd4eca2a402fd4a0d71348f41b0061d870eb5796202"
+  },
+  "src/server/modules/assistant/model-output-contract.cjs": {
+    "bytes": 1711,
+    "sha256": "e012d4e2c3bc1f9f1e482ee5b9a2f55dcb9d18179e0a2a1e98862e2f06e2bd76"
+  },
+  "src/server/modules/assistant/model-preferences.cjs": {
+    "bytes": 634,
+    "sha256": "b98743610c997360a654f0849eb7170e9e9ca7ad67883c6ab4c570a439ac7a6e"
+  },
+  "src/server/modules/assistant/requested-operation.cjs": {
+    "bytes": 8796,
+    "sha256": "c30defb86dee805ae89179816fda04fe6d96e290ecdeb1b6d40bcdb516349ff0"
+  },
+  "src/server/modules/assistant/scenarios/appointment-current-commands.json": {
+    "bytes": 7573,
+    "sha256": "22b3206e6fe6690ddd25fd061d75d650f69aacc1ccfc1caeec158f1117350990"
+  },
+  "src/server/modules/assistant/scenarios/index.json": {
+    "bytes": 14187,
+    "sha256": "b5dd301edc5e6772fe8f17c976ef5b9da146961e44ffb1b9cc66914501117971"
+  },
+  "src/server/modules/assistant/service-brand-forms.cjs": {
+    "bytes": 3669,
+    "sha256": "3965eed0d5c160ee43f13f6ea68182cefefaf975fc6b612be82d2a0fc2a4054f"
+  },
+  "src/server/modules/assistant/service-exact-followup.cjs": {
+    "bytes": 2743,
+    "sha256": "1e41b91f641a95385f0115e19ec647f2323aecb8eaa543450c3e4cf670f8c723"
+  },
+  "src/server/modules/assistant/service-matching.cjs": {
+    "bytes": 4457,
+    "sha256": "ce213e65cc02b2c31f0ee7ed0aa020b60fca1ac1dc513edf22a2ee4c482f53b0"
+  },
+  "src/server/modules/assistant/service-partial-search.cjs": {
+    "bytes": 7054,
+    "sha256": "3031ef421d293609a2e80140338c902b01c2d15e9d2c2660d9757c419a78a2ac"
+  },
+  "src/server/modules/assistant/service.cjs": {
+    "bytes": 16935,
+    "sha256": "ec9cf8e00e4596a04860ebb49572db98978f4caa034a8533e970ce383cf57ffd"
+  },
+  "src/server/modules/assistant/slot-request.cjs": {
+    "bytes": 2000,
+    "sha256": "07fa1bb13f3ba6ddc766d53d27a138da72ee699869af3ba67c6345e7f05d2ef7"
+  },
+  "src/server/modules/assistant/spoken-time.cjs": {
+    "bytes": 4818,
+    "sha256": "caff173ecef44457a3c9c33466ad72fe534ed0e2375b0374cb1e2a72c0d651f2"
+  },
+  "src/server/modules/cabinet/validation.cjs": {
+    "bytes": 7219,
+    "sha256": "7e2b02ee7c166420b5d9d928f66d415db9f07d0cceef985024ab8addc6e95d60"
+  },
+  "src/shared/appointment-time.cjs": {
+    "bytes": 166,
+    "sha256": "1c0cdfbbdced0cdf1fa949366ecd9255c605edf31431fd448c6639ce214fc737"
+  }
+}

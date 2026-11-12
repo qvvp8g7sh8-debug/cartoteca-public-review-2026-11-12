@@ -1,0 +1,109 @@
+/* Click/tap help only. Explicit IDs override legacy full-width Telegram buttons. */
+.settings-help-trigger,
+.settings-panel button.settings-help-trigger,
+#telegram-settings button.settings-help-trigger,
+#online-booking-settings button.settings-help-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--blue);
+  cursor: pointer;
+}
+.settings-help-trigger > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #b8ccd9;
+  border-radius: 50%;
+  background: #f2f7fa;
+  font-size: 14px;
+  font-weight: 650;
+}
+.settings-help-trigger:hover > span {
+  background: #e3eef5;
+  border-color: #88acbf;
+}
+.settings-help-trigger:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+/* Native modal keeps keyboard focus inside and supports Escape. */
+#settings-help-dialog {
+  width: min(440px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #cbdde7;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 12px 40px #16384926;
+}
+#settings-help-dialog::backdrop {
+  background: #16384955;
+}
+#settings-help-dialog .settings-help-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+#settings-help-title {
+  min-width: 0;
+  margin: 8px 0;
+  font-size: 17px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#settings-help-dialog .settings-help-close {
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #d3e1e9;
+  border-radius: 9px;
+  background: #f5f9fb;
+  color: var(--blue);
+  font-size: 25px;
+  line-height: 1;
+}
+#settings-help-dialog .settings-help-close:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+#settings-help-text {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .settings-help-trigger,
+  .settings-panel button.settings-help-trigger,
+  #telegram-settings button.settings-help-trigger,
+  #online-booking-settings button.settings-help-trigger {
+    flex-basis: 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+}

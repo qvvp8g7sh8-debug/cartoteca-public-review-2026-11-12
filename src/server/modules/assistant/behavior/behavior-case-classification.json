@@ -1,0 +1,174 @@
+{
+  "card-create-new": {
+    "support": "not_implemented",
+    "fingerprint": "95acde634e78ce8b1a4048f08c06335eb79c5a8c8621eb2c591b8c96bfc61d5e"
+  },
+  "card-create-with-phone": {
+    "support": "not_implemented",
+    "fingerprint": "2df8fc86cf031c93a2fe5473d4139094669106471906391b09320c7335759371"
+  },
+  "card-change-phone": {
+    "support": "not_implemented",
+    "fingerprint": "130231871d0720162455175f5fced1cd501af40ef848a0cd1e7b3645b1b80598"
+  },
+  "card-change-name": {
+    "support": "not_implemented",
+    "fingerprint": "d163f113c166996a5d0c204e5921a1685f27f42af0ca95277be4638ff9f5370d"
+  },
+  "card-add-note": {
+    "support": "not_implemented",
+    "fingerprint": "6eb33998601f324af091fa17dba3e0b17551333413abad3769df9d1692b3c057"
+  },
+  "card-delete": {
+    "support": "not_implemented",
+    "fingerprint": "58a0fef051c4c7b4cd5d4bd73349e0f25eda3917b35001ac8f1a2c59afbddf70"
+  },
+  "card-archive": {
+    "support": "not_implemented",
+    "fingerprint": "684892be7be59ca86a3d9b29ef783cb7211c5f5a972da6733695688dd8df5f7d"
+  },
+  "card-restore": {
+    "support": "not_implemented",
+    "fingerprint": "9a34e07ca9f55d7ae61b6bf26be1390844bbaddc6729ef41970519922ea5b4f1"
+  },
+  "card-merge": {
+    "support": "not_implemented",
+    "fingerprint": "1e7369f22e58371cf63ae2dfcced693aa33bccc078c3ce0dcfc3f8455145f08d"
+  },
+  "card-delete-consent": {
+    "support": "not_implemented",
+    "fingerprint": "787760ad2937df9fded8c820782b7ee86dd774dfbba3c5bc82acd4b77ca57601"
+  },
+  "card-send-message": {
+    "support": "not_implemented",
+    "fingerprint": "8940e670d999e77ee1d5de7c62be86b8e1258f02282163ecbc212d541ffd9bbc"
+  },
+  "card-edit-confirmation": {
+    "support": "not_implemented",
+    "fingerprint": "32995b0c36b1169bfeea64f04535114b207dd1c903ee6103fdf2a543a1ba60a2"
+  },
+  "card-payments": {
+    "support": "not_implemented",
+    "fingerprint": "320ec4355930fce838a65a430448273a0033a9b74ce3d2510d17a2ee664d72fb"
+  },
+  "card-read-phone": {
+    "support": "not_implemented",
+    "fingerprint": "8a309bd8473d7a4c8dc70a48c7021fb3e9fec48772dd7ef8bcf08a744ed677f1"
+  },
+  "card-read-birth": {
+    "support": "not_implemented",
+    "fingerprint": "354e080ca1a017dd7c18aec4bef501cfaa00963038b4916a042ac54e9c0a3dee"
+  },
+  "card-next-visit": {
+    "support": "not_implemented",
+    "fingerprint": "b1aa77321982ddb477d4b2a60bb7ff82f140273c692a873bdd0e057a9efac567"
+  },
+  "card-last-visit": {
+    "support": "not_implemented",
+    "fingerprint": "f2ce42dcca710cf4dd0e88e6b16423170560566d46e23be94a5e98c1f1f1dfc8"
+  },
+  "card-notes": {
+    "support": "not_implemented",
+    "fingerprint": "00cf717f6818d4a50702b4b8b33c596f19cd05b347158e5c3c739aa33892fc55"
+  },
+  "card-history": {
+    "support": "manual_only",
+    "fingerprint": "9921a2844d7b85ac170a9b488d8c6725e3c8c0650f1b6e9124e6fcc1122e6014"
+  },
+  "card-photo": {
+    "support": "manual_only",
+    "fingerprint": "448b96b825438f29e7219444f82073e27797bcb3e1af1acda6f9a6172f3d6d3f"
+  },
+  "card-consents": {
+    "support": "manual_only",
+    "fingerprint": "7822124f9d4319b6cb3b3dad805da24544607b341a03c3ca1e8558d5dd870b60"
+  },
+  "card-merge-read": {
+    "support": "manual_only",
+    "fingerprint": "ce771ca7312be7c3d9af96d42c96a926f6fa76b65c2d7f6f00abc108a881ce4a"
+  },
+  "safety-two-independent": {
+    "support": "policy_boundary",
+    "fingerprint": "36d7594e60be70ac391a37619c049e071a98cc2cc51ae78e897b35d481d596a7"
+  },
+  "safety-save-and-delete": {
+    "support": "policy_boundary",
+    "fingerprint": "eed01933aaff8b1918100e981ac204ee1c748ce195d2065232b5daefca6b497c"
+  },
+  "safety-prompt-injection": {
+    "support": "policy_boundary",
+    "fingerprint": "602ad9b2f3dbfcb576c1439da259134281c13d2bd45702e0e2c1cdb555ba87e6"
+  },
+  "safety-fabricated-id": {
+    "support": "policy_boundary",
+    "fingerprint": "c27c2b117ebdc1692a252fe436cb7242140480d2aff00a2eb2cfedfbc876b783"
+  },
+  "safety-code-input": {
+    "support": "policy_boundary",
+    "fingerprint": "647db500786e6a582982c5c30500a7b68748885052ce01601eda89f37df71c0a"
+  },
+  "safety-payload-json": {
+    "support": "policy_boundary",
+    "fingerprint": "b6f3754eb590b3210ef0f1a2449ae775f0c639af90c0315b0fb14e38f3c40982"
+  },
+  "safety-foreign-organization": {
+    "support": "policy_boundary",
+    "fingerprint": "d252a2aff6189c6393a465efc8c50e3e8dcbf943b131d93da44add3276fa763f"
+  },
+  "safety-admin-clinical": {
+    "support": "policy_boundary",
+    "fingerprint": "067d656ffc0f97358c4629e43e5962899c33868e4978f86e9f104abecb5ba5ec"
+  },
+  "safety-availability-fabrication": {
+    "support": "policy_boundary",
+    "fingerprint": "9e222b4ec3217f4ae890e53e1c53b403c4af2c6ba1129c602abe6d534bb9df2d"
+  },
+  "safety-ignore-acl": {
+    "support": "policy_boundary",
+    "fingerprint": "c0323bd2995a2d9a84cc743fddd1b9ecb0375ab674c3ced192406b2fa0643387"
+  },
+  "safety-silent-confirm": {
+    "support": "policy_boundary",
+    "fingerprint": "4fdd6956f19f75bc45086f7f6fe9a66d4b72d5d6b9fa8fec7db17544f259f6b1"
+  },
+  "safety-mass-find": {
+    "support": "policy_boundary",
+    "fingerprint": "eea2ba276b66a944b042d4c594a13b99193a03e4d16a338dc2ff6b1053f0c91a"
+  },
+  "safety-business-promise": {
+    "support": "policy_boundary",
+    "fingerprint": "55463feadbe495d3c035663bc606084210e6b0c54d2bc245745a2c9cf4df4153"
+  },
+  "safety-clinical-inference": {
+    "support": "policy_boundary",
+    "fingerprint": "1e84b4ef8e8d988cde66e6d6eec2fc5a687bedf41bb73b43ad2f74c2a9a8c971"
+  },
+  "safety-replay-old-confirmation": {
+    "support": "policy_boundary",
+    "fingerprint": "bdabc7cde0429fadf8314c19555b803f85996b73b910800493ffafad49f0d36b"
+  },
+  "period-staff-inactive": {
+    "support": "policy_boundary",
+    "fingerprint": "8a3d9c4e623b01eeefb372fe73e7aa8bd7520885b98f1eed03f85ab4a09580b7"
+  },
+  "period-foreign-staff": {
+    "support": "policy_boundary",
+    "fingerprint": "21ef8c68e09d24e54b4d45125ac0aecd90ee6cb7f50ad43da7abb9d257a57cc2"
+  },
+  "constraint-staff-acl": {
+    "support": "policy_boundary",
+    "fingerprint": "11b566ed8e0586ce810daab166cbe8f308659de4665717f72ac70b82012c10c4"
+  },
+  "constraint-staff-inactive": {
+    "support": "policy_boundary",
+    "fingerprint": "9f36692c068bc270711bfea8ca2ac7ab3f773d02ddce83887f1c72734dcbb0f5"
+  },
+  "card-hidden-existence": {
+    "support": "policy_boundary",
+    "fingerprint": "ecb948733511b7a441b207be8fb969594bb78aeb582b3ee67799a6da31e5c033"
+  },
+  "card-all-clients-export": {
+    "support": "policy_boundary",
+    "fingerprint": "199a4a0e909efa11adaf98ad267ff068c78305630a257b37890e3be55d74f922"
+  }
+}

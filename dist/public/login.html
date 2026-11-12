@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#244c64" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="cartoteca-privacy-version" content="2026-10-06.1" />
+    <title>Вход · Картотека</title>
+    <meta name="robots" content="noindex" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="install-app.css" />
+    <script src="install-app.js" defer></script>
+    <script src="login.js" defer></script>
+  </head>
+  <body class="login-page">
+    <main class="login-card">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">К</span
+        ><span>Картотека<small>Личный кабинет специалиста</small></span>
+      </div>
+      <h1 id="auth-title">Вход в картотеку</h1>
+      <p id="auth-description" class="auth-description">Проверяем доступ к кабинету…</p>
+      <div class="auth-switch" id="auth-switch" hidden>
+        <button type="button" class="secondary active" data-auth-mode="login">Войти</button>
+        <button type="button" class="secondary" data-auth-mode="register">
+          Создать аккаунт
+        </button>
+      </div>
+      <form id="auth-form" hidden>
+        <label class="field registration-field" hidden
+          >Ваше имя<input id="auth-name" maxlength="120" autocomplete="name"
+        /></label>
+        <label class="field registration-field" hidden
+          >Название для клиентов<input
+            id="auth-organization"
+            maxlength="120"
+            autocomplete="organization"
+        /></label>
+        <label class="field registration-field" hidden
+          >Город<input id="auth-city" maxlength="120" autocomplete="address-level2"
+        /></label>
+        <label class="field registration-field" hidden
+          >Контактный телефон<input id="auth-phone" type="tel" maxlength="40" autocomplete="tel"
+        /></label>
+        <label class="field"
+          >Электронная почта<input
+            id="auth-email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            required
+            maxlength="254"
+            placeholder="name@example.ru"
+            autocapitalize="none"
+            spellcheck="false"
+        /></label>
+        <label class="field"
+          ><span id="auth-password-label">Пароль</span
+          ><input
+            id="auth-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            maxlength="128"
+        /></label>
+        <label class="field" id="auth-mfa-field" hidden>
+          Код приложения или резервный код
+          <input
+            id="auth-mfa-code"
+            autocomplete="one-time-code"
+            maxlength="64"
+            autocapitalize="none"
+            spellcheck="false"
+          />
+          <small>Если приложение недоступно, введите один сохранённый резервный код.</small>
+        </label>
+        <label class="field" id="auth-repeat-field" hidden
+          >Повторите пароль<input
+            id="auth-repeat"
+            type="password"
+            autocomplete="new-password"
+            maxlength="128"
+        /></label>
+        <label class="password-toggle"
+          ><input id="show-password" type="checkbox" />Показать пароль</label
+        >
+        <label id="auth-privacy-field" class="auth-consent" hidden>
+          <input id="auth-privacy-consent" type="checkbox" />
+          <span
+            >Даю
+            <a href="consent.html#registration" target="_blank" rel="noopener noreferrer"
+              >согласие на обработку персональных данных</a
+            >.</span
+          >
+        </label>
+        <p id="auth-error" class="error" role="alert"></p>
+        <button class="primary" id="auth-submit" type="submit">Войти</button>
+        <p class="auth-description" id="auth-help">
+          Почта используется как логин. Вводите пароль от картотеки.
+        </p>
+      </form>
+      <section id="account-access-problem" hidden>
+        <p id="account-access-message" class="auth-description"></p>
+        <p id="account-access-error" class="error" role="alert"></p>
+        <button class="primary" id="account-switch-account" type="button">
+          Войти под другой почтой
+        </button>
+      </section>
+      <section class="auth-extra">
+        <form id="email-change-form" hidden>
+          <p>
+            Подтвердите новый адрес для входа. Пароль останется прежним, а старые сеансы будут
+            завершены.
+          </p>
+          <button class="primary" type="submit">Подтвердить новую почту</button>
+        </form>
+        <button class="text-btn" id="forgot-open" type="button">Забыли пароль?</button>
+        <form id="forgot-form" hidden>
+          <label class="field"
+            >Почта кабинета<input
+              id="forgot-email"
+              type="email"
+              required
+              autocomplete="email" /></label
+          ><button class="secondary">Отправить ссылку</button>
+        </form>
+        <form id="verify-form" hidden>
+          <label class="field"
+            >Код из приложения или резервный код<input
+              id="verify-code"
+              autocomplete="one-time-code"
+              required
+              maxlength="40" /></label
+          ><button class="primary">Подтвердить вход</button>
+        </form>
+        <form id="reset-form" hidden>
+          <label class="field"
+            >Новый пароль картотеки<input
+              id="reset-password"
+              type="password"
+              minlength="12"
+              maxlength="128"
+              required
+              autocomplete="new-password"
+          /></label>
+          <label class="field"
+            >Повторите пароль<input
+              id="reset-repeat"
+              type="password"
+              required
+              autocomplete="new-password"
+          /></label>
+          <label class="field"
+            >Код из приложения или резервный код (если подключён)<input
+              id="reset-code"
+              autocomplete="one-time-code"
+              maxlength="40"
+          /></label>
+          <button class="primary">Сохранить новый пароль</button>
+        </form>
+        <p id="extra-message" role="status"></p>
+      </section>
+      <button class="secondary" id="auth-retry" hidden type="button">Повторить</button>
+      <p class="auth-legal">
+        <a href="/product/">О Картотеке</a><br />
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer"
+          >Политика обработки персональных данных</a
+        >
+      </p>
+    </main>
+  </body>
+</html>

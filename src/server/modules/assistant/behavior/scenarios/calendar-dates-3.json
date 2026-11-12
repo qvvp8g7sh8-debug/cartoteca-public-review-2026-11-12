@@ -1,0 +1,143 @@
+[
+  {
+    "id": "cal-bare-calendar",
+    "category": "calendar-dates",
+    "title": "Открой календарь",
+    "text": "Открой календарь",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar"
+      },
+      "status": "supported",
+      "outcome": "Открыть текущую дату организации; конкретный период не запрошен.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-politeness",
+    "category": "calendar-dates",
+    "title": "Будь добр, покажи, пожалуйста, моё расписание на завтра",
+    "text": "Будь добр, покажи, пожалуйста, моё расписание на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Вежливые обороты не меняют действие.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-empty-day",
+    "category": "calendar-dates",
+    "title": "Покажи расписание на 18 октября 2026 года",
+    "text": "Покажи расписание на 18 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-18"
+      },
+      "status": "supported",
+      "outcome": "Открыть дату даже при отсутствии записей; не выдумывать приёмы.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ],
+    "preconditions": [
+      "Синтетический календарь не содержит записей на эту дату."
+    ]
+  },
+  {
+    "id": "cal-archive-view",
+    "category": "calendar-dates",
+    "title": "Открой расписание на 10 января 2024 года",
+    "text": "Открой расписание на 10 января 2024 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2024-01-10"
+      },
+      "status": "supported",
+      "outcome": "Просмотр прошлого разрешён только штатным ACL; не создавать запись задним числом.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-near-midnight-spoken",
+    "category": "calendar-dates",
+    "title": "Завтра, то есть 16 октября, покажи расписание",
+    "text": "Завтра, то есть 16 октября, покажи расписание",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "calendar",
+        "date": "2026-10-16"
+      },
+      "status": "supported",
+      "outcome": "Относительная и явная даты согласованы.",
+      "limitations": []
+    },
+    "tags": [
+      "calendar-dates",
+      "calendar",
+      "supported"
+    ]
+  },
+  {
+    "id": "cal-conflicting-relative",
+    "category": "calendar-dates",
+    "title": "Покажи завтра, 18 октября 2026 года",
+    "text": "Покажи завтра, 18 октября 2026 года",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Завтра от 15 октября — 16 октября; нужна одна согласованная дата.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "calendar-dates",
+      "help",
+      "needs_clarification"
+    ]
+  }
+]

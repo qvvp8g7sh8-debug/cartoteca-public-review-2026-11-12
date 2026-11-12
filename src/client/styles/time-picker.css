@@ -1,0 +1,181 @@
+/* A short dropdown based on the original time choices; scrolling never selects. */
+@media screen {
+  [data-time-picker-source][hidden] {
+    display: none;
+  }
+  .field > .time-picker-field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 4px;
+    border: 1px solid #bdcfd6;
+    border-radius: 9px;
+    background: #fff;
+    color: #233f4b;
+    box-sizing: border-box;
+  }
+  .time-picker-field[data-time-picker-optional] {
+    grid-template-columns: minmax(0, 1fr) 44px;
+  }
+  .time-picker-field:focus-within {
+    border-color: #43858f;
+    outline: 2px solid #43858f;
+    outline-offset: 1px;
+  }
+  .time-picker-field .time-picker-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+  .time-picker-field .time-picker-trigger:focus-visible, .time-picker-field .time-picker-trigger[aria-expanded='true'] {
+    outline: none;
+    background: #eaf3f1;
+  }
+  .time-picker-field .time-picker-trigger svg {
+    width: 12px;
+    height: 12px;
+    color: #52747b;
+    pointer-events: none;
+  }
+  .time-picker-field .time-picker-clear {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: #52747b;
+    box-shadow: none;
+  }
+  .time-picker-field .time-picker-clear svg {
+    width: 20px;
+    height: 20px;
+  }
+  .time-picker-field .time-picker-clear:disabled {
+    color: #71838a;
+    opacity: .55;
+  }
+  .time-picker-field .time-picker-clear:focus-visible {
+    outline: 2px solid #43858f;
+    outline-offset: -2px;
+  }
+  .time-picker-popup {
+    inset: auto;
+    z-index: 1000;
+    margin: 0;
+    padding: 10px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid #bdcfd6;
+    border-radius: 10px;
+    background: #fff;
+    color: #233f4b;
+    box-shadow: 0 8px 24px #233f4b26;
+    box-sizing: border-box;
+  }
+  .time-picker-popup[hidden], .time-picker-popup [hidden] {
+    display: none;
+  }
+  .time-picker-popup {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .time-picker-options {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 308px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .time-picker-options [role='option'] {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #233f4b;
+    box-sizing: border-box;
+    font-size: 17px;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+  .time-picker-options [role='option']:hover, .time-picker-options [data-active='true'] {
+    background: #edf4f3;
+  }
+  .time-picker-options [aria-selected='true'] {
+    background: #dbece8;
+    color: #244c64;
+    font-weight: 700;
+  }
+  .time-picker-popup[data-time-emphasis='true'] .time-picker-options [data-time-major='true'] {
+    color: #183f4d;
+    font-weight: 700;
+  }
+  .time-picker-popup[data-time-emphasis='true'] .time-picker-options [data-time-major='false'] {
+    color: #576b75;
+    font-weight: 400;
+  }
+  .time-picker-popup[data-work-time-emphasis='true'] .time-picker-options [role='option'] {
+    color: #657780;
+    font-weight: 400;
+  }
+  .time-picker-popup[data-work-time-emphasis='true'] .time-picker-options [data-time-minute='30'] {
+    color: #365563;
+    font-weight: 600;
+  }
+  .time-picker-popup[data-work-time-emphasis='true'] .time-picker-options [data-time-minute='00'] {
+    color: #183f4d;
+    font-weight: 700;
+  }
+  .time-picker-popup[data-work-time-emphasis='true'] .time-picker-options [aria-selected='true'] {
+    color: #244c64;
+    font-weight: 700;
+  }
+  .time-picker-empty {
+    margin: 8px 4px;
+    color: #71838a;
+    font-size: 14px;
+  }
+  .time-picker-field[aria-disabled='true'] {
+    background: #f1f5f6;
+    color: #71838a;
+  }
+  .time-picker-field .time-picker-trigger:disabled {
+    cursor: default;
+    opacity: .65;
+  }
+  .time-picker-field[aria-invalid='true'] {
+    border-color: #a12d36;
+  }
+}
+@media screen and (forced-colors: active) {
+  .time-picker-field:focus-within {
+    outline-color: Highlight;
+  }
+  .time-picker-options [aria-selected='true'] {
+    outline: 1px solid Highlight;
+  }
+  .time-picker-field[aria-disabled='true'] {
+    color: GrayText;
+  }
+}

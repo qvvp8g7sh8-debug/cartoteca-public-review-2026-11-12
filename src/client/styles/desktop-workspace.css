@@ -1,0 +1,302 @@
+/* Desktop room assignment form; mobile layout is unchanged. */
+@media screen and (min-width: 981px) {
+  .settings-panel.settings-pages #workspace-settings {
+    --settings-caption-width: minmax(160px, 0.7fr);
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-layout-bar[data-room-layout] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0 0 20px;
+    border: 0;
+    border-bottom: 1px solid #dce5e9;
+    border-radius: 0;
+    background: transparent;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-block-heading {
+    gap: 12px;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    .workspace-layout-bar[data-room-layout]
+    :is(h3, .form-hint) {
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-layout-bar h3 {
+    font-size: 18px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-layout-bar .form-hint {
+    margin-top: 6px;
+    color: #586e79;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    .workspace-layout-bar[data-room-layout]
+    .workspace-room-mark {
+    color: #356b70;
+    background: #edf4f4;
+    border: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-layout-field {
+    max-width: none;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages #workspace-settings #workspace-room-list {
+    display: block;
+    margin: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room {
+    padding: 16px 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #dce5e9;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-heading {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 12px 20px;
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-heading > .field {
+    max-width: 420px;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages #workspace-settings [data-room-name] {
+    font-size: 17px;
+    font-weight: 600;
+    background: #f7f9fa;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-assignments:not([hidden]) {
+    display: grid;
+    grid-template-columns: var(--settings-caption-width) minmax(0, 1.3fr);
+    gap: 24px;
+    padding: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff-mode {
+    max-width: none;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff-mode select {
+    margin-top: 10px;
+    max-width: 260px;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room legend {
+    padding: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff {
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: 8px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff > label {
+    padding: 9px 10px;
+    border: 1px solid #dce5e9;
+    border-radius: 8px;
+    background: #fff;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff > label:has(input:checked) {
+    border-color: #86ada8;
+    background: #edf5f2;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-staff-person strong {
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room .workspace-protection {
+    display: block;
+    padding: 12px 0 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room .workspace-protection h4 {
+    margin: 0;
+    color: #586e79;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-protection .settings-label-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    min-height: 40px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-protection .telegram-switch {
+    grid-column: 3;
+    grid-row: 1;
+    min-height: 44px;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    .workspace-protection
+    .settings-label-row
+    > span {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-protection .settings-help-trigger {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .settings-panel.settings-pages #workspace-settings #workspace-add-room {
+    margin-top: 16px;
+    border-style: solid;
+    border-color: #bdced3;
+    background: #fff;
+    color: #315e65;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-settings-actions {
+    justify-content: flex-start;
+    margin: 20px 0 0;
+    padding: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-overview > div {
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-overview strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages #workspace-settings .workspace-room-overview small {
+    display: block;
+    margin-top: 4px;
+    color: #586e79;
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages #workspace-settings [data-room-edit] {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 8px 12px;
+    color: #315e65;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #workspace-settings [data-room-edit]:hover {
+    background: #edf4f4;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    [data-room-expanded='true']
+    .workspace-room-heading {
+    padding-top: 16px;
+    margin-top: 12px;
+    border-top: 1px solid #e9eef0;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    [data-room-expanded='false']
+    > :is(.workspace-room-heading, .workspace-room-assignments) {
+    display: none;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap]) {
+    appearance: none;
+    position: relative;
+    flex: 0 0 38px;
+    width: 38px;
+    min-width: 38px;
+    max-width: 38px;
+    height: 23px;
+    min-height: 23px;
+    margin: 0;
+    padding: 3px;
+    border: 0;
+    border-radius: 12px;
+    background: #8b9da5;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap])::before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px #1a354433;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap]):checked {
+    background: #467f69;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap]):checked::before {
+    transform: translateX(15px);
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap]):focus-visible,
+  .settings-panel.settings-pages #workspace-settings [data-room-edit]:focus-visible {
+    outline: 2px solid #315e65;
+    outline-offset: 3px;
+  }
+  .settings-panel.settings-pages
+    #workspace-settings
+    :is([data-room-active], [data-room-prevent-overlap]):disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  @media (forced-colors: active) {
+    .settings-panel.settings-pages
+      #workspace-settings
+      :is([data-room-active], [data-room-prevent-overlap]) {
+      appearance: auto;
+    }
+    .settings-panel.settings-pages
+      #workspace-settings
+      :is([data-room-active], [data-room-prevent-overlap])::before {
+      content: none;
+    }
+  }
+  @media (max-width: 1150px) {
+    .settings-panel.settings-pages #workspace-settings {
+      --settings-caption-width: 155px;
+    }
+    .settings-panel.settings-pages #workspace-settings .workspace-layout-bar[data-room-layout] {
+      grid-template-columns: minmax(0, 1fr) 190px;
+    }
+  }
+}

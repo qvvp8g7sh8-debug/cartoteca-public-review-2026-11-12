@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#173f54" />
+    <title>Управление · Картотека</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="admin.js" defer=""></script>
+  </head>
+  <body class="admin-page">
+    <main class="admin-shell">
+      <header class="admin-header">
+        <div class="brand">
+          <span class="brand-icon">К</span
+          ><span>Картотека<small>Управление платформой</small></span>
+        </div>
+        <button id="admin-logout" class="secondary" hidden="">Выйти</button>
+      </header>
+      <section id="admin-loading">
+        <h1>Главный администратор</h1>
+        <p>Проверяем доступ…</p>
+      </section>
+      <section id="admin-setup" class="admin-card" hidden="">
+        <h1>Создание главного администратора</h1>
+        <p>Ссылка одноразовая. Данные клиентов этому разделу недоступны.</p>
+        <form id="admin-setup-form">
+          <label class="field"
+            >Имя<input id="admin-name" required="" maxlength="120" autocomplete="name"
+          /></label>
+          <label class="field"
+            >Электронная почта<input
+              id="admin-email"
+              type="email"
+              required=""
+              maxlength="254"
+              autocomplete="username"
+          /></label>
+          <label class="field"
+            >Пароль<input
+              id="admin-password"
+              type="password"
+              required=""
+              minlength="12"
+              maxlength="128"
+              autocomplete="new-password"
+          /></label>
+          <label class="field"
+            >Повторите пароль<input
+              id="admin-repeat"
+              type="password"
+              required=""
+              minlength="12"
+              maxlength="128"
+              autocomplete="new-password"
+          /></label>
+          <p id="admin-error" class="error" role="alert"></p>
+          <button class="primary" type="submit">Создать главного администратора</button>
+        </form>
+      </section>
+      <section id="admin-created" class="admin-card" hidden="">
+        <h1>Главный администратор создан</h1>
+        <p>Теперь войдите через обычную страницу входа.</p>
+        <a class="primary admin-link" href="/">Перейти ко входу</a>
+      </section>
+      <section id="admin-dashboard" hidden="">
+        <div class="admin-title">
+          <div>
+            <h1>Управление картотекой</h1>
+            <p id="admin-identity"></p>
+          </div>
+        </div>
+        <p id="admin-message" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="admin-workspace">
+          <nav class="admin-tabs" aria-label="Разделы управления">
+            <div class="admin-nav-group">
+              <p class="admin-nav-label">Работа</p>
+              <button class="secondary active" data-admin-view="overview" aria-pressed="true" type="button">Обзор</button>
+              <button class="secondary" data-admin-view="organizations" aria-pressed="false" type="button">Кабинеты</button>
+              <button class="secondary" data-admin-view="billing" aria-pressed="false" type="button">Пакеты и оплата</button>
+              <button class="secondary" data-admin-view="support" aria-pressed="false" type="button">Поддержка</button>
+            </div>
+            <div class="admin-nav-group admin-nav-secondary">
+              <p class="admin-nav-label">Управление</p>
+              <button class="secondary" data-admin-view="accounts" aria-pressed="false" type="button">Пользователи</button>
+              <button class="secondary" data-admin-view="voice-assistant" aria-pressed="false" type="button">Помощник</button>
+              <button class="secondary" data-admin-view="system" aria-pressed="false" type="button">Система</button>
+              <button class="secondary" data-admin-view="audit" aria-pressed="false" type="button">История</button>
+            </div>
+          </nav>
+          <div class="admin-content">
+            <section class="admin-card admin-view" data-admin-section="overview">
+              <header class="admin-section-header">
+                <div><h2>Обзор</h2><p class="admin-section-lead">Финансы и работа кабинетов.</p></div>
+                <button type="button" class="secondary" data-admin-jump="billing">Открыть финансы</button>
+              </header>
+              <div id="admin-overview-billing" class="admin-overview-billing"></div>
+              <section class="admin-attention" aria-labelledby="admin-attention-title">
+                <h3 id="admin-attention-title">Требует внимания</h3>
+                <div id="admin-summary" class="admin-summary"></div>
+              </section>
+              <dl class="admin-overview-meta">
+                <div><dt>Кабинетов</dt><dd id="admin-org-count">—</dd></div>
+                <div><dt>Пользователей · активных / всего</dt><dd id="admin-account-count">—</dd></div>
+              </dl>
+              <details class="admin-explanation">
+                <summary>Границы доступа администратора</summary>
+                <p>
+                  Управление организациями, аккаунтами и поддержкой. Карточки клиентов, фотографии и
+                  история посещений закрыты.
+                </p>
+              </details>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="organizations" hidden="">
+              <header class="admin-section-header"><div><h2>Кабинеты</h2><p class="admin-section-lead">Доступ, владелец и условия обслуживания.</p></div></header>
+              <div class="admin-toolbar">
+                <label class="admin-search"
+                  >Поиск<input
+                    id="admin-org-search"
+                    type="search"
+                    maxlength="120"
+                    autocomplete="off"
+                    placeholder="Название, город, телефон или владелец"
+                /></label>
+                <label class="admin-filter"
+                  >Доступ<select id="admin-org-status">
+                    <option value="">Любой</option>
+                    <option value="active">Включён</option>
+                    <option value="suspended">Приостановлен</option>
+                  </select></label
+                >
+                <label class="admin-filter"
+                  >Условия картотеки<select id="admin-org-plan">
+                    <option value="">Любой</option>
+                    <option value="free">Бесплатный</option>
+                    <option value="paid">Платный</option>
+                  </select></label
+                >
+              </div>
+              <p id="admin-org-result-count" class="admin-result-count" aria-live="polite"></p>
+              <div id="admin-organizations" class="admin-record-list"></div>
+              <button type="button" id="admin-org-more" class="secondary admin-more" hidden="">
+                Показать ещё 20
+              </button>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="billing" hidden="">
+              <header class="admin-section-header">
+                <div><h2>Пакеты и оплата</h2><p class="admin-section-lead">Независимые услуги, оплаты и расходы кабинетов.</p></div>
+                <button type="button" id="admin-billing-refresh" class="secondary">Обновить</button>
+              </header>
+              <div id="admin-billing-summary" class="admin-finance-summary"></div>
+              <div id="admin-billing-content"><p class="admin-loading-panel" role="status">Загружаем пакеты и оплаты…</p></div>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="accounts" hidden="">
+              <header class="admin-section-header"><div><h2>Пользователи</h2><p class="admin-section-lead">Учётные записи, доступ и восстановление входа.</p></div></header>
+              <div class="admin-toolbar">
+                <label class="admin-search"
+                  >Поиск<input
+                    id="admin-account-search"
+                    type="search"
+                    maxlength="120"
+                    autocomplete="off"
+                    placeholder="Имя, email, организация или роль"
+                /></label>
+                <label class="admin-filter"
+                  >Доступ<select id="admin-account-status">
+                    <option value="">Любой</option>
+                    <option value="active">Включён</option>
+                    <option value="suspended">Заблокирован</option>
+                  </select></label
+                >
+              </div>
+              <p id="admin-account-result-count" class="admin-result-count" aria-live="polite"></p>
+              <div id="admin-accounts" class="admin-record-list"></div>
+              <button type="button" id="admin-account-more" class="secondary admin-more" hidden="">
+                Показать ещё 20
+              </button>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="support" hidden="">
+              <header class="admin-section-header"><div><h2>Поддержка</h2><p class="admin-section-lead">Вопросы клиентов и предложения по работе картотеки.</p></div></header>
+              <div class="admin-toolbar">
+                <label class="admin-filter"
+                  >Состояние<select id="admin-support-state">
+                    <option value="open">Все нерешённые</option>
+                    <option value="">Все обращения</option>
+                    <option value="new">Новые</option>
+                    <option value="in_progress">В работе</option>
+                    <option value="waiting">Ожидают ответа</option>
+                    <option value="resolved">Решённые</option>
+                  </select></label
+                >
+                <button type="button" id="admin-support-clear" class="text-btn" hidden="">
+                  Показать все кабинеты
+                </button>
+              </div>
+              <p id="admin-support-count" class="admin-result-count" aria-live="polite"></p>
+              <div id="admin-support-list" class="admin-record-list"></div>
+              <button type="button" id="admin-support-more" class="secondary admin-more" hidden="">
+                Показать ещё 20
+              </button>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="audit" hidden="">
+              <header class="admin-section-header"><div><h2>История действий</h2><p class="admin-section-lead">Кто, когда и что изменил в управлении платформой.</p></div></header>
+              <div class="admin-toolbar">
+                <label class="admin-filter"
+                  >Действие<select id="admin-audit-event">
+                    <option value="">Все действия</option>
+                    <option value="organization_profile_admin_updated">Профиль организации</option>
+                    <option value="organization_access_admin_updated">Доступ организации</option>
+                    <option value="subscription_terms_admin_updated">Условия тарифа</option>
+                    <option value="account_access_admin_updated">Доступ пользователя</option>
+                    <option value="account_email_changed">Смена почты</option>
+                    <option value="account_email_recovery_prepared">Восстановление почты</option>
+                    <option value="support_case_updated">Обработка обращения</option>
+                    <option value="support_reply_queued">Ответ поддержки</option>
+                    <option value="login_succeeded">Входы</option>
+                  </select></label
+                >
+                <button type="button" id="admin-audit-clear" class="text-btn" hidden="">
+                  Показать все кабинеты
+                </button>
+                <label class="admin-search"
+                  >Поиск<input
+                    id="admin-audit-search"
+                    type="search"
+                    maxlength="120"
+                    placeholder="Исполнитель или организация"
+                /></label>
+              </div>
+              <div id="admin-audit"></div>
+              <button type="button" id="admin-audit-more" class="secondary admin-more" hidden="">
+                Показать ещё 20
+              </button>
+            </section>
+            <section
+              id="admin-voice-assistant"
+              class="admin-card admin-view"
+              data-admin-section="voice-assistant"
+              hidden=""
+            >
+              <header class="admin-section-header"><div><h2>Помощник</h2><p class="admin-section-lead">Общие настройки работы и доступ сотрудников.</p></div></header>
+              <p class="admin-context-note">Подключение кабинетов и стоимость — в разделе <button type="button" class="text-btn" data-admin-jump="billing">Пакеты и оплата</button>.</p>
+
+              <p id="admin-voice-loading" role="status" aria-live="polite"></p>
+
+              <div class="admin-section-tabs" role="tablist" aria-label="Управление ИИ-помощником">
+                <button
+                  type="button"
+                  id="admin-voice-tab-settings"
+                  data-admin-voice-tab="settings"
+                  role="tab"
+                  aria-controls="admin-voice-panel-settings"
+                  aria-selected="true"
+                  tabindex="0"
+                >
+                  Настройки</button
+                ><button
+                  type="button"
+                  id="admin-voice-tab-members"
+                  data-admin-voice-tab="members"
+                  role="tab"
+                  aria-controls="admin-voice-panel-members"
+                  aria-selected="false"
+                  tabindex="-1"
+                >
+                  Сотрудники</button
+                ><button
+                  type="button"
+                  id="admin-voice-tab-behavior"
+                  data-admin-voice-tab="behavior"
+                  role="tab"
+                  aria-controls="admin-voice-panel-behavior"
+                  aria-selected="false"
+                  tabindex="-1"
+                >
+                  Поведение</button
+                ><button
+                  type="button"
+                  id="admin-voice-tab-history"
+                  data-admin-voice-tab="history"
+                  role="tab"
+                  aria-controls="admin-voice-panel-history"
+                  aria-selected="false"
+                  tabindex="-1"
+                >
+                  История
+                </button>
+              </div>
+              <section
+                id="admin-voice-panel-settings"
+                data-admin-voice-panel="settings"
+                role="tabpanel"
+                aria-labelledby="admin-voice-tab-settings"
+              >
+                <div id="admin-voice-settings"></div>
+              </section>
+              <section
+                id="admin-voice-panel-members"
+                data-admin-voice-panel="members"
+                role="tabpanel"
+                aria-labelledby="admin-voice-tab-members"
+                hidden=""
+              >
+                <section class="admin-detail-section">
+                  <h3>Доступ сотрудников</h3>
+                  <form
+                    id="admin-voice-org-search-form"
+                    class="admin-voice-org-search"
+                    role="search"
+                  >
+                    <label class="field"
+                      >Найти кабинет<input
+                        id="admin-voice-org-search"
+                        type="search"
+                        maxlength="120"
+                        autocomplete="off"
+                        placeholder="Название, город или владелец"
+                    /></label>
+                    <button type="submit" class="secondary">Найти</button>
+                  </form>
+                  <p id="admin-voice-search-status" role="status" aria-live="polite"></p>
+                  <button id="admin-voice-org-more" type="button" class="secondary" hidden="">
+                    Показать ещё 20 кабинетов
+                  </button>
+                  <div class="admin-voice-fields">
+                    <label class="field"
+                      >Кабинет<select id="admin-voice-organization">
+                        <option value="">Выберите кабинет</option>
+                      </select></label
+                    >
+                    <label class="field"
+                      >Пользователь<select id="admin-voice-account" disabled="">
+                        <option value="">Выберите пользователя</option>
+                      </select></label
+                    >
+                  </div>
+                  <button type="button" class="secondary" data-voice-member-reload="">
+                    Перечитать персональный доступ
+                  </button>
+                  <div id="admin-voice-member"><p>Выберите кабинет и пользователя.</p></div>
+                </section>
+              </section>
+              <section
+                id="admin-voice-panel-behavior"
+                data-admin-voice-panel="behavior"
+                role="tabpanel"
+                aria-labelledby="admin-voice-tab-behavior"
+                hidden=""
+              >
+                <section class="admin-detail-section">
+                  <h3>Правила и примеры</h3>
+                  <p>Измените черновик → сравните → утвердите.</p>
+                  <div id="admin-voice-behavior"></div>
+                </section>
+              </section>
+              <section
+                id="admin-voice-panel-history"
+                data-admin-voice-panel="history"
+                role="tabpanel"
+                aria-labelledby="admin-voice-tab-history"
+                hidden=""
+              >
+                <section class="admin-detail-section">
+                  <h3>Восстановление настроек</h3>
+                  <div id="admin-voice-history"></div>
+                </section>
+                <section class="admin-detail-section">
+                  <div class="admin-voice-actions">
+                    <h3>Изменения помощника</h3>
+                    <button type="button" class="secondary" data-voice-audit-reload="">
+                      Обновить журнал
+                    </button>
+                  </div>
+                  <div id="admin-voice-audit"><p>Загружаем историю изменений…</p></div>
+                </section>
+              </section>
+            </section>
+            <section class="admin-card admin-view" data-admin-section="system" hidden="">
+              <header class="admin-section-header"><div><h2>Система</h2><p class="admin-section-lead">Работа сервисов, доставка сообщений и резервные копии.</p></div></header>
+              <details class="admin-explanation" id="admin-mfa-settings">
+                <summary>Защита входа главного администратора</summary>
+                <div id="admin-mfa-content"><p role="status" data-mfa-message>Откройте настройки для проверки состояния.</p></div>
+              </details>
+              <div id="admin-system"><p>Загружаем сведения…</p></div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section id="admin-denied" class="admin-card" hidden="">
+        <h1>Нет доступа</h1>
+        <p>Войдите под учётной записью главного администратора.</p>
+        <a class="primary admin-link" href="/">Перейти ко входу</a>
+      </section>
+    </main>
+  </body>
+</html>

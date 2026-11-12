@@ -1,0 +1,208 @@
+/* Desktop A: independent menu/page scrolling; native details and forms remain intact. */
+@media screen and (min-width: 981px) {
+  .settings-panel.settings-pages {
+    --desktop-settings-menu: 260px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages > h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .settings-panel.settings-pages .settings-tiles {
+    position: static;
+    align-self: flex-start;
+    width: var(--desktop-settings-menu);
+    padding: 4px 8px 4px 0;
+    box-sizing: border-box;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #a3b9c2 transparent;
+    scroll-padding-block: 4px;
+  }
+  .settings-panel.settings-pages .settings-tile {
+    position: static;
+    width: 100%;
+    margin: 0 0 4px;
+    border-color: transparent;
+    background: transparent;
+  }
+  .settings-panel.settings-pages .settings-tile > summary {
+    min-height: 52px;
+    padding: 4px 8px;
+    gap: 8px;
+    scroll-margin-block: 4px;
+  }
+  .settings-panel.settings-pages .settings-tile > summary:focus-visible {
+    outline-offset: -2px;
+  }
+  .settings-panel.settings-pages .settings-tile[open] {
+    border-color: #dce5e9;
+  }
+  .settings-panel.settings-pages .settings-tile[open] > summary {
+    background: #edf4f4;
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages .settings-tile-description {
+    display: block;
+    color: #586e79;
+  }
+  .settings-panel.settings-pages .settings-tile-icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+  .settings-panel.settings-pages .settings-page-surface,
+  .settings-panel.settings-pages .settings-tiles:not([data-settings-open])::after {
+    inset: var(--settings-desktop-top, 64px) 16px var(--settings-desktop-bottom, 44px)
+      calc(var(--desktop-settings-menu) + 32px);
+    background: #fff;
+  }
+  .settings-panel.settings-pages .settings-page-toolbar {
+    min-height: 56px;
+    padding: 12px 20px;
+  }
+  .settings-panel.settings-pages .settings-page-title {
+    font-size: 20px;
+    line-height: 1.3;
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages .settings-accordion-content {
+    padding: 16px 20px 20px;
+    scroll-padding-block: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #a3b9c2 transparent;
+  }
+  .settings-panel.settings-pages :is(.profile-grid, .online-booking-fields) {
+    gap: 12px;
+    align-items: start;
+  }
+  .settings-panel.settings-pages .profile-grid > .field {
+    grid-column: auto;
+  }
+  .settings-panel.settings-pages .profile-grid :is(.profile-field-label, .settings-label-row) {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+  }
+  .settings-panel.settings-pages .profile-grid .settings-label-row > label {
+    margin: 0;
+  }
+  .settings-panel.settings-pages .profile-grid .field > input {
+    height: 44px;
+    line-height: 1.35;
+  }
+  .settings-panel.settings-pages .profile-group-heading {
+    margin: 8px 0 0;
+    color: #233f4b;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+  .settings-panel.settings-pages .profile-group-heading:first-child {
+    margin-top: 0;
+  }
+  .settings-panel.settings-pages :is(#account-profile-form, .organization-time-zone-form) {
+    max-width: 760px;
+  }
+  .settings-panel.settings-pages .profile-save-row {
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+  .settings-panel.settings-pages
+    .field
+    :is(input:not([type='checkbox']):not([type='radio']), select),
+  .settings-panel.settings-pages .online-booking-fields :is(input, select) {
+    margin-top: 4px;
+  }
+  .settings-panel.settings-pages .field input[type='number'] {
+    max-width: 160px;
+  }
+  .settings-panel.settings-pages :is(.online-booking-fields, .telegram-settings-form) select {
+    max-width: 240px;
+  }
+  .settings-panel.settings-pages .settings-label-row {
+    gap: 4px;
+  }
+  .settings-panel.settings-pages #organization-time-zone-settings {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #dce5e9;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form {
+    display: grid;
+    grid-template-columns: minmax(160px, 360px) auto;
+    gap: 8px 12px;
+    align-items: end;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form :is(label, p) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form > button {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form select {
+    width: 100%;
+    min-width: 0;
+  }
+  .settings-panel.settings-pages #team-settings :is(.team-own-notifications, .team-roster) {
+    padding: 16px;
+  }
+  .settings-panel.settings-pages #team-settings .team-invite-panel > summary {
+    top: 16px;
+    right: 16px;
+  }
+  .settings-panel.settings-pages #team-settings .invite-member-form {
+    right: 16px;
+    top: 68px;
+  }
+  .settings-panel.settings-pages #telegram-settings {
+    max-width: 720px;
+  }
+  .settings-panel.settings-pages .telegram-settings-form {
+    gap: 8px;
+  }
+  .settings-panel.settings-pages .telegram-settings-form > .form-grid {
+    grid-template-columns: minmax(0, 240px);
+    margin: 4px 0;
+  }
+  .settings-panel.settings-pages .telegram-settings-form > button {
+    justify-self: start;
+  }
+  .settings-panel.settings-pages .telegram-settings-form > .form-hint {
+    margin: 8px 0;
+  }
+  .settings-panel.settings-pages .telegram-message-preview {
+    margin: 4px 0 8px;
+  }
+  .settings-panel.settings-pages .settings-legal {
+    margin-top: 8px;
+  }
+  @media (forced-colors: active) {
+    .settings-panel.settings-pages .settings-tile[open] {
+      border-color: Highlight;
+    }
+    .settings-panel.settings-pages .settings-tile[open] > summary {
+      background: Highlight;
+      color: HighlightText;
+    }
+    .settings-panel.settings-pages .settings-tile-description,
+    .settings-panel.settings-pages .settings-page-title,
+    .settings-panel.settings-pages .profile-group-heading {
+      color: CanvasText;
+    }
+    .settings-panel.settings-pages .settings-tile[open] .settings-tile-description {
+      color: HighlightText;
+    }
+  }
+}

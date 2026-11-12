@@ -1,0 +1,72 @@
+/* The inbox participates in the common background coordinator, without a second timer. */
+.app-nav-item {
+  position: relative;
+}
+.booking-inbox-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 2px 5px;
+  margin-left: 4px;
+  border-radius: 8px;
+  background: #e2edf3;
+  color: #244c64;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1;
+}
+.booking-inbox-count[hidden] {
+  display: none !important;
+}
+.app-nav-item.active .booking-inbox-count {
+  background: #f3f8fb;
+}
+.booking-request-sync {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.booking-request-sync.is-stale,
+.booking-inbox-count.is-stale {
+  color: #785c22;
+  background: #fff5da;
+}
+.booking-request-warning {
+  padding: 8px 10px;
+  margin: 8px 0 0;
+  border-radius: 8px;
+  background: #fff5da;
+  color: #785c22;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .topbar .app-nav-item .booking-inbox-count {
+    position: absolute;
+    top: 2px;
+    left: calc(50% + 5px);
+    margin: 0;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+  .management-tabs [data-management-tab='requests'] {
+    position: relative;
+  }
+  .management-tabs .booking-inbox-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0;
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+}

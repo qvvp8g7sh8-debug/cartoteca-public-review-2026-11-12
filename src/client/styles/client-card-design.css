@@ -1,0 +1,193 @@
+/* Card identity and history. Appointment/service rows remain equal at 44px. */
+@media screen {
+  .workspace-designed.card-mode > .directory {
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: none;
+  }
+  .workspace-designed.card-mode .directory .search input {
+    padding: 9px 0;
+  }
+  .workspace-designed.card-mode .patient-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 14px;
+  }
+  .workspace-designed.card-mode .patient-identity {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .workspace-designed.card-mode .patient-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -0.4px;
+  }
+  .workspace-designed.card-mode .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.7px;
+    margin: 0 0 8px;
+  }
+  .workspace-designed.card-mode .contact {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .workspace-designed.card-mode .patient-card-meta {
+    margin-top: 12px;
+    gap: 8px;
+  }
+  .workspace-designed.card-mode .patient-card-designation {
+    font-size: 12px;
+    margin: 0;
+  }
+  .workspace-designed.card-mode .patient-actions > button {
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 9px 12px;
+    white-space: normal;
+    border-radius: 9px;
+  }
+  .workspace-designed.card-mode .patient-connections {
+    border-radius: 9px;
+    box-shadow: none;
+  }
+  .workspace-designed.card-mode .patient-appointments {
+    margin: 0 0 16px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .workspace-designed.card-mode .patient-appointments:has(#patient-telegram-body:empty) {
+    display: none;
+  }
+  .workspace-designed.card-mode .tabs {
+    gap: 4px;
+    padding: 4px;
+    background: #eaf0ef;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .workspace-designed.card-mode .tab {
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .workspace-designed.card-mode .tab.active {
+    border-color: #cfdddc;
+    background: #fff;
+    color: var(--blue);
+    font-weight: 600;
+  }
+  .workspace-designed.card-mode .tab span {
+    font-size: 11px;
+    padding: 1px 4px;
+  }
+  .workspace-designed.card-mode .content-heading {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 10px;
+  }
+  .workspace-designed.card-mode .content-heading h3 {
+    font-size: 16px;
+  }
+  .workspace-designed.card-mode .content-heading .text-btn {
+    min-height: 44px;
+    font-size: 13px;
+  }
+  .workspace-designed.card-mode .visit {
+    box-shadow: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .workspace-designed.card-mode .visit-head {
+    min-height: 56px;
+    padding: 10px 14px;
+    gap: 12px;
+    background: #fff;
+  }
+  .workspace-designed.card-mode .visit-brief {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .workspace-designed.card-mode .empty {
+    padding: 24px 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  .workspace-designed.card-mode .empty h3 {
+    font-size: 16px;
+  }
+  .workspace-designed.card-mode .empty p {
+    max-width: 540px;
+    margin: 8px auto 12px;
+  }
+  .workspace-designed.card-mode .empty #empty-new {
+    min-height: 44px;
+    background: #fff;
+    color: var(--blue);
+    border-color: #cad9dc;
+    box-shadow: none;
+    font-size: 13px;
+    white-space: normal;
+  }
+  .workspace-designed.card-mode #tab-content > .card {
+    padding: 18px;
+    box-shadow: none;
+  }
+  .workspace-designed.card-mode .field-value {
+    margin-bottom: 16px;
+  }
+  .workspace-designed.card-mode .field-value dt {
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .workspace-designed.card-mode .field-value dd {
+    font-size: 14px;
+  }
+  @media (max-width: 900px) {
+    .workspace-designed.card-mode .patient-header {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      padding: 16px;
+    }
+    .workspace-designed.card-mode .patient-actions {
+      width: 100%;
+    }
+  }
+  @media (max-width: 700px) {
+    .workspace-designed.card-mode > .directory {
+      padding: 0;
+      background: transparent;
+    }
+    .workspace-designed.card-mode .patient-header h2 {
+      font-size: 22px;
+    }
+    .workspace-designed.card-mode .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .workspace-designed.card-mode .tab {
+      min-width: 0;
+      padding: 8px 3px;
+      font-size: 12px;
+      white-space: normal;
+    }
+    .workspace-designed.card-mode .tab span {
+      margin-left: 3px;
+    }
+    .workspace-designed.card-mode .content-heading small {
+      margin-left: auto;
+    }
+  }
+}

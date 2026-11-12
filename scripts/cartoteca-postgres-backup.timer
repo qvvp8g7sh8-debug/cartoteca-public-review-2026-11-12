@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily verified native PostgreSQL Cartoteca recovery
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+Unit=cartoteca-postgres-backup.service
+
+[Install]
+WantedBy=timers.target

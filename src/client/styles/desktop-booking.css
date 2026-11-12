@@ -1,0 +1,331 @@
+/* Desktop A: compact fields above controls; native form behavior stays intact. */
+@media screen and (min-width: 981px) {
+  .settings-panel.settings-pages #online-booking-settings {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+    color: #233f4b;
+  }
+  .settings-panel.settings-pages #online-booking-settings #booking-publication {
+    margin: 0;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-publication {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.8fr) minmax(0, 1.2fr);
+    gap: 12px;
+    margin: 0 0 16px;
+    padding: 0 0 16px;
+    border: 0;
+    border-bottom: 1px solid #dce5e9;
+    border-radius: 0;
+    background: transparent;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .booking-publication
+    > :is(.settings-label-row, .booking-link-actions, p, img) {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .booking-publication
+    > .settings-label-row {
+    min-height: 40px;
+    gap: 8px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 550;
+  }
+  .settings-panel.settings-pages #online-booking-settings #booking-publication-label {
+    flex: 1;
+    order: 0;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-publication .checkbox-hit-area {
+    order: 2;
+    flex: 0 0 44px;
+    width: 44px;
+    min-height: 40px;
+    padding: 0;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .booking-publication
+    > .settings-label-row
+    > .settings-help-trigger {
+    order: 1;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-publication > .field {
+    display: block;
+    grid-column: auto;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .booking-publication:not(:has([data-booking-link-staff]))
+    > .field {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    :is(.booking-publication, .online-booking-fields)
+    :is(select, input:not([type='hidden']):not([type='checkbox'])) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 40px;
+    min-height: 40px;
+    margin: 4px 0 0;
+    padding: 9px 11px;
+    border: 1px solid #beced6;
+    border-radius: 7px;
+    background: #fff;
+    color: #233f4b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[data-booking-public-link] {
+    background: #f3f6f7;
+    color: #586e79;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-link-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    :is(.booking-link-actions button, #online-booking-settings-form > button[type='submit']) {
+    width: auto;
+    min-height: 37px;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-publication > p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start;
+    margin: 0;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .online-booking-fields
+    > .field:not([hidden]) {
+    display: flex;
+    grid-column: auto;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .online-booking-fields
+    .settings-label-row {
+    align-items: center;
+    min-height: 28px;
+    gap: 4px;
+    margin: 0;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .online-booking-fields
+    .settings-label-row
+    > :first-child {
+    flex: 1;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .online-booking-fields
+    .settings-help-trigger {
+    flex-basis: 36px;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-kind-switch {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+    margin-top: 4px;
+    padding: 3px;
+    border: 1px solid #dce5e9;
+    border-radius: 8px;
+    background: #eef3f4;
+  }
+  .settings-panel.settings-pages #online-booking-settings .booking-kind-switch button {
+    min-height: 38px;
+    padding: 7px 8px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: none;
+    font-size: 13px;
+    line-height: 1.35;
+    overflow-wrap: normal;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .booking-kind-switch
+    button[aria-pressed='true'] {
+    border-color: #b9ceca;
+    background: #fff;
+    color: #255961;
+    box-shadow: 0 1px 3px rgb(35 63 75 / 8%);
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    .online-booking-fields
+    input[type='number'] {
+    width: 125px;
+    font-variant-numeric: tabular-nums;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-fields small {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #586e79;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    #online-booking-settings-form
+    > .settings-label-row {
+    min-height: 48px;
+    padding: 12px 0;
+    margin: 12px 0 0;
+  }
+  .settings-panel.settings-pages #online-booking-settings .check-field {
+    flex: 1;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 40px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .settings-panel.settings-pages #online-booking-settings .check-field input[type='checkbox'] {
+    order: 1;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox'] {
+    appearance: none;
+    box-sizing: border-box;
+    flex: 0 0 38px;
+    width: 38px;
+    min-width: 38px;
+    height: 23px;
+    min-height: 23px;
+    padding: 2px;
+    margin: 0;
+    border: 1px solid #8a9da5;
+    border-radius: 12px;
+    background: #becbd0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox']::before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(26 53 68 / 20%);
+    transition: transform 140ms ease-out;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox']:checked {
+    border-color: #467f69;
+    background: #467f69;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox']:checked::before {
+    transform: translateX(15px);
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox']:focus-visible {
+    outline: 3px solid #6395a4;
+    outline-offset: 3px;
+  }
+  .settings-panel.settings-pages #online-booking-settings input[type='checkbox']:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .settings-panel.settings-pages #online-booking-settings .compact-accordion {
+    margin: 0 0 16px;
+    border-block: 1px solid #dce5e9;
+    border-radius: 0;
+    background: #fff;
+  }
+  .settings-panel.settings-pages #online-booking-settings .compact-accordion > summary {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-members {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-member {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1.3fr);
+    gap: 0 16px;
+    padding: 12px 0;
+    border: 0;
+    border-top: 1px solid #e9eef0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-member > strong {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-member > small {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages #online-booking-settings .online-booking-member > label {
+    grid-column: 2;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages
+    #online-booking-settings
+    #online-booking-settings-form
+    > button[type='submit'] {
+    margin: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .settings-panel.settings-pages #online-booking-settings input[type='checkbox']::before {
+      transition: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .settings-panel.settings-pages #online-booking-settings input[type='checkbox'] {
+      appearance: auto;
+      background: Canvas;
+      border-color: ButtonText;
+    }
+    .settings-panel.settings-pages #online-booking-settings input[type='checkbox']::before {
+      content: none;
+    }
+  }
+}

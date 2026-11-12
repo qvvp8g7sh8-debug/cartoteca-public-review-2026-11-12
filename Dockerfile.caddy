@@ -1,0 +1,11 @@
+# Docker Hub has not published 2.11.7 yet. Use the official release binary.
+# Current production target is Linux amd64; fail rather than run the wrong binary.
+FROM caddy:2.11.6-alpine
+ARG TARGETARCH=amd64
+RUN test "$TARGETARCH" = "amd64" \
+    && wget -q -O /tmp/caddy.tar.gz https://github.com/caddyserver/caddy/releases/download/v2.11.7/caddy_2.11.7_linux_amd64.tar.gz \
+    && echo "727b91701a392de6ebc5027509f548bf39979e5216340d0faed8fa5e69c84f8b  /tmp/caddy.tar.gz" | sha256sum -c - \
+    && tar -xzf /tmp/caddy.tar.gz -C /usr/bin caddy \
+    && chmod 755 /usr/bin/caddy \
+    && rm /tmp/caddy.tar.gz \
+    && caddy version | grep '^v2.11.7'

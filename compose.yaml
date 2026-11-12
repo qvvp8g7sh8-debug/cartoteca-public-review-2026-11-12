@@ -1,0 +1,63 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file: .env.local
+    environment:
+      NODE_ENV: production
+      APP_ORIGIN: https://${DOMAIN:?Set DOMAIN in .env}
+      BIND_HOST: 0.0.0.0
+      PORT: 4173
+      CARTOTECA_DATA_DIR: /data
+      BACKUP_STATUS_FILE: /backup-status/status.json
+      TRUSTED_PROXIES: 172.30.41.2
+    volumes:
+      - ./data:/data
+      - ./backup-status:/backup-status:ro
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    networks:
+      private:
+        ipv4_address: 172.30.41.3
+      egress: {}
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "3"}
+  caddy:
+    image: cartoteca-caddy:2.11.7
+    build:
+      context: .
+      dockerfile: Dockerfile.caddy
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      private:
+        ipv4_address: 172.30.41.2
+    depends_on: [app]
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "3"}
+networks:
+  egress:
+    enable_ipv4: false
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: fd30:ca47:42::/64
+  private:
+    ipam:
+      config:
+        - subnet: 172.30.41.0/29
+volumes:
+  caddy_data:
+  caddy_config:

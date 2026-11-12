@@ -1,0 +1,208 @@
+.app-nav {
+  max-width: 1440px;
+  margin: 22px auto 0;
+  padding: 0 32px;
+  display: flex;
+  gap: 8px;
+}
+.app-nav-item {
+  padding: 11px 18px;
+  border-radius: 10px;
+  background: transparent;
+  color: #637584;
+  font-size: 14px;
+}
+.app-nav-item.active {
+  background: #244c64;
+  color: #fff;
+}
+.global-view {
+  grid-column: 1/-1;
+  min-width: 0;
+}
+.workspace.global-mode {
+  display: block;
+}
+.workspace.global-mode>.directory,.workspace.global-mode>.detail {
+  display: none;
+}
+.global-panel {
+  background: #fff;
+  border: 1px solid #e0e7ec;
+  border-radius: 18px;
+  padding: 26px;
+}
+.global-panel h2 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+.global-subtitle {
+  margin: 0 0 22px;
+  color: #637584;
+}
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7,minmax(0,1fr));
+  gap: 10px;
+}
+.calendar-day {
+  min-height: 180px;
+  border: 1px solid #e0e7ec;
+  border-radius: 12px;
+  background: #fafcfd;
+  padding: 12px;
+}
+.calendar-day.today {
+  border-color: #79a3bd;
+  box-shadow: inset 0 3px #244c64;
+}
+.calendar-day h3 {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.calendar-event {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #eaf1f6;
+  color: #244c64;
+  border-radius: 8px;
+  padding: 9px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.calendar-event small {
+  display: block;
+  color: #637584;
+  margin-top: 4px;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 14px;
+}
+.service-tile {
+  border: 1px solid #e0e7ec;
+  border-radius: 12px;
+  padding: 18px;
+  background: #fafcfd;
+}
+.service-tile h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.service-tile p {
+  margin: 0;
+  color: #637584;
+  font-size: 14px;
+}
+.service-price {
+  margin-top: 16px;
+  color: #244c64;
+  font-weight: 650;
+}
+.client-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.client-summary .avatar {
+  width: 54px;
+  height: 54px;
+}
+@media(max-width:700px) {
+  .app-nav {
+    overflow: auto;
+    padding: 0 16px;
+    margin-top: 14px;
+  }
+  .app-nav-item {
+    white-space: nowrap;
+    padding: 10px 14px;
+  }
+  .workspace {
+    margin-top: 18px;
+  }
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+  .calendar-day {
+    min-height: 0;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  .global-panel {
+    padding: 20px;
+  }
+}
+.settings-section {
+  margin-top: 24px;
+  background: #fafcfd;
+  border: 1px solid #e0e7ec;
+  border-radius: 14px;
+  padding: 20px;
+}
+.settings-section h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.service-settings-list {
+  display: grid;
+  gap: 8px;
+}
+.service-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #e0e7ec;
+  border-radius: 11px;
+  padding: 14px 16px;
+}
+.service-setting strong {
+  display: block;
+  font-size: 15px;
+}
+.service-setting span {
+  display: block;
+  color: #637584;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.setting-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.setting-actions .secondary {
+  min-height: 38px;
+  padding: 8px 12px;
+}
+.text-btn.danger {
+  color: #a43134;
+  padding: 8px 0;
+}
+@media(max-width:700px) {
+  .service-setting {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .setting-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .setting-actions .secondary {
+    flex: 1;
+  }
+}

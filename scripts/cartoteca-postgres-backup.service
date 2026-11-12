@@ -1,0 +1,15 @@
+[Unit]
+Description=Verified native PostgreSQL Cartoteca recovery job
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+# Review the deployment path and explicit non-secret configuration before installation.
+WorkingDirectory=/opt/cartoteca
+ExecStart=/usr/bin/python3 /opt/cartoteca/scripts/postgres-backup-job.py run --config /etc/cartoteca-postgres-backup.json --scheduled
+ExecStopPost=-/usr/bin/python3 /opt/cartoteca/scripts/postgres-backup-job.py stop --config /etc/cartoteca-postgres-backup.json
+TimeoutStartSec=1830
+TimeoutStopSec=30
+KillMode=control-group
+UMask=0077

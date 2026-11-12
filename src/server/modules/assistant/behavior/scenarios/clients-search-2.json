@@ -1,0 +1,118 @@
+[
+  {
+    "id": "client-typo",
+    "category": "clients-search",
+    "title": "Найди клиента Анна Ивнаова",
+    "text": "Найди клиента Анна Ивнаова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анна Ивнаова"
+      },
+      "status": "manual",
+      "outcome": "Не исправлять фамилию и не подставлять случайного клиента.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "client-no-query",
+    "category": "clients-search",
+    "title": "Найди клиента",
+    "text": "Найди клиента",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients"
+      },
+      "status": "needs_clarification",
+      "outcome": "Вернуть штатную просьбу назвать имя; поиск без критерия не открывать.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "client-pronoun",
+    "category": "clients-search",
+    "title": "Найди её карточку",
+    "text": "Найди её карточку",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Местоимение не определяет клиента без контекста диалога.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "clients-search",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "client-last-client",
+    "category": "clients-search",
+    "title": "Открой последнего клиента",
+    "text": "Открой последнего клиента",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет истории диалога или отдельного определения «последний».",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "clients-search",
+      "help",
+      "unsupported"
+    ]
+  },
+  {
+    "id": "client-search-not-appointment",
+    "category": "clients-search",
+    "title": "Найди клиента Иванова, запись пока не нужна",
+    "text": "Найди клиента Иванова, запись пока не нужна",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Иванова"
+      },
+      "status": "supported",
+      "outcome": "Не готовить запись при явном запросе только поиска.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-search",
+      "clients",
+      "supported"
+    ]
+  }
+]

@@ -1,0 +1,339 @@
+[
+  {
+    "id": "dialogue-pronoun-calendar",
+    "category": "dialogue-context",
+    "title": "А на завтра?",
+    "text": "А на завтра?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Вне активного диалога не угадывать действие или клиента: нужна новая полная команда. В активном диалоге ответ обрабатывается только для текущего запрошенного поля; произвольная память и голосовое сохранение отсутствуют.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Нет активного серверного диалога подготовки записи."
+    ]
+  },
+  {
+    "id": "dialogue-pronoun-client",
+    "category": "dialogue-context",
+    "title": "А теперь её запиши",
+    "text": "А теперь её запиши",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Вне активного диалога не угадывать действие или клиента: нужна новая полная команда. В активном диалоге ответ обрабатывается только для текущего запрошенного поля; произвольная память и голосовое сохранение отсутствуют.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Нет активного серверного диалога подготовки записи."
+    ]
+  },
+  {
+    "id": "dialogue-slot-only-time",
+    "category": "dialogue-context",
+    "title": "В 14:30",
+    "text": "В 14:30",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Вне активного диалога не угадывать действие или клиента: нужна новая полная команда. В активном диалоге ответ обрабатывается только для текущего запрошенного поля; произвольная память и голосовое сохранение отсутствуют.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Нет активного серверного диалога подготовки записи."
+    ]
+  },
+  {
+    "id": "dialogue-slot-only-name",
+    "category": "dialogue-context",
+    "title": "Анна Иванова",
+    "text": "Анна Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Вне активного диалога не угадывать действие или клиента: нужна новая полная команда. В активном диалоге ответ обрабатывается только для текущего запрошенного поля; произвольная память и голосовое сохранение отсутствуют.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Нет активного серверного диалога подготовки записи."
+    ]
+  },
+  {
+    "id": "dialogue-confirm-only",
+    "category": "dialogue-context",
+    "title": "Да, подтверждаю",
+    "text": "Да, подтверждаю",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Вне активного диалога не угадывать действие или клиента: нужна новая полная команда. В активном диалоге ответ обрабатывается только для текущего запрошенного поля; произвольная память и голосовое сохранение отсутствуют.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ],
+    "preconditions": [
+      "Нет активного серверного диалога подготовки записи."
+    ]
+  },
+  {
+    "id": "dialogue-no-input",
+    "category": "dialogue-context",
+    "title": "...",
+    "text": "...",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "needs_clarification",
+      "outcome": "Текущий результат — общая подсказка без перехода. Шум или пунктуация не являются действием.",
+      "limitations": [
+        "Вне активного диалога подготовки нужна новая полная команда; help сам не запускает уточнения."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "needs_clarification"
+    ]
+  },
+  {
+    "id": "dialogue-cancel-turn",
+    "category": "dialogue-context",
+    "title": "Отмена, ничего не делай",
+    "text": "Отмена, ничего не делай",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Отмена в активном диалоге удаляет только локальный черновик; без диалога возвращается подсказка. Сохранённые записи не меняются.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-stop-preparation",
+    "category": "dialogue-context",
+    "title": "Не записывай Анну Иванову",
+    "text": "Не записывай Анну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Отрицание запрещает даже подготовку новой записи.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-negative-find",
+    "category": "dialogue-context",
+    "title": "Не ищи Иванову",
+    "text": "Не ищи Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Не запускать поиск по отрицательной команде.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-negative-calendar",
+    "category": "dialogue-context",
+    "title": "Не открывай расписание на завтра",
+    "text": "Не открывай расписание на завтра",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Слова расписание и завтра не отменяют отрицание.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-hypothetical",
+    "category": "dialogue-context",
+    "title": "Если бы я сказал «запиши Анну Иванову», что бы произошло?",
+    "text": "Если бы я сказал «запиши Анну Иванову», что бы произошло?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Цитируемый гипотетический пример не исполнять.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-quoted-only",
+    "category": "dialogue-context",
+    "title": "Клиент написал мне «запиши Анну завтра»",
+    "text": "Клиент написал мне «запиши Анну завтра»",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Пересказ сообщения не равен прямой команде пользователя.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-question-capability",
+    "category": "dialogue-context",
+    "title": "Ты умеешь искать клиентов?",
+    "text": "Ты умеешь искать клиентов?",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "supported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Объяснить доступные действия без поиска произвольного клиента.",
+      "limitations": []
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "supported"
+    ]
+  },
+  {
+    "id": "dialogue-deferred-command",
+    "category": "dialogue-context",
+    "title": "Потом напомни мне записать Анну Иванову",
+    "text": "Потом напомни мне записать Анну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "help"
+      },
+      "status": "unsupported",
+      "outcome": "Текущий результат — общая подсказка без перехода. Нет таймеров и напоминаний; не готовить запись сейчас.",
+      "limitations": [
+        "Утверждение примера не добавляет отсутствующее действие в приложение."
+      ]
+    },
+    "tags": [
+      "dialogue-context",
+      "help",
+      "unsupported"
+    ]
+  }
+]

@@ -1,0 +1,428 @@
+[
+  {
+    "id": "name-indeclinable-ko",
+    "category": "clients-morphology",
+    "title": "Найди Дарью Шевченко",
+    "text": "Найди Дарью Шевченко",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Дарью Шевченко"
+      },
+      "status": "supported",
+      "outcome": "Шевченко не получает выдуманное окончание.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-indeclinable-ma",
+    "category": "clients-morphology",
+    "title": "Найди Лилию Дюма",
+    "text": "Найди Лилию Дюма",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Лилию Дюма"
+      },
+      "status": "supported",
+      "outcome": "Дюма сохраняется буквально; не лемматизировать к Дюм.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-kim-female",
+    "category": "clients-morphology",
+    "title": "Найди Веру Ким",
+    "text": "Найди Веру Ким",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Веру Ким"
+      },
+      "status": "supported",
+      "outcome": "Женская Ким не склоняется только по мужскому образцу.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-kima-ambiguous",
+    "category": "clients-morphology",
+    "title": "Найди Кима",
+    "text": "Найди Кима",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Кима"
+      },
+      "status": "manual",
+      "outcome": "Без надёжного контекста не сводить Кима к Ким; это может быть другая фамилия.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-kim-male",
+    "category": "clients-morphology",
+    "title": "Найди Павла Игоревича Кима",
+    "text": "Найди Павла Игоревича Кима",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Павла Игоревича Кима"
+      },
+      "status": "supported",
+      "outcome": "Кандидат Павел Игоревич Ким допустим при подтверждённом полном имени.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ],
+    "preconditions": [
+      "Доступен Павел Игоревич Ким, нет точного клиента Павел Игоревич Кима."
+    ]
+  },
+  {
+    "id": "name-ivanov-versus-ivanova",
+    "category": "clients-morphology",
+    "title": "Найди Иванова",
+    "text": "Найди Иванова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Иванова"
+      },
+      "status": "manual",
+      "outcome": "Иванова может быть женской именительной или мужской родительной формой; не выбирать пол.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-initial-collision",
+    "category": "clients-morphology",
+    "title": "Найди Петрову Е.",
+    "text": "Найди Петрову Е.",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Петрову Е."
+      },
+      "status": "manual",
+      "outcome": "Инициал может соответствовать Елене, Евгении или другой клиентке.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-nickname-sasha",
+    "category": "clients-morphology",
+    "title": "Найди Сашу Петрова",
+    "text": "Найди Сашу Петрова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Сашу Петрова"
+      },
+      "status": "manual",
+      "outcome": "Саша не означает автоматически Александр или Александра.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-nickname-shura",
+    "category": "clients-morphology",
+    "title": "Найди Шуру Иванову",
+    "text": "Найди Шуру Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Шуру Иванову"
+      },
+      "status": "manual",
+      "outcome": "Не раскрывать уменьшительное имя без явного словаря и подтверждения.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-yo-vs-e",
+    "category": "clients-morphology",
+    "title": "Найди Семена Федорова",
+    "text": "Найди Семена Федорова",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Семена Федорова"
+      },
+      "status": "supported",
+      "outcome": "ё/е можно сравнивать локально, но не переписывать сохранённое ФИО.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-homonym-cases",
+    "category": "clients-morphology",
+    "title": "Найди Елену Петрову",
+    "text": "Найди Елену Петрову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Елену Петрову"
+      },
+      "status": "manual",
+      "outcome": "Два доступных полных совпадения остаются неоднозначными после склонения.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "Две разные Елены Петровы."
+    ]
+  },
+  {
+    "id": "name-exact-before-variant",
+    "category": "clients-morphology",
+    "title": "Найди Анну Иванову",
+    "text": "Найди Анну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Иванову"
+      },
+      "status": "manual",
+      "outcome": "Точное ФИО имеет приоритет над падежным кандидатом; не выбирать между ними молча.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "Есть точный буквальный клиент Анну Иванову и отдельная Анна Иванова."
+    ]
+  },
+  {
+    "id": "name-latin-cyrillic",
+    "category": "clients-morphology",
+    "title": "Найди Aнну Иванову",
+    "text": "Найди Aнну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Aнну Иванову"
+      },
+      "status": "manual",
+      "outcome": "Латинская A в начале не исправляется скрытно на кириллическую А.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-apostrophe",
+    "category": "clients-morphology",
+    "title": "Найди Марию О’Коннор",
+    "text": "Найди Марию О’Коннор",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Марию О’Коннор"
+      },
+      "status": "manual",
+      "outcome": "Не обрезать фамилию по апострофу и не удалять часть имени.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-particle",
+    "category": "clients-morphology",
+    "title": "Найди Анну ван дер Меер",
+    "text": "Найди Анну ван дер Меер",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну ван дер Меер"
+      },
+      "status": "manual",
+      "outcome": "Частицы составной фамилии сохраняются.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  },
+  {
+    "id": "name-georgian",
+    "category": "clients-morphology",
+    "title": "Найди Нино Беридзе",
+    "text": "Найди Нино Беридзе",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Нино Беридзе"
+      },
+      "status": "supported",
+      "outcome": "Не применять русское окончание к фамилии Беридзе.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "supported"
+    ]
+  },
+  {
+    "id": "name-patronymic-conflict",
+    "category": "clients-morphology",
+    "title": "Найди Анну Петровну Иванову",
+    "text": "Найди Анну Петровну Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Анну Петровну Иванову"
+      },
+      "status": "manual",
+      "outcome": "Не игнорировать несовпадающее отчество ради знакомой фамилии.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ],
+    "preconditions": [
+      "Есть Анна Сергеевна Иванова, но нет Анны Петровны Ивановой."
+    ]
+  },
+  {
+    "id": "name-without-fuzzy",
+    "category": "clients-morphology",
+    "title": "Найди Марью Иванову",
+    "text": "Найди Марью Иванову",
+    "referenceDate": "2026-10-15",
+    "referenceTime": "10:30",
+    "timeZone": "Europe/Moscow",
+    "current": {
+      "intent": {
+        "intent": "clients",
+        "query": "Марью Иванову"
+      },
+      "status": "manual",
+      "outcome": "Марья и Мария не считаются одним человеком по похожести.",
+      "limitations": []
+    },
+    "tags": [
+      "clients-morphology",
+      "clients",
+      "manual"
+    ]
+  }
+]

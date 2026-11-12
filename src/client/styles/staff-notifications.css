@@ -1,0 +1,223 @@
+/* Personal channels reuse the client-card service icons and surfaces. */
+@media screen {
+  .settings-panel.settings-pages #staff-notifications .staff-notification-channels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-channel {
+    display: contents;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-channels > div,
+  .settings-panel.settings-pages #staff-notifications .staff-notification-details {
+    display: contents;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-details > summary {
+    display: flex;
+    grid-row: 1;
+    gap: 10px;
+    min-height: 58px;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style: none;
+    background: #f3f5f6;
+    border-color: #d9e1e4;
+    color: #65777f;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    [data-staff-channel='telegram']
+    > details
+    > summary {
+    grid-column: 1;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    [data-staff-channel='max']
+    > details
+    > summary {
+    grid-column: 2;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-push-channel > details > summary {
+    grid-column: 3;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-details
+    > summary.is-linked {
+    background: #edf7ef;
+    border-color: #b3d7bd;
+    color: #32644c;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-details
+    > summary.is-loading {
+    background: #f1f5f8;
+    border-color: var(--line);
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-details[open] > summary {
+    outline: 2px solid var(--blue);
+    outline-offset: -2px;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service svg {
+    fill: #83939a;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service .connection-max-mark {
+    background: #e3e8ea;
+    color: #71838a;
+    border: 1px solid #ced8dc;
+    box-shadow: inset 0 1px 0 #fff;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service.is-linked svg {
+    fill: #3c8562;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service.is-linked .connection-max-mark {
+    background: #dcefe2;
+    border-color: #b3d7bd;
+    color: #32734f;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service:not(.is-linked):hover {
+    background: #edf1f3;
+    border-color: #bbcbd1;
+  }
+  .settings-panel.settings-pages #staff-notifications .connection-service.is-linked:hover {
+    background: #e4f2e8;
+    border-color: #99c5a8;
+  }
+  .staff-notification-details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .staff-notification-details > summary:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: -3px;
+    border-radius: 10px;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-channel
+    .telegram-connection-status {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: 3px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-body {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding: 10px 12px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    summary.is-linked
+    .telegram-connection-status {
+    color: #367062;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-details:not([open])
+    > .staff-notification-body {
+    display: none;
+  }
+  .settings-panel.settings-pages
+    #staff-notifications
+    .staff-notification-body
+    :is(button, .staff-telegram-open) {
+    width: auto;
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-notification-actions {
+    flex-direction: row;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .settings-panel.settings-pages #staff-notifications .telegram-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin: 0 0 6px;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages #staff-notifications .telegram-settings-result:not(:empty) {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-push-channel fieldset {
+    margin: 0;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-push-events {
+    gap: 0 12px;
+  }
+  .settings-panel.settings-pages #staff-notifications .staff-push-events label {
+    font-size: 13px;
+  }
+  @media (max-width: 700px) {
+    .settings-panel.settings-pages #staff-notifications .staff-notification-channels {
+      gap: 6px;
+    }
+    .settings-panel.settings-pages #staff-notifications .staff-notification-details > summary {
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      min-height: 78px;
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .settings-panel.settings-pages #staff-notifications :is(.connection-service, .connection-service.is-linked) svg {
+      width: 24px;
+      height: 24px;
+      flex-basis: 24px;
+    }
+    .settings-panel.settings-pages #staff-notifications .connection-max-mark {
+      width: 24px;
+      height: 24px;
+      flex-basis: 24px;
+    }
+    .settings-panel.settings-pages #staff-notifications .connection-service strong {
+      font-size: 12px;
+    }
+    .settings-panel.settings-pages
+      #staff-notifications
+      .staff-notification-channel
+      .telegram-connection-status {
+      white-space: normal;
+      font-size: 11px;
+    }
+    .settings-panel.settings-pages #staff-notifications .staff-push-period {
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+  }
+  @media (forced-colors: active) {
+    .staff-notification-details > summary {
+      border-color: ButtonText;
+    }
+    .staff-notification-details > summary:focus-visible {
+      outline-color: Highlight;
+    }
+    .settings-panel.settings-pages #staff-notifications :is(.connection-service, .connection-service.is-linked) svg {
+      fill: ButtonText;
+    }
+    .settings-panel.settings-pages #staff-notifications :is(.connection-service, .connection-service.is-linked) .connection-max-mark {
+      background: Canvas;
+      color: ButtonText;
+      border-color: ButtonText;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+#telegram-settings .telegram-settings-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+#telegram-settings .reminder-channel-statuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+#telegram-settings .reminder-channel-status {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  width: 96px;
+  padding: 12px 8px 9px;
+  border: 1px solid #e6d8b1;
+  border-radius: 12px;
+  background: #fff8e7;
+  color: #765b29;
+}
+#telegram-settings .reminder-channel-status[data-connection-state='connected'] {
+  background: #edf8f1;
+  border-color: #b9dcca;
+  color: #316746;
+}
+#telegram-settings .reminder-channel-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: inset 0 1px 1px #ffffff55,
+    0 3px 7px #20374416;
+}
+#telegram-settings .reminder-channel-telegram {
+  background: linear-gradient(145deg, #48b8e9, #198ac0);
+}
+#telegram-settings .reminder-channel-telegram svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+#telegram-settings .reminder-channel-max {
+  background: linear-gradient(135deg, #5265bd, #8357b4);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+#telegram-settings .reminder-channel-mark {
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff8e7;
+  border-radius: 50%;
+  background: #b88629;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+#telegram-settings [data-connection-state='connected'] .reminder-channel-mark {
+  border-color: #edf8f1;
+  background: #3b8b67;
+}
+#telegram-settings .reminder-channel-status small {
+  font-size: 12px;
+  line-height: 1.3;
+}
+#telegram-settings .reminder-channel-status:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+#telegram-settings .client-notification-settings-form {
+  margin: 14px 0;
+}
+#telegram-settings [data-notification-message]:empty {
+  display: none;
+}
+@media (forced-colors: active) {
+  #telegram-settings :is(.reminder-channel-status, .reminder-channel-icon, .reminder-channel-mark) {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+}
+#telegram-settings .telegram-settings-block {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#telegram-settings .telegram-settings-block + .telegram-settings-block {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+#telegram-settings h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+#telegram-settings .form-hint {
+  margin: 8px 0 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+:is(#telegram-settings, #staff-notifications) :is(button, .staff-telegram-open) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: center;
+  text-decoration: none;
+}
+:is(#telegram-settings, #staff-notifications) :is(button, .staff-telegram-open):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+:is(#telegram-settings, #staff-notifications) .telegram-switch {
+  align-items: flex-start;
+  line-height: 1.5;
+}
+:is(#telegram-settings, #staff-notifications) .telegram-switch input {
+  flex: 0 0 18px;
+  margin-top: 3px;
+}
+:is(#telegram-settings, #staff-notifications) .telegram-connection-status {
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+:is(#telegram-settings, #staff-notifications) .telegram-connection-status[data-linked='true'] {
+  color: #2e6b46;
+}
+#staff-notifications .staff-notification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+#staff-notifications .staff-notification-management {
+  margin-top: 12px;
+}
+#staff-notifications .staff-notification-management > summary {
+  padding: 10px 0;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 14px;
+}
+:is(#telegram-settings, #staff-notifications) .booking-danger:hover:not(:disabled) {
+  color: #933e3e;
+  background: #fff1f0;
+  border-color: #e5b9b5;
+}
+#staff-notifications .telegram-settings-result:empty,
+#telegram-settings #telegram-settings-message:empty {
+  display: none;
+}
+@media (min-width: 1100px) {
+  #telegram-settings .telegram-settings-groups:has(#telegram-client-settings) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  #telegram-settings .telegram-settings-block + .telegram-settings-block {
+    padding: 0 0 0 24px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+}
+@media (max-width: 600px) {
+  :is(#telegram-settings, #staff-notifications) :is(button, .staff-telegram-open) {
+    width: 100%;
+  }
+  #telegram-settings .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #staff-notifications .staff-notification-actions {
+    flex-direction: column;
+  }
+}
+@media screen {
+  .client-notification-events {
+    border: 0;
+    margin: 12px 0;
+    padding: 0;
+    min-width: 0;
+  }
+  .client-notification-events legend {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .client-notification-events label {
+    min-height: 44px;
+  }
+}

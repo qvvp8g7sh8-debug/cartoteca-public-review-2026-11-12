@@ -1,0 +1,254 @@
+/* Desktop A: navigation beside content. Mobile B: a compact bounded screen. */
+@media screen {
+  .workspace-designed .management-panel {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0 24px;
+    padding: 20px;
+    border-radius: 14px;
+    height: calc(100dvh - 150px);
+    min-height: 420px;
+    box-shadow: none;
+  }
+  .workspace-designed .management-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .workspace-designed .management-heading h2 {
+    font-size: 22px;
+    margin: 0 0 16px;
+  }
+  .workspace-designed .management-tabs {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+  }
+  .workspace-designed .management-tabs button {
+    justify-content: start;
+    min-height: 66px;
+    padding: 10px;
+    gap: 10px;
+    text-align: left;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .workspace-designed .management-tabs button[aria-selected='true'] {
+    background: var(--light);
+    border-color: #d0e0de;
+    box-shadow: none;
+  }
+  .workspace-designed .management-tab-copy {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+  }
+  .workspace-designed .management-tab-copy small {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .workspace-designed .management-content {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    border-left: 1px solid var(--line);
+    padding-left: 24px;
+  }
+  .workspace-designed .management-section-heading {
+    margin: 0 0 14px;
+  }
+  .workspace-designed .management-section-heading h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 650;
+    line-height: 1.4;
+  }
+  .workspace-designed .management-panel .services-heading {
+    margin-bottom: 12px;
+  }
+  .workspace-designed .management-panel .services-heading-actions {
+    gap: 8px;
+  }
+  .workspace-designed .management-panel .services-heading-actions button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .workspace-designed .management-panel .service-selection-bar {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    box-shadow: none;
+  }
+  .workspace-designed .management-panel .service-selection-empty span {
+    font-size: 13px;
+  }
+  .workspace-designed .management-panel .service-selection-actions .primary {
+    font-size: 13px;
+  }
+  .workspace-designed .management-panel .service-category-nav {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .workspace-designed .management-panel .service-category-tab {
+    min-height: 44px;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: #fff;
+  }
+  .workspace-designed .management-panel .service-category-tab.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .workspace-designed .management-panel .service-catalog-search {
+    border-radius: 9px;
+  }
+  .workspace-designed .management-panel .service-category-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .workspace-designed .management-panel :is(.service-select-card, .service-edit-card) {
+    min-height: 72px;
+    padding: 10px 14px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .workspace-designed .management-panel :is(.service-select-card, .service-edit-card):last-child {
+    border-bottom: 0;
+  }
+  .workspace-designed .management-panel .service-select-card.selected {
+    box-shadow: inset 3px 0 var(--blue);
+  }
+  .workspace-designed .management-panel .service-row-main > strong {
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .workspace-designed .management-panel .service-card-product {
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  .workspace-designed .management-panel .service-edit-card .setting-actions button {
+    min-height: 44px;
+  }
+  .workspace-designed .management-panel .work-schedule-selection {
+    background: var(--surface-soft);
+  }
+  .workspace-designed .management-panel .work-schedule-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .workspace-designed .management-panel .booking-requests-heading h3 {
+    font-size: 16px;
+  }
+  .workspace-designed .management-panel .booking-requests-heading p {
+    font-size: 13px;
+  }
+  .workspace-designed .management-panel .booking-requests-empty {
+    padding: 24px 16px;
+    background: var(--surface-soft);
+    border-style: solid;
+  }
+  @media (max-width: 980px) {
+    .workspace-designed .management-panel {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px;
+      height: calc(100dvh - 148px);
+    }
+    .workspace-designed .management-heading {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    .workspace-designed .management-tabs {
+      grid-column: 1;
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #eaf0ef;
+      max-width: none;
+      gap: 3px;
+    }
+    .workspace-designed .management-tabs button {
+      flex-direction: row;
+      justify-content: center;
+      min-height: 48px;
+      padding: 7px 3px;
+      font-size: 12px;
+      text-align: center;
+      gap: 5px;
+      border-radius: 7px;
+    }
+    .workspace-designed .management-tabs button[aria-selected='true'] {
+      background: #fff;
+    }
+    .workspace-designed .management-tabs svg {
+      display: none;
+    }
+    .workspace-designed .management-tab-copy small {
+      display: none;
+    }
+    .workspace-designed .management-content {
+      grid-column: 1;
+      grid-row: 2;
+      padding: 0;
+      border: 0;
+      scrollbar-gutter: auto;
+    }
+    .workspace-designed .management-section-heading h3 {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 700px) {
+    .workspace-designed .management-panel {
+      height: calc(100dvh - var(--bottom-nav-height, 72px) - env(safe-area-inset-bottom) - 48px);
+      min-height: 340px;
+      padding: 12px;
+    }
+    .workspace-designed .management-panel .services-heading-actions button {
+      padding: 8px 6px;
+      white-space: normal;
+    }
+    .workspace-designed .management-panel .service-select-card {
+      padding: 10px;
+    }
+    .workspace-designed .management-panel .service-selection-bar.is-empty {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+    }
+    .workspace-designed .management-panel .is-empty .service-selection-actions {
+      width: auto;
+    }
+    .workspace-designed .management-panel .service-selection-actions .primary {
+      padding: 8px;
+      white-space: normal;
+    }
+  }
+}

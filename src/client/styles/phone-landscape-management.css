@@ -1,0 +1,177 @@
+/* Phone landscape management: one tab row above scrollable services, schedules and requests. */
+@media screen {
+  body.phone-landscape .workspace.workspace-designed .management-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100%;
+    min-height: 0;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+  body.phone-landscape .workspace-designed .management-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tabs {
+    display: grid;
+    grid-area: 1 / 1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tabs button {
+    --nav-icon-light: #e9ae50;
+    --nav-icon-base: #d48b29;
+    --nav-icon-edge: #af6c1c;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tabs svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #fff;
+    background: linear-gradient(145deg, var(--nav-icon-light), var(--nav-icon-base) 75%);
+    box-shadow: inset 0 1px 0 #ffffff70, 0 2px 0 var(--nav-icon-edge);
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tabs [data-management-tab='schedule'] {
+    --nav-icon-light: #3ab99a;
+    --nav-icon-base: #20977b;
+    --nav-icon-edge: #17715d;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tabs [data-management-tab='requests'] {
+    --nav-icon-light: #ee9878;
+    --nav-icon-base: #d97956;
+    --nav-icon-edge: #b85c3b;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-tab-copy small {
+    display: none;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-content {
+    grid-area: 2 / 1;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    overflow: auto;
+    scrollbar-gutter: auto;
+  }
+  body.phone-landscape .workspace-designed .management-panel .services-heading-actions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 6px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .services-heading-actions button {
+    min-height: 44px;
+    width: auto;
+  }
+  body.phone-landscape .workspace-designed .management-panel :is(.service-row-actions > button, .work-month-nav button) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-selection-bar {
+    margin-bottom: 8px;
+    padding: 8px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-catalog-layout {
+    display: block;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-category-nav {
+    display: flex;
+    gap: 6px;
+    overflow: auto;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-category-tab {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 44px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-category-select {
+    display: none;
+  }
+  body.phone-landscape .workspace-designed .management-panel .service-category-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.phone-landscape .workspace-designed .management-panel :is(.service-select-card, .service-edit-card) {
+    min-height: 64px;
+    height: auto;
+    padding: 8px 10px;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel .services-panel .service-row-main {
+    display: block;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel .services-panel .service-row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 4px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .work-schedule-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 6px 12px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .work-schedule-toolbar > .field {
+    flex: 1 1 200px;
+    width: auto;
+    max-width: 360px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .work-month-nav {
+    width: auto;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel .work-schedule-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(210px, 0.85fr);
+    gap: 12px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .work-schedule-selection {
+    padding: 10px;
+  }
+  body.phone-landscape .workspace-designed .management-panel :is(.work-day, .work-weekdays > button) {
+    min-height: 44px;
+  }
+  body.phone-landscape .workspace-designed .management-panel .work-day {
+    gap: 2px;
+    padding: 4px 2px;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel .booking-requests-panel .booking-request {
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.85fr);
+    gap: 8px 14px;
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel #booking-requests-panel .booking-request-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  body.phone-landscape .workspace.workspace-designed .management-panel #booking-requests-panel .booking-request-actions > button {
+    min-height: 44px;
+    width: auto;
+  }
+}
+@media screen and (forced-colors: active) {
+  body.phone-landscape .workspace.workspace-designed .management-tabs svg {
+    color: CanvasText;
+    background: Canvas;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 740px) {
+  body.phone-landscape .workspace.workspace-designed .management-panel .work-schedule-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

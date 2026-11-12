@@ -1,0 +1,214 @@
+/* Low-height touch-phone dialogs. The opt-in class owns the orientation boundary. */
+@media screen {
+  body.phone-landscape dialog {
+    --phone-dialog-top: max(4px, env(safe-area-inset-top));
+    --phone-dialog-bottom: max(4px, env(safe-area-inset-bottom));
+    --phone-dialog-left: max(8px, env(safe-area-inset-left));
+    --phone-dialog-right: max(8px, env(safe-area-inset-right));
+    --phone-dialog-height: calc(
+      var(--phone-landscape-height, 100dvh) - var(--phone-dialog-top) - var(--phone-dialog-bottom)
+    );
+    max-width: calc(100% - var(--phone-dialog-left) - var(--phone-dialog-right));
+    max-height: var(--phone-dialog-height);
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] {
+    position: fixed;
+    top: calc(var(--phone-viewport-top, 0px) + var(--phone-dialog-top));
+    bottom: auto;
+    left: var(--phone-dialog-left);
+    right: var(--phone-dialog-right);
+    width: auto;
+    max-width: none;
+    height: var(--phone-dialog-height);
+    max-height: var(--phone-dialog-height);
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    translate: none;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] #editor-form {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .dialog-heading {
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin: 0;
+    padding: 4px 12px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .dialog-heading h2 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .dialog-heading .icon-btn {
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] #form-content {
+    min-height: 0;
+    min-width: 0;
+    padding: 8px 12px 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: auto;
+    scroll-padding-block: 8px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .form-grid > .field {
+    grid-column: auto;
+    min-width: 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .form-grid > .full {
+    grid-column: 1 / -1;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .field {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    .field
+    :is(input:not([type='hidden'], [type='checkbox'], [type='radio'], [type='file']), select, textarea) {
+    min-height: 44px;
+    min-width: 0;
+    min-inline-size: 0;
+    max-width: 100%;
+    margin-top: 4px;
+    padding: 9px 10px;
+    font-size: 16px;
+    line-height: 1.35;
+    box-sizing: border-box;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .field textarea {
+    min-height: 60px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    .field
+    :is(input[type='date'], input[type='time']) {
+    width: 100%;
+    height: 44px;
+    max-height: 44px;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    .field
+    :is(input[type='date'], input[type='time'])::-webkit-date-and-time-value {
+    min-width: 0;
+    text-align: left;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .dialog-actions {
+    position: static;
+    gap: 8px;
+    margin: 0;
+    padding: 4px 12px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .dialog-actions button {
+    flex: 0 1 auto;
+    min-height: 44px;
+    min-width: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] #form-error {
+    max-height: min(48px, calc(var(--phone-landscape-height, 100dvh) * 0.18));
+    margin: 0;
+    padding: 4px 12px;
+    overflow: auto;
+    font-size: 13px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .form-hint {
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    :is(.appointment-patient-status, .appointment-time-status):empty {
+    display: none;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .appointment-patient-search-row {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    margin-top: 4px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    .appointment-patient-search-row
+    > input[type='search'] {
+    margin: 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    :is(.appointment-patient-add, .appointment-procedure-remove, .visit-procedure-remove) {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .appointment-patient-results {
+    max-height: min(176px, calc(var(--phone-dialog-height) * 0.55));
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    #appointment-service:not([data-service-window]) .appointment-service-menu {
+    position: static;
+    max-height: min(176px, calc(var(--phone-dialog-height) * 0.55));
+    margin-top: 4px;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    :is(.appointment-service-group > summary, .appointment-service-option) {
+    min-height: 44px;
+    padding-block: 10px;
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid
+    > .field {
+    grid-column: span 3;
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid
+    > .field:has(:is([name='date'], [name='time'], [name='duration'])) {
+    grid-column: span 2;
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid
+    > .field:has([name='date']) {
+    grid-column: 1 / span 2;
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid
+    > .full {
+    grid-column: 1 / -1;
+  }
+  body.phone-landscape #editor.editor-designed:is([data-editor-kind='appointment'], [data-editor-kind='visit'])
+    .form-grid
+    > .field:has(:is(select[name='staffId'], select[name='roomId'])) {
+    grid-column: span 3;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind='appointment']
+    .form-grid:has(> .field :is(select[name='staffId'], select[name='roomId']))
+    > .appointment-patient-picker {
+    grid-column: span 3;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind]
+    :is(.appointment-procedures, .visit-procedures, .visit-photo-section) {
+    padding: 8px 0;
+  }
+  body.phone-landscape #editor.editor-designed[data-editor-kind] .visit-photo-section {
+    margin-top: 8px;
+  }
+}

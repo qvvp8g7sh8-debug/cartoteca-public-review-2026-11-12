@@ -1,0 +1,10 @@
+[Unit]
+Description=Verified encrypted Cartoteca v2 backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker exec cartoteca-app-1 node scripts/backup-v2.cjs create
+TimeoutStartSec=1800
+UMask=0077

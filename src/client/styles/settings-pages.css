@@ -1,0 +1,607 @@
+/* Separate settings pages: one bounded workspace, no changes to calendar or print. */
+@media screen {
+  body.settings-screen {
+    padding-bottom: 0;
+  }
+  .settings-panel.settings-pages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: var(--settings-space, calc(100dvh - 144px));
+    min-height: 220px;
+    min-width: 0;
+    padding: 16px;
+    overflow: hidden;
+  }
+  .settings-panel.settings-pages [hidden] {
+    display: none !important;
+  }
+  .settings-panel.settings-pages :is(button, input, select, textarea, h3, h4) {
+    font-family: inherit;
+  }
+  .settings-panel.settings-pages > h2 {
+    font-size: 21px;
+    margin: 0 0 10px;
+  }
+  .settings-panel.settings-pages .account-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 12px;
+    margin: 0 0 12px;
+  }
+  .settings-panel.settings-pages .account-settings strong {
+    font-size: 15px;
+  }
+  .settings-panel.settings-pages .account-settings p {
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .settings-tiles {
+    position: relative;
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .settings-panel.settings-pages .settings-tile {
+    position: static;
+    width: 252px;
+    margin: 0 0 6px;
+    border: 1px solid #dce4ea;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages .settings-tile > summary {
+    min-height: 62px;
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 9px;
+    background: transparent;
+  }
+  .settings-panel.settings-pages .settings-tile > summary:hover {
+    background: #f5f7fa;
+  }
+  .settings-panel.settings-pages .settings-tile[open] > summary {
+    background: #edf3f8;
+    color: #263f58;
+  }
+  .settings-panel.settings-pages .settings-tile-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .settings-panel.settings-pages .settings-tile-description {
+    font-size: 12px;
+    line-height: 1.35;
+    color: #697887;
+  }
+  .settings-panel.settings-pages .settings-tile-icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 8px;
+    background: #f0f3f6;
+    color: #50677c;
+  }
+  .settings-panel.settings-pages .settings-tile-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .settings-panel.settings-pages .settings-page-surface {
+    position: absolute;
+    inset: 0 0 0 268px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid #dce4ea;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .settings-panel.settings-pages .settings-tile:not([open]) > .settings-page-surface {
+    display: none;
+  }
+  .settings-panel.settings-pages .settings-page-toolbar {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 12px;
+    min-height: 60px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #e5eaf0;
+    background: #fff;
+  }
+  .settings-panel.settings-pages .settings-page-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 650;
+  }
+  .settings-panel.settings-pages .settings-page-title:focus {
+    outline: none;
+  }
+  .settings-panel.settings-pages button.settings-page-back {
+    display: none;
+    min-width: 44px;
+    padding: 8px 10px;
+    color: #536d82;
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages .settings-page-back > span {
+    font-size: 24px;
+    line-height: 1;
+    vertical-align: -1px;
+  }
+  .settings-panel.settings-pages .settings-accordion-content {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    padding: 18px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    background: #fff;
+  }
+  .settings-panel.settings-pages .settings-tiles:not([data-settings-open])::after {
+    content: 'Выберите раздел настроек';
+    position: absolute;
+    inset: 0 0 0 268px;
+    display: grid;
+    place-items: center;
+    color: #718091;
+    font-size: 14px;
+    background: #f7f9fb;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+  }
+  .settings-panel.settings-pages .settings-legal {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages :is(.profile-grid, .online-booking-fields) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .settings-panel.settings-pages .profile-grid > .field {
+    grid-column: auto;
+  }
+  .settings-panel.settings-pages .profile-grid > .profile-organization-name {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages .profile-grid > .profile-display-name {
+    grid-column: 1 / -1;
+  }
+  .settings-panel.settings-pages :is(.primary, .secondary) {
+    border-radius: 8px;
+    box-shadow: none;
+    font-weight: 600;
+  }
+  .settings-panel.settings-pages :is(.form-hint, [role='status']) {
+    color: #687988;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .error {
+    color: #b3343b;
+  }
+  .settings-panel.settings-pages :is(h3, h4) {
+    font-size: 16px;
+  }
+  .settings-panel.settings-pages .profile-overview-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .settings-panel.settings-pages .profile-overview-avatar {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border-radius: 12px;
+    background: #edf3f8;
+    color: #48657f;
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .settings-panel.settings-pages .profile-overview-identity strong {
+    display: block;
+    font-size: 17px;
+  }
+  .settings-panel.settings-pages .profile-overview-identity span:not(.profile-overview-avatar) {
+    display: block;
+    margin-top: 3px;
+    color: #718091;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .profile-overview-list {
+    margin: 0;
+  }
+  .settings-panel.settings-pages .profile-group-heading {
+    grid-column: 1 / -1;
+    margin: 12px 0 4px;
+    color: #748490;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .settings-panel.settings-pages .profile-group-heading:first-child {
+    margin-top: 0;
+  }
+  .settings-panel.settings-pages #account-profile-form {
+    max-width: 660px;
+  }
+  .settings-panel.settings-pages .profile-save-row {
+    border-top: 1px solid #e5eaf0;
+    padding-top: 16px;
+    margin-top: 20px;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary {
+    display: none;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary span {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .settings-panel.settings-pages .profile-overview-row {
+    display: grid;
+    grid-template-columns: 155px minmax(0, 1fr);
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid #e9edf2;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .settings-panel.settings-pages .profile-overview-row dt {
+    color: #728091;
+  }
+  .settings-panel.settings-pages .profile-overview-row dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: #273d50;
+  }
+  .settings-panel.settings-pages .profile-overview-actions {
+    margin-top: 16px;
+  }
+  .settings-panel.settings-pages #organization-time-zone-settings {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form {
+    max-width: 660px;
+  }
+  .settings-panel.settings-pages .organization-time-zone-form select {
+    min-height: 44px;
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .settings-panel.settings-pages .settings-label-row {
+    gap: 0;
+  }
+  .settings-panel.settings-pages button.settings-help-trigger,
+  .settings-panel.settings-pages #telegram-settings button.settings-help-trigger,
+  .settings-panel.settings-pages #online-booking-settings button.settings-help-trigger {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    flex: 0 0 44px;
+    margin: -10px 0;
+    padding: 10px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages .settings-help-trigger > span {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    color: #687e91;
+    border-color: #d1dce5;
+    background: #f7f9fb;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .settings-panel.settings-pages .member-count {
+    min-width: 22px;
+    height: 22px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: #f0f3f6;
+    color: #62778a;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .settings-panel.settings-pages :is(.team-invite-panel, .member-edit-panel) {
+    border: 0;
+    margin: 10px 0;
+  }
+  .settings-panel.settings-pages :is(.team-invite-panel, .member-edit-panel) > summary {
+    min-height: 44px;
+    padding: 12px 0;
+    color: #4d6b84;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .settings-panel.settings-pages .team-invite-panel {
+    border-bottom: 1px solid #e5eaf0;
+    margin-bottom: 14px;
+  }
+  .settings-panel.settings-pages .invite-member-form {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px;
+    background: #f7f9fb;
+    border-radius: 8px;
+  }
+  .settings-panel.settings-pages .invite-member-form > button {
+    justify-self: start;
+  }
+  .settings-panel.settings-pages .invite-member-form .invite-member-heading h4 {
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages .team-member {
+    display: block;
+    padding: 12px;
+    background: #fff;
+    border-color: #e1e7ed;
+  }
+  .settings-panel.settings-pages .team-member-main {
+    gap: 10px;
+  }
+  .settings-panel.settings-pages .team-member-main > div {
+    min-width: 0;
+  }
+  .settings-panel.settings-pages .team-member-main strong {
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages .team-member small {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+  .settings-panel.settings-pages .team-avatar {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    background: #f0f3f6;
+    color: #536d82;
+    font-size: 12px;
+  }
+  .settings-panel.settings-pages .team-member-meta {
+    justify-content: flex-start;
+    margin: 8px 0 0 42px;
+    gap: 8px;
+  }
+  .settings-panel.settings-pages .role-badge {
+    padding: 3px 6px;
+    background: #f0f3f6;
+    color: #62778a;
+    font-size: 11px;
+    border-radius: 5px;
+  }
+  .settings-panel.settings-pages .member-edit-panel {
+    margin: 8px 0 0;
+    border-top: 1px solid #e9edf2;
+  }
+  .settings-panel.settings-pages .member-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: end;
+  }
+  .settings-panel.settings-pages .member-controls .field {
+    margin: 0;
+  }
+  .settings-panel.settings-pages .member-access-toggle {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    min-height: 44px;
+    min-width: 150px;
+  }
+  .member-access-track {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    flex: 0 0 34px;
+    border-radius: 12px;
+    background: #768590;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+  .member-access-track::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .member-access-toggle[aria-checked='true'] .member-access-track {
+    background: #3b8b67;
+  }
+  .member-access-toggle[aria-checked='true'] .member-access-track::before {
+    transform: translateX(14px);
+  }
+  @media (forced-colors: active) {
+    .member-access-track {
+      border: 1px solid ButtonText;
+      background: Canvas;
+    }
+    .member-access-track::before {
+      background: ButtonText;
+    }
+  }
+  .settings-panel.settings-pages .member-specialty-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .settings-panel.settings-pages .staff-notification-channel {
+    border-color: #e1e7ed;
+    padding: 12px;
+    background: #fff;
+  }
+  .settings-panel.settings-pages .staff-notification-channel h4 {
+    font-size: 14px;
+  }
+  .settings-panel.settings-pages .telegram-message-preview {
+    border-radius: 8px;
+    background: #f7f9fb;
+  }
+}
+@media screen and (min-width: 980px) {
+  .settings-panel.settings-pages > h2 {
+    margin-bottom: 24px;
+  }
+  .settings-panel.settings-pages .account-settings {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    gap: 16px;
+    max-width: calc(100% - 180px);
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 980px) and (max-height: 700px) {
+  .settings-panel.settings-pages .settings-tile-description {
+    display: none;
+  }
+  .settings-panel.settings-pages .settings-tile > summary {
+    min-height: 44px;
+  }
+}
+@media screen and (max-width: 979px) {
+  .settings-panel.settings-pages {
+    padding: 12px;
+  }
+  .settings-panel.settings-pages .settings-tiles {
+    overflow: auto;
+  }
+  .settings-panel.settings-pages .settings-tile {
+    width: 100%;
+  }
+  .settings-panel.settings-pages .settings-tile > summary {
+    min-height: 62px;
+    padding: 10px 12px;
+  }
+  .settings-panel.settings-pages .settings-page-surface {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .settings-panel.settings-pages .settings-tiles:not([data-settings-open])::after {
+    display: none;
+  }
+  .settings-panel.settings-pages[data-settings-open] > :is(h2, .account-settings, .early-access-offer, .settings-legal) {
+    display: none;
+  }
+  .settings-panel.settings-pages[data-settings-open] .settings-tiles {
+    overflow: hidden;
+  }
+  .settings-panel.settings-pages[data-settings-open] .settings-tile:not([open]) {
+    display: none;
+  }
+  .settings-panel.settings-pages[data-settings-open] .settings-tile[open] {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    border: 0;
+  }
+  .settings-panel.settings-pages[data-settings-open] .settings-tile[open] > summary {
+    display: none;
+  }
+  .settings-panel.settings-pages .settings-page-toolbar {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) 72px;
+    min-height: 56px;
+    padding: 6px 0;
+    gap: 4px;
+  }
+  .settings-panel.settings-pages .settings-page-title {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    text-align: center;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .workspace.workspace-designed .settings-panel.settings-pages .settings-page-toolbar > button.settings-page-back {
+    display: inline-flex;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-items: center;
+    gap: 4px;
+    min-height: 44px;
+    padding: 6px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--blue, #244c64);
+    box-shadow: none;
+    white-space: nowrap;
+  }
+  .workspace.workspace-designed .settings-panel.settings-pages .settings-page-toolbar > button.settings-page-back:is(:hover, :active) {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .settings-panel.settings-pages .settings-accordion-content {
+    padding: 16px 2px 12px;
+    scrollbar-gutter: auto;
+  }
+  .settings-panel.settings-pages :is(.profile-grid, .online-booking-fields) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-panel.settings-pages .profile-overview-row {
+    grid-template-columns: 116px minmax(0, 1fr);
+    gap: 12px;
+    font-size: 13px;
+  }
+  .settings-panel.settings-pages .profile-overview-row dd {
+    text-align: right;
+  }
+  .settings-panel.settings-pages .profile-overview-actions .primary {
+    width: 100%;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary {
+    display: grid;
+    gap: 6px;
+    min-height: 44px;
+    padding: 8px 24px 8px 0;
+    position: relative;
+    font-size: 12px;
+    color: #748490;
+    cursor: pointer;
+    list-style: none;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary::-webkit-details-marker {
+    display: none;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary span {
+    color: #273d50;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel > summary::after {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 12px;
+    font-size: 23px;
+  }
+  .settings-panel.settings-pages .organization-time-zone-panel[open] > summary::after {
+    transform: rotate(90deg);
+  }
+  .settings-panel.settings-pages .team-member-meta {
+    flex-wrap: wrap;
+  }
+  .settings-panel.settings-pages .member-specialty-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

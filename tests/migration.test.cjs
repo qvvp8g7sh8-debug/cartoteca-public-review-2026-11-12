@@ -1,0 +1,37 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto');
+const {createPlatformStore}=require('../platform-store.cjs');
+const {migrateSelectedAccounts}=require('../src/server/migrations/002-selected-accounts.cjs');
+const {createPlatformDatabase}=require('../src/server/infrastructure/platform-database.cjs');
+test('selected accounts preserve passwords roles IDs and organization without sessions or clinical data',async t=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'cartoteca-migration-'));
+  let target;
+  t.after(()=>{target?.close();fs.rmSync(dir,{recursive:true,force:true});});
+  const source=path.join(dir,'source'),destination=path.join(dir,'new'),backupDirectory=path.join(dir,'backup');
+  const store=createPlatformStore(path.join(source,'platform'));
+  const owner=await store.registerOwner({email:'owner@example.test',password:'Existing-owner-password',displayName:'Owner',organizationName:'Original clinic'});
+  store.verifyEmail(owner.verificationToken);
+  const admin=await store.bootstrapGlobalAdmin({email:'admin@example.test',password:'Existing-admin-password',displayName:'Admin'});
+  await store.registerOwner({email:'excluded@example.test',password:'Excluded-owner-password',displayName:'Excluded',organizationName:'Excluded clinic'});
+  const oldSession=await store.login('owner@example.test','Existing-owner-password');
+  store.close();
+  const filename=path.join(source,'platform','platform.sqlite');
+  const digest=()=>crypto.createHash('sha256').update(fs.readFileSync(filename)).digest('hex');
+  const before=digest();
+  const options={source,destination,backupDirectory,emails:['owner@example.test','admin@example.test']};
+  const dry=migrateSelectedAccounts({...options,dryRun:true});assert.equal(dry.accounts,2);assert.equal(fs.existsSync(destination),false);
+  const result=migrateSelectedAccounts(options);assert.equal(result.accounts,2);assert.equal(result.clinicalDataCopied,false);assert.equal(digest(),before);
+  assert.notDeepEqual(fs.readFileSync(path.join(source,'platform','platform.key')),fs.readFileSync(path.join(destination,'platform','platform.key')));
+  target=createPlatformStore(path.join(destination,'platform'));
+  const migratedOwner=await target.login('owner@example.test','Existing-owner-password');assert.equal(migratedOwner.account.id,owner.accountId);assert.equal(migratedOwner.organizationId,owner.organizationId);assert.equal(target.session(migratedOwner.token).role,'owner');
+  const migratedAdmin=await target.login('admin@example.test','Existing-admin-password');assert.equal(migratedAdmin.account.id,admin.accountId);assert.equal(target.session(migratedAdmin.token).globalAdmin,true);
+  assert.equal(target.session(oldSession.token),null);assert.equal(target.adminOverview(admin.accountId).accountsTotal,2);
+  assert.equal(target.organization(owner.organizationId).name,'Original clinic');assert.equal(target.organization(owner.organizationId).legacyData,false);
+  assert.throws(()=>migrateSelectedAccounts(options),/already exists/);
+});
+test('lost encryption key never creates a replacement for an existing database',t=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'cartoteca-missing-key-'));
+  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+  const db=createPlatformDatabase(dir);db.db.close();fs.unlinkSync(path.join(dir,'platform.key'));
+  assert.throws(()=>createPlatformDatabase(dir),/key is missing/);assert.equal(fs.existsSync(path.join(dir,'platform.key')),false);
+});
